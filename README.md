@@ -28,13 +28,13 @@
 </p>
 
 <ul align="center" style="list-style-type: none;">
-  <p>Python
-  TensorFlow
-  PyTorch
-  scikit-learn
-  NumPy
-  Pandas
-  Jupyter Notebooks
+  <p>Python -
+  TensorFlow -
+  PyTorch -
+  scikit-learn -
+  NumPy -
+  Pandas -
+  Jupyter Notebooks -
 </p>
 
 <p align="center">
@@ -42,8 +42,8 @@
 </p>
 
 <ul align="center" style="list-style-type: none;">
-  <p> GitHub
-  Docker
-  Kubernetes
-  Linux
+  <p> Git -
+  Docker -
+  Kubernetes -
+  Linux -
   </p>
