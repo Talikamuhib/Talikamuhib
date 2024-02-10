@@ -20,3 +20,30 @@
   Check out my projects below! If you find them interesting, let's collaborate. <br>
   <strong>Star ⭐ and Fork 🍴 to join me on this creative journey!</strong>
 </p>
+<!-- Tech Skills Stack Section -->
+<h2 align="center">💻 Tech Stack</h2>
+
+<p align="center">
+  <strong>Languages and Frameworks:</strong>
+</p>
+
+<ul align="center" style="list-style-type: none;">
+  <p>Python
+  TensorFlow
+  PyTorch
+  scikit-learn
+  NumPy
+  Pandas
+  Jupyter Notebooks
+</p>
+
+<p align="center">
+  <strong>Tools and Platforms:</strong>
+</p>
+
+<ul align="center" style="list-style-type: none;">
+  <p> GitHub
+  Docker
+  Kubernetes
+  Linux
+  </p>
