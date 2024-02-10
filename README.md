@@ -1,12 +1,22 @@
+<h1 align="center">👋 Hi, I’m Talika!</h1>
 
-</head>
-<body>
-  <h1>👋 Hi, I’m Talika!</h1>
-  <p>👀 I’m interested in exploring the realms of Generative AI and its applications.</p>
-  <p>🌱 I’m currently learning various machine learning techniques to enhance my understanding of AI.</p>
-  <p>💞️ I’m looking to collaborate on projects involving AI-driven creativity and innovation.</p>
-  <p>📫 You can reach me at <a href="mailto:taliqa.muhib@gmail.com">taliqa.muhib@gmail.com</a>.</p>
-  <p>😄 Pronouns: She/her</p>
-  <p>⚡ Fun fact: I can solve a Rubik's Cube in under two minutes!</p>
-</body>
-</html>
+<p align="center">
+  <img src="your_animated_gif_url_here.gif" alt="Animated GIF" width="600"/>
+</p>
+
+<p align="center">
+  I’m interested in exploring the realms of <strong>Generative AI</strong> and its applications. Currently diving into machine learning techniques to enhance my AI skills.
+</p>
+
+<p align="center">
+  <!-- Example badges -->
+  <a href="mailto:taliqa.muhib@gmail.com">
+    <img src="https://img.shields.io/badge/Contact-Me-green?style=flat-square" alt="Contact Badge"/>
+  </a>
+  <img src="https://img.shields.io/badge/Pronouns-She%2Fher-blueviolet?style=flat-square" alt="Pronouns Badge"/>
+</p>
+
+<p align="center">
+  Check out my projects below! If you find them interesting, let's collaborate. <br>
+  <strong>Star ⭐ and Fork 🍴 to join me on this creative journey!</strong>
+</p>
