@@ -56,10 +56,10 @@
 ---
 
 <!-- COOL SNAKE ANIMATION -->
-<h2 align="left" style="color: #3b82f6;">🐍 Contribution Graph</h2>
+<h2 align="left" style="color: #3b82f6;">🐍 play game</h2>
 
 <p align="center">
-    <img src="https://github.com/talikamuhib/talikamuhib/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation">
+    <img src="https://github.com/talikamuhib/talikamuhib/game.html" alt="Snake Animation">
 </p>
 
 ---
