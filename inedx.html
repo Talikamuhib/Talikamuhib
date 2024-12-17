@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talika | Data Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d1117;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0d1117, #1f2937);
+            overflow: hidden;
+        }
+
+        /* Background Animation */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('https://i.imgur.com/FYwXH6f.png') no-repeat center;
+            background-size: cover;
+            opacity: 0.08;
+            animation: moveBackground 20s linear infinite;
+        }
+        @keyframes moveBackground {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            color: #d1d5db;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #58a6ff;
+            animation: typing 4s steps(40) infinite, blink 0.8s step-end infinite;
+        }
+        @keyframes typing {
+            0% { width: 0; }
+            50% { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        p.tagline {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            margin-bottom: 2rem;
+        }
+
+        /* Call to Action Buttons */
+        .btn {
+            display: inline-block;
+            margin: 1rem 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #58a6ff;
+            color: #58a6ff;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #58a6ff;
+            color: #0d1117;
+        }
+
+        /* Subtle Floating Animation for Icons */
+        .icons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .icons i {
+            font-size: 2rem;
+            color: #9ca3af;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .icons i:hover {
+            transform: translateY(-8px);
+            color: #58a6ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hello, I’m <span>Talika</span></h1>
+            <h2>A Data Analyst & Tech Enthusiast</h2>
+            <p class="tagline">Transforming Data into Insights | Researcher for a Better Tomorrow</p>
+            <a href="#projects" class="btn">View My Projects</a>
+            <a href="#contact" class="btn">Contact Me</a>
+
+            <!-- Tech Icons -->
+            <div class="icons">
+                <i class="fas fa-chart-line" title="Data Visualization"></i>
+                <i class="fas fa-database" title="SQL & Databases"></i>
+                <i class="fas fa-code" title="Python for Analysis"></i>
+                <i class="fas fa-brain" title="Machine Learning"></i>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
