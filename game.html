@@ -3,154 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Collector Game</title>
+    <title>Catch the Data Points</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* General Styles */
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f9f9f9;
+            background-color: #f9fafb;
             overflow: hidden;
         }
 
+        /* Game Container */
         .game-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
-            height: 300px;
-            background-color: #e5e7eb;
-            border: 2px solid #3b82f6;
+            height: 100vh;
+            background: linear-gradient(to bottom, #3b82f6, #1e40af);
             overflow: hidden;
         }
 
-        #player {
+        /* Player */
+        .player {
             position: absolute;
             bottom: 10px;
             left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Falling Objects */
+        .falling {
+            position: absolute;
+            top: 0;
             width: 30px;
             height: 30px;
-            background-color: #3b82f6;
-            border-radius: 5px;
-        }
-
-        .data-point, .error-block {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            bottom: 10px;
-        }
-
-        .data-point {
-            background-color: #22c55e;
-        }
-
-        .error-block {
             background-color: #ef4444;
+            border-radius: 50%;
         }
 
-        #score {
+        .falling.data {
+            background-color: #facc15;
+        }
+
+        /* Score Display */
+        .score {
             position: absolute;
             top: 10px;
             left: 10px;
-            font-size: 1.2rem;
-            color: #333;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
-        #game-over {
+        /* Game Over Screen */
+        .game-over {
             display: none;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 2rem;
-            color: #ef4444;
             text-align: center;
+            color: #ffffff;
+            font-size: 2rem;
+        }
+
+        .game-over button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #22c55e;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+
+        .game-over button:hover {
+            background-color: #15803d;
         }
     </style>
 </head>
 <body>
+    <!-- Game Container -->
     <div class="game-container">
-        <div id="player"></div>
-        <div id="score">Score: 0</div>
-        <div id="game-over">Game Over!<br>Refresh to Play Again</div>
+        <!-- Player -->
+        <div class="player" id="player"></div>
+
+        <!-- Score -->
+        <div class="score" id="score">Score: 0</div>
+
+        <!-- Game Over -->
+        <div class="game-over" id="gameOver">
+            <p>Game Over!</p>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button onclick="restartGame()">Restart</button>
+        </div>
     </div>
 
     <script>
-        const gameContainer = document.querySelector(".game-container");
+        // Select elements
         const player = document.getElementById("player");
         const scoreDisplay = document.getElementById("score");
-        const gameOverDisplay = document.getElementById("game-over");
+        const gameOverScreen = document.getElementById("gameOver");
+        const finalScoreDisplay = document.getElementById("finalScore");
+        const gameContainer = document.querySelector(".game-container");
 
-        let playerPosition = gameContainer.offsetWidth / 2 - 15;
         let score = 0;
-        let gameOver = false;
+        let isGameOver = false;
 
         // Player Movement
+        let playerPosition = window.innerWidth / 2;
+
         document.addEventListener("keydown", (e) => {
-            if (gameOver) return;
+            if (isGameOver) return;
+
             if (e.key === "ArrowLeft" && playerPosition > 0) {
-                playerPosition -= 30;
-            } else if (e.key === "ArrowRight" && playerPosition < gameContainer.offsetWidth - 30) {
-                playerPosition += 30;
+                playerPosition -= 20;
+            } else if (e.key === "ArrowRight" && playerPosition < window.innerWidth - 50) {
+                playerPosition += 20;
             }
             player.style.left = `${playerPosition}px`;
         });
 
-        // Function to create random blocks (data points/errors)
-        function createBlock(type) {
-            const block = document.createElement("div");
-            block.classList.add(type);
-            block.style.left = Math.floor(Math.random() * (gameContainer.offsetWidth - 20)) + "px";
-            gameContainer.appendChild(block);
+        // Function to create falling objects
+        function createFallingObject() {
+            if (isGameOver) return;
 
-            let blockInterval = setInterval(() => {
-                const blockTop = parseInt(window.getComputedStyle(block).bottom) || 0;
-                block.style.bottom = blockTop + 5 + "px";
+            const falling = document.createElement("div");
+            falling.classList.add("falling");
+            const isDataPoint = Math.random() > 0.3; // 70% chance of data point
+            if (isDataPoint) falling.classList.add("data");
 
-                if (blockTop > gameContainer.offsetHeight) {
-                    block.remove();
-                    clearInterval(blockInterval);
+            falling.style.left = `${Math.random() * (window.innerWidth - 30)}px`;
+            gameContainer.appendChild(falling);
+
+            let fallingInterval = setInterval(() => {
+                const top = parseInt(window.getComputedStyle(falling).top);
+                falling.style.top = top + 5 + "px";
+
+                // Remove object when out of bounds
+                if (top > window.innerHeight) {
+                    falling.remove();
+                    clearInterval(fallingInterval);
                 }
 
                 // Collision Detection
-                const blockLeft = block.offsetLeft;
-                const blockRight = blockLeft + block.offsetWidth;
-                const playerLeft = player.offsetLeft;
-                const playerRight = playerLeft + player.offsetWidth;
+                const fallingRect = falling.getBoundingClientRect();
+                const playerRect = player.getBoundingClientRect();
 
                 if (
-                    blockTop >= gameContainer.offsetHeight - 40 &&
-                    blockRight > playerLeft &&
-                    blockLeft < playerRight
+                    fallingRect.top < playerRect.bottom &&
+                    fallingRect.bottom > playerRect.top &&
+                    fallingRect.left < playerRect.right &&
+                    fallingRect.right > playerRect.left
                 ) {
-                    if (type === "data-point") {
-                        score++;
-                        scoreDisplay.textContent = `Score: ${score}`;
+                    if (falling.classList.contains("data")) {
+                        score += 10; // Increase score for data points
                     } else {
-                        gameOver = true;
-                        clearInterval(blockInterval);
-                        gameOverDisplay.style.display = "block";
+                        endGame(); // End game on collision with error
                     }
-                    block.remove();
+                    scoreDisplay.textContent = `Score: ${score}`;
+                    falling.remove();
+                    clearInterval(fallingInterval);
                 }
-            }, 30);
+            }, 20);
+        }
+
+        // End Game
+        function endGame() {
+            isGameOver = true;
+            gameOverScreen.style.display = "block";
+            finalScoreDisplay.textContent = score;
+            clearInterval(gameInterval);
+        }
+
+        // Restart Game
+        function restartGame() {
+            window.location.reload();
         }
 
         // Game Loop
-        setInterval(() => {
-            if (!gameOver) {
-                createBlock("data-point");
-                if (Math.random() > 0.7) createBlock("error-block");
-            }
-        }, 1000);
+        const gameInterval = setInterval(createFallingObject, 1000);
     </script>
 </body>
 </html>
