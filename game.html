@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collector Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background-color: #e5e7eb;
+            border: 2px solid #3b82f6;
+            overflow: hidden;
+        }
+
+        #player {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: #3b82f6;
+            border-radius: 5px;
+        }
+
+        .data-point, .error-block {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            bottom: 10px;
+        }
+
+        .data-point {
+            background-color: #22c55e;
+        }
+
+        .error-block {
+            background-color: #ef4444;
+        }
+
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        #game-over {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: #ef4444;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div id="player"></div>
+        <div id="score">Score: 0</div>
+        <div id="game-over">Game Over!<br>Refresh to Play Again</div>
+    </div>
+
+    <script>
+        const gameContainer = document.querySelector(".game-container");
+        const player = document.getElementById("player");
+        const scoreDisplay = document.getElementById("score");
+        const gameOverDisplay = document.getElementById("game-over");
+
+        let playerPosition = gameContainer.offsetWidth / 2 - 15;
+        let score = 0;
+        let gameOver = false;
+
+        // Player Movement
+        document.addEventListener("keydown", (e) => {
+            if (gameOver) return;
+            if (e.key === "ArrowLeft" && playerPosition > 0) {
+                playerPosition -= 30;
+            } else if (e.key === "ArrowRight" && playerPosition < gameContainer.offsetWidth - 30) {
+                playerPosition += 30;
+            }
+            player.style.left = `${playerPosition}px`;
+        });
+
+        // Function to create random blocks (data points/errors)
+        function createBlock(type) {
+            const block = document.createElement("div");
+            block.classList.add(type);
+            block.style.left = Math.floor(Math.random() * (gameContainer.offsetWidth - 20)) + "px";
+            gameContainer.appendChild(block);
+
+            let blockInterval = setInterval(() => {
+                const blockTop = parseInt(window.getComputedStyle(block).bottom) || 0;
+                block.style.bottom = blockTop + 5 + "px";
+
+                if (blockTop > gameContainer.offsetHeight) {
+                    block.remove();
+                    clearInterval(blockInterval);
+                }
+
+                // Collision Detection
+                const blockLeft = block.offsetLeft;
+                const blockRight = blockLeft + block.offsetWidth;
+                const playerLeft = player.offsetLeft;
+                const playerRight = playerLeft + player.offsetWidth;
+
+                if (
+                    blockTop >= gameContainer.offsetHeight - 40 &&
+                    blockRight > playerLeft &&
+                    blockLeft < playerRight
+                ) {
+                    if (type === "data-point") {
+                        score++;
+                        scoreDisplay.textContent = `Score: ${score}`;
+                    } else {
+                        gameOver = true;
+                        clearInterval(blockInterval);
+                        gameOverDisplay.style.display = "block";
+                    }
+                    block.remove();
+                }
+            }, 30);
+        }
+
+        // Game Loop
+        setInterval(() => {
+            if (!gameOver) {
+                createBlock("data-point");
+                if (Math.random() > 0.7) createBlock("error-block");
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
