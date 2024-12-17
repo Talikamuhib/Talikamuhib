@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Talika's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #1f2937, #3b82f6);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        /* Project Section */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem 1rem;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #3b82f6;
+        }
+
+        .project-card p {
+            padding: 0 1rem;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .project-card .btn {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.6rem 1.2rem;
+            background: #3b82f6;
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .project-card .btn:hover {
+            background: #2563eb;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #1f2937;
+            color: #fff;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>My Projects</h1>
+        <p>Showcasing my work as a Data Analyst and Tech Enthusiast</p>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="projects-container">
+        <!-- Project Card 1 -->
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300x180" alt="Project Image">
+            <h3>Sales Dashboard Analysis</h3>
+            <p>Built an interactive dashboard using Python and Power BI to analyze global sales data trends.</p>
+            <a href="https://github.com/your-repo/sales-dashboard" class="btn" target="_blank">View Project</a>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300x180" alt="Project Image">
+            <h3>Customer Segmentation</h3>
+            <p>Performed customer segmentation with K-means clustering to identify target customer groups.</p>
+            <a href="https://github.com/your-repo/customer-segmentation" class="btn" target="_blank">View Project</a>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300x180" alt="Project Image">
+            <h3>Time Series Forecasting</h3>
+            <p>Forecasted product demand using ARIMA and Python to optimize inventory management.</p>
+            <a href="https://github.com/your-repo/time-series" class="btn" target="_blank">View Project</a>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300x180" alt="Project Image">
+            <h3>Sentiment Analysis</h3>
+            <p>Analyzed customer reviews using NLP techniques to understand user sentiment and trends.</p>
+            <a href="https://github.com/your-repo/sentiment-analysis" class="btn" target="_blank">View Project</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Talika | Data Analyst Portfolio</p>
+    </footer>
+</body>
+</html>
