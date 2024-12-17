@@ -85,6 +85,52 @@
         .game-over button:hover {
             background-color: #15803d;
         }
+
+        /* Modal Rules Pop-up */
+        .modal {
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s;
+        }
+
+        .modal h2 {
+            margin-bottom: 10px;
+            color: #3b82f6;
+        }
+
+        .modal p {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .modal button {
+            background-color: #3b82f6;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .modal button:hover {
+            background-color: #2563eb;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -104,20 +150,29 @@
         </div>
     </div>
 
+    <!-- Rules Modal -->
+    <div class="modal" id="rulesModal">
+        <h2>🎮 Game Rules</h2>
+        <p>🟡 <strong>Collect the Yellow Data Points</strong> to score points.</p>
+        <p>🔴 <strong>Avoid the Red Errors</strong> to stay in the game.</p>
+        <p>➡️ Use the <strong>Left</strong> and <strong>Right Arrow Keys</strong> to move the player.</p>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
     <script>
         // Select elements
         const player = document.getElementById("player");
         const scoreDisplay = document.getElementById("score");
         const gameOverScreen = document.getElementById("gameOver");
         const finalScoreDisplay = document.getElementById("finalScore");
+        const rulesModal = document.getElementById("rulesModal");
         const gameContainer = document.querySelector(".game-container");
 
         let score = 0;
         let isGameOver = false;
-
-        // Player Movement
         let playerPosition = window.innerWidth / 2;
 
+        // Player Movement
         document.addEventListener("keydown", (e) => {
             if (isGameOver) return;
 
@@ -135,7 +190,7 @@
 
             const falling = document.createElement("div");
             falling.classList.add("falling");
-            const isDataPoint = Math.random() > 0.3; // 70% chance of data point
+            const isDataPoint = Math.random() > 0.3;
             if (isDataPoint) falling.classList.add("data");
 
             falling.style.left = `${Math.random() * (window.innerWidth - 30)}px`;
@@ -145,13 +200,11 @@
                 const top = parseInt(window.getComputedStyle(falling).top);
                 falling.style.top = top + 5 + "px";
 
-                // Remove object when out of bounds
                 if (top > window.innerHeight) {
                     falling.remove();
                     clearInterval(fallingInterval);
                 }
 
-                // Collision Detection
                 const fallingRect = falling.getBoundingClientRect();
                 const playerRect = player.getBoundingClientRect();
 
@@ -162,11 +215,11 @@
                     fallingRect.right > playerRect.left
                 ) {
                     if (falling.classList.contains("data")) {
-                        score += 10; // Increase score for data points
+                        score += 10;
+                        scoreDisplay.textContent = `Score: ${score}`;
                     } else {
-                        endGame(); // End game on collision with error
+                        endGame();
                     }
-                    scoreDisplay.textContent = `Score: ${score}`;
                     falling.remove();
                     clearInterval(fallingInterval);
                 }
@@ -186,8 +239,11 @@
             window.location.reload();
         }
 
-        // Game Loop
-        const gameInterval = setInterval(createFallingObject, 1000);
+        // Start Game
+        function startGame() {
+            rulesModal.style.display = "none";
+            gameInterval = setInterval(createFallingObject, 1000);
+        }
     </script>
 </body>
 </html>
