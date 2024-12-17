@@ -1,72 +1,82 @@
-<h1 align="center" style="color: #3b82f6; font-size: 3.2rem; font-family: 'Poppins', sans-serif;">
-    🚀 Talika Muhib | <span style="color: #2563eb;">Data Analyst Portfolio</span>
+<!-- HEADER -->
+<h1 align="center" style="font-size: 3.5rem; color: #3b82f6;">
+   🚀 Hi, I'm Talika Muhib! 
 </h1>
 
-<p align="center" style="font-size: 1.2rem;">
-    <em>A stunning portfolio showcasing my expertise in <b>data analytics</b>, visualization, and impactful insights.</em>
+<p align="center" style="font-size: 1.4rem; color: #444;">
+   <em>Data Analyst | Problem Solver | Insight Generator 🌟</em>
 </p>
 
 <p align="center">
-    <a href="https://github.com/Talikamuhib"><img src="https://img.shields.io/github/followers/Talikamuhib?style=social" alt="GitHub Followers"></a>
-    <a href="https://github.com/Talikamuhib/Talikamuhib"><img src="https://img.shields.io/github/stars/Talikamuhib/Talikamuhib?style=social" alt="GitHub Stars"></a>
-    <a href="mailto:taliqa.muhib@gmail.com"><img src="https://img.shields.io/badge/Email-Contact%20Me-brightgreen"></a>
-</p>
-
-<hr/>
-
-<h2 align="center" style="color: #444; font-size: 2rem;">🌟 Live Portfolio Preview</h2>
-<p align="center">
-    <a href="https://talikamuhib.github.io/Talikamuhib" target="_blank">
-        <img src="https://via.placeholder.com/800x450" alt="Portfolio Preview" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); max-width: 90%;">
-    </a>
-</p>
-<p align="center" style="font-size: 1.1rem;">
-    🔗 <strong>Check out my portfolio here:</strong>  
-    <a href="https://talikamuhib.github.io/Talikamuhib" style="color: #3b82f6; text-decoration: none; font-weight: bold;">
-        👉 Click to View Live Demo 👈
-    </a>
-</p>
-
-<hr/>
-
-<h2 style="color: #1f2937; font-size: 2rem; margin-bottom: 1rem;">🎯 Key Highlights</h2>
-<ul style="font-size: 1.1rem; line-height: 2; color: #444;">
-    <li>🚀 **Fully Responsive Design**: Seamlessly fits any screen size (desktop, mobile, tablet).</li>
-    <li>📊 **Clean Data Visualizations**: Showcasing interactive charts and dashboards.</li>
-    <li>📧 **Instant Contact Form**: Reach out quickly through a dynamic contact section.</li>
-    <li>🎨 **Modern UI**: Smooth animations, transitions, and intuitive navigation.</li>
-</ul>
-
----
-
-<h2 align="center" style="color: #3b82f6;">🛠️ Built With</h2>
-<p align="center" style="font-size: 1.2rem;">
-    <img src="https://img.shields.io/badge/HTML5-🔧-E34F26?logo=html5&style=for-the-badge&logoColor=white" />
-    <img src="https://img.shields.io/badge/CSS3-🎨-1572B6?logo=css3&style=for-the-badge&logoColor=white" />
-    <img src="https://img.shields.io/badge/JavaScript-⚡️-F7DF1E?logo=javascript&style=for-the-badge&logoColor=black" />
-    <img src="https://img.shields.io/badge/GitHub%20Pages-🚀-222222?logo=github&style=for-the-badge&logoColor=white" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=500&size=22&duration=4000&color=3b82f6&center=true&vCenter=true&width=600&lines=Turning+Data+Into+Actionable+Insights;Exploring+Numbers+to+Tell+Stories;Creating+Interactive+Dashboards" alt="Typing SVG">
 </p>
 
 ---
 
-<h2 style="color: #1f2937; font-size: 2rem; text-align: center;">📬 Let's Connect</h2>
-<p align="center" style="font-size: 1.1rem;">
-    <a href="mailto:taliqa.muhib@gmail.com" style="text-decoration: none; color: #3b82f6; font-weight: bold;">📧 Email</a> |
-    <a href="https://linkedin.com/in/your-profile" target="_blank" style="text-decoration: none; color: #3b82f6; font-weight: bold;">🔗 LinkedIn</a> |
-    <a href="https://github.com/your-profile" target="_blank" style="text-decoration: none; color: #3b82f6; font-weight: bold;">🐱 GitHub</a> |
-    <a href="https://twitter.com/your-profile" target="_blank" style="text-decoration: none; color: #3b82f6; font-weight: bold;">🐦 Twitter</a>
+<!-- GITHUB STATS -->
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=talikamuhib&show_icons=true&theme=tokyonight&hide_border=true" height="180" alt="GitHub Stats"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=talikamuhib&layout=compact&langs_count=6&theme=tokyonight&hide_border=true" height="180" alt="Top Languages"/>
+</div>
+
+---
+
+<!-- ANIMATED IMAGE -->
+<div align="center">
+    <img src="https://i.giphy.com/media/LMcB8XospGZO8UQq87/giphy.gif" alt="Developer Animation" width="300px">
+</div>
+
+---
+
+<!-- TECH STACK -->
+<h2 align="left" style="color: #3b82f6;">🛠️ Tech Stack</h2>
+
+<p align="center">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="HTML5" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="CSS3" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="JavaScript" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg" height="40" alt="Plotly" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" height="40" alt="SQLite" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="Git" />
 </p>
 
-<hr/>
+---
 
-<h2 align="center" style="color: #2563eb; font-size: 1.8rem;">⭐️ Star This Repository</h2>
-<p align="center" style="font-size: 1.2rem;">
-    If you find my portfolio inspiring, please give this repository a ⭐ on GitHub!  
-    <a href="https://github.com/talikamuhib/Talikamuhib" target="_blank">
-        <img src="https://img.shields.io/github/stars/talikamuhib/Talikamuhib?style=social" alt="Star the repository">
-    </a>
+<!-- SOCIAL LINKS -->
+<h2 align="left" style="color: #3b82f6;">🌐 Connect with Me</h2>
+
+<p align="center">
+    <a href="mailto:taliqa.muhib@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+    <a href="https://linkedin.com/in/your-profile"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+    <a href="https://github.com/talikamuhib"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+    <a href="https://twitter.com/your-profile"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"></a>
 </p>
 
-<p align="center" style="font-size: 1rem; color: #444;">
-    🛠 Built with ❤️ by <strong>Talika Muhib</strong> | <em>© 2024 All Rights Reserved</em>
+---
+
+<!-- COOL SNAKE ANIMATION -->
+<h2 align="left" style="color: #3b82f6;">🐍 Contribution Graph</h2>
+
+<p align="center">
+    <img src="https://github.com/talikamuhib/talikamuhib/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation">
+</p>
+
+---
+
+<!-- QUOTE -->
+<h2 align="center" style="color: #2563eb; font-size: 1.8rem;">💭 Quote of the Day</h2>
+<p align="center" style="font-size: 1.2rem; color: #444;">
+   <em>"Data is the new oil. But refining it into insights is where the power lies."</em>
+</p>
+
+---
+
+<!-- FOOTER -->
+<p align="center" style="font-size: 1rem;">
+    🔗 <strong>Visit:</strong> <a href="https://talikamuhib.github.io/Talikamuhib/" style="color: #3b82f6;">https://talikamuhib.github.io/Talikamuhib/</a>
+</p>
+
+<p align="center" style="color: #888;">
+    ❤️ Designed and coded by <strong>Talika Muhib</strong> | © 2024 All Rights Reserved
 </p>
