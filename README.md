@@ -53,14 +53,6 @@
     <a href="https://twitter.com/your-profile"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"></a>
 </p>
 
----
-
-<!-- COOL SNAKE ANIMATION -->
-<h2 align="left" style="color: #3b82f6;">🐍 play game</h2>
-
-<p align="center">
-    <img src="https://github.com/talikamuhib/talikamuhib/game.html" alt="Snake Animation">
-</p>
 
 ---
 
