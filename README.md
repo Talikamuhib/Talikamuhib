@@ -11,7 +11,7 @@
     <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=500&size=22&duration=4000&color=3b82f6&center=true&vCenter=true&width=600&lines=Turning+Data+Into+Actionable+Insights;Exploring+Numbers+to+Tell+Stories;Creating+Interactive+Dashboards" alt="Typing SVG">
 </p>
 
----
+
 
 <!-- GITHUB STATS -->
 <div align="center">
