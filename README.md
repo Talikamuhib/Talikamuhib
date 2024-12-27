@@ -1,18 +1,3 @@
-<!-- HEADER -->
-<h1 align="center" style="font-size: 3.5rem; color: #3b82f6;">
-   🚀 Hi, I'm Talika Muhib! 
-</h1>
-
-<p align="center" style="font-size: 1.4rem; color: #444;">
-   <em>Data Analyst | Problem Solver | Insight Generator 🌟</em>
-</p>
-
-<p align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=500&size=22&duration=4000&color=3b82f6&center=true&vCenter=true&width=600&lines=Turning+Data+Into+Actionable+Insights;Exploring+Numbers+to+Tell+Stories;Creating+Interactive+Dashboards" alt="Typing SVG">
-</p>
-
-
-
 <!-- GITHUB STATS -->
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=talikamuhib&show_icons=true&theme=tokyonight&hide_border=true" height="180" alt="GitHub Stats"/>
