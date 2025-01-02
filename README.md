@@ -36,6 +36,3 @@
     🔗 <strong>Visit:</strong> <a href="https://talikamuhib.github.io/Talikamuhib/" style="color: #3b82f6;">https://talikamuhib.github.io/Talikamuhib/</a>
 </p>
 
-<p align="center" style="color: #888;">
-    ❤️ Designed and coded by <strong>Talika Muhib</strong> | © 2024 All Rights Reserved
-</p>
