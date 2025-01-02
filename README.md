@@ -30,6 +30,7 @@
     <a href="https://twitter.com/taliqamuhib"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"></a>
 </p>
 
+![](https://komarev.com/ghpvc/Talikamuhib=PROFILE+VIEWS)
 
 <!-- FOOTER -->
 <p align="center" style="font-size: 1rem;">
