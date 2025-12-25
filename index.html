@@ -4,151 +4,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talika | Data Analyst Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Talika Muhib | Data Stories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        html {
-            scroll-behavior: smooth;
+
+        :root {
+            --bg: #040611;
+            --bg-alt: rgba(8, 12, 24, 0.9);
+            --accent: #a855f7;
+            --accent-secondary: #22d3ee;
+            --text-main: #f8fafc;
+            --text-muted: #cbd5f5;
+            --border-subtle: rgba(148, 163, 184, 0.18);
         }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #0d1117;
-            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.2), transparent 45%),
+                        radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.22), transparent 40%),
+                        var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* Hero Section */
-        .hero {
+        header {
             position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #0d1117, #1f2937);
+            padding: 2.5rem 8vw 6rem;
             overflow: hidden;
         }
 
-        /* Background Animation */
-        .hero::before {
-            content: '';
+        header::after {
+            content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: url('https://i.imgur.com/FYwXH6f.png') no-repeat center;
-            background-size: cover;
-            opacity: 0.08;
-            animation: moveBackground 20s linear infinite;
-        }
-        @keyframes moveBackground {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            inset: 0;
+            background: radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.2), transparent 50%),
+                        radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.3), transparent 50%);
+            z-index: 0;
         }
 
-        .hero-content {
+        nav {
             position: relative;
             z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            color: #58a6ff;
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            font-weight: 500;
-            margin: 1rem 0;
-            color: #d1d5db;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid #58a6ff;
-            animation: typing 4s steps(40) infinite, blink 0.8s step-end infinite;
-        }
-        @keyframes typing {
-            0% { width: 0; }
-            50% { width: 100%; }
-        }
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-
-        p.tagline {
-            font-size: 1.2rem;
-            color: #9ca3af;
-            margin-bottom: 2rem;
-        }
-
-        /* Call to Action Buttons */
-        .btn {
-            display: inline-block;
-            margin: 1rem 0.5rem;
-            padding: 0.8rem 1.5rem;
-            border: 2px solid #58a6ff;
-            color: #58a6ff;
-            background: transparent;
-            font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #58a6ff;
-            color: #0d1117;
-        }
-
-        /* Subtle Floating Animation for Icons */
-        .icons {
-            margin-top: 2rem;
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .logo::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .hero {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .hero-copy span {
+            display: inline-block;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-secondary);
+        }
+
+        .hero-copy h1 {
+            margin-top: 1.5rem;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-family: 'Playfair Display', serif;
+            line-height: 1.05;
+        }
+
+        .hero-copy p {
+            margin-top: 1.4rem;
+            max-width: 540px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .hero-actions {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .primary-btn,
+        .ghost-btn {
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
+            padding: 0.9rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 500;
+            transition: transform 0.3s ease, background 0.3s ease, border 0.3s ease;
+        }
+
+        .primary-btn {
+            background: linear-gradient(120deg, var(--accent), var(--accent-secondary));
+            color: var(--bg);
+            border: none;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .ghost-btn {
+            background: transparent;
+            border: 1px solid rgba(168, 85, 247, 0.45);
+            color: var(--text-main);
+        }
+
+        .ghost-btn:hover {
+            transform: translateY(-4px);
+            border-color: rgba(34, 211, 238, 0.6);
+        }
+
+        .hero-panel {
+            position: relative;
+            padding: 2.3rem;
+            border-radius: 28px;
+            background: rgba(8, 12, 24, 0.82);
+            border: 1px solid var(--border-subtle);
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+        }
+
+        .hero-panel::after {
+            content: "";
+            position: absolute;
+            inset: auto -40px -60px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 65%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .hero-panel:hover::after {
+            opacity: 1;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+        }
+
+        .panel-header h2 {
+            font-size: 1.2rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(226, 232, 240, 0.78);
+        }
+
+        .panel-header span {
+            font-size: 0.85rem;
+            color: rgba(226, 232, 240, 0.6);
+        }
+
+        .metrics-list {
+            display: grid;
+            gap: 1.35rem;
+        }
+
+        .metrics-item h3 {
+            font-size: 2.2rem;
+            color: var(--accent);
+        }
+
+        .metrics-item p {
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        main {
+            padding: 0 8vw 5rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            letter-spacing: 0.28em;
+            color: rgba(94, 234, 212, 0.8);
+            text-transform: uppercase;
+        }
+
+        .grid {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .grid-card {
+            padding: 2rem 2.1rem;
+            border-radius: 24px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border-subtle);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+
+        .grid-card h3 {
+            font-size: 1.15rem;
+            letter-spacing: 0.04em;
+        }
+
+        .grid-card p {
+            margin-top: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .testimonials {
+            margin-top: 4.5rem;
+        }
+
+        .testimonials h2 {
+            margin-top: 0.6rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            max-width: 720px;
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-track {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 0.5rem;
+            scrollbar-width: thin;
+        }
+
+        .testimonial-track::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .testimonial-track::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.4);
+            border-radius: 999px;
+        }
+
+        .testimonial-card {
+            flex: 0 0 clamp(280px, 30vw, 360px);
+            padding: 2.1rem;
+            border-radius: 24px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border-subtle);
+            scroll-snap-align: center;
+            display: flex;
+            flex-direction: column;
             gap: 1.5rem;
         }
 
-        .icons i {
-            font-size: 2rem;
-            color: #9ca3af;
-            transition: transform 0.3s ease, color 0.3s ease;
+        .testimonial-card p {
+            color: rgba(226, 232, 240, 0.88);
+            line-height: 1.8;
         }
 
-        .icons i:hover {
-            transform: translateY(-8px);
-            color: #58a6ff;
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.6), rgba(34, 211, 238, 0.6));
+            display: grid;
+            place-items: center;
+            font-weight: 600;
+            color: var(--bg);
+        }
+
+        .testimonial-author div span {
+            display: block;
+            color: rgba(148, 163, 184, 0.75);
+            font-size: 0.85rem;
+        }
+
+        .cta {
+            margin-top: 5rem;
+            padding: 3rem;
+            border-radius: 30px;
+            background: linear-gradient(120deg, rgba(168, 85, 247, 0.35), rgba(34, 211, 238, 0.35));
+            display: grid;
+            gap: 1.4rem;
+            justify-items: start;
+        }
+
+        .cta h3 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            line-height: 1.35;
+            max-width: 640px;
+        }
+
+        footer {
+            padding: 2.5rem 8vw;
+            color: rgba(148, 163, 184, 0.7);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        @media (max-width: 720px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.4rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            header {
+                padding: 2rem 6vw 5rem;
+            }
+
+            main {
+                padding: 0 6vw 4rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .testimonial-track {
+                scroll-snap-type: none;
+            }
+
+            .testimonial-card {
+                flex: 0 0 100%;
+                min-width: unset;
+            }
+
+            .cta {
+                padding: 2.4rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Talika Muhib</span></h1>
-            <h2>A Data Analyst & Tech Enthusiast</h2>
-            <p class="tagline">Transforming Data into Insights | Researcher for a Better Tomorrow</p>
-            <a href="projects.html" class="btn">View My Projects</a>
-            <a href="contact.html" class="btn">Contact Me</a>
-            <a href="game.html" class="btn">Play Game</a>
+    <header>
+        <nav>
+            <a class="logo" href="index.html">Talika Muhib</a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="game.html">Play</a></li>
+            </ul>
+        </nav>
 
-            <!-- Tech Icons -->
-            <div class="icons">
-                <i class="fas fa-chart-line" title="Data Visualization"></i>
-                <i class="fas fa-database" title="SQL & Databases"></i>
-                <i class="fas fa-code" title="Python for Analysis"></i>
-                <i class="fas fa-brain" title="Machine Learning"></i>
+        <section class="hero">
+            <div class="hero-copy">
+                <span>Data with character</span>
+                <h1>Designing intelligence that feels intuitive, human, and ready to act.</h1>
+                <p>I translate complex signals into immersive stories leaders can rally around. From growth analytics to customer intelligence, every insight is built to be heard.</p>
+                <div class="hero-actions">
+                    <a class="primary-btn" href="projects.html">Explore work</a>
+                    <a class="ghost-btn" href="contact.html">Start a collaboration</a>
+                </div>
             </div>
-        </div>
-    </section>
+            <aside class="hero-panel">
+                <div class="panel-header">
+                    <h2>Impact snapshot</h2>
+                    <span>FY 2021&ndash;2024</span>
+                </div>
+                <div class="metrics-list">
+                    <div class="metrics-item">
+                        <h3>120M+</h3>
+                        <p>Customer touchpoints measured, refined, and optimized with advanced segmentation.</p>
+                    </div>
+                    <div class="metrics-item">
+                        <h3>48 hrs</h3>
+                        <p>Average time to turn raw signals into board-ready visual intelligence.</p>
+                    </div>
+                    <div class="metrics-item">
+                        <h3>3 continents</h3>
+                        <p>Cross-cultural delivery experience blending qualitative sentiment with quantitative rigor.</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </header>
+
+    <main>
+        <section>
+            <p class="section-title">Signature approach</p>
+            <div class="grid">
+                <article class="grid-card">
+                    <h3>Immersive strategy labs</h3>
+                    <p>Sprint-style workshops bring decision makers into the build, so data stories land with empathy and clarity.</p>
+                </article>
+                <article class="grid-card">
+                    <h3>Adaptive insights layer</h3>
+                    <p>Reusable Python and Power BI components keep intelligence evergreen across product, marketing, and ops.</p>
+                </article>
+                <article class="grid-card">
+                    <h3>Ethical decision rails</h3>
+                    <p>Governance playbooks, bias audits, and explainability checklists keep every recommendation responsible.</p>
+                </article>
+                <article class="grid-card">
+                    <h3>Companion enablement</h3>
+                    <p>Guided walkthroughs and stakeholder training make adoption seamless long after launch day.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <p class="section-title">Voices of partners</p>
+            <h2>Leaders trust Talika to translate complex data moments into confident decisions.</h2>
+            <div class="testimonial-track">
+                <article class="testimonial-card">
+                    <p>“We walked into the session with 18 months of messy data. Talika left us with an executive deck that catalyzed a new market launch in three weeks.”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">KS</div>
+                        <div>
+                            <strong>Kavya Singh</strong>
+                            <span>VP Growth, Fintech Scaleup</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p>“The blend of qualitative journey mapping with predictive analytics unlocked budget we had been chasing for years.”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">JM</div>
+                        <div>
+                            <strong>Jordan Malik</strong>
+                            <span>Chief Experience Officer, Retail Collective</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p>“Our data went from siloed dashboards to a living story the board references every quarter. Talika sets the bar for insight design.”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">LT</div>
+                        <div>
+                            <strong>Laney Torres</strong>
+                            <span>Director Analytics, HealthTech Consortium</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h3>Let’s architect the next story your stakeholders will champion.</h3>
+            <a class="primary-btn" href="contact.html">Book a discovery call</a>
+            <a class="ghost-btn" href="projects.html">See recent collaborations</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Talika Muhib. Crafted with empathy and analytics.</p>
+    </footer>
 </body>
 </html>
