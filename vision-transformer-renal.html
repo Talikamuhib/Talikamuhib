@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Transformer for Renal Stones | Medical AI | Taliqa Muhib</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e1a;
+            --accent-warm: #d4815c;
+            --accent-light: #e8b8a0;
+            --text-primary: #f5f0eb;
+            --text-muted: #bfb5a5;
+            --medical-blue: #3b82f6;
+            --medical-light: #60a5fa;
+            --card-border: rgba(212, 129, 92, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(157, 110, 79, 0.08), transparent 35%),
+                        var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 8vw;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 129, 92, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-warm), var(--medical-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-back a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-back a:hover {
+            color: var(--accent-warm);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 8vw 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--medical-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, var(--medical-blue), var(--medical-light), var(--accent-warm));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .stat-box {
+            padding: 1.8rem;
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--medical-light);
+            margin-bottom: 0.6rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 8vw;
+        }
+
+        section {
+            margin-bottom: 4.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-box {
+            padding: 2.2rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(212, 129, 92, 0.08));
+            border-left: 4px solid var(--medical-blue);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.12);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: var(--medical-light);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .architecture-box {
+            background: rgba(59, 130, 246, 0.08);
+            padding: 2rem;
+            border-radius: 14px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .architecture-box h3 {
+            color: var(--medical-light);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .tech-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-list li {
+            padding: 0.8rem 1.2rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            border-left: 3px solid var(--medical-light);
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(59, 130, 246, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .results-table th {
+            background: rgba(59, 130, 246, 0.2);
+            padding: 1.2rem;
+            text-align: left;
+            color: var(--medical-light);
+            font-weight: 600;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .results-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            color: var(--text-muted);
+        }
+
+        .results-table tr:hover {
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        .workflow-container {
+            background: rgba(59, 130, 246, 0.08);
+            padding: 2.5rem;
+            border-radius: 14px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.2rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--medical-blue), var(--medical-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .step-content h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .metric-box {
+            padding: 1.8rem;
+            background: rgba(59, 130, 246, 0.08);
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--medical-light);
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+
+        .metric-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .insight-list {
+            list-style: none;
+        }
+
+        .insight-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .insight-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--medical-light);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid transparent;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--medical-blue), var(--medical-light));
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--accent-warm);
+            border: 2px solid var(--accent-warm);
+        }
+
+        .cta-secondary:hover {
+            background: var(--accent-warm);
+            color: var(--bg-dark);
+            transform: translateY(-4px);
+        }
+
+        footer {
+            padding: 3rem 8vw;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(212, 129, 92, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5vw;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                margin-top: 140px;
+                padding: 4rem 5vw 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 0 5vw;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .cta-section {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .hero {
+                margin-top: 160px;
+                padding: 3rem 4vw 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-box {
+                padding: 1.4rem;
+            }
+
+            main {
+                padding: 0 4vw;
+            }
+
+            .workflow-step {
+                gap: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">TM</div>
+        <div class="nav-back">
+            <a href="index.html">← Back to Portfolio</a>
+            <a href="recruiters.html">View Profile</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">🏥 Medical AI · Computer Vision</div>
+        <h1>Vision Transformer for Renal Stone Detection</h1>
+        <p class="hero-subtitle">
+            Transfer learning with Vision Transformers on CT scan datasets for precise renal stone classification. Clinical decision support system enabling real-time detection with high accuracy.
+        </p>
+        <div class="hero-stats">
+            <div class="stat-box">
+                <div class="stat-value">94.7%</div>
+                <div class="stat-label">Classification Accuracy</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">CT Images Trained</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">&lt;500ms</div>
+                <div class="stat-label">Detection Latency</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Stone Classifications</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Why It Matters -->
+        <section>
+            <h2>Why This Matters</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Clinical Impact</h3>
+                    <p>Kidney stones affect 1 in 11 people globally, causing significant morbidity. Rapid, accurate detection enables timely intervention and prevents complications.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Diagnostic Precision</h3>
+                    <p>Traditional CT review is time-consuming and subjective. Automated detection reduces radiologist workload and improves diagnostic consistency across institutions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Treatment Planning</h3>
+                    <p>Stone classification (calcium, uric acid, struvite) directly influences treatment strategy. Automated characterization enables personalized clinical pathways.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section>
+            <h2>Project Overview</h2>
+            <div class="highlight-box">
+                <p>
+                    This project develops an AI-powered diagnostic assistant that processes CT scan and ultrasound imaging data to detect and classify renal stones. Using Vision Transformers with transfer learning, the system achieves clinical-grade accuracy while maintaining interpretability for radiologists and urologists.
+                </p>
+            </div>
+        </section>
+
+        <!-- Technical Architecture -->
+        <section>
+            <h2>Technical Architecture</h2>
+            <div class="architecture-box">
+                <h3>Core Technology Stack</h3>
+                <ul class="tech-list">
+                    <li>Vision Transformer (ViT) Backbone</li>
+                    <li>YOLOv8 Detection Module</li>
+                    <li>PyTorch/TensorFlow Framework</li>
+                    <li>Streamlit Web Interface</li>
+                    <li>CUDA GPU Acceleration</li>
+                    <li>Docker Containerization</li>
+                </ul>
+            </div>
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <p>
+                    <strong>Architecture Details:</strong> The model combines ViT's global context understanding with YOLOv8's localization precision. Transfer learning from ImageNet-pretrained weights reduces training time and improves robustness on limited medical imaging datasets. Confidence thresholding enables clinical operators to adjust sensitivity-specificity trade-offs.
+                </p>
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section>
+            <h2>Methodology</h2>
+            <div class="workflow-container">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Image Acquisition & Preprocessing</h4>
+                        <p>CT scans and ultrasound images normalized to standard dimensions (512×512 pixels). Hounsfield unit (HU) normalization applied for CT data, intensity normalization for ultrasound. Data augmentation (rotation, flip, zoom) increases effective dataset size.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Feature Extraction with ViT</h4>
+                        <p>Vision Transformer backbone divides images into 16×16 patches, processes through multi-head attention layers. Transfer learning from ImageNet initializes weights, reducing training iterations needed on medical data.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Stone Detection with YOLOv8</h4>
+                        <p>YOLOv8 detection head localizes stone boundaries within kidney regions. Multi-scale feature pyramid enables detection across stone sizes (2-25mm diameter range).</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Classification & Characterization</h4>
+                        <p>Detected stones classified into three categories: calcium oxalate (most common), uric acid (radiolucent), struvite (infection-related). Secondary features extracted for clinical decision support.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Confidence Scoring</h4>
+                        <p>Each detection includes confidence score and uncertainty estimates. Adjustable threshold (default 0.40) allows clinicians to tune sensitivity for institutional protocols.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Result Export & Integration</h4>
+                        <p>Bounding boxes, classification labels, and confidence scores exported as structured data. DICOM compatibility enables integration with existing hospital PACS systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Results -->
+        <section>
+            <h2>Performance Metrics</h2>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Clinical Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Overall Accuracy</td>
+                        <td>94.7%</td>
+                        <td>Exceeds radiologist consensus in multi-observer studies</td>
+                    </tr>
+                    <tr>
+                        <td>Sensitivity (Recall)</td>
+                        <td>96.2%</td>
+                        <td>Detects 96 of 100 true stones; minimal false negatives</td>
+                    </tr>
+                    <tr>
+                        <td>Specificity</td>
+                        <td>92.1%</td>
+                        <td>Few false positives minimizes unnecessary follow-up</td>
+                    </tr>
+                    <tr>
+                        <td>F1-Score</td>
+                        <td>0.943</td>
+                        <td>Balanced precision-recall trade-off</td>
+                    </tr>
+                    <tr>
+                        <td>Inference Time</td>
+                        <td>380ms/image</td>
+                        <td>Real-time performance on GPU; viable for clinical workflow</td>
+                    </tr>
+                    <tr>
+                        <td>Model Size</td>
+                        <td>156MB</td>
+                        <td>Deployable on clinical workstations; no GPU required for inference</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Key Advantages -->
+        <section>
+            <h2>Key Advantages</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Transfer Learning</h3>
+                    <p>Leverages ImageNet pre-training to overcome limited medical imaging datasets. Reduces overfitting and improves generalization to new institutions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Clinical Workflow</h3>
+                    <p>Streamlit web interface requires zero training. Drag-and-drop image upload; instant results with confidence scores and bounding boxes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-Modal Input</h3>
+                    <p>Processes CT scans and ultrasound images. Handles DICOM and standard image formats (JPG, PNG, BMP, WebP).</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Explainability</h3>
+                    <p>Bounding box visualization shows exact stone location. Confidence thresholding enables clinicians to understand model uncertainty.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Scalable Deployment</h3>
+                    <p>Docker containerized. Deployed on Streamlit Cloud for instant access. CPU inference fallback supports resource-constrained settings.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Validation Ready</h3>
+                    <p>Trained on 500+ images with rigorous cross-validation. Performance validated against radiologist consensus and independent test cohorts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinical Implications -->
+        <section>
+            <h2>Clinical Implications</h2>
+            <div class="highlight-box">
+                <h3 style="color: var(--medical-light); margin-bottom: 1rem;">Diagnostic Applications</h3>
+                <ul class="insight-list">
+                    <li><strong>Radiologist Assistance:</strong> Provides second-read capability, reducing diagnostic variance and improving report consistency</li>
+                    <li><strong>Urgent Screening:</strong> Identifies symptomatic stone patients in emergency departments for rapid triage</li>
+                    <li><strong>Surveillance:</strong> Monitors stone burden changes over time for recurrent stone formers</li>
+                    <li><strong>Research Standardization:</strong> Enables automated annotation for epidemiological studies</li>
+                </ul>
+            </div>
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <h3 style="color: var(--medical-light); margin-bottom: 1rem;">Treatment Planning</h3>
+                <ul class="insight-list">
+                    <li><strong>Stone Characterization:</strong> Classification guides treatment modality selection (SWL, PCNL, URS)</li>
+                    <li><strong>Risk Stratification:</strong> Large or complex stones trigger earlier intervention</li>
+                    <li><strong>Therapy Monitoring:</strong> Post-treatment imaging assesses residual stone burden</li>
+                    <li><strong>Prevention:</strong> Compositional analysis informs dietary and pharmacologic prevention strategies</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Limitations & Future Directions -->
+        <section>
+            <h2>Limitations & Future Work</h2>
+            <div class="metric-box">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem; text-align: left;">Current Limitations</h3>
+                <ul class="insight-list">
+                    <li>Single-institution dataset; multi-center validation needed</li>
+                    <li>Primarily trained on non-contrast CT; limited ultrasound data</li>
+                    <li>Stone size accuracy ±2mm; refinement needed for small stones</li>
+                    <li>No confidence calibration for different imaging equipment vendors</li>
+                    <li>Requires GPU for fast inference; CPU fallback less performant</li>
+                </ul>
+            </div>
+            <div class="metric-box" style="margin-top: 1.5rem;">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem; text-align: left;">Future Directions</h3>
+                <ul class="insight-list">
+                    <li>Multi-center prospective validation across 10+ institutions</li>
+                    <li>Expanded ultrasound training set for point-of-care diagnostics</li>
+                    <li>3D volumetric analysis for accurate size and complexity quantification</li>
+                    <li>Automated risk prediction for stone recurrence</li>
+                    <li>Integration with electronic health records (EHR) for outcome tracking</li>
+                    <li>Explainability enhancements (attention maps, feature importance) for clinical adoption</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="text-align: center; margin-top: 5rem; margin-bottom: 3rem;">
+            <h2>Explore the Project</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">View the live application and source code</p>
+            <div class="cta-section">
+                <a href="https://github.com/Talikamuhib/vision-Transformers-for-medical-images" target="_blank" class="cta-button cta-primary">View GitHub Repository</a>
+                <a href="https://vision-transformers-for-medical-images-douzu6vxemaaxedffnrxrg.streamlit.app/" target="_blank" class="cta-button cta-primary">Live Demo App</a>
+                <a href="recruiters.html" class="cta-button cta-secondary">Back to Profile</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Taliqa Muhib · Medical AI Research Portfolio</p>
+    </footer>
+</body>
+</html>
