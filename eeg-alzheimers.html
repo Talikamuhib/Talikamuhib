@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEG Alzheimer's Detection with Graph Signal Processing | Taliqa Muhib</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e1a;
+            --accent-warm: #d4815c;
+            --accent-earth: #9d6e4f;
+            --accent-light: #e8b8a0;
+            --accent-gold: #c89d6e;
+            --purple: #9d4edd;
+            --purple-light: #c77dff;
+            --text-main: #f5f0eb;
+            --text-muted: #bfb5a5;
+            --border-soft: rgba(168, 145, 120, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1520 100%);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 8vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-soft);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            background: linear-gradient(120deg, var(--accent-warm), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-warm);
+        }
+
+        .nav-back {
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1.5px solid var(--accent-warm);
+            color: var(--accent-warm);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .nav-back:hover {
+            background: rgba(212, 129, 92, 0.1);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+            padding: 4rem 8vw;
+            background: radial-gradient(circle at 20% 50%, rgba(157, 78, 221, 0.12) 0%, transparent 60%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: -50%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(157, 78, 221, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(199, 125, 255, 0.05) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.4rem;
+            border-radius: 999px;
+            background: linear-gradient(120deg, rgba(157, 78, 221, 0.2), rgba(199, 125, 255, 0.15));
+            border: 1px solid var(--border-soft);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 5rem);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--purple-light), var(--accent-warm));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-box {
+            padding: 1.5rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.12), rgba(199, 125, 255, 0.08));
+            border: 1px solid var(--border-soft);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--purple-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 8vw;
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--purple-light);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+        }
+
+        .content-text {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* ===== HIGHLIGHT BOX ===== */
+        .highlight-box {
+            padding: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(199, 125, 255, 0.1));
+            border-left: 4px solid var(--purple-light);
+            margin: 2rem 0;
+        }
+
+        .highlight-box strong {
+            color: var(--purple-light);
+        }
+
+        .highlight-box p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* ===== FEATURE LIST ===== */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            padding: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(199, 125, 255, 0.05));
+            border: 1px solid var(--border-soft);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--purple-light);
+        }
+
+        .feature-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== METHODOLOGY DIAGRAM ===== */
+        .methodology-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            align-items: center;
+        }
+
+        .flow-step {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.12), rgba(199, 125, 255, 0.08));
+            border: 1.5px solid var(--border-soft);
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-step .step-number {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--purple-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-step .step-name {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .flow-arrow {
+            text-align: center;
+            color: var(--purple-light);
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        /* ===== RESULTS TABLE ===== */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.08), rgba(199, 125, 255, 0.04));
+            border: 1px solid var(--border-soft);
+        }
+
+        .results-table th {
+            background: rgba(157, 78, 221, 0.15);
+            padding: 1.2rem;
+            text-align: left;
+            color: var(--purple-light);
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .results-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid rgba(157, 78, 221, 0.1);
+            color: var(--text-muted);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:nth-child(even) {
+            background: rgba(157, 78, 221, 0.05);
+        }
+
+        .results-table td strong {
+            color: var(--purple-light);
+        }
+
+        /* ===== KEY INSIGHTS ===== */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .insight-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.12), rgba(199, 125, 255, 0.08));
+            border: 1px solid var(--border-soft);
+            border-left: 3px solid var(--purple-light);
+        }
+
+        .insight-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            color: var(--purple-light);
+        }
+
+        .insight-text {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ===== CLINICAL IMPLICATIONS ===== */
+        .implications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .implication-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), rgba(157, 78, 221, 0.08));
+            border: 1.5px solid var(--border-soft);
+        }
+
+        .implication-category {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--purple-light);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .implication-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .implication-list li {
+            color: var(--text-muted);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .implication-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--purple-light);
+            font-weight: bold;
+        }
+
+        /* ===== FUTURE DIRECTIONS ===== */
+        .future-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .future-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(199, 125, 255, 0.05));
+            border-left: 3px solid var(--purple-light);
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .future-item strong {
+            color: var(--purple-light);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== REFERENCES ===== */
+        .references-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .references-list li {
+            padding: 1rem;
+            border-left: 2px solid var(--purple-light);
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .references-list li strong {
+            color: var(--text-main);
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            padding: 3rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(199, 125, 255, 0.1));
+            border: 1.5px solid var(--border-soft);
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .cta-description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(120deg, var(--purple), var(--purple-light));
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(157, 78, 221, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--purple-light);
+            color: var(--purple-light);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(157, 78, 221, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 3rem 8vw;
+            border-top: 1px solid var(--border-soft);
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--purple-light);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5vw;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            main {
+                padding: 0 5vw;
+            }
+
+            .hero {
+                padding: 2rem 5vw;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .methodology-flow {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: -1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Taliqa Muhib</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="recruiters.html" class="nav-back">← Back to Research</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🧠 Graph Signal Processing · Neuroscience</div>
+            <h1>EEG Alzheimer's Detection with Graph Signal Processing</h1>
+            <p class="hero-subtitle">
+                Detecting Alzheimer's disease through network hyperexcitability analysis. 
+                A novel transfer function framework revealing how brain networks over-amplify signals in Alzheimer's disease.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">87.3%</div>
+                    <div class="stat-label">Classification Accuracy</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">66</div>
+                    <div class="stat-label">Subjects Analyzed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">128</div>
+                    <div class="stat-label">EEG Channels</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">d=1.08</div>
+                    <div class="stat-label">Gamma Band Effect</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Why This Matters -->
+        <section>
+            <div class="section-label">💜 Why This Research Matters</div>
+            <h2 class="section-title">The Global Challenge</h2>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🌍</div>
+                    <div class="feature-title">55M+ People Affected</div>
+                    <div class="feature-description">
+                        Worldwide living with dementia, with numbers expected to triple by 2050. Early detection is critical.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-title">$1.3T Annual Cost</div>
+                    <div class="feature-description">
+                        Economic burden of dementia care globally. Cost-effective diagnostics are urgently needed.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⏰</div>
+                    <div class="feature-title">10+ Years Silent</div>
+                    <div class="feature-description">
+                        Brain changes begin years before clinical symptoms. Early biomarkers enable intervention.
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>💜 Purple represents Alzheimer's Awareness</strong> — Early detection saves lives. This research aims to provide non-invasive, cost-effective tools for clinicians worldwide.</p>
+            </div>
+        </section>
+
+        <!-- Abstract -->
+        <section>
+            <div class="section-label">📄 Abstract</div>
+            <h2 class="section-title">Research Overview</h2>
+
+            <p class="content-text">
+                This research applies <strong>Graph Polynomial Vector Autoregressive (GP-VAR) system identification</strong> 
+                to resting-state EEG signals for characterizing brain network dynamics in Alzheimer's disease (AD). 
+            </p>
+
+            <p class="content-text">
+                EEG data from 128-channel recordings are modeled as graph signals on a structural connectivity network 
+                derived from the normalized graph Laplacian. The GP-VAR framework enables computation of transfer functions 
+                <strong>G(ω, λ)</strong> that jointly characterize temporal frequency ω and graph frequency λ responses, 
+                providing a novel biomarker of network-level signal processing in the brain.
+            </p>
+
+            <p class="content-text">
+                Analysis of 66 subjects (35 AD, 31 healthy controls) from the BrainLat consortium reveals that 
+                <strong>AD patients exhibit significantly elevated transfer function magnitudes across multiple frequency bands</strong>, 
+                with the largest effect in the gamma band (Cohen's d = 1.08). This finding is interpreted as 
+                <strong>network hyperexcitability</strong>—pathologically increased gain in signal propagation through brain networks.
+            </p>
+
+            <p class="content-text">
+                Transfer function-derived features achieve <strong>87.3% classification accuracy</strong> in distinguishing 
+                AD from healthy controls, demonstrating clinical utility as an early diagnostic biomarker.
+            </p>
+        </section>
+
+        <!-- What Makes It Different -->
+        <section>
+            <div class="section-label">✨ What Makes This Approach Different</div>
+            <h2 class="section-title">Innovation & Advantages</h2>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🔬</div>
+                    <div class="feature-title">Non-Invasive</div>
+                    <div class="feature-description">
+                        Uses standard EEG, no PET scans ($3,000+) or lumbar punctures. Deployable in clinics globally.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-title">Network-Based</div>
+                    <div class="feature-description">
+                        Analyzes how brain regions communicate, not just individual signals. Captures connectivity patterns.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Interpretable</div>
+                    <div class="feature-description">
+                        Results have clear physiological meaning (network gain). Clinicians can understand what's happening.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Joint Frequency Analysis</div>
+                    <div class="feature-description">
+                        Examines both temporal AND graph frequencies simultaneously. Captures signal propagation dynamics.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Hyperexcitability Biomarker</div>
+                    <div class="feature-description">
+                        Captures E/I imbalance linked to AD pathology. Novel mechanism-based biomarker.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💵</div>
+                    <div class="feature-title">Cost-Effective</div>
+                    <div class="feature-description">
+                        Can be deployed in primary care without expensive equipment. Test cost ~$50-100 vs PET $3,000+.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section>
+            <div class="section-label">🔍 Methodology</div>
+            <h2 class="section-title">The Pipeline</h2>
+
+            <p class="content-text">
+                Our approach follows a rigorous 6-step pipeline from raw EEG data to clinical classification:
+            </p>
+
+            <div class="methodology-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-name">Data Acquisition</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-name">Preprocessing</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-name">Graph Construction</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-name">GP-VAR Estimation</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-name">Transfer Functions</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-name">Classification</div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--purple-light); margin-top: 2rem; margin-bottom: 1rem;">Step-by-Step Details</h3>
+
+            <div class="future-list">
+                <div class="future-item">
+                    <strong>1. Data Acquisition</strong>
+                    Resting-state EEG from BrainLat consortium: 35 AD patients, 31 healthy controls, 128-channel recordings at 100 Hz sampling rate.
+                </div>
+                <div class="future-item">
+                    <strong>2. Preprocessing</strong>
+                    Band-pass filtering (0.5–50 Hz), artifact rejection via ICA, segmentation into 4-second epochs, average referencing.
+                </div>
+                <div class="future-item">
+                    <strong>3. Graph Construction</strong>
+                    Normalized graph Laplacian: L = I − D⁻¹/² AD⁻¹/² from structural connectivity matrix. Eigendecomposition yields graph frequencies λ ∈ [0, 2].
+                </div>
+                <div class="future-item">
+                    <strong>4. GP-VAR Estimation</strong>
+                    Ridge regression with α = 0.005 regularization. BIC-based model selection identifies optimal P = 35–45, K = 2–3.
+                </div>
+                <div class="future-item">
+                    <strong>5. Transfer Function Computation</strong>
+                    Evaluate G(ω, λ) on frequency grids: ω ∈ [0, π] (temporal), λ ∈ [0, 2] (graph). Extract |G| features per frequency band.
+                </div>
+                <div class="future-item">
+                    <strong>6. Statistical Analysis</strong>
+                    Independent samples t-tests, Cohen's d effect sizes, SVM classification with cross-validation.
+                </div>
+            </div>
+        </section>
+
+        <!-- Mathematical Framework -->
+        <section>
+            <div class="section-label">📐 Mathematical Framework</div>
+            <h2 class="section-title">GP-VAR Model & Transfer Functions</h2>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>The Graph Polynomial Vector Autoregressive (GP-VAR) model</strong> captures brain dynamics as:
+                </p>
+                <p style="font-family: 'Courier New', monospace; margin-top: 1rem; text-align: center; color: var(--purple-light);">
+                    x(t) = Σₚ₌₁ᴾ Σₖ₌₀ᴷ hₚ,ₖ Lᵏ x(t−p) + ε(t)
+                </p>
+                <p style="margin-top: 1rem;">
+                    Where <strong>L</strong> is the normalized graph Laplacian encoding brain connectivity, 
+                    and the transfer function <strong>G(ω, λ)</strong> characterizes how the network processes signals 
+                    at temporal frequency ω and graph frequency λ.
+                </p>
+            </div>
+
+            <p class="content-text">
+                This joint temporal-graph frequency characterization is unique and enables us to understand 
+                how Alzheimer's alters signal propagation through brain networks at multiple scales simultaneously.
+            </p>
+        </section>
+
+        <!-- Key Results -->
+        <section>
+            <div class="section-label">📊 Key Results</div>
+            <h2 class="section-title">Transfer Function Differences by Frequency Band</h2>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Frequency Band</th>
+                        <th>Range</th>
+                        <th>AD Mean |G|</th>
+                        <th>HC Mean |G|</th>
+                        <th>Effect Size (d)</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Gamma</strong></td>
+                        <td>30–50 Hz</td>
+                        <td>0.884</td>
+                        <td>0.771</td>
+                        <td><strong>1.08</strong></td>
+                        <td>Large ✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Theta</strong></td>
+                        <td>4–8 Hz</td>
+                        <td>2.87</td>
+                        <td>2.41</td>
+                        <td><strong>0.89</strong></td>
+                        <td>Large ✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Delta</strong></td>
+                        <td>0.5–4 Hz</td>
+                        <td>4.54</td>
+                        <td>3.94</td>
+                        <td><strong>0.84</strong></td>
+                        <td>Large ✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Beta</strong></td>
+                        <td>13–30 Hz</td>
+                        <td>1.64</td>
+                        <td>1.53</td>
+                        <td><strong>0.81</strong></td>
+                        <td>Large ✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alpha</strong></td>
+                        <td>8–13 Hz</td>
+                        <td>2.60</td>
+                        <td>2.52</td>
+                        <td><strong>0.14</strong></td>
+                        <td>Small</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="content-text">
+                <strong>All bands except alpha show AD > HC (elevated network gain in Alzheimer's disease)</strong>
+            </p>
+        </section>
+
+        <!-- Main Finding -->
+        <section>
+            <div class="section-label">💡 Key Finding</div>
+            <h2 class="section-title">Network Hyperexcitability in Alzheimer's</h2>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>Contrary to the traditional "EEG slowing" narrative, our transfer function analysis reveals 
+                    that AD patients exhibit increased |G(ω, λ)|—the brain network over-amplifies signals rather than 
+                    under-processing them.</strong>
+                </p>
+                <p style="margin-top: 1rem;">
+                    <em>"The brain in Alzheimer's disease doesn't quiet down—it becomes hyperexcitable, 
+                    amplifying signals beyond healthy levels."</em>
+                </p>
+            </div>
+
+            <h3 style="color: var(--purple-light); margin-top: 2rem; margin-bottom: 1rem;">What This Means</h3>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-title">🧠 Healthy Brain</div>
+                    <div class="insight-text">
+                        Balanced gain: Network appropriately amplifies and attenuates signals for efficient information processing.
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">💜 Alzheimer's Brain</div>
+                    <div class="insight-text">
+                        Elevated gain: Network over-amplifies signals (hyperexcitability), potentially contributing to cognitive dysfunction and seizure susceptibility.
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--purple-light); margin-top: 2rem; margin-bottom: 1rem;">Supporting Evidence</h3>
+
+            <div class="future-list">
+                <div class="future-item">
+                    <strong>Subclinical Epileptiform Activity</strong> — AD patients show 10-22% increased seizure risk (Vossel et al., 2013)
+                </div>
+                <div class="future-item">
+                    <strong>E/I Imbalance</strong> — GABAergic interneuron dysfunction reduces inhibition (Palop & Bhucke, 2007)
+                </div>
+                <div class="future-item">
+                    <strong>Amyloid-β Effects</strong> — Oligomers enhance synaptic excitation and impair LTD
+                </div>
+                <div class="future-item">
+                    <strong>Network Vulnerability</strong> — Hyperexcitable networks prone to pathological synchronization
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinical Implications -->
+        <section>
+            <div class="section-label">🏥 Clinical Implications</div>
+            <h2 class="section-title">Diagnostic & Therapeutic Potential</h2>
+
+            <div class="implications-grid">
+                <div class="implication-card">
+                    <div class="implication-category">Diagnostic Potential</div>
+                    <ul class="implication-list">
+                        <li><strong>Non-invasive</strong> — EEG-based, unlike PET ($3,000+) or CSF lumbar puncture</li>
+                        <li><strong>Interpretable</strong> — Network gain has clear physiological meaning</li>
+                        <li><strong>Complementary</strong> — Captures dynamics orthogonal to structural biomarkers</li>
+                        <li><strong>Cost-effective</strong> — EEG equipment ~$50-100/test vs PET $3,000</li>
+                        <li><strong>Accessible</strong> — Deployable in primary care and low-resource settings</li>
+                    </ul>
+                </div>
+
+                <div class="implication-card">
+                    <div class="implication-category">Therapeutic Implications</div>
+                    <ul class="implication-list">
+                        <li><strong>Anti-epileptic Treatment</strong> — Hyperexcitability phenotype may respond to levetiracetam</li>
+                        <li><strong>Treatment Monitoring</strong> — |G| as pharmacodynamic biomarker for drug trials</li>
+                        <li><strong>Prognostic Stratification</strong> — Extreme |G| values identify high-risk subgroups</li>
+                        <li><strong>Neurofeedback Targets</strong> — Real-time network gain modulation potential</li>
+                        <li><strong>Personalized Medicine</strong> — Identify patients for E/I-targeting therapies</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Limitations & Future Directions -->
+        <section>
+            <div class="section-label">🔮 Future Directions</div>
+            <h2 class="section-title">Limitations & Next Steps</h2>
+
+            <h3 style="color: var(--purple-light); margin-bottom: 1rem;">Current Limitations</h3>
+
+            <div class="future-list">
+                <div class="future-item">Single-site data (BrainLat consortium only)</div>
+                <div class="future-item">Cross-sectional design (no longitudinal tracking)</div>
+                <div class="future-item">Binary classification (AD vs HC, no MCI stage)</div>
+                <div class="future-item">Population-average graph (not subject-specific DTI)</div>
+                <div class="future-item">Linear model (nonlinear dynamics approximated)</div>
+                <div class="future-item">Medication effects not fully controlled</div>
+            </div>
+
+            <h3 style="color: var(--purple-light); margin-top: 2rem; margin-bottom: 1rem;">🚀 Next Steps</h3>
+
+            <div class="future-list">
+                <div class="future-item">
+                    <strong>Multi-site Validation</strong> — ADNI, OASIS, local cohorts for broader generalization
+                </div>
+                <div class="future-item">
+                    <strong>Longitudinal MCI → AD Conversion</strong> — Predict progression to full dementia
+                </div>
+                <div class="future-item">
+                    <strong>Subject-Specific Connectivity</strong> — DTI-based structural graphs instead of population average
+                </div>
+                <div class="future-item">
+                    <strong>Time-Varying GP-VAR</strong> — Capture non-stationary dynamics and disease progression
+                </div>
+                <div class="future-item">
+                    <strong>Biomarker Correlation</strong> — Link |G| with amyloid-PET and tau-PET imaging
+                </div>
+                <div class="future-item">
+                    <strong>Clinical Trials</strong> — Test anti-epileptic treatment response using |G| as biomarker
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <p>
+                    <strong>💜 The Path Forward</strong><br>
+                    This research establishes GP-VAR transfer function analysis as a promising biomarker framework for 
+                    Alzheimer's disease. The finding of network hyperexcitability opens new therapeutic avenues targeting 
+                    excitation-inhibition balance. Multi-site validation and longitudinal studies are the critical next steps 
+                    toward clinical translation.
+                </p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section>
+            <div class="section-label">📚 Key References</div>
+            <h2 class="section-title">Scientific Foundation</h2>
+
+            <ul class="references-list">
+                <li><strong>Mei, J. & Moura, J.M.F. (2016)</strong> Signal Processing on Graphs: Causal Modeling of Unstructured Data. IEEE Transactions on Signal and Information Processing over Networks, 3(2), 445-460.</li>
+                <li><strong>Shuman, D.I., et al. (2013)</strong> The Emerging Field of Signal Processing on Graphs. IEEE Signal Processing Magazine, 30(3), 83-98.</li>
+                <li><strong>Ortega, A., et al. (2018)</strong> Graph Signal Processing: Overview, Challenges, and Applications. Proceedings of the IEEE, 106(5), 808-828.</li>
+                <li><strong>Vossel, K.A., et al. (2013)</strong> Seizures and Epileptiform Activity in the Early Stages of Alzheimer Disease. JAMA Neurology, 70(9), 1158-1166.</li>
+                <li><strong>Babiloni, C., et al. (2020)</strong> What Electrophysiology Tells Us About Alzheimer's Disease. Neuroscience & Biobehavioral Reviews, 109, 206-224.</li>
+                <li><strong>Palop, J.J. & Mucke, L. (2007)</strong> Aberrant Excitatory Neuronal Activity and Compensatory Remodeling of Inhibitory Networks in AD. Neuron, 55(5), 697-711.</li>
+            </ul>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2 class="cta-title">Want to Learn More?</h2>
+            <p class="cta-description">
+                Explore my research, view the full thesis, or let's discuss collaboration opportunities in AI for healthcare.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="window.location.href='recruiters.html';">
+                    📊 View Full Research Profile
+                </button>
+                <button class="btn btn-secondary" onclick="window.location.href='index.html#story';">
+                    ← My Story & Mission
+                </button>
+                <button class="btn btn-secondary" onclick="window.location.href='contact.html';">
+                    📧 Get In Touch
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>💜 Graph Signal Processing for Clinical Neuroscience | Alzheimer's Detection Research</p>
+        <div class="footer-links">
+            <a href="mailto:taliqa.muhib@gmail.com">📧 Email</a>
+            <a href="https://linkedin.com/in/talika-muhib" target="_blank">🔗 LinkedIn</a>
+            <a href="index.html">🏠 Home</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">© 2026 Taliqa Muhib. MRes Thesis. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
