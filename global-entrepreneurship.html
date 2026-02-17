@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Entrepreneurship Monitor Dashboard | Data Analytics | Taliqa Muhib</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e1a;
+            --accent-warm: #d4815c;
+            --accent-light: #e8b8a0;
+            --text-primary: #f5f0eb;
+            --text-muted: #bfb5a5;
+            --data-teal: #06b6d4;
+            --data-light: #22d3ee;
+            --card-border: rgba(168, 145, 120, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(157, 110, 79, 0.08), transparent 35%),
+                        var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 8vw;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--data-teal), var(--data-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-back a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-back a:hover {
+            color: var(--accent-warm);
+        }
+
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 8vw 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: var(--data-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, var(--data-teal), var(--data-light), var(--accent-warm));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .stat-box {
+            padding: 1.8rem;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--data-light);
+            margin-bottom: 0.6rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 8vw;
+        }
+
+        section {
+            margin-bottom: 4.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-box {
+            padding: 2.2rem;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(212, 129, 92, 0.08));
+            border-left: 4px solid var(--data-teal);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            background: rgba(6, 182, 212, 0.12);
+            border-color: rgba(6, 182, 212, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: var(--data-light);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .insight-list {
+            list-style: none;
+        }
+
+        .insight-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .insight-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--data-light);
+            font-weight: bold;
+        }
+
+        .metric-box {
+            padding: 1.8rem;
+            background: rgba(6, 182, 212, 0.08);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .dataset-card {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(6, 182, 212, 0.05));
+            border: 2px solid rgba(6, 182, 212, 0.3);
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .dataset-card h3 {
+            color: var(--data-light);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .dataset-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .dataset-link {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--data-teal), var(--data-light));
+            color: white;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .dataset-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid transparent;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--data-teal), var(--data-light));
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--accent-warm);
+            border: 2px solid var(--accent-warm);
+        }
+
+        .cta-secondary:hover {
+            background: var(--accent-warm);
+            color: var(--bg-dark);
+            transform: translateY(-4px);
+        }
+
+        footer {
+            padding: 3rem 8vw;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(6, 182, 212, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5vw;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                margin-top: 140px;
+                padding: 4rem 5vw 3rem;
+            }
+
+            main {
+                padding: 0 5vw;
+            }
+
+            .cta-section {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .hero {
+                margin-top: 160px;
+                padding: 3rem 4vw 2rem;
+            }
+
+            main {
+                padding: 0 4vw;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">TM</div>
+        <div class="nav-back">
+            <a href="index.html">← Back to Portfolio</a>
+            <a href="recruiters.html">View Profile</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">🌍 Data Analytics · Global Research</div>
+        <h1>Global Entrepreneurship Monitor Dashboard</h1>
+        <p class="hero-subtitle">
+            Comprehensive analysis of entrepreneurial intentions, perceptions, and activity across 71 countries using GEM 2017 individual-level data. Identifies regional patterns, demographic insights, and key drivers of entrepreneurship globally.
+        </p>
+        <div class="hero-stats">
+            <div class="stat-box">
+                <div class="stat-value">71</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">190K+</div>
+                <div class="stat-label">Respondents</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Variables</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">2017</div>
+                <div class="stat-label">Wave Year</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section>
+            <h2>About GEM 2017</h2>
+            <div class="highlight-box">
+                <p>
+                    The Global Entrepreneurship Monitor (GEM) is the world's leading study of entrepreneurial dynamics. The 2017 wave captures individual-level data on entrepreneurial intentions, business ownership, business attitudes, and demographics across diverse economic contexts. This dataset represents approximately 190,000 adults aged 18-64 surveyed across 71 economies.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Dataset Overview</h2>
+            <div class="dataset-card">
+                <h3>📊 GEM 2017 APS Global Individual Level Data</h3>
+                <p>Publicly available on Kaggle with 190,000+ individual responses from 71 countries</p>
+                <a href="https://www.kaggle.com/datasets/taliqamuhib/cxx-gem-gild-2017" target="_blank" class="dataset-link">Access Dataset on Kaggle →</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Insights & Analysis</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Entrepreneurial Intentions</h3>
+                    <p>Analyze planned entrepreneurship across regions. Identify countries with highest intention-to-action conversion rates.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Business Ownership</h3>
+                    <p>Current business ownership rates by country, industry, and demographic. Early-stage vs established patterns.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Demographics</h3>
+                    <p>Age, gender, education, and employment status profiles of entrepreneurs globally. Identify underrepresented groups.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Motivation & Skills</h3>
+                    <p>Necessity-driven vs opportunity-driven entrepreneurship. Self-perceived business skills and knowledge assessment.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Regional Patterns</h3>
+                    <p>Entrepreneurship dynamics by development level. Emerging markets vs developed economies comparison.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Policy Implications</h3>
+                    <p>Support assessment, government policies, financing availability. Barriers to entrepreneurship identification.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Dataset Variables</h2>
+            <div class="metric-box">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Core Measures</h3>
+                <ul class="insight-list">
+                    <li><strong>Entrepreneurial Intentions:</strong> Plans to start business in next 3 years</li>
+                    <li><strong>TEA (Total Early-stage Entrepreneurial Activity):</strong> Nascent + new business ownership</li>
+                    <li><strong>Business Ownership:</strong> Active ownership of established businesses (3.5+ years)</li>
+                    <li><strong>Demographics:</strong> Age, gender, education level, employment status, income</li>
+                    <li><strong>Motivation:</strong> Opportunity vs necessity-driven entrepreneurship assessment</li>
+                    <li><strong>Skills:</strong> Perceived capabilities in business skills and knowledge</li>
+                    <li><strong>Fear of Failure:</strong> Fear of startup failure rate by country</li>
+                    <li><strong>Attitudes:</strong> Social desirability, business status, and opportunity recognition</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Analysis Opportunities</h2>
+            <div class="highlight-box">
+                <h3 style="color: var(--data-light); margin-bottom: 1rem;">Research Questions</h3>
+                <ul class="insight-list">
+                    <li>Which countries have highest ratio of entrepreneurial intention to actual business ownership?</li>
+                    <li>How does gender influence entrepreneurial participation and success rates globally?</li>
+                    <li>What barriers most significantly prevent transition from intention to action?</li>
+                    <li>How do economic development levels correlate with entrepreneurship patterns?</li>
+                    <li>What demographic profiles characterize successful vs unsuccessful entrepreneurs?</li>
+                    <li>How do government policies and support systems influence entrepreneurial activity?</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Visualization Potential</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Geospatial Maps</h3>
+                    <p>Global heatmaps showing entrepreneurship rates, intentions, and barriers by country/region.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Demographic Profiles</h3>
+                    <p>Age-gender-education heatmaps. Income vs entrepreneurship scatter plots and distributions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Funnel Analysis</h3>
+                    <p>Intention → Early-stage → Established business progression by country and demographic.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Regional Comparisons</h3>
+                    <p>Developed vs emerging markets. Regional clusters (Africa, Asia, Europe, Americas).</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Barrier Analysis</h3>
+                    <p>Top obstacles preventing entrepreneurship. Policy factors correlation analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Dashboards</h3>
+                    <p>Interactive Tableau/Power BI dashboards for country-level entrepreneurship profiles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Use Cases</h2>
+            <div class="metric-box">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Applications</h3>
+                <ul class="insight-list">
+                    <li><strong>Policy Research:</strong> Inform government entrepreneurship policies and incentives</li>
+                    <li><strong>Impact Investment:</strong> Identify high-potential emerging markets for startup investment</li>
+                    <li><strong>Education:</strong> Design entrepreneurship curricula based on skills gap analysis</li>
+                    <li><strong>Economic Development:</strong> Regional economic planning and diversification strategies</li>
+                    <li><strong>Financial Services:</strong> Assess market opportunity for microfinance and startup lending</li>
+                    <li><strong>Business Intelligence:</strong> Competitive landscape analysis by industry and region</li>
+                </ul>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 5rem; margin-bottom: 3rem;">
+            <h2>Explore the Data</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Access the complete GEM 2017 dataset on Kaggle and start your analysis</p>
+            <div class="cta-section">
+                <a href="https://www.kaggle.com/datasets/taliqamuhib/cxx-gem-gild-2017" target="_blank" class="cta-button cta-primary">Download Dataset on Kaggle</a>
+                <a href="recruiters.html" class="cta-button cta-secondary">Back to Profile</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taliqa Muhib · Global Entrepreneurship & Data Analytics Research</p>
+    </footer>
+</body>
+</html>
