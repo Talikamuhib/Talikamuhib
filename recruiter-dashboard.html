@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #9d6e4f;
+            --primary-light: #c89d6e;
+            --dark: #0a0e1a;
+            --text: #f5f0eb;
+            --text-secondary: #ccc5bf;
+            --card-bg: #1a1f2e;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1a2e 100%);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(157, 110, 79, 0.2);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            padding-top: 8rem;
+            padding-bottom: 3rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #9d6e4f, #c89d6e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .quick-stat {
+            background: var(--card-bg);
+            border: 1px solid rgba(157, 110, 79, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .quick-stat:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            background: rgba(157, 110, 79, 0.05);
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .availability-box {
+            background: linear-gradient(135deg, rgba(157, 110, 79, 0.15), rgba(200, 157, 110, 0.05));
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--dark);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .availability-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .availability-box p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .work-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .work-area {
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .work-area:hover {
+            border-left-color: var(--primary-light);
+            transform: translateX(4px);
+        }
+
+        .work-area-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .work-area-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(157, 110, 79, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .highlight-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(157, 110, 79, 0.15);
+        }
+
+        .highlight-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .about-me {
+            background: var(--card-bg);
+            border: 1px solid rgba(157, 110, 79, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-me h3 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-me p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(157, 110, 79, 0.15);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .projects-spotlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-spotlight {
+            background: var(--card-bg);
+            border: 1px solid rgba(157, 110, 79, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .project-spotlight:hover {
+            border-color: var(--primary);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(157, 110, 79, 0.15);
+        }
+
+        .project-spotlight-tag {
+            display: inline-block;
+            background: rgba(157, 110, 79, 0.15);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-spotlight-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(157, 110, 79, 0.15);
+        }
+
+        .project-spotlight-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-spotlight-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .project-spotlight-body {
+            padding: 1.5rem;
+        }
+
+        .project-spotlight-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-spotlight-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .project-spotlight-link:hover {
+            gap: 0.8rem;
+        }
+
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(157, 110, 79, 0.2);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(157, 110, 79, 0.05);
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            padding-top: 0;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            display: none;
+            border-top: 1px solid rgba(157, 110, 79, 0.15);
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-icon.active {
+            transform: rotate(180deg);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(157, 110, 79, 0.1), rgba(200, 157, 110, 0.05));
+            border: 1px solid rgba(157, 110, 79, 0.3);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #9d6e4f, #c89d6e);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(157, 110, 79, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(157, 110, 79, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(157, 110, 79, 0.2);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .cta-section {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            main {
+                padding-top: 10rem;
+            }
+
+            .quick-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-spotlight {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav">
+            <a href="index.html" class="logo">↑ Back to Home</a>
+            <ul class="nav-links">
+                <li><a href="portfolio-dashboard.html">Portfolio</a></li>
+                <li><a href="gem-dashboard.html">GEM Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Recruiter Dashboard</h1>
+                <p>Quick overview of experience, availability, and key highlights</p>
+            </section>
+
+            <div class="quick-stats">
+                <div class="quick-stat">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Research Projects</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="stat-value">94.7%</div>
+                    <div class="stat-label">Best Accuracy</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="stat-value">500K+</div>
+                    <div class="stat-label">Data Points</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Research Areas</div>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="availability-box">
+                    <span class="status-badge">👨‍🎓 Available for Opportunities</span>
+                    <h3>Current Status</h3>
+                    <p>Student visa · UK-based · Eligible to work during studies · Post-graduation work visa available</p>
+                    <p style="font-size: 0.9rem; margin: 0;">Open to roles in AI/ML, healthcare tech, research, and data science</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Areas of Interest</h2>
+                <div class="work-areas">
+                    <div class="work-area">
+                        <div class="work-area-title">🏥 Healthcare AI</div>
+                        <div class="work-area-desc">Medical imaging, clinical decision support, disease detection, and biomedical signal processing applications.</div>
+                    </div>
+                    <div class="work-area">
+                        <div class="work-area-title">🧠 Machine Learning</div>
+                        <div class="work-area-desc">Deep learning, neural networks, computer vision, natural language processing, and model optimization.</div>
+                    </div>
+                    <div class="work-area">
+                        <div class="work-area-title">📊 Data Science</div>
+                        <div class="work-area-desc">Statistical analysis, data engineering, exploratory analysis, and insights extraction from complex datasets.</div>
+                    </div>
+                    <div class="work-area">
+                        <div class="work-area-title">🚀 Startups</div>
+                        <div class="work-area-desc">Early-stage tech companies, MVP development, and impact-driven ventures in emerging spaces.</div>
+                    </div>
+                    <div class="work-area">
+                        <div class="work-area-title">🔬 Research</div>
+                        <div class="work-area-desc">Academic research, novel methodologies, peer-reviewed publications, and breakthrough innovations.</div>
+                    </div>
+                    <div class="work-area">
+                        <div class="work-area-title">⚙️ Tech Leadership</div>
+                        <div class="work-area-desc">Mentoring, technical direction, cross-functional collaboration, and building high-performing teams.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Key Highlights</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-box">
+                        <div class="highlight-icon">📈</div>
+                        <div class="highlight-title">High-Accuracy Models</div>
+                        <div class="highlight-text">Consistently achieving 87-95% accuracy across medical imaging, neuroscience, and computer vision projects.</div>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="highlight-icon">🔬</div>
+                        <div class="highlight-title">Research-Driven</div>
+                        <div class="highlight-text">Published work in signal processing, graph neural networks, and clinical AI applications with statistical rigor.</div>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="highlight-icon">🌍</div>
+                        <div class="highlight-title">Global Scale</div>
+                        <div class="highlight-text">Experience with large-scale datasets spanning 71 countries (190K+ respondents) and 500K+ images.</div>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="highlight-icon">🛠️</div>
+                        <div class="highlight-title">Full-Stack Capability</div>
+                        <div class="highlight-text">From data collection and preprocessing to model deployment, evaluation frameworks, and production systems.</div>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="highlight-icon">💡</div>
+                        <div class="highlight-title">Innovation Focus</div>
+                        <div class="highlight-text">Pioneering work in graph-based VAR for EEG, Vision Transformers for medical imaging, and document intelligence.</div>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="highlight-icon">📚</div>
+                        <div class="highlight-title">Continuous Learning</div>
+                        <div class="highlight-text">Rapidly mastering new domains—from neuroscience to insurance tech—while maintaining research excellence.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-spotlight">
+                    <div class="project-spotlight">
+                        <div class="project-spotlight-header">
+                            <span class="project-spotlight-tag">Medical AI · 2022</span>
+                            <div class="project-spotlight-title">Vision Transformer Renal Stones</div>
+                            <div class="project-spotlight-stats">
+                                <span>📊 94.7% Accuracy</span>
+                                <span>⚡ <500ms</span>
+                            </div>
+                        </div>
+                        <div class="project-spotlight-body">
+                            <p class="project-spotlight-desc">Vision Transformer model for kidney stone detection in CT images with clinical deployment readiness.</p>
+                            <a href="vision-transformer-renal.html" class="project-spotlight-link">View Details →</a>
+                        </div>
+                    </div>
+
+                    <div class="project-spotlight">
+                        <div class="project-spotlight-header">
+                            <span class="project-spotlight-tag">Neuroscience · 2025</span>
+                            <div class="project-spotlight-title">EEG Alzheimer's Detection</div>
+                            <div class="project-spotlight-stats">
+                                <span>🧠 87.3% Accuracy</span>
+                                <span>66 Subjects</span>
+                            </div>
+                        </div>
+                        <div class="project-spotlight-body">
+                            <p class="project-spotlight-desc">Graph-based VAR model for EEG analysis achieving early Alzheimer's detection with biomarkers.</p>
+                            <a href="eeg-alzheimers.html" class="project-spotlight-link">View Details →</a>
+                        </div>
+                    </div>
+
+                    <div class="project-spotlight">
+                        <div class="project-spotlight-header">
+                            <span class="project-spotlight-tag">Data Analytics · 2021</span>
+                            <div class="project-spotlight-title">Global Entrepreneurship Monitor</div>
+                            <div class="project-spotlight-stats">
+                                <span>🌍 71 Countries</span>
+                                <span>190K+ Respondents</span>
+                            </div>
+                        </div>
+                        <div class="project-spotlight-body">
+                            <p class="project-spotlight-desc">Analysis of entrepreneurial intentions across 71 countries with interactive dashboard and insights.</p>
+                            <a href="gem-dashboard.html" class="project-spotlight-link">View Dashboard →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section about-me">
+                <h3>About Me</h3>
+                <p>I'm a researcher and engineer focused on applying machine learning to high-impact problems in healthcare, neuroscience, and emerging technologies. My work spans from theoretical innovations (graph-based signal processing) to practical applications (clinical AI deployment).</p>
+                <p>I'm particularly interested in bridging the gap between academic research and real-world applications—building systems that are not just accurate, but also interpretable, efficient, and clinically viable.</p>
+                <div class="tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Healthcare AI</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">Signal Processing</span>
+                    <span class="tag">Data Science</span>
+                    <span class="tag">Research</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">PyTorch</span>
+                </div>
+            </section>
+
+            <section class="section faq-section">
+                <h2 class="section-title">Quick FAQ</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('active'); this.querySelector('.faq-icon').classList.toggle('active');">
+                        <span>📍 Where are you based?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        I'm based in the UK on a student visa. I'm eligible to work during my studies and have a post-graduation work visa available, giving flexibility for various employment arrangements.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('active'); this.querySelector('.faq-icon').classList.toggle('active');">
+                        <span>💼 Do you require visa sponsorship?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        I'm currently on a student visa and don't require sponsorship to work during my studies. Post-graduation, I have access to post-graduation work visa routes, which provides considerable flexibility for eligible employers.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('active'); this.querySelector('.faq-icon').classList.toggle('active');">
+                        <span>⏰ What's your availability?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        I'm open to immediate opportunities for flexible, part-time, or full-time roles. I'm also interested in internships, consulting, or research collaborations. Let's discuss what works best for your team.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('active'); this.querySelector('.faq-icon').classList.toggle('active');">
+                        <span>🎯 What types of roles interest you?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        I'm interested in ML/AI roles, healthcare tech, data science, research positions, and early-stage startups. I particularly enjoy working on problems with clear impact, novel methodologies, and opportunities to learn and grow.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('active'); this.querySelector('.faq-icon').classList.toggle('active');">
+                        <span>📊 Can I access your data/datasets?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Many of my datasets are available on Kaggle. Check individual project pages for dataset links. I'm also happy to share code, methodologies, and results for research or collaboration purposes.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('active'); this.querySelector('.faq-icon').classList.toggle('active');">
+                        <span>📞 How can we get in touch?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Visit my <a href="contact.html" style="color: var(--primary); text-decoration: underline;">contact page</a> for email, LinkedIn, GitHub, and other ways to reach out. I'm responsive and happy to discuss opportunities!
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Let's Work Together</h2>
+                <p>Interested in collaboration, opportunities, or just want to chat? I'd love to hear from you.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                    <a href="portfolio-dashboard.html" class="btn btn-secondary">
+                        <i class="fas fa-briefcase"></i> View Full Portfolio
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Taliq Muhib. Recruiter Dashboard.</p>
+    </footer>
+
+    <script>
+        // Close FAQ on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.faq-answer').forEach(el => {
+                    el.classList.remove('active');
+                    el.previousElementSibling.querySelector('.faq-icon').classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

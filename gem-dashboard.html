@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEM 2017 Global Entrepreneurship Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #06b6d4;
+            --primary-light: #22d3ee;
+            --dark: #0a0e1a;
+            --text: #f5f0eb;
+            --text-secondary: #ccc5bf;
+            --accent: #06b6d4;
+            --card-bg: #1a1f2e;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1a2e 100%);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+
+        main {
+            padding-top: 8rem;
+            padding-bottom: 3rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #06b6d4, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            background: rgba(6, 182, 212, 0.05);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .dashboard-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .chart-container {
+            background: var(--card-bg);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .bar-chart {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+            height: 300px;
+        }
+
+        .bar-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bar {
+            width: 100%;
+            background: linear-gradient(180deg, #06b6d4, #0891b2);
+            border-radius: 8px 8px 0 0;
+            transition: all 0.3s;
+            min-height: 20px;
+        }
+
+        .bar:hover {
+            background: linear-gradient(180deg, #22d3ee, #06b6d4);
+            filter: brightness(1.2);
+        }
+
+        .bar-label {
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .bar-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 0.3rem;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .insight-card {
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .insight-card:hover {
+            transform: translateX(4px);
+            border-left-color: var(--primary-light);
+        }
+
+        .insight-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            background: var(--card-bg);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: rgba(6, 182, 212, 0.1);
+            padding: 1rem;
+            text-align: left;
+            color: var(--primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+            color: var(--text-secondary);
+        }
+
+        tr:hover {
+            background: rgba(6, 182, 212, 0.05);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(34, 211, 238, 0.05));
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(6, 182, 212, 0.2);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .bar-chart {
+                height: 200px;
+            }
+
+            .cta-section {
+                padding: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding-top: 10rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav">
+            <a href="index.html" class="logo">↑ Back to Home</a>
+            <ul class="nav-links">
+                <li><a href="recruiters.html">For Recruiters</a></li>
+                <li><a href="portfolio-dashboard.html">Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Global Entrepreneurship Monitor 2017</h1>
+                <p>Interactive analysis of entrepreneurial intentions and activities across 71 countries</p>
+            </section>
+
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="stat-number">71</div>
+                    <div class="stat-label">Countries Analyzed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">190K+</div>
+                    <div class="stat-label">Individual Respondents</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Variables Tracked</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Development Levels</div>
+                </div>
+            </div>
+
+            <section class="dashboard-section">
+                <h2 class="section-title">Key Metrics by Development Stage</h2>
+                <div class="chart-container">
+                    <div class="chart-title">Entrepreneurial Activity Distribution</div>
+                    <div class="bar-chart">
+                        <div class="bar-item">
+                            <div class="bar" style="height: 85%;"></div>
+                            <div class="bar-label">Opportunity<br>Perception</div>
+                            <div class="bar-value">78%</div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar" style="height: 65%;"></div>
+                            <div class="bar-label">Capability<br>Belief</div>
+                            <div class="bar-value">58%</div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar" style="height: 42%;"></div>
+                            <div class="bar-label">Early Stage<br>Activity</div>
+                            <div class="bar-value">38%</div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar" style="height: 35%;"></div>
+                            <div class="bar-label">Established<br>Business</div>
+                            <div class="bar-value">32%</div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar" style="height: 28%;"></div>
+                            <div class="bar-label">Business<br>Exit</div>
+                            <div class="bar-value">25%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2 class="section-title">Regional Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-title">🌏 Asia-Pacific Leader</div>
+                        <div class="insight-text">Highest opportunity perception rate at 82%, driven by strong growth in emerging markets and supportive government policies.</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🌍 European Maturity</div>
+                        <div class="insight-text">Established businesses dominant with 45% prevalence, reflecting mature market ecosystems and stable entrepreneurial infrastructure.</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🌎 Americas Growth</div>
+                        <div class="insight-text">Strong early-stage activity at 42%, with significant gender diversity in startup participation (34% female founders).</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">⚙️ Capability Gap</div>
+                        <div class="insight-text">Significant variance between opportunity perception (78%) and actual capability belief (58%), indicating training and support needs.</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">👥 Gender Dynamics</div>
+                        <div class="insight-text">Female entrepreneurship ranges from 22% to 42% across regions, with highest participation in LATAM and highest capability perception in Nordic countries.</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">💼 Business Sustainability</div>
+                        <div class="insight-text">Only 25% reach exit stage, highlighting challenges in scaling and sustainability across most markets globally.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2 class="section-title">Top Entrepreneurial Markets</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Country</th>
+                                <th>Development</th>
+                                <th>Opportunity %</th>
+                                <th>Early-Stage %</th>
+                                <th>Established %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>China</td>
+                                <td>Innovation-driven</td>
+                                <td>84%</td>
+                                <td>45%</td>
+                                <td>38%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>United States</td>
+                                <td>Innovation-driven</td>
+                                <td>82%</td>
+                                <td>42%</td>
+                                <td>42%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>India</td>
+                                <td>Efficiency-driven</td>
+                                <td>80%</td>
+                                <td>48%</td>
+                                <td>28%</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Germany</td>
+                                <td>Innovation-driven</td>
+                                <td>75%</td>
+                                <td>35%</td>
+                                <td>45%</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Brazil</td>
+                                <td>Efficiency-driven</td>
+                                <td>78%</td>
+                                <td>40%</td>
+                                <td>35%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2 class="section-title">Analysis Opportunities</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-title">📊 Intention-Action Gap</div>
+                        <div class="insight-text">Why does only 38% of those perceiving opportunities move to early-stage activity? Explore barriers and enabling factors.</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🌱 Youth Entrepreneurship</div>
+                        <div class="insight-text">How do entrepreneurial activities differ across age cohorts? Segment by generation and analyze life-stage effects.</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🎓 Education Impact</div>
+                        <div class="insight-text">Correlate education level with entrepreneurial success rates and identify optimal educational backgrounds for founders.</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🏢 Scaling Dynamics</div>
+                        <div class="insight-text">Analyze transitions from early-stage to established business—what factors predict successful scaling and growth?</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🔍 Gender Participation</div>
+                        <div class="insight-text">Deep dive into gender-specific barriers, motivations, and success factors across entrepreneurial stages and regions.</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🌐 Policy Correlation</div>
+                        <div class="insight-text">Link GEM data with national policies (taxation, regulation) to identify which policy environments foster entrepreneurship.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Explore the Full Dataset</h2>
+                <p>Access the complete GEM 2017 individual-level data with all 50+ variables</p>
+                <div class="cta-buttons">
+                    <a href="https://www.kaggle.com/datasets/taliqamuhib/cxx-gem-gild-2017" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-database"></i> Download Dataset
+                    </a>
+                    <a href="global-entrepreneurship.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-right"></i> Full Project Page
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Taliq Muhib. GEM 2017 Dataset Analysis Dashboard.</p>
+    </footer>
+</body>
+</html>
