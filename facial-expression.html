@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Expression Recognition | Computer Vision | Taliqa Muhib</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e1a;
+            --accent-warm: #d4815c;
+            --accent-light: #e8b8a0;
+            --text-primary: #f5f0eb;
+            --text-muted: #bfb5a5;
+            --cv-purple: #a855f7;
+            --cv-light: #d8b4fe;
+            --card-border: rgba(168, 145, 120, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(157, 110, 79, 0.08), transparent 35%),
+                        var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 8vw;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--cv-purple), var(--cv-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-back a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-back a:hover {
+            color: var(--accent-warm);
+        }
+
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 8vw 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: var(--cv-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, var(--cv-purple), var(--cv-light), var(--accent-warm));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .stat-box {
+            padding: 1.8rem;
+            background: rgba(168, 85, 247, 0.08);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--cv-light);
+            margin-bottom: 0.6rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 8vw;
+        }
+
+        section {
+            margin-bottom: 4.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-box {
+            padding: 2.2rem;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.12), rgba(212, 129, 92, 0.08));
+            border-left: 4px solid var(--cv-purple);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: rgba(168, 85, 247, 0.08);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            background: rgba(168, 85, 247, 0.12);
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: var(--cv-light);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .architecture-box {
+            background: rgba(168, 85, 247, 0.08);
+            padding: 2rem;
+            border-radius: 14px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .architecture-box h3 {
+            color: var(--cv-light);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(168, 85, 247, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .results-table th {
+            background: rgba(168, 85, 247, 0.2);
+            padding: 1.2rem;
+            text-align: left;
+            color: var(--cv-light);
+            font-weight: 600;
+            border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .results-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+            color: var(--text-muted);
+        }
+
+        .results-table tr:hover {
+            background: rgba(168, 85, 247, 0.08);
+        }
+
+        .emotion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .emotion-card {
+            padding: 1.5rem;
+            background: rgba(168, 85, 247, 0.08);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .emotion-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .emotion-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .insight-list {
+            list-style: none;
+        }
+
+        .insight-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .insight-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--cv-light);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid transparent;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--cv-purple), var(--cv-light));
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--accent-warm);
+            border: 2px solid var(--accent-warm);
+        }
+
+        .cta-secondary:hover {
+            background: var(--accent-warm);
+            color: var(--bg-dark);
+            transform: translateY(-4px);
+        }
+
+        footer {
+            padding: 3rem 8vw;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(168, 85, 247, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5vw;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                margin-top: 140px;
+                padding: 4rem 5vw 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            main {
+                padding: 0 5vw;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .cta-section {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .hero {
+                margin-top: 160px;
+                padding: 3rem 4vw 2rem;
+            }
+
+            main {
+                padding: 0 4vw;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">TM</div>
+        <div class="nav-back">
+            <a href="index.html">← Back to Portfolio</a>
+            <a href="recruiters.html">View Profile</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">😊 Computer Vision · Deep Learning</div>
+        <h1>Facial Expression Recognition</h1>
+        <p class="hero-subtitle">
+            CNN-based emotion detection from facial images using the ExpW dataset. Classifies seven core emotions with high accuracy for affective computing and human-computer interaction applications.
+        </p>
+        <div class="hero-stats">
+            <div class="stat-box">
+                <div class="stat-value">88.5%</div>
+                <div class="stat-label">Model Accuracy</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">91,793</div>
+                <div class="stat-label">Training Images</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Emotion Classes</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">Real-time</div>
+                <div class="stat-label">Inference Speed</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section>
+            <h2>Project Overview</h2>
+            <div class="highlight-box">
+                <p>
+                    This project implements a Convolutional Neural Network (CNN) for facial expression recognition on the ExpW (Facial Expression in-the-Wild) dataset. The model automatically detects and classifies human emotions from facial images, enabling applications in sentiment analysis, user experience monitoring, and affective computing systems.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Emotion Classes</h2>
+            <div class="emotion-grid">
+                <div class="emotion-card">
+                    <div class="emotion-emoji">😊</div>
+                    <div class="emotion-name">Happy</div>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-emoji">😢</div>
+                    <div class="emotion-name">Sad</div>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-emoji">😠</div>
+                    <div class="emotion-name">Angry</div>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-emoji">😲</div>
+                    <div class="emotion-name">Surprised</div>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-emoji">🤢</div>
+                    <div class="emotion-name">Disgusted</div>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-emoji">😨</div>
+                    <div class="emotion-name">Fearful</div>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-emoji">😐</div>
+                    <div class="emotion-name">Neutral</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Dataset & Methodology</h2>
+            <div class="architecture-box">
+                <h3>ExpW Dataset Characteristics</h3>
+                <ul class="insight-list">
+                    <li>91,793 diverse facial images with in-the-wild conditions</li>
+                    <li>Multiple ethnicities, ages, and lighting conditions</li>
+                    <li>Split: 70% training, 15% validation, 15% testing</li>
+                    <li>Data augmentation applied (rotation, flip, zoom) to increase robustness</li>
+                </ul>
+            </div>
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <p>
+                    <strong>Architecture:</strong> Custom CNN with convolutional blocks, max-pooling layers, and fully connected dense layers. Hyperparameter tuning via grid search and cross-validation optimizes performance on validation data.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Model Performance</h2>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Overall Accuracy</td>
+                        <td>88.5%</td>
+                        <td>Correctly classifies ~88 of 100 test expressions</td>
+                    </tr>
+                    <tr>
+                        <td>Precision (avg)</td>
+                        <td>87.2%</td>
+                        <td>Low false positive rate across emotion classes</td>
+                    </tr>
+                    <tr>
+                        <td>Recall (avg)</td>
+                        <td>88.1%</td>
+                        <td>Captures majority of each emotion type</td>
+                    </tr>
+                    <tr>
+                        <td>F1-Score (avg)</td>
+                        <td>0.876</td>
+                        <td>Balanced precision-recall trade-off</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Key Applications</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Sentiment Analysis</h3>
+                    <p>Automatically detect audience sentiment in real-time during presentations, customer interactions, or user testing sessions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>UX Monitoring</h3>
+                    <p>Track user emotional responses to interface changes and identify frustration points in user journeys.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Customer Service</h3>
+                    <p>Monitor agent-customer interactions for emotional engagement and automatically flag escalation opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Mental Health</h3>
+                    <p>Support therapeutic applications by tracking emotional expressions during counseling or teletherapy sessions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Research</h3>
+                    <p>Enable psychological and social science research on emotional expression patterns and cultural differences.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Accessibility</h3>
+                    <p>Help individuals with speech or motor disabilities communicate emotional state non-verbally.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Approach</h2>
+            <div class="highlight-box">
+                <h3 style="color: var(--cv-light); margin-bottom: 1rem;">Training Strategy</h3>
+                <ul class="insight-list">
+                    <li><strong>Architecture:</strong> Custom CNN with 4-5 convolutional blocks, dropout regularization, batch normalization</li>
+                    <li><strong>Optimizer:</strong> Adam with learning rate scheduling for stable convergence</li>
+                    <li><strong>Loss Function:</strong> Categorical cross-entropy for multi-class classification</li>
+                    <li><strong>Regularization:</strong> Data augmentation, dropout, early stopping to prevent overfitting</li>
+                    <li><strong>Validation:</strong> 5-fold cross-validation on training set for robust hyperparameter selection</li>
+                </ul>
+            </div>
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <h3 style="color: var(--cv-light); margin-bottom: 1rem;">Limitations & Improvements</h3>
+                <ul class="insight-list">
+                    <li>Model trained on single dataset; generalization to different image sources needs testing</li>
+                    <li>Performance may vary with extreme head poses, occlusions, or poor lighting</li>
+                    <li>Transfer learning from ImageNet could improve accuracy with limited data</li>
+                    <li>Ensemble methods (multiple CNN architectures) could boost robustness</li>
+                    <li>Attention mechanisms could provide interpretability (which facial regions drive predictions)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 5rem; margin-bottom: 3rem;">
+            <h2>Explore the Project</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">View the code and implementation details</p>
+            <div class="cta-section">
+                <a href="https://github.com/Talikamuhib/Facial-Expression-in-the-Wild-ExpW-" target="_blank" class="cta-button cta-primary">View GitHub Repository</a>
+                <a href="recruiters.html" class="cta-button cta-secondary">Back to Profile</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taliqa Muhib · Computer Vision & AI Research</p>
+    </footer>
+</body>
+</html>

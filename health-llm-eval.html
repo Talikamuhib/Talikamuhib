@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health LLM Eval Harness | LLM Evaluation | Taliqa Muhib</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e1a;
+            --accent-warm: #d4815c;
+            --accent-light: #e8b8a0;
+            --text-primary: #f5f0eb;
+            --text-muted: #bfb5a5;
+            --llm-teal: #14b8a6;
+            --llm-light: #5eead4;
+            --card-border: rgba(168, 145, 120, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, rgba(20, 184, 166, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(157, 110, 79, 0.08), transparent 35%),
+                        var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 8vw;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--llm-teal), var(--llm-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-back a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-back a:hover {
+            color: var(--accent-warm);
+        }
+
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 8vw 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            background: rgba(20, 184, 166, 0.15);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            color: var(--llm-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, var(--llm-teal), var(--llm-light), var(--accent-warm));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .stat-box {
+            padding: 1.8rem;
+            background: rgba(20, 184, 166, 0.08);
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--llm-light);
+            margin-bottom: 0.6rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 8vw;
+        }
+
+        section {
+            margin-bottom: 4.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-box {
+            padding: 2.2rem;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(212, 129, 92, 0.08));
+            border-left: 4px solid var(--llm-teal);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: rgba(20, 184, 166, 0.08);
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            background: rgba(20, 184, 166, 0.12);
+            border-color: rgba(20, 184, 166, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: var(--llm-light);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--llm-light);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            line-height: 1.5;
+        }
+
+        .insight-list {
+            list-style: none;
+        }
+
+        .insight-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .insight-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--llm-light);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid transparent;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--llm-teal), var(--llm-light));
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(20, 184, 166, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--accent-warm);
+            border: 2px solid var(--accent-warm);
+        }
+
+        .cta-secondary:hover {
+            background: var(--accent-warm);
+            color: var(--bg-dark);
+            transform: translateY(-4px);
+        }
+
+        footer {
+            padding: 3rem 8vw;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(20, 184, 166, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5vw;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                margin-top: 140px;
+                padding: 4rem 5vw 3rem;
+            }
+
+            main {
+                padding: 0 5vw;
+            }
+
+            .cta-section {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .hero {
+                margin-top: 160px;
+                padding: 3rem 4vw 2rem;
+            }
+
+            main {
+                padding: 0 4vw;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">TM</div>
+        <div class="nav-back">
+            <a href="index.html">← Back to Portfolio</a>
+            <a href="recruiters.html">View Profile</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">🧬 LLM Evaluation · Healthcare AI</div>
+        <h1>Health LLM Eval Harness</h1>
+        <p class="hero-subtitle">
+            Lightweight evaluation framework for health-focused Large Language Models. Provides clean, modular architecture for assessing LLM performance on medical tasks with minimal dependencies.
+        </p>
+        <div class="hero-stats">
+            <div class="stat-box">
+                <div class="stat-value">Minimal</div>
+                <div class="stat-label">Dependencies</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">Modular</div>
+                <div class="stat-label">Architecture</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">Pluggable</div>
+                <div class="stat-label">Providers</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">JSONL</div>
+                <div class="stat-label">Datasets</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section>
+            <h2>Project Overview</h2>
+            <div class="highlight-box">
+                <p>
+                    Health LLM Eval Harness is a lightweight, production-ready evaluation framework designed for assessing Large Language Models in healthcare contexts. It follows clean code principles with a modular, extensible architecture that minimizes dependencies while maximizing functionality.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Core Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Pydantic-Based Validation</h3>
+                    <p>Strong data type validation and serialization using Pydantic v2, ensuring data integrity throughout evaluation pipelines.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pluggable Provider System</h3>
+                    <p>Extensible provider interface supporting multiple LLM backends (OpenAI, local models, stubs) without modifying core code.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>JSONL Dataset Format</h3>
+                    <p>Lightweight, streaming-friendly dataset format ideal for large-scale evaluations without memory overhead.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Automated CI/CD</h3>
+                    <p>GitHub Actions workflows for continuous testing and deployment, ensuring code quality and reproducibility.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Clean Architecture</h3>
+                    <p>Single-responsibility modules with clear separation of concerns: datasets, scoring, checks, and reporting.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Medical Domain Focus</h3>
+                    <p>Pre-configured datasets for healthcare evaluation (medical terminology, clinical scenarios) with extensible taxonomy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Project Structure</h2>
+            <div class="code-block">
+health-llm-eval-harness/
+├── src/health_eval/           # Main package
+│   ├── __init__.py
+│   ├── run.py                 # Evaluation runner
+│   ├── datasets.py            # Dataset loading & management
+│   ├── scoring.py             # Metrics & scoring logic
+│   ├── checks.py              # Validation checks
+│   ├── report.py              # Report generation
+│   └── providers/             # LLM provider backends
+│       ├── __init__.py
+│       ├── stub.py            # Stub provider (testing)
+│       └── openai_compat.py   # OpenAI-compatible API
+├── data/                      # JSONL evaluation datasets
+│   ├── sample.jsonl
+│   └── medical_terms.jsonl
+├── .github/workflows/
+│   └── ci.yml                 # GitHub Actions CI
+├── requirements.txt           # Minimal dependencies
+└── README.md
+            </div>
+        </section>
+
+        <section>
+            <h2>Usage Examples</h2>
+            <div class="highlight-box">
+                <h3 style="color: var(--llm-light); margin-bottom: 1rem;">Basic Evaluation</h3>
+                <div class="code-block">
+from health_eval.datasets import load_jsonl
+from health_eval.providers.stub import create_provider
+
+# Load dataset
+data = load_jsonl('data/medical_terms.jsonl')
+
+# Create provider (stub for testing)
+provider = create_provider({"model": "test-model"})
+
+# Run evaluation
+for item in data:
+    response = provider.generate(item['prompt'])
+    print(f"Response: {response}")
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <h3 style="color: var(--llm-light); margin-bottom: 1rem;">Custom Provider Implementation</h3>
+                <div class="code-block">
+from health_eval.providers import BaseProvider
+
+class CustomProvider(BaseProvider):
+    def generate(self, prompt: str) -> str:
+        # Implement your LLM backend
+        return f"Response to: {prompt}"
+
+# Use custom provider
+provider = CustomProvider()
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Components</h2>
+            <div class="architecture-box">
+                <h3>Evaluation Pipeline</h3>
+                <ul class="insight-list">
+                    <li><strong>Dataset Loading:</strong> Stream JSONL files for memory-efficient handling of large evaluation sets</li>
+                    <li><strong>Provider Selection:</strong> Choose LLM backend (OpenAI, local, stub) via configuration</li>
+                    <li><strong>Scoring:</strong> Apply domain-specific metrics (accuracy, F1, medical relevance)</li>
+                    <li><strong>Validation:</strong> Run checks for consistency, bias detection, and output validation</li>
+                    <li><strong>Reporting:</strong> Generate human-readable reports with results and recommendations</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Why This Architecture Matters</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Production-Ready</h3>
+                    <p>CI/CD pipelines ensure code quality, versioning, and automated testing on every commit.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Minimal Dependencies</h3>
+                    <p>Only Pydantic as core requirement—reduces supply chain risk and deployment complexity.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Extensible</h3>
+                    <p>Pluggable providers and custom metrics allow adaptation to domain-specific needs without core modifications.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Testable</h3>
+                    <p>Stub provider enables comprehensive testing without external API calls or infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Healthcare Compliance</h3>
+                    <p>Designed with audit trails and reproducible results for healthcare AI validation requirements.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Developer-Friendly</h3>
+                    <p>Clean codebase with single-responsibility modules makes onboarding and contribution straightforward.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Healthcare Applications</h2>
+            <div class="highlight-box">
+                <h3 style="color: var(--llm-light); margin-bottom: 1rem;">Evaluation Use Cases</h3>
+                <ul class="insight-list">
+                    <li>Clinical decision support systems assessment</li>
+                    <li>Medical summarization quality evaluation</li>
+                    <li>Diagnostic accuracy benchmarking</li>
+                    <li>Compliance and risk detection in LLM outputs</li>
+                    <li>Comparing LLM model versions during development</li>
+                    <li>Validating domain adaptation to specific medical subspecialties</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Development & Deployment</h2>
+            <div class="architecture-box">
+                <h3>Installation</h3>
+                <ul class="insight-list">
+                    <li>Clone repository and install: <code style="background: rgba(20, 184, 166, 0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">pip install -r requirements.txt</code></li>
+                    <li>Run evaluation: <code style="background: rgba(20, 184, 166, 0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">cd src && python -m health_eval.run</code></li>
+                    <li>CI/CD automatically runs tests on push to validate changes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 5rem; margin-bottom: 3rem;">
+            <h2>Get Started</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Explore the code and contribute to healthcare AI evaluation</p>
+            <div class="cta-section">
+                <a href="https://github.com/Talikamuhib/health-llm-eval-harness" target="_blank" class="cta-button cta-primary">View GitHub Repository</a>
+                <a href="recruiters.html" class="cta-button cta-secondary">Back to Profile</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taliqa Muhib · Healthcare AI & LLM Research</p>
+    </footer>
+</body>
+</html>

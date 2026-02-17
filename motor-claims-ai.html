@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Claims CourtPack AI | Document Intelligence | Taliqa Muhib</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e1a;
+            --accent-warm: #d4815c;
+            --accent-light: #e8b8a0;
+            --text-primary: #f5f0eb;
+            --text-muted: #bfb5a5;
+            --doc-orange: #f97316;
+            --doc-light: #fed7aa;
+            --card-border: rgba(168, 145, 120, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, rgba(249, 115, 22, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(157, 110, 79, 0.08), transparent 35%),
+                        var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 8vw;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--doc-orange), var(--doc-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-back a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-back a:hover {
+            color: var(--accent-warm);
+        }
+
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 8vw 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            color: var(--doc-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, var(--doc-orange), var(--doc-light), var(--accent-warm));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .stat-box {
+            padding: 1.8rem;
+            background: rgba(249, 115, 22, 0.08);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--doc-light);
+            margin-bottom: 0.6rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 8vw;
+        }
+
+        section {
+            margin-bottom: 4.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-box {
+            padding: 2.2rem;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(212, 129, 92, 0.08));
+            border-left: 4px solid var(--doc-orange);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: rgba(249, 115, 22, 0.08);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            background: rgba(249, 115, 22, 0.12);
+            border-color: rgba(249, 115, 22, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: var(--doc-light);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .workflow-container {
+            background: rgba(249, 115, 22, 0.08);
+            padding: 2.5rem;
+            border-radius: 14px;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.2rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--doc-orange), var(--doc-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .step-content h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .insight-list {
+            list-style: none;
+        }
+
+        .insight-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .insight-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--doc-light);
+            font-weight: bold;
+        }
+
+        .metric-box {
+            padding: 1.8rem;
+            background: rgba(249, 115, 22, 0.08);
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid transparent;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--doc-orange), var(--doc-light));
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(249, 115, 22, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--accent-warm);
+            border: 2px solid var(--accent-warm);
+        }
+
+        .cta-secondary:hover {
+            background: var(--accent-warm);
+            color: var(--bg-dark);
+            transform: translateY(-4px);
+        }
+
+        footer {
+            padding: 3rem 8vw;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(249, 115, 22, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5vw;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                margin-top: 140px;
+                padding: 4rem 5vw 3rem;
+            }
+
+            main {
+                padding: 0 5vw;
+            }
+
+            .cta-section {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .hero {
+                margin-top: 160px;
+                padding: 3rem 4vw 2rem;
+            }
+
+            main {
+                padding: 0 4vw;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .workflow-step {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">TM</div>
+        <div class="nav-back">
+            <a href="index.html">← Back to Portfolio</a>
+            <a href="recruiters.html">View Profile</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">📋 Document Intelligence · Insurance Tech</div>
+        <h1>Motor Claims CourtPack AI</h1>
+        <p class="hero-subtitle">
+            AI-powered prototype for automating motor insurance court pack analysis. Extracts structured claim data from unstructured legal documents, provides explainable insights, and flags risks for faster, more accurate claims workflows.
+        </p>
+        <div class="hero-stats">
+            <div class="stat-box">
+                <div class="stat-value">MVP</div>
+                <div class="stat-label">Status</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">5+</div>
+                <div class="stat-label">Fields Extracted</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">Real-time</div>
+                <div class="stat-label">Processing</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">Audit-Ready</div>
+                <div class="stat-label">Compliance</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section>
+            <h2>The Challenge</h2>
+            <div class="highlight-box">
+                <p>
+                    Motor insurance claims involve large, unstructured court bundles with complex legal language. Manual document review is time-consuming, error-prone, and creates audit concerns. Insurance teams need to extract key claim fields, identify inconsistencies, and flag fraud risks—all while maintaining explainability for compliance.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Solution Overview</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Document Intake</h3>
+                    <p>Simple Streamlit interface for uploading court pack PDFs. Supports batch processing for enterprise workflows.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Structured Extraction</h3>
+                    <p>Automatically extracts accident date, hire duration, vehicle registration, cost details with page-level evidence.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Confidence Scoring</h3>
+                    <p>Each extracted field includes confidence score for decision support—not replacement.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Anomaly Detection</h3>
+                    <p>Rule-based validation flags timeline inconsistencies, cost anomalies, and potential fraud indicators.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Risk Indicators</h3>
+                    <p>Generates early triage flags for high-risk claims requiring manual review and investigation.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Export Options</h3>
+                    <p>Results exportable as JSON and CSV for downstream processing and integration with claims systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <div class="workflow-container">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>PDF Upload & Parsing</h4>
+                        <p>Drag-and-drop interface using Streamlit. PyMuPDF extracts text and metadata from complex multi-page PDFs with preservation of page-level information.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Field Extraction</h4>
+                        <p>Identifies and extracts: accident date, injury duration, vehicle registration, repair costs, hire duration, medical expenses. Rule-based parsing with Pydantic validation.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Evidence Linking</h4>
+                        <p>Each extracted field includes source page and relevant text snippet for audit trail and manual verification.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Consistency Checks</h4>
+                        <p>Validates timeline logic (start/end dates), cost ranges, medical coherence. Flags logical inconsistencies for investigation.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Risk Scoring</h4>
+                        <p>Calculates risk indicators based on cost thresholds, missing fields, inconsistencies, and historical patterns.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Triage & Export</h4>
+                        <p>Generates priority scores for manual review. Exports structured JSON/CSV for downstream workflow integration and compliance systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Why This Approach</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>MVP Philosophy</h3>
+                    <p>Lightweight, deployable in days. Focuses on practical automation rather than perfect AI—human expertise remains central.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Explainability</h3>
+                    <p>Every decision is traceable to source documents. Supports compliance audits and builds trust with claims teams.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Risk Reduction</h3>
+                    <p>Rule-based validation prevents systematic errors. Confidence scores prevent over-reliance on automation.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Scalability</h3>
+                    <p>Python + Streamlit deployment ready. Can process hundreds of court packs daily on standard infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Compliance-Ready</h3>
+                    <p>Audit trail built in. Transparent decision logic satisfies regulatory requirements and legal standards.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>User-Centric</h3>
+                    <p>Streamlit interface requires no ML expertise. Claims adjusters can use immediately after brief training.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Business Impact</h2>
+            <div class="metric-box">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem; text-align: left;">Expected Outcomes</h3>
+                <ul class="insight-list">
+                    <li><strong>Speed:</strong> Reduce manual document review from 2-3 hours to 15-30 minutes per claim</li>
+                    <li><strong>Consistency:</strong> Eliminate human review variance; standardize field extraction across teams</li>
+                    <li><strong>Accuracy:</strong> Rule-based validation catches logical inconsistencies humans might miss</li>
+                    <li><strong>Cost:</strong> Enable junior adjusters to handle routine claims; free experts for complex cases</li>
+                    <li><strong>Fraud Prevention:</strong> Early risk signals enable targeted investigation of high-risk claims</li>
+                    <li><strong>Compliance:</strong> Full audit trail satisfies FCA and internal governance requirements</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Stack</h2>
+            <div class="highlight-box">
+                <h3 style="color: var(--doc-light); margin-bottom: 1rem;">Core Technologies</h3>
+                <ul class="insight-list">
+                    <li><strong>Frontend:</strong> Streamlit for interactive, no-code web interface</li>
+                    <li><strong>Backend:</strong> Python with pandas, PyMuPDF for PDF parsing and data processing</li>
+                    <li><strong>Data Validation:</strong> Pydantic for type safety and structured output</li>
+                    <li><strong>Deployment:</strong> Lightweight containerization; runs on standard business infrastructure</li>
+                    <li><strong>License:</strong> MIT—open source and community-friendly</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Roadmap & Future Directions</h2>
+            <div class="metric-box">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem; text-align: left;">Next Steps</h3>
+                <ul class="insight-list">
+                    <li>Multi-institution validation to refine extraction rules and risk models</li>
+                    <li>ML enhancement for improved field extraction on edge cases</li>
+                    <li>Integration with claims management systems (Guidewire, Duck Creek)</li>
+                    <li>Expanded document types (invoices, repair quotes, medical reports)</li>
+                    <li>Advanced analytics dashboard for fraud pattern detection</li>
+                    <li>Performance benchmarking against industry standards</li>
+                </ul>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 5rem; margin-bottom: 3rem;">
+            <h2>Explore the Project</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">View the code, documentation, and getting started guide</p>
+            <div class="cta-section">
+                <a href="https://github.com/Talikamuhib/motor-claims-courtpack-ai" target="_blank" class="cta-button cta-primary">View GitHub Repository</a>
+                <a href="recruiters.html" class="cta-button cta-secondary">Back to Profile</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taliqa Muhib · InsurTech & Document Intelligence</p>
+    </footer>
+</body>
+</html>
