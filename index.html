@@ -80,6 +80,24 @@
             color: var(--accent-warm);
         }
 
+        .nav-recruiter {
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            background: linear-gradient(120deg, var(--accent-warm), var(--accent-light));
+            color: var(--bg-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-recruiter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 129, 92, 0.3);
+        }
+
         /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
@@ -342,6 +360,183 @@
             color: var(--text-muted);
         }
 
+        /* ===== RECRUITER HUB ===== */
+        .recruiter-hub {
+            min-height: 100vh;
+            padding: 6rem 8vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 0%, rgba(212, 129, 92, 0.1) 0%, transparent 70%);
+        }
+
+        .recruiter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 900px;
+        }
+
+        .recruiter-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent-warm);
+            margin-bottom: 1rem;
+        }
+
+        .recruiter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .recruiter-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .recruiter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .recruiter-card {
+            padding: 2.5rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(212, 129, 92, 0.12), rgba(157, 110, 79, 0.08));
+            border: 1.5px solid var(--border-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recruiter-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-warm);
+            background: linear-gradient(135deg, rgba(212, 129, 92, 0.18), rgba(157, 110, 79, 0.12));
+        }
+
+        .recruiter-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-warm), transparent);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--accent-warm);
+        }
+
+        .card-content {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .card-items {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .card-items li {
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .card-items li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-warm);
+            font-weight: bold;
+        }
+
+        .recruiter-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .recruiter-btn {
+            padding: 1rem 2.2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .recruiter-btn-primary {
+            background: linear-gradient(120deg, var(--accent-warm), var(--accent-light));
+            color: var(--bg-dark);
+        }
+
+        .recruiter-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 129, 92, 0.4);
+        }
+
+        .recruiter-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-warm);
+            color: var(--accent-warm);
+        }
+
+        .recruiter-btn-secondary:hover {
+            background: rgba(212, 129, 92, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .arrow-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+            color: var(--accent-warm);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 3rem 8vw;
+            border-top: 1px solid var(--border-soft);
+            text-align: center;
+            color: var(--text-muted);
+        }
+
         footer p {
             margin-bottom: 1rem;
         }
@@ -401,6 +596,23 @@
             .story-title {
                 font-size: 1.8rem;
             }
+
+            .recruiter-title {
+                font-size: 2rem;
+            }
+
+            .recruiter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recruiter-cta {
+                flex-direction: column;
+            }
+
+            .recruiter-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -413,6 +625,7 @@
             <li><a href="#story">Story</a></li>
             <li><a href="#map">Journey</a></li>
             <li><a href="projects.html">Projects</a></li>
+            <li><a href="#recruiter" class="nav-recruiter">→ For Recruiters</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -553,6 +766,126 @@
                 <div class="marker-title">The Future</div>
                 <div class="marker-description">Building intelligent systems for real-world impact. Healthcare. Climate. Access. Justice.</div>
             </div>
+        </div>
+    </section>
+
+    <!-- Recruiter Hub Section -->
+    <section class="recruiter-hub" id="recruiter">
+        <div class="recruiter-header">
+            <div class="recruiter-label">🎯 Looking for Talent?</div>
+            <h2 class="recruiter-title">Here's What You Need to Know</h2>
+            <p class="recruiter-subtitle">
+                Research work, interests, and everything you need to evaluate a fit. Download my resume, review my projects, or reach out directly.
+            </p>
+        </div>
+
+        <div class="recruiter-grid">
+            <!-- Research Done -->
+            <div class="recruiter-card">
+                <div class="card-icon">🔬</div>
+                <div class="card-title">Research I've Done</div>
+                <p class="card-content">
+                    Computational neuroscience and applied machine learning across healthcare, governance, and global development.
+                </p>
+                <ul class="card-items">
+                    <li><strong>EEG & Graph Signal Processing</strong> - Alzheimer's detection via spectral biomarkers</li>
+                    <li><strong>Computer Vision</strong> - Water body segmentation, medical imaging (U-Net, Vision Transformers)</li>
+                    <li><strong>Data Science</strong> - Global entrepreneurship analytics, dashboard design, Python ETL pipelines</li>
+                    <li><strong>Systems Thinking</strong> - Water access, governance, justice, social impact frameworks</li>
+                </ul>
+            </div>
+
+            <!-- Research Interests -->
+            <div class="recruiter-card">
+                <div class="card-icon">🚀</div>
+                <div class="card-title">What Excites Me</div>
+                <p class="card-content">
+                    Problems at the intersection of AI, healthcare, and human impact. Building systems, not just models.
+                </p>
+                <ul class="card-items">
+                    <li><strong>Healthcare AI</strong> - Accessible diagnostics, neurodegenerative disease detection</li>
+                    <li><strong>Climate Tech</strong> - Environmental monitoring, water/resource management</li>
+                    <li><strong>Research Roles</strong> - PhD opportunities, neuroscience labs, graph ML research</li>
+                    <li><strong>Impact Teams</strong> - NGOs, social enterprises, global development tech</li>
+                </ul>
+            </div>
+
+            <!-- Skills & Tech Stack -->
+            <div class="recruiter-card">
+                <div class="card-icon">⚙️</div>
+                <div class="card-title">Technical Stack</div>
+                <p class="card-content">
+                    Specialized in signal processing and ML. Full-stack capability from data engineering to research.
+                </p>
+                <ul class="card-items">
+                    <li><strong>Core:</strong> Python, PyTorch, TensorFlow, Scikit-learn</li>
+                    <li><strong>Signal Processing:</strong> Graph Signal Processing, EEG analysis, MNE-Python</li>
+                    <li><strong>Data:</strong> SQL, Azure Data Factory, Power BI, Tableau</li>
+                    <li><strong>Cloud:</strong> Azure, AWS, Google Cloud · Git, Jupyter, Linux</li>
+                </ul>
+            </div>
+
+            <!-- Availability -->
+            <div class="recruiter-card">
+                <div class="card-icon">📅</div>
+                <div class="card-title">Availability & Fit</div>
+                <p class="card-content">
+                    Open to research, full-time, internships, and consulting. Based in UK, open to remote globally.
+                </p>
+                <ul class="card-items">
+                    <li><strong>Current:</strong> MRes Computational Science & AI (Coventry University)</li>
+                    <li><strong>Available:</strong> Full-time, part-time, fellowship, consulting</li>
+                    <li><strong>Location:</strong> UK-based, remote-friendly, willing to relocate</li>
+                    <li><strong>Notice:</strong> Flexible · Can start immediately or plan ahead</li>
+                </ul>
+            </div>
+
+            <!-- Recognition -->
+            <div class="recruiter-card">
+                <div class="card-icon">🏆</div>
+                <div class="card-title">Recognition & Awards</div>
+                <p class="card-content">
+                    Scholarship recipient with demonstrated research excellence and leadership potential.
+                </p>
+                <ul class="card-items">
+                    <li><strong>British Council Women in STEM Scholar</strong> - 2024-25 cohort</li>
+                    <li><strong>E-Scholarship Recipient</strong> - AKES, competitive selection</li>
+                    <li><strong>Published Research</strong> - Graph signal processing, neuroscience applications</li>
+                    <li><strong>Impact Work:</strong> 4+ years consulting across 3 continents</li>
+                </ul>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="recruiter-card">
+                <div class="card-icon">→</div>
+                <div class="card-title">Let's Connect</div>
+                <p class="card-content">
+                    Ready to explore opportunities? Download my resume, check my projects, or let's chat directly.
+                </p>
+                <ul class="card-items">
+                    <li><strong>Resume:</strong> See the full CV and credentials</li>
+                    <li><strong>Work:</strong> Explore research, code, and dashboards</li>
+                    <li><strong>Direct:</strong> Email, LinkedIn, or quick call</li>
+                    <li><strong>More?</strong> Custom deck or portfolio presentation available</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="recruiter-cta">
+            <button class="recruiter-btn recruiter-btn-primary" onclick="window.location.href='#';">
+                📄 Download Resume (PDF)
+            </button>
+            <button class="recruiter-btn recruiter-btn-secondary" onclick="window.location.href='projects.html';">
+                → View All Projects
+            </button>
+            <button class="recruiter-btn recruiter-btn-secondary" onclick="window.location.href='contact.html';">
+                📧 Get In Touch
+            </button>
+        </div>
+
+        <div class="arrow-divider">
+            ↓ ↓ ↓
         </div>
     </section>
 
