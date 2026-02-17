@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taliqa Muhib | Recruiter Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e1a;
+            --accent-warm: #d4815c;
+            --accent-earth: #9d6e4f;
+            --accent-light: #e8b8a0;
+            --accent-gold: #c89d6e;
+            --text-main: #f5f0eb;
+            --text-muted: #bfb5a5;
+            --border-soft: rgba(168, 145, 120, 0.12);
+            --success: #10b981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1520 100%);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 8vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-soft);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            background: linear-gradient(120deg, var(--accent-warm), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-warm);
+        }
+
+        .nav-back {
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1.5px solid var(--accent-warm);
+            color: var(--accent-warm);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .nav-back:hover {
+            background: rgba(212, 129, 92, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+            padding: 4rem 8vw;
+            background: radial-gradient(circle at 20% 50%, rgba(212, 129, 92, 0.1) 0%, transparent 60%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: -50%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 129, 92, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(157, 110, 79, 0.06) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.4rem;
+            border-radius: 999px;
+            background: linear-gradient(120deg, rgba(212, 129, 92, 0.2), rgba(157, 110, 79, 0.15));
+            border: 1px solid var(--border-soft);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 5rem);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(212, 129, 92, 0.12), rgba(157, 110, 79, 0.08));
+            border: 1px solid var(--border-soft);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-warm);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 8vw;
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent-warm);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-main);
+        }
+
+        /* ===== TABS ===== */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 1rem;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--accent-warm);
+        }
+
+        .tab-btn.active::after {
+            content: "";
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-warm);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ===== EXPERIENCE TIMELINE ===== */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(212, 129, 92, 0.1), rgba(157, 110, 79, 0.05));
+            border: 1px solid var(--border-soft);
+            border-left: 3px solid var(--accent-warm);
+            position: relative;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent-warm);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .timeline-role {
+            color: var(--accent-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(212, 129, 92, 0.15);
+            color: var(--accent-light);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ===== SKILLS GRID ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            padding: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(212, 129, 92, 0.1), rgba(157, 110, 79, 0.05));
+            border: 1px solid var(--border-soft);
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: var(--accent-warm);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .skill-badge {
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            background: rgba(212, 129, 92, 0.12);
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ===== PROJECTS GRID ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-item {
+            padding: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(212, 129, 92, 0.12), rgba(157, 110, 79, 0.08));
+            border: 1px solid var(--border-soft);
+            transition: all 0.3s;
+        }
+
+        .project-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-warm);
+        }
+
+        .project-tag {
+            font-size: 0.75rem;
+            color: var(--accent-warm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-warm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            padding: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(212, 129, 92, 0.08), rgba(157, 110, 79, 0.04));
+            border: 1px solid var(--border-soft);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            color: var(--accent-warm);
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 4rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(212, 129, 92, 0.15), rgba(157, 110, 79, 0.1));
+            border: 1.5px solid var(--border-soft);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .cta-description {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(120deg, var(--accent-warm), var(--accent-light));
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 129, 92, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-warm);
+            color: var(--accent-warm);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 129, 92, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 3rem 8vw;
+            border-top: 1px solid var(--border-soft);
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-warm);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5vw;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            main {
+                padding: 0 5vw;
+            }
+
+            .hero {
+                padding: 2rem 5vw;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .quick-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 540px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .quick-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Taliqa Muhib</div>
+        <ul class="nav-links">
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="index.html#home" class="nav-back">← Back to Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🎯 Recruiter Portal</div>
+            <h1>Everything You Need to Know</h1>
+            <p class="hero-subtitle">
+                Research work, technical expertise, availability, and how to move forward. 
+                All in one place for faster hiring decisions.
+            </p>
+
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Years Impact</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Continents Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">🏆</div>
+                    <div class="stat-label">Awards & Scholarships</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-label">→ Career Timeline</div>
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2025 – Present</div>
+                    <div class="timeline-title">Postgraduate Researcher</div>
+                    <div class="timeline-role">Coventry University, UK</div>
+                    <div class="timeline-description">
+                        Leading computational neuroscience research on graph signal processing for Alzheimer's detection via EEG networks. 
+                        Designing spectral algorithms and optimizing feature engineering for clinical classification.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Graph Signal Processing</span>
+                        <span class="tag">EEG Analysis</span>
+                        <span class="tag">Neuroscience</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Dec 2023 – Aug 2024</div>
+                    <div class="timeline-title">Junior Consultant Data Analyst</div>
+                    <div class="timeline-role">ConsumerCentriX, Geneva</div>
+                    <div class="timeline-description">
+                        Built Python ETL pipelines for GEM Global Entrepreneurship Monitor datasets, reducing analysis time by 60%. 
+                        Delivered 15+ interactive Power BI dashboards and strategic insights for gender-gap policy initiatives.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Data Analytics</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 – 2024</div>
+                    <div class="timeline-title">Consultant</div>
+                    <div class="timeline-role">Rupani Foundation, Afghanistan</div>
+                    <div class="timeline-description">
+                        Supported UN Women initiatives through digital toolkits and training programs for Afghan women educators. 
+                        Built data-tracking systems and capacity-building resources for global development programs.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Data Systems</span>
+                        <span class="tag">Impact Design</span>
+                        <span class="tag">Education Tech</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 – 2022</div>
+                    <div class="timeline-title">Education & Recognition</div>
+                    <div class="timeline-role">Fatima Jinnah Women's University, Pakistan</div>
+                    <div class="timeline-description">
+                        BSc Computer Science with AKES Undergraduate Scholarship. British Council Women in STEM Scholar (2024-25 cohort). 
+                        Foundation in computational theory, machine learning, and research methodology.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="tag">Computer Science</span>
+                        <span class="tag">Scholarship</span>
+                        <span class="tag">Recognition</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-label">→ Technical Expertise</div>
+            <h2 class="section-title">Skills & Stack</h2>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🧠 Signal Processing</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Graph Fourier Transform</span>
+                        <span class="skill-badge">Spectral Analysis</span>
+                        <span class="skill-badge">EEG Processing</span>
+                        <span class="skill-badge">Connectivity Graphs</span>
+                        <span class="skill-badge">Feature Extraction</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🤖 AI & Machine Learning</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">PyTorch</span>
+                        <span class="skill-badge">TensorFlow</span>
+                        <span class="skill-badge">Scikit-learn</span>
+                        <span class="skill-badge">Vision Transformers</span>
+                        <span class="skill-badge">CNNs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📊 Data & Analytics</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Tableau</span>
+                        <span class="skill-badge">Pandas</span>
+                        <span class="skill-badge">Data Visualization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>☁️ Cloud & DevOps</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Azure Data Factory</span>
+                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">Google Cloud</span>
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">Linux</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📈 Specializations</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Healthcare AI</span>
+                        <span class="skill-badge">Neuroscience</span>
+                        <span class="skill-badge">Computer Vision</span>
+                        <span class="skill-badge">Systems Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🎓 Research Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Paper Writing</span>
+                        <span class="skill-badge">Literature Review</span>
+                        <span class="skill-badge">Methodology Design</span>
+                        <span class="skill-badge">Data Interpretation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-label">→ Selected Work</div>
+            <h2 class="section-title">Research & Projects</h2>
+
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-tag">Neuroscience · 2025</div>
+                    <div class="project-title">EEG Alzheimer's Detection with GSP</div>
+                    <div class="project-description">
+                        End-to-end pipeline combining EEG preprocessing, graph construction, spectral feature extraction, and ML classification for distinguishing Alzheimer's cohorts with clinical significance.
+                    </div>
+                    <a href="projects.html" class="project-link">View research →</a>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-tag">Computer Vision · 2024</div>
+                    <div class="project-title">Water Body Segmentation</div>
+                    <div class="project-description">
+                        U-Net architecture for satellite image segmentation, benchmarked on IoU and F1 metrics. Supporting environmental monitoring and climate adaptation use cases.
+                    </div>
+                    <a href="projects.html" class="project-link">View project →</a>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-tag">Medical AI · 2022</div>
+                    <div class="project-title">Vision Transformer for Renal Stones</div>
+                    <div class="project-description">
+                        Transfer learning with ViT on CT scan datasets for precise renal stone classification. Delivered clinical decision support system with high accuracy.
+                    </div>
+                    <a href="projects.html" class="project-link">View case study →</a>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-tag">Data Analytics · 2024</div>
+                    <div class="project-title">Global Entrepreneurship Dashboard</div>
+                    <div class="project-description">
+                        50+ country dashboards highlighting gender gaps in entrepreneurship. 60% time reduction through automated Python pipelines and strategic insights.
+                    </div>
+                    <a href="projects.html" class="project-link">View metrics →</a>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-tag">Impact Tech · 2023</div>
+                    <div class="project-title">Digital Capacity Building Toolkit</div>
+                    <div class="project-description">
+                        Data tracking systems and training resources for UN Women initiatives. Scaled technical education impact across Afghanistan with sustainable adoption models.
+                    </div>
+                    <a href="projects.html" class="project-link">View framework →</a>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-tag">Research · Ongoing</div>
+                    <div class="project-title">Graph ML for Neurodegenerative Disease</div>
+                    <div class="project-description">
+                        Advanced research on Laplacian-based feature engineering for complex biomarker discovery. Publishing findings on spectral methods in clinical neuroscience.
+                    </div>
+                    <a href="projects.html" class="project-link">Learn more →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Availability & Fit -->
+        <section>
+            <div class="section-label">→ Quick Details</div>
+            <h2 class="section-title">Availability & Terms</h2>
+
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="project-item">
+                    <div class="project-title">📍 Location</div>
+                    <div class="project-description">
+                        UK-based (Coventry) · Remote-friendly · Open to relocation for right opportunity
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">⏰ Availability</div>
+                    <div class="project-description">
+                        Full-time · Part-time · Consulting · Fellowship · Research roles
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">📋 Notice Period</div>
+                    <div class="project-description">
+                        Flexible · Can start immediately or plan 2-4 weeks ahead
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">🎓 Status</div>
+                    <div class="project-description">
+                        MRes Computational Science & AI in progress · Open to research roles during studies
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">🌍 Visa</div>
+                    <div class="project-description">
+                        UK visa holder · Eligible to work globally · Sponsorship available if needed
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">💼 Interests</div>
+                    <div class="project-description">
+                        Research · Healthcare AI · Climate Tech · Systems · Impact-driven teams
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="section-label">→ Common Questions</div>
+            <h2 class="section-title">FAQ for Recruiters</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What roles are you most interested in?</div>
+                    <div class="faq-answer">
+                        Research positions (PhD programs, labs), Data Science roles, AI/ML engineering, Healthcare tech, Climate/Systems projects, or anything solving real-world problems at scale.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are you open to remote work?</div>
+                    <div class="faq-answer">
+                        Yes, absolutely. Remote-first is preferred. Open to hybrid or in-office for the right opportunity.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can you start immediately?</div>
+                    <div class="faq-answer">
+                        Flexible. Can start immediately for consulting/part-time. Full-time: planning 2-4 weeks in advance is ideal.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you require visa sponsorship?</div>
+                    <div class="faq-answer">
+                        I'm a UK visa holder. UK roles: no sponsorship needed. International: sponsorship can be arranged.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's your salary expectation?</div>
+                    <div class="faq-answer">
+                        Open to discussion based on role, seniority, and location. Let's talk scope and value first. Competitive market rates expected.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are you pursuing further education?</div>
+                    <div class="faq-answer">
+                        Currently in MRes Computational Science & AI. Open to part-time roles that complement research or pause studies for full-time opportunity.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's your experience with startups vs enterprises?</div>
+                    <div class="faq-answer">
+                        Experience with both: Consulting, NGOs, startups (ConsumerCentriX), and research institutions (universities). Prefer mission-driven impact over scale.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do you approach team dynamics?</div>
+                    <div class="faq-answer">
+                        Collaborative, curious, and focused on impact. Comfortable leading research, supporting others, and learning. Strong believer in diverse, inclusive teams.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's your communication style?</div>
+                    <div class="faq-answer">
+                        Direct, thoughtful, storytelling-focused. I translate complex research into actionable insights. Comfortable with both technical and executive audiences.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Recognition -->
+        <section>
+            <div class="section-label">→ Recognition</div>
+            <h2 class="section-title">Awards & Scholarships</h2>
+
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="project-item">
+                    <div class="project-tag">2024-2025</div>
+                    <div class="project-title">British Council Women in STEM Scholar</div>
+                    <div class="project-description">
+                        Selected for competitive 2024-25 cohort for championing inclusive innovation in computational neuroscience and research excellence.
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-tag">2018-2022</div>
+                    <div class="project-title">AKES Undergraduate Scholarship</div>
+                    <div class="project-description">
+                        Highly competitive scholarship recipient at Fatima Jinnah Women's University for academic excellence and leadership potential.
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-tag">2025</div>
+                    <div class="project-title">Published Research</div>
+                    <div class="project-description">
+                        Graph signal processing and neuroscience research published and under peer review. Contributions to open-source neuroscience tools (MNE-Python).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2 class="cta-title">Ready to Move Forward?</h2>
+            <p class="cta-description">
+                Download resume, browse projects, or let's schedule a quick call to explore fit.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="alert('Resume download will be added. Email: taliqa.muhib@gmail.com')">
+                    📄 Download Resume
+                </button>
+                <button class="btn btn-secondary" onclick="window.location.href='index.html#map'">
+                    → View My Story
+                </button>
+                <button class="btn btn-secondary" onclick="window.location.href='contact.html'">
+                    📧 Schedule Call
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Let's build something that matters together.</p>
+        <div class="footer-links">
+            <a href="mailto:taliqa.muhib@gmail.com">📧 Email</a>
+            <a href="https://linkedin.com/in/talika-muhib" target="_blank">🔗 LinkedIn</a>
+            <a href="https://github.com/Talikamuhib" target="_blank">💻 GitHub</a>
+            <a href="index.html">🏠 Back to Portfolio</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.85rem;">© 2026 Taliqa Muhib. Recruiter Portal.</p>
+    </footer>
+
+    <script>
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
