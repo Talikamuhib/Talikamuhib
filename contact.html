@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me | Talika's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
         * {
@@ -13,42 +13,97 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #ff6b35;
+            --accent-cyan: #00d9ff;
+            --accent-purple: #b24bff;
+            --dark: #0a0e1a;
+            --text: #f5f0eb;
+            --text-secondary: #bfb5a5;
+            --border-glow: rgba(0, 217, 255, 0.25);
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a0f2e 50%, #0d1b2a 100%);
+            color: var(--text);
             line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(178, 75, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Header Section */
         header {
-            background: linear-gradient(135deg, #1f2937, #3b82f6);
-            color: #fff;
+            background: rgba(10, 14, 26, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            color: var(--text);
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
+            border-bottom: 1px solid var(--border-glow);
+            position: relative;
+            z-index: 1;
+            margin-top: 60px;
         }
+
         header h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
             margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
         }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
         header p {
             font-size: 1.2rem;
-            color: #d1d5db;
+            color: var(--text-secondary);
         }
 
         /* Contact Section */
         .contact-container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 3rem auto;
-            padding: 2rem;
-            background: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            padding: 3rem;
+            background: rgba(10, 14, 26, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid var(--border-glow);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
         .contact-container h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            color: #3b82f6;
+            background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-align: center;
             margin-bottom: 1.5rem;
         }
@@ -56,48 +111,127 @@
         form {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         input, textarea {
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1.5px solid var(--border-glow);
+            border-radius: 12px;
             font-size: 1rem;
-            transition: border 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(225, 215, 200, 0.4);
         }
 
         input:focus, textarea:focus {
-            border-color: #3b82f6;
+            background: rgba(255, 107, 53, 0.1);
+            border-color: var(--primary);
             outline: none;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
         }
 
         button {
-            padding: 0.8rem 1.5rem;
-            background-color: #3b82f6;
-            color: #fff;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+            color: var(--dark);
             border: none;
             font-size: 1rem;
-            border-radius: 5px;
+            font-weight: 600;
+            border-radius: 12px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            z-index: 1;
         }
 
         button:hover {
-            background-color: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.4);
+        }
+
+        button:hover::before {
+            animation: shimmer 0.6s;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         /* Social Links */
         .social-links {
-            margin-top: 2rem;
+            margin-top: 3rem;
             text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-glow);
+        }
+
+        .social-links p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .social-links a {
             display: inline-block;
             margin: 0 1rem;
-            color: #3b82f6;
+            color: var(--primary);
             font-size: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1.5px solid var(--border-glow);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+        }
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
