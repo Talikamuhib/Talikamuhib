@@ -219,17 +219,24 @@
             text-transform: uppercase;
             color: var(--accent-warm);
             margin-bottom: 1.5rem;
-            background: rgba(255, 107, 53, 0.1);
-            padding: 0.5rem 1rem;
+            background: rgba(255, 107, 53, 0.15);
+            padding: 0.6rem 1.2rem;
             border-radius: 999px;
-            border: 1px solid var(--border-soft);
+            border: 1.5px solid var(--border-soft);
             display: inline-block;
             animation: glow 2s ease-in-out infinite;
+            position: relative;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
         }
 
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.2); }
-            50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.4); }
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255, 107, 53, 0.3), 0 0 40px rgba(255, 107, 53, 0.1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(255, 107, 53, 0.5), 0 0 80px rgba(0, 217, 255, 0.2);
+            }
         }
 
         .hero h1 {
@@ -287,6 +294,10 @@
             font-size: 0.95rem;
             position: relative;
             overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .btn::before {
@@ -298,15 +309,31 @@
             z-index: 1;
         }
 
+        .btn::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 0;
+        }
+
+        .btn:active::after {
+            opacity: 1;
+        }
+
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-warm), var(--accent-cyan));
             color: var(--bg-dark);
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.35),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.5);
+            transform: translateY(-4px) translateX(4px);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.5),
+                        0 0 20px rgba(0, 217, 255, 0.3);
         }
 
         .btn-primary:hover::before {
@@ -322,13 +349,16 @@
             background: linear-gradient(135deg, transparent, transparent);
             border: 2px solid var(--accent-warm);
             color: var(--accent-warm);
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.15),
+                        inset 0 0 0 0 rgba(255, 107, 53, 0);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .btn-secondary:hover {
             background: rgba(255, 107, 53, 0.15);
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
             border-color: var(--accent-cyan);
             color: var(--accent-cyan);
         }
@@ -418,10 +448,58 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
             animation: slideInRight 0.8s ease-out;
             box-shadow: 0 8px 32px rgba(255, 107, 53, 0.1), 0 8px 32px rgba(0, 217, 255, 0.1);
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 107, 53, 0.2), transparent 60%),
+                        radial-gradient(circle at 70% 70%, rgba(0, 217, 255, 0.2), transparent 60%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .story-visual-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .story-visual-icon {
+            font-size: 5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        .story-visual-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-warm);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: rgba(255, 107, 53, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            backdrop-filter: blur(10px);
         }
 
         .story-visual:hover {
@@ -429,6 +507,10 @@
             transform: translateY(-10px);
             box-shadow: 0 12px 48px rgba(255, 107, 53, 0.2), 0 12px 48px rgba(0, 217, 255, 0.2);
             border-color: var(--accent-cyan);
+        }
+
+        .story-visual:hover .story-visual-icon {
+            animation: float 2s ease-in-out infinite;
         }
 
         @keyframes slideInRight {
@@ -482,6 +564,18 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: relative;
+        }
+
+        .map-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 3px;
+            height: 100px;
+            background: linear-gradient(180deg, transparent, var(--accent-warm), transparent);
+            transform: translateX(-50%);
         }
 
         .map-title {
@@ -493,6 +587,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+            position: relative;
+            z-index: 1;
         }
 
         .map-container {
@@ -513,23 +611,47 @@
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-align: center;
             box-shadow: 0 8px 32px rgba(255, 107, 53, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-marker::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(0, 217, 255, 0.2), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 0;
         }
 
         .map-marker:hover {
             background: rgba(255, 107, 53, 0.15);
             transform: translateY(-12px);
             border-color: var(--accent-warm);
-            box-shadow: 0 12px 48px rgba(255, 107, 53, 0.2);
+            box-shadow: 0 12px 48px rgba(255, 107, 53, 0.2), 0 0 30px rgba(255, 107, 53, 0.15);
+        }
+
+        .map-marker:hover::before {
+            opacity: 1;
         }
 
         .marker-emoji {
             font-size: 3rem;
             margin-bottom: 1rem;
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-15px) scale(1.1); }
         }
 
         .map-marker:hover .marker-emoji {
-            transform: scale(1.2) rotate(10deg);
+            transform: scale(1.3) rotate(15deg);
         }
 
         .marker-title {
@@ -540,12 +662,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+            z-index: 1;
         }
 
         .marker-description {
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
 
         /* ===== FOOTER ===== */
@@ -622,8 +748,8 @@
         .recruiter-card {
             padding: 2.5rem;
             border-radius: 20px;
-            background: rgba(10, 14, 26, 0.6);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.8), rgba(10, 14, 26, 0.5));
+            backdrop-filter: blur(20px) saturate(180%);
             border: 1.5px solid var(--border-glow);
             display: flex;
             flex-direction: column;
@@ -632,14 +758,32 @@
             position: relative;
             overflow: hidden;
             animation: slideIn 0.8s ease-out;
-            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.05);
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.08),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .recruiter-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 107, 53, 0.1), transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(0, 217, 255, 0.1), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .recruiter-card:hover::after {
+            opacity: 1;
         }
 
         .recruiter-card:hover {
             transform: translateY(-12px);
             border-color: var(--accent-warm);
-            background: rgba(255, 107, 53, 0.15);
-            box-shadow: 0 12px 48px rgba(255, 107, 53, 0.2);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(0, 217, 255, 0.08));
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.25),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
 
         .recruiter-card::before {
@@ -651,6 +795,7 @@
             height: 3px;
             background: linear-gradient(90deg, var(--accent-warm), rgba(0, 217, 255, 0.5), transparent);
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 2;
         }
 
         .recruiter-card:hover::before {
@@ -661,10 +806,13 @@
         .card-icon {
             font-size: 2.5rem;
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 4px 12px rgba(255, 107, 53, 0.2));
         }
 
         .recruiter-card:hover .card-icon {
-            transform: scale(1.2) rotate(10deg);
+            transform: scale(1.3) rotate(15deg);
         }
 
         .card-title {
@@ -674,11 +822,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
         }
 
         .card-content {
             color: var(--text-muted);
             line-height: 1.7;
+            position: relative;
+            z-index: 1;
         }
 
         .card-items {
@@ -686,12 +839,20 @@
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
+            position: relative;
+            z-index: 1;
         }
 
         .card-items li {
             padding-left: 1.5rem;
             position: relative;
             color: var(--text-muted);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-items li:hover {
+            color: var(--accent-cyan);
+            padding-left: 2rem;
         }
 
         .card-items li::before {
@@ -700,6 +861,12 @@
             left: 0;
             color: var(--accent-warm);
             font-weight: bold;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-items li:hover::before {
+            color: var(--accent-cyan);
+            left: 0.5rem;
         }
 
         .recruiter-cta {
@@ -725,6 +892,7 @@
             gap: 0.6rem;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .recruiter-btn::before {
@@ -739,12 +907,15 @@
         .recruiter-btn-primary {
             background: linear-gradient(135deg, var(--accent-warm), var(--accent-cyan));
             color: var(--bg-dark);
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.35),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
         }
 
         .recruiter-btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.5);
+            transform: translateY(-4px) translateX(4px);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.5),
+                        0 0 20px rgba(0, 217, 255, 0.3);
         }
 
         .recruiter-btn-primary:hover::before {
@@ -755,13 +926,16 @@
             background: transparent;
             border: 2px solid var(--accent-warm);
             color: var(--accent-warm);
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.15),
+                        inset 0 0 0 0 rgba(255, 107, 53, 0);
+            position: relative;
         }
 
         .recruiter-btn-secondary:hover {
             background: rgba(255, 107, 53, 0.15);
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
             border-color: var(--accent-cyan);
             color: var(--accent-cyan);
         }
@@ -927,13 +1101,19 @@
             <div class="story-content">
                 <div class="story-text">
                     <div class="story-number">01</div>
-                    <h2 class="story-title">Mountains: Curiosity Without Resources</h2>
+                    <h2 class="story-title">Mountains: Where Curiosity Blooms</h2>
                     <p class="story-description">
-                        Growing up in Gilgit, I learned early that curiosity doesn't need permission. In remote mountain classrooms, 
-                        limited resources became a teacher themselves — showing me that innovation thrives when necessity meets determination.
+                        In the peaks of Gilgit, I discovered that the greatest innovations aren't born from abundance—they're forged in necessity. 
+                        With limited resources but boundless curiosity, I learned that constraints are catalysts. 
+                        Every mountain taught me resilience; every classroom without walls, infinite possibility.
                     </p>
                 </div>
-                <div class="story-visual">🏔️ Mountains</div>
+                <div class="story-visual">
+                    <div class="story-visual-content">
+                        <div class="story-visual-icon">⛰️</div>
+                        <div class="story-visual-label">Resilience & Innovation</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -942,14 +1122,20 @@
             <div class="story-content">
                 <div class="story-text">
                     <div class="story-number">02</div>
-                    <h2 class="story-title">The Pivotal Recognition</h2>
+                    <h2 class="story-title">Recognition: The Breaking Point</h2>
                     <p class="story-description">
-                        <strong>E-scholarship and the British Council Women in STEM scholarship</strong> weren't just opportunities — 
-                        they were affirmations. When the world recognized my potential to contribute to science and research, 
-                        it changed my trajectory. These moments showed me that barriers can be broken.
+                        Two scholarships changed everything: the E-scholarship and the British Council Women in STEM award. 
+                        Not just because they opened doors, but because they validated something I'd always known—
+                        that a girl from the mountains could contribute to global science. 
+                        It wasn't permission I needed; it was the world saying: <em>"We believe in you."</em>
                     </p>
                 </div>
-                <div class="story-visual">📚 Recognition</div>
+                <div class="story-visual">
+                    <div class="story-visual-content">
+                        <div class="story-visual-icon">🌟</div>
+                        <div class="story-visual-label">Opportunity & Belief</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -958,14 +1144,20 @@
             <div class="story-content">
                 <div class="story-text">
                     <div class="story-number">03</div>
-                    <h2 class="story-title">Afghanistan: The Awakening</h2>
+                    <h2 class="story-title">Afghanistan: Purpose Crystallized</h2>
                     <p class="story-description">
-                        Witnessing the challenges women face in Afghanistan transformed how I think about my work. 
-                        I understood that education isn't a luxury — it's resistance. This experience shaped my mission: 
-                        building systems that empower, not exclude.
+                        Witnessing the struggles of Afghan women wasn't just heartbreaking—it was activating. 
+                        I realized that education is resistance. Access is revolution. 
+                        Technical solutions alone weren't enough. I needed to build systems that don't just include women—
+                        they empower them. Every algorithm I write now has their struggle embedded in it.
                     </p>
                 </div>
-                <div class="story-visual">🌍 Witness</div>
+                <div class="story-visual">
+                    <div class="story-visual-content">
+                        <div class="story-visual-icon">🌍</div>
+                        <div class="story-visual-label">Purpose & Impact</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -974,14 +1166,21 @@
             <div class="story-content">
                 <div class="story-text">
                     <div class="story-number">04</div>
-                    <h2 class="story-title">Science: AI & Neuroscience</h2>
+                    <h2 class="story-title">Science: Speaking in Algorithms</h2>
                     <p class="story-description">
-                        AI and neuroscience became my languages for change. Through EEG signal processing and Alzheimer's detection, 
-                        I found ways to translate human challenges into technical solutions. 
-                        Every algorithm is an act of accessibility.
+                        Machine learning and neuroscience became my vocabulary for change. 
+                        Through EEG signal processing and early Alzheimer's detection, I found the bridge between suffering and solution. 
+                        Graph neural networks, vision transformers, signal analysis—
+                        each tool is a way to translate human pain into actionable intelligence. 
+                        Technology without humanity is just code. Science with purpose is medicine.
                     </p>
                 </div>
-                <div class="story-visual">🧠 Science</div>
+                <div class="story-visual">
+                    <div class="story-visual-content">
+                        <div class="story-visual-icon">🧠</div>
+                        <div class="story-visual-label">AI & Healthcare</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -990,14 +1189,23 @@
             <div class="story-content">
                 <div class="story-text">
                     <div class="story-number">05</div>
-                    <h2 class="story-title">Systems: Water, Governance, Justice</h2>
+                    <h2 class="story-title">Systems: Thinking at Scale</h2>
                     <p class="story-description">
-                        Beyond individual solutions lie systems. Water access, governance, justice — 
-                        these interconnected challenges require thinking at scale. My work now focuses on 
-                        building systems that create lasting change.
+                        Individual solutions are beautiful but finite. Real change requires systems thinking. 
+                        Water access, governance, climate justice—these aren't separate problems, they're interconnected crises. 
+                        My work now focuses on the architecture of change: building frameworks, not just tools. 
+                        Infrastructure for a more equitable future. Because lasting impact requires systems designed with intention.
                     </p>
                 </div>
-                <div class="story-visual">⚙️ Systems</div>
+                <div class="story-visual">
+                    <div class="story-visual-content">
+                        <div class="story-visual-icon">⚙️</div>
+                        <div class="story-visual-label">Systems & Scale</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
             </div>
         </section>
     </div>
