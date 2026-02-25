@@ -14,20 +14,20 @@
         }
 
         :root {
-            --primary: #ff6b35;
-            --primary-light: #ffb088;
-            --accent-cyan: #00d9ff;
-            --accent-purple: #b24bff;
-            --dark: #0a0e1a;
-            --text: #f5f0eb;
-            --text-secondary: #ccc5bf;
-            --card-bg: #1a1f2e;
-            --border-glow: rgba(0, 217, 255, 0.25);
+            --primary: #e63946;
+            --primary-light: #ff6b7a;
+            --accent-red: #d62828;
+            --accent-white: #ffffff;
+            --dark: #0f0f0f;
+            --text: #ffffff;
+            --text-secondary: #e0e0e0;
+            --card-bg: #161616;
+            --border-glow: rgba(230, 57, 70, 0.4);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a0e1a 0%, #1a0f2e 50%, #0d1b2a 100%);
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a0f1a 50%, #0f1a15 100%);
             color: var(--text);
             min-height: 100vh;
             position: relative;
@@ -41,9 +41,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(178, 75, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(230, 57, 70, 0.05) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -53,11 +53,11 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(10, 14, 26, 0.95);
+            background: rgba(15, 15, 15, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             z-index: 1000;
-            border-bottom: 1px solid rgba(157, 110, 79, 0.2);
+            border-bottom: 1px solid rgba(230, 57, 70, 0.2);
         }
 
         .nav {
@@ -111,7 +111,7 @@
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #9d6e4f, #c89d6e);
+            background: linear-gradient(135deg, #e63946, #ff6b7a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -131,7 +131,7 @@
 
         .quick-stat {
             background: var(--card-bg);
-            border: 1px solid rgba(157, 110, 79, 0.3);
+            border: 1px solid rgba(230, 57, 70, 0.3);
             border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
@@ -141,7 +141,7 @@
         .quick-stat:hover {
             border-color: var(--primary);
             transform: translateY(-4px);
-            background: rgba(157, 110, 79, 0.05);
+            background: rgba(230, 57, 70, 0.05);
         }
 
         .stat-value {
@@ -170,7 +170,7 @@
         }
 
         .availability-box {
-            background: linear-gradient(135deg, rgba(157, 110, 79, 0.15), rgba(200, 157, 110, 0.05));
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.15), rgba(230, 57, 70, 0.05));
             border: 2px solid var(--primary);
             border-radius: 12px;
             padding: 2rem;
@@ -243,7 +243,7 @@
 
         .highlight-box {
             background: var(--card-bg);
-            border: 1px solid rgba(157, 110, 79, 0.2);
+            border: 1px solid rgba(230, 57, 70, 0.2);
             border-radius: 12px;
             padding: 1.5rem;
             transition: all 0.3s;
@@ -252,7 +252,7 @@
         .highlight-box:hover {
             border-color: var(--primary);
             transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(157, 110, 79, 0.15);
+            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.15);
         }
 
         .highlight-icon {
@@ -275,7 +275,7 @@
 
         .about-me {
             background: var(--card-bg);
-            border: 1px solid rgba(157, 110, 79, 0.2);
+            border: 1px solid rgba(230, 57, 70, 0.2);
             border-radius: 12px;
             padding: 2rem;
             margin-bottom: 3rem;
@@ -302,7 +302,7 @@
         }
 
         .tag {
-            background: rgba(157, 110, 79, 0.15);
+            background: rgba(230, 57, 70, 0.15);
             color: var(--primary);
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -319,7 +319,7 @@
 
         .project-spotlight {
             background: var(--card-bg);
-            border: 1px solid rgba(157, 110, 79, 0.2);
+            border: 1px solid rgba(230, 57, 70, 0.2);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s;
@@ -328,12 +328,12 @@
         .project-spotlight:hover {
             border-color: var(--primary);
             transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(157, 110, 79, 0.15);
+            box-shadow: 0 20px 40px rgba(230, 57, 70, 0.15);
         }
 
         .project-spotlight-tag {
             display: inline-block;
-            background: rgba(157, 110, 79, 0.15);
+            background: rgba(230, 57, 70, 0.15);
             color: var(--primary);
             padding: 0.4rem 0.8rem;
             border-radius: 6px;
@@ -344,7 +344,7 @@
 
         .project-spotlight-header {
             padding: 1.5rem;
-            border-bottom: 1px solid rgba(157, 110, 79, 0.15);
+            border-bottom: 1px solid rgba(230, 57, 70, 0.15);
         }
 
         .project-spotlight-title {
@@ -391,7 +391,7 @@
 
         .faq-item {
             background: var(--card-bg);
-            border: 1px solid rgba(157, 110, 79, 0.2);
+            border: 1px solid rgba(230, 57, 70, 0.2);
             border-radius: 12px;
             margin-bottom: 1rem;
             overflow: hidden;
@@ -409,7 +409,7 @@
         }
 
         .faq-question:hover {
-            background: rgba(157, 110, 79, 0.05);
+            background: rgba(230, 57, 70, 0.05);
         }
 
         .faq-answer {
@@ -418,7 +418,7 @@
             color: var(--text-secondary);
             line-height: 1.8;
             display: none;
-            border-top: 1px solid rgba(157, 110, 79, 0.15);
+            border-top: 1px solid rgba(230, 57, 70, 0.15);
         }
 
         .faq-answer.active {
@@ -435,8 +435,8 @@
         }
 
         .cta-section {
-            background: linear-gradient(135deg, rgba(157, 110, 79, 0.1), rgba(200, 157, 110, 0.05));
-            border: 1px solid rgba(157, 110, 79, 0.3);
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(230, 57, 70, 0.05));
+            border: 1px solid rgba(230, 57, 70, 0.3);
             border-radius: 12px;
             padding: 3rem;
             text-align: center;
@@ -468,7 +468,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #9d6e4f, #c89d6e);
+            background: linear-gradient(135deg, #e63946, #ff6b7a);
             color: white;
             border: none;
             cursor: pointer;
@@ -476,7 +476,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(157, 110, 79, 0.3);
+            box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
         }
 
         .btn-secondary {
@@ -486,14 +486,14 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(157, 110, 79, 0.1);
+            background: rgba(230, 57, 70, 0.1);
         }
 
         footer {
             text-align: center;
             padding: 2rem;
             color: var(--text-secondary);
-            border-top: 1px solid rgba(157, 110, 79, 0.2);
+            border-top: 1px solid rgba(230, 57, 70, 0.2);
             margin-top: 4rem;
         }
 
