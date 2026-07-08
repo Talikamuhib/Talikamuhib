@@ -1,6 +1,6 @@
 ```diff
 + $ whoami
-+ > talika muhib (Tee)
++ > Taliqa Muhib (Tee)
 + > healthtech data scientist | healthcare AI researcher
 
 + $ role

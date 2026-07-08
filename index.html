@@ -1,1764 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taliqa Muhib | Building Intelligent Systems for Real-World Impact</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-dark: #0f0f0f;
-            --bg-darker: #000000;
-            --accent-warm: #e63946;
-            --accent-warm-light: #f1436d;
-            --accent-earth: #d62828;
-            --accent-light: #ff6b7a;
-            --accent-gold: #e63946;
-            --accent-cyan: #ffffff;
-            --accent-purple: #ff6b7a;
-            --text-main: #ffffff;
-            --text-muted: #e0e0e0;
-            --border-soft: rgba(230, 57, 70, 0.2);
-            --border-glow: rgba(230, 57, 70, 0.4);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a0f0f 50%, #000000 100%);
-            color: var(--text-main);
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(214, 40, 40, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(230, 57, 70, 0.06) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* ===== NAVIGATION ===== */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 8vw;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 14, 26, 0.7);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid var(--border-glow);
-            z-index: 1000;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        nav:hover {
-            background: rgba(10, 14, 26, 0.85);
-            border-bottom-color: var(--border-soft);
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 0.1em;
-            background: linear-gradient(120deg, var(--accent-warm), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: all 0.3s;
-        }
-
-        .logo:hover {
-            text-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            padding-bottom: 0.25rem;
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-warm), var(--accent-cyan));
-            transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-warm);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-recruiter {
-            padding: 0.7rem 1.5rem;
-            border-radius: 999px;
-            background: rgba(230, 57, 70, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1.5px solid var(--accent-warm);
-            color: var(--accent-warm);
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            box-shadow: 0 0 20px rgba(230, 57, 70, 0);
-        }
-
-        .nav-recruiter:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(230, 57, 70, 0.35);
-            background: rgba(230, 57, 70, 0.25);
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            margin-top: 60px;
-            padding: 4rem 8vw;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: -50%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(178, 75, 255, 0.15) 0%, transparent 50%);
-            animation: float 25s ease-in-out infinite;
-            z-index: 0;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(circle at 30% 30%, rgba(230, 57, 70, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 70% 70%, rgba(255, 165, 0, 0.08) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite reverse;
-            z-index: 0;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(20px, -30px) rotate(1deg); }
-            50% { transform: translate(-20px, 20px) rotate(-1deg); }
-            75% { transform: translate(30px, 10px) rotate(1deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            text-align: center;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-label {
-            font-size: 0.95rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent-warm);
-            margin-bottom: 1.5rem;
-            background: rgba(230, 57, 70, 0.15);
-            padding: 0.6rem 1.2rem;
-            border-radius: 999px;
-            border: 1.5px solid var(--border-soft);
-            display: inline-block;
-            animation: glow 2s ease-in-out infinite;
-            position: relative;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(230, 57, 70, 0.3);
-        }
-
-        @keyframes glow {
-            0%, 100% { 
-                box-shadow: 0 0 20px rgba(230, 57, 70, 0.4), 0 0 40px rgba(230, 57, 70, 0.1);
-            }
-            50% { 
-                box-shadow: 0 0 40px rgba(230, 57, 70, 0.6), 0 0 80px rgba(230, 57, 70, 0.3);
-            }
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 7vw, 5rem);
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-            background: linear-gradient(135deg, #ff6b7a, #e63946, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 300% 300%;
-            animation: gradientShift 8s ease infinite;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-meta {
-            font-size: 0.95rem;
-            color: var(--accent-light);
-            margin-bottom: 2.5rem;
-            font-style: italic;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            cursor: pointer;
-            border: none;
-            font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: translateX(-100%);
-            z-index: 1;
-        }
-
-        .btn::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: 0;
-        }
-
-        .btn:active::after {
-            opacity: 1;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-warm), #ff6b7a);
-            color: var(--bg-dark);
-            box-shadow: 0 6px 25px rgba(230, 57, 70, 0.4),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px) translateX(4px);
-            box-shadow: 0 12px 40px rgba(230, 57, 70, 0.6),
-                        0 0 20px rgba(230, 57, 70, 0.4);
-        }
-
-        .btn-primary:hover::before {
-            animation: shimmer 0.6s;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, transparent, transparent);
-            border: 2px solid var(--accent-warm);
-            color: var(--accent-warm);
-            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.2),
-                        inset 0 0 0 0 rgba(230, 57, 70, 0);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(230, 57, 70, 0.2);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(230, 57, 70, 0.35),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border-color: #ff6b7a;
-            color: #ff6b7a;
-        }
-
-        /* ===== STORY SECTIONS ===== */
-        .story-section {
-            min-height: 100vh;
-            padding: 6rem 8vw;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .story-section::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: inherit;
-            z-index: -1;
-        }
-
-        .story-section:nth-child(even) .story-content {
-            flex-direction: row-reverse;
-        }
-
-        .story-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            flex-direction: row;
-        }
-
-        .story-text {
-            flex: 1;
-            min-width: 300px;
-            animation: fadeInLeft 0.8s ease-out;
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .story-number {
-            font-size: 5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.6), rgba(214, 40, 40, 0.6));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
-            transform: translateZ(30px);
-        }
-
-        .story-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-        }
-
-        .story-description {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .story-visual {
-            flex: 1;
-            min-width: 300px;
-            height: 400px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.2), rgba(214, 40, 40, 0.1));
-            border: 1.5px solid var(--border-glow);
-            backdrop-filter: blur(15px) saturate(180%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: slideInRight 0.8s ease-out;
-            box-shadow: 0 8px 32px rgba(230, 57, 70, 0.15), 0 8px 32px rgba(230, 57, 70, 0.1);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .story-visual::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(230, 57, 70, 0.25), transparent 60%),
-                        radial-gradient(circle at 70% 70%, rgba(214, 40, 40, 0.2), transparent 60%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
-
-        .story-visual-content {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
-
-        .story-visual-icon {
-            font-size: 5rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-20px) scale(1.05); }
-        }
-
-        .story-visual-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--accent-warm);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            background: rgba(230, 57, 70, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            backdrop-filter: blur(10px);
-        }
-
-        .story-visual:hover {
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.3), rgba(214, 40, 40, 0.2));
-            transform: translateY(-15px) rotateX(5deg) rotateY(-5deg) translateZ(40px);
-            box-shadow: 0 20px 60px rgba(230, 57, 70, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            border-color: #ff6b7a;
-        }
-
-        .story-visual:hover .story-visual-icon {
-            animation: float 2s ease-in-out infinite;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section Background Variations */
-        .story-section:nth-child(2) {
-            background: radial-gradient(circle at 10% 50%, rgba(230, 57, 70, 0.1) 0%, transparent 60%);
-        }
-
-        .story-section:nth-child(3) {
-            background: radial-gradient(circle at 90% 50%, rgba(178, 75, 255, 0.08) 0%, transparent 60%);
-        }
-
-        .story-section:nth-child(4) {
-            background: radial-gradient(circle at 50% 100%, rgba(0, 217, 255, 0.08) 0%, transparent 70%);
-        }
-
-        .story-section:nth-child(5) {
-            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.05) 0%, transparent 60%);
-        }
-
-        .story-section:nth-child(6) {
-            background: radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.05) 0%, transparent 60%);
-        }
-
-        /* ===== INTERACTIVE MAP ===== */
-        .map-section {
-            min-height: 100vh;
-            padding: 6rem 8vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .map-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 3px;
-            height: 100px;
-            background: linear-gradient(180deg, transparent, var(--accent-warm), transparent);
-            transform: translateX(-50%);
-        }
-
-        .map-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--accent-warm), #ff6b7a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 300% 300%;
-            animation: gradientShift 8s ease infinite;
-            position: relative;
-            z-index: 1;
-            transform: translateZ(30px);
-        }
-
-        .map-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .map-marker {
-            padding: 2rem;
-            border-radius: 16px;
-            background: rgba(10, 14, 26, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1.5px solid var(--border-glow);
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-marker::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(0, 217, 255, 0.2), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: 0;
-        }
-
-        .map-marker:hover {
-            background: rgba(255, 107, 53, 0.15);
-            transform: translateY(-12px);
-            border-color: var(--accent-warm);
-            box-shadow: 0 12px 48px rgba(255, 107, 53, 0.2), 0 0 30px rgba(255, 107, 53, 0.15);
-        }
-
-        .map-marker:hover::before {
-            opacity: 1;
-        }
-
-        .marker-emoji {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            animation: float 3s ease-in-out infinite;
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-15px) scale(1.1); }
-        }
-
-        .map-marker:hover .marker-emoji {
-            transform: scale(1.3) rotate(15deg);
-        }
-
-        .marker-title {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            background: linear-gradient(135deg, var(--accent-warm), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            z-index: 1;
-        }
-
-        .marker-description {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            padding: 3rem 8vw;
-            border-top: 1px solid var(--border-soft);
-            text-align: center;
-            color: var(--text-muted);
-        }
-
-        /* ===== RECRUITER HUB ===== */
-        .recruiter-hub {
-            min-height: 100vh;
-            padding: 6rem 8vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: radial-gradient(circle at 50% 0%, rgba(178, 75, 255, 0.08) 0%, transparent 70%),
-                        radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
-        }
-
-        .recruiter-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            max-width: 900px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .recruiter-label {
-            font-size: 0.95rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent-warm);
-            margin-bottom: 1rem;
-            background: rgba(255, 107, 53, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            border: 1px solid var(--border-soft);
-            display: inline-block;
-        }
-
-        .recruiter-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-            background: linear-gradient(135deg, var(--accent-warm), var(--accent-cyan), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 300% 300%;
-            animation: gradientShift 8s ease infinite;
-        }
-
-        .recruiter-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-
-        .recruiter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            width: 100%;
-            margin-bottom: 3rem;
-        }
-
-        .recruiter-card {
-            padding: 2.5rem;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(10, 14, 26, 0.8), rgba(10, 14, 26, 0.5));
-            backdrop-filter: blur(20px) saturate(180%);
-            border: 1.5px solid var(--border-glow);
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            overflow: hidden;
-            animation: slideIn 0.8s ease-out;
-            box-shadow: 0 8px 32px rgba(230, 57, 70, 0.12),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        .recruiter-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(230, 57, 70, 0.1), transparent 50%),
-                        radial-gradient(circle at 70% 70%, rgba(230, 57, 70, 0.08), transparent 50%);
-            opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .recruiter-card:hover::after {
-            opacity: 1;
-        }
-
-        .recruiter-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--accent-warm);
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.15), rgba(230, 57, 70, 0.08));
-            box-shadow: 0 20px 60px rgba(230, 57, 70, 0.3),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-        }
-
-        .recruiter-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-warm), rgba(230, 57, 70, 0.5), transparent);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: 2;
-        }
-
-        .recruiter-card:hover::before {
-            height: 5px;
-            background: linear-gradient(90deg, white, var(--accent-warm));
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            z-index: 1;
-            filter: drop-shadow(0 4px 12px rgba(255, 107, 53, 0.2));
-        }
-
-        .recruiter-card:hover .card-icon {
-            transform: scale(1.3) rotate(15deg);
-        }
-
-        .card-title {
-            font-weight: 700;
-            font-size: 1.3rem;
-            background: linear-gradient(135deg, var(--accent-warm), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            z-index: 1;
-            letter-spacing: 0.5px;
-        }
-
-        .card-content {
-            color: var(--text-muted);
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-
-        .card-items {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .card-items li {
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text-muted);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .card-items li:hover {
-            color: var(--accent-cyan);
-            padding-left: 2rem;
-        }
-
-        .card-items li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-warm);
-            font-weight: bold;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .card-items li:hover::before {
-            color: var(--accent-cyan);
-            left: 0.5rem;
-        }
-
-        .recruiter-cta {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-            max-width: 1400px;
-            width: 100%;
-        }
-
-        .recruiter-btn {
-            padding: 1rem 2.2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .recruiter-btn::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: translateX(-100%);
-            z-index: 1;
-        }
-
-        .recruiter-btn-primary {
-            background: linear-gradient(135deg, var(--accent-warm), var(--accent-cyan));
-            color: var(--bg-dark);
-            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.35),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            position: relative;
-        }
-
-        .recruiter-btn-primary:hover {
-            transform: translateY(-4px) translateX(4px);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.5),
-                        0 0 20px rgba(0, 217, 255, 0.3);
-        }
-
-        .recruiter-btn-primary:hover::before {
-            animation: shimmer 0.6s;
-        }
-
-        .recruiter-btn-secondary {
-            background: transparent;
-            border: 2px solid var(--accent-warm);
-            color: var(--accent-warm);
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.15),
-                        inset 0 0 0 0 rgba(255, 107, 53, 0);
-            position: relative;
-        }
-
-        .recruiter-btn-secondary:hover {
-            background: rgba(255, 107, 53, 0.15);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.3),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-        }
-
-        .arrow-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            font-size: 1.5rem;
-            background: linear-gradient(90deg, transparent, var(--accent-warm), transparent);
-            padding: 1rem;
-            border-radius: 12px;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            padding: 3rem 8vw;
-            border-top: 1px solid var(--border-glow);
-            text-align: center;
-            color: var(--text-muted);
-            background: rgba(10, 14, 26, 0.6);
-            backdrop-filter: blur(10px);
-        }
-
-        footer p {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .footer-links a {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            color: var(--text-muted);
-            position: relative;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-warm);
-        }
-
-        .footer-links a::after {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-warm), var(--accent-cyan));
-            transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .footer-links a:hover::after {
-            width: 100%;
-        }
-
-        /* ===== PROBLEMS SOLVED SECTION ===== */
-        .impact-section {
-            min-height: 100vh;
-            padding: 6rem 8vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.05) 0%, rgba(0, 0, 0, 0.3) 100%);
-        }
-
-        .impact-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #e63946, transparent);
-        }
-
-        .impact-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            max-width: 900px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .impact-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        .impact-header h2 span {
-            color: #e63946;
-        }
-
-        .impact-header p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1400px;
-            width: 100%;
-            margin-bottom: 3rem;
-        }
-
-        .problem-card {
-            padding: 2.5rem;
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(22, 22, 22, 0.9), rgba(0, 0, 0, 0.7));
-            border: 2px solid #e63946;
-            border-left: 5px solid #e63946;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            overflow: hidden;
-            animation: slideInUp 0.8s ease-out;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .problem-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #e63946, transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-12px);
-            border-color: #ff6b7a;
-            box-shadow: 0 20px 50px rgba(230, 57, 70, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        }
-
-        .problem-card:hover::before {
-            opacity: 1;
-        }
-
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .problem-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #e63946;
-            margin-bottom: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .problem-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.2rem;
-        }
-
-        .problem-impact {
-            padding-top: 1.2rem;
-            border-top: 1px solid rgba(230, 57, 70, 0.3);
-            color: #ff6b7a;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .impact-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            width: 100%;
-            margin-top: 3rem;
-        }
-
-        .metric {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 12px;
-            background: rgba(230, 57, 70, 0.1);
-            border: 1px solid rgba(230, 57, 70, 0.3);
-            transition: all 0.4s ease;
-        }
-
-        .metric:hover {
-            background: rgba(230, 57, 70, 0.2);
-            transform: translateY(-8px);
-            border-color: #e63946;
-        }
-
-        .metric-number {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            color: #e63946;
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .metric-label {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-        }
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 5vw;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-            }
-
-            .hero {
-                padding: 2rem 5vw;
-            }
-
-            .story-section {
-                padding: 4rem 5vw;
-            }
-
-            .story-content {
-                flex-direction: column !important;
-                gap: 2rem;
-            }
-
-            .story-visual {
-                width: 100%;
-                height: 300px;
-            }
-
-            .map-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .story-title {
-                font-size: 1.8rem;
-            }
-
-            .recruiter-title {
-                font-size: 2rem;
-            }
-
-            .recruiter-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .recruiter-cta {
-                flex-direction: column;
-            }
-
-            .recruiter-btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Taliqa Muhib — HealthTech Data Scientist and Healthcare AI Researcher working at the intersection of machine learning, clinical data, and patient pathway analytics." />
+  <meta name="author" content="Taliqa Muhib" />
+  <meta name="theme-color" content="#0b1120" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="mask-icon" href="favicon.svg" color="#2dd4bf" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Taliqa Muhib | HealthTech Data Scientist" />
+  <meta property="og:description"
+    content="Healthcare AI Researcher | Patient Pathway Analytics | Predictive Modelling" />
+  <meta property="og:type" content="website" />
+
+  <title>Taliqa Muhib | HealthTech Data Scientist &amp; Healthcare AI Researcher</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/portfolio.css?v=1.1" />
+  <link rel="stylesheet" href="css/chatbot.css?v=1.1" />
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">Taliqa Muhib</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#story">Story</a></li>
-            <li><a href="#map">Journey</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="graphics.html">Graphics</a></li>
-            <li><a href="portfolio-dashboard.html">Dashboard</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="recruiters.html" class="nav-recruiter">→ For Recruiters</a></li>
-        </ul>
-    </nav>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Hero Section -->
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Taliqa Muhib home">
+        <span class="brand-mark">TM</span>
+        <span class="brand-text">Taliqa Muhib</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#focus">Focus</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#research">Research</a>
+        <a href="#journey">Journey</a>
+        <a href="#recruiters">For Recruiters</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu"
+        aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-label">🏔️ From Mountains to Mission</div>
-            <h1>I build intelligent systems to solve real-world problems</h1>
-            <p class="hero-subtitle">
-                From mountain classrooms to AI research, my work focuses on healthcare, climate, and access.
-                Every system I build starts with a story of resilience and purpose.
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="hero-eyebrow reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          HealthTech Data Scientist · Healthcare AI Researcher
+        </p>
+        <h1 class="hero-title reveal">Hi, I&rsquo;m Taliqa Muhib.</h1>
+        <p class="hero-subtitle reveal">
+          HealthTech Data Scientist and Healthcare AI Researcher working at the
+          intersection of machine learning, clinical data, and patient pathway analytics.
+        </p>
+        <p class="hero-desc reveal">
+          I build Python, SQL, and dashboard-based solutions that turn complex healthcare
+          and operational data into clear insights for better patient outcomes, service
+          planning, and clinical decision-making.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary">View HealthTech Projects</a>
+          <a href="Taliqa_Muhib_Resume.pdf" class="btn btn-outline" download>Download CV</a>
+          <a href="https://github.com/Talikamuhib" class="btn btn-ghost" target="_blank"
+            rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/talika-muhib" class="btn btn-ghost"
+            target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+
+        <ul class="hero-stats reveal" aria-label="Highlights">
+          <li>
+            <span class="stat-num" data-count="5" data-suffix="+">0</span>
+            <span class="stat-label">HealthTech &amp; AI projects</span>
+          </li>
+          <li>
+            <span class="stat-num" data-count="4" data-suffix="+">0</span>
+            <span class="stat-label">Core focus areas</span>
+          </li>
+          <li>
+            <span class="stat-num" data-count="2">0</span>
+            <span class="stat-label">Research degrees</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ HEALTHTECH FOCUS ============ -->
+    <section class="section" id="focus">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">What I do</p>
+          <h2 class="section-title">HealthTech Focus</h2>
+          <p class="section-lead">
+            Four areas where I turn healthcare and operational data into decisions.
+          </p>
+        </header>
+
+        <div class="focus-grid">
+          <article class="focus-card reveal">
+            <div class="focus-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M3 12h4l2 5 4-14 2 9h6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3>Patient Pathway Analytics</h3>
+            <p>Referral trends, waiting times, appointment progression, engagement, and retention.</p>
+          </article>
+
+          <article class="focus-card reveal">
+            <div class="focus-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M4 19V5m0 14h16M8 15l3-4 3 3 4-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3>Predictive Modelling</h3>
+            <p>Appointment no-show prediction, demand forecasting, patient risk segmentation, and service planning.</p>
+          </article>
+
+          <article class="focus-card reveal">
+            <div class="focus-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <rect x="3" y="4" width="18" height="14" rx="2" />
+                <path d="M7 14v-3m5 3V9m5 5v-5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Healthcare Dashboards</h3>
+            <p>Tableau and Power BI dashboards for operational monitoring, clinical insight, and leadership reporting.</p>
+          </article>
+
+          <article class="focus-card reveal">
+            <div class="focus-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"
+                  stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Clinical AI Research</h3>
+            <p>EEG analysis, graph signal processing, medical imaging, and responsible healthcare AI.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">Selected work</p>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-lead">
+            Healthcare analytics, predictive modelling, dashboards, and applied research.
+          </p>
+        </header>
+
+        <div class="filter-bar reveal" role="tablist" aria-label="Project filters">
+          <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="healthtech" role="tab" aria-selected="false">HealthTech</button>
+          <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false">Machine Learning</button>
+          <button class="filter-btn" data-filter="dashboards" role="tab" aria-selected="false">Dashboards</button>
+          <button class="filter-btn" data-filter="research" role="tab" aria-selected="false">Research</button>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <!-- Project 1 -->
+          <article class="project-card reveal" data-tags="healthtech dashboards ml">
+            <div class="project-top">
+              <span class="badge badge-dashboard">Dashboard</span>
+              <span class="project-index">01</span>
+            </div>
+            <h3>ADHD Patient Pathway Analytics Dashboard</h3>
+            <p class="project-desc">
+              A HealthTech analytics project exploring referral volumes, waiting times,
+              assessment progression, appointment attendance, patient engagement, and
+              clinical service capacity across an ADHD care pathway.
             </p>
-            <p class="hero-meta">Where education transforms confidence, independence, and opportunity for women.</p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('story').scrollIntoView()">
-                    Explore My Story
-                </button>
-                <button class="btn btn-secondary" onclick="window.location.href='projects.html'">
-                    View Projects
-                </button>
+            <div class="project-details">
+              <p>
+                Combines Python and SQL data pipelines with Tableau dashboards to help
+                service leads understand demand, bottlenecks, and where capacity is
+                needed. Designed to support service planning, not clinical diagnosis.
+              </p>
             </div>
-        </div>
-    </section>
+            <ul class="tag-list">
+              <li>Python</li><li>SQL</li><li>Pandas</li><li>Scikit-learn</li>
+              <li>Tableau</li><li>Healthcare Analytics</li>
+            </ul>
+            <div class="project-actions">
+              <button class="link-btn toggle-details" aria-expanded="false">Details</button>
+              <a class="link-btn" href="https://github.com/Talikamuhib" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="link-btn link-accent" href="portfolio-dashboard.html">Dashboard</a>
+            </div>
+          </article>
 
-    <!-- Impact: Problems Solved Section -->
-    <section class="impact-section">
-        <div class="impact-header">
-            <h2>Real Problems. <span>Real Solutions.</span></h2>
-            <p>I build intelligent systems to tackle real-world challenges. Every project begins with a problem, and ends with measurable impact.</p>
-        </div>
-
-        <div class="problems-grid">
-            <div class="problem-card">
-                <div class="problem-icon">🔬</div>
-                <h3 class="problem-title">Kidney Stone Detection</h3>
-                <p class="problem-desc">Millions suffer from kidney stones without early detection. Built computer vision AI to analyze medical imaging and identify kidney stones with high precision, enabling faster diagnosis and intervention.</p>
-                <div class="problem-impact">✓ Computer Vision + Medical AI</div>
+          <!-- Project 2 -->
+          <article class="project-card reveal" data-tags="healthtech ml">
+            <div class="project-top">
+              <span class="badge badge-progress">In Progress</span>
+              <span class="project-index">02</span>
             </div>
-
-            <div class="problem-card">
-                <div class="problem-icon">👩‍💻</div>
-                <h3 class="problem-title">EdTech for Afghan Women</h3>
-                <p class="problem-desc">Afghan women face barriers to technical education. Developed an e-learning platform providing coding and digital skills training to women in Afghanistan, enabling economic independence and opportunity.</p>
-                <div class="problem-impact">✓ Empowering technical learning</div>
-            </div>
-
-            <div class="problem-card">
-                <div class="problem-icon">🧠</div>
-                <h3 class="problem-title">Alzheimer's via Signal Processing</h3>
-                <p class="problem-desc">Early detection saves lives. Using advanced signal processing on EEG data, developed models to identify Alzheimer's biomarkers before symptom onset, enabling early medical intervention.</p>
-                <div class="problem-impact">✓ Signal Processing + Neuroscience</div>
-            </div>
-
-            <div class="problem-card">
-                <div class="problem-icon">❄️</div>
-                <h3 class="problem-title">Glacier Climate Monitoring</h3>
-                <p class="problem-desc">Glaciers are disappearing. Built systems to track glacial changes and climate impact, providing data-driven insights for environmental policy and conservation strategies.</p>
-                <div class="problem-impact">✓ Climate Data Intelligence</div>
-            </div>
-        </div>
-
-        <div class="impact-metrics">
-            <div class="metric">
-                <div class="metric-number">4</div>
-                <div class="metric-label">Real-World Problems</div>
-            </div>
-            <div class="metric">
-                <div class="metric-number">∞</div>
-                <div class="metric-label">Lives Impacted</div>
-            </div>
-            <div class="metric">
-                <div class="metric-number">100%</div>
-                <div class="metric-label">Commitment to Impact</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Story Sections -->
-    <div id="story">
-        <!-- Section 1: Kidney Stones - Vision and Precision -->
-        <section class="story-section">
-            <div class="story-content">
-                <div class="story-text">
-                    <div class="story-number">01</div>
-                    <h2 class="story-title">Kidney Stones: Vision Meets Medicine</h2>
-                    <p class="story-description">
-                        Millions suffer from kidney stones without early detection. The pain is sudden. The diagnosis is delayed. 
-                        I asked: What if computers could see what doctors sometimes miss? 
-                        Using computer vision and deep learning on medical imaging, I built a system that identifies kidney stones 
-                        with precision and speed. Every early detection is a patient spared from unnecessary suffering. 
-                        <em>This is why I code: to translate human pain into algorithmic solutions.</em>
-                    </p>
-                </div>
-                <div class="story-visual">
-                    <div class="story-visual-content">
-                        <div class="story-visual-icon">🔬</div>
-                        <div class="story-visual-label">Medical AI</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: EdTech Afghanistan - Building Access -->
-        <section class="story-section">
-            <div class="story-content">
-                <div class="story-text">
-                    <div class="story-number">02</div>
-                    <h2 class="story-title">EdTech for Afghan Women: Coding is Freedom</h2>
-                    <p class="story-description">
-                        Afghan women are locked out of technical education. No platforms. No access. No opportunity. 
-                        But I saw something else: untapped brilliance. Unlimited potential. 
-                        I built an e-learning platform delivering coding and digital skills training directly to women in Afghanistan. 
-                        Technical skills aren't just about jobs—they're about independence, dignity, and writing your own future. 
-                        <em>Every woman who learns to code is a revolution happening quietly behind a screen.</em>
-                    </p>
-                </div>
-                <div class="story-visual">
-                    <div class="story-visual-content">
-                        <div class="story-visual-icon">👩‍💻</div>
-                        <div class="story-visual-label">Tech Education</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Alzheimer's - Reading the Brain -->
-        <section class="story-section">
-            <div class="story-content">
-                <div class="story-text">
-                    <div class="story-number">03</div>
-                    <h2 class="story-title">Alzheimer's: Signal Processing & Hope</h2>
-                    <p class="story-description">
-                        By the time Alzheimer's is diagnosed, the brain has already changed. The window for intervention closes. 
-                        I decided to open it wider. Using advanced signal processing on EEG data, I developed models that detect 
-                        Alzheimer's biomarkers before symptoms emerge. Early detection means early intervention—and for millions, 
-                        perhaps the difference between independence and loss. 
-                        <em>The brain speaks in signals. I learned to listen.</em>
-                    </p>
-                </div>
-                <div class="story-visual">
-                    <div class="story-visual-content">
-                        <div class="story-visual-icon">🧠</div>
-                        <div class="story-visual-label">Neuroscience</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 4: Glaciers - Climate Intelligence -->
-        <section class="story-section">
-            <div class="story-content">
-                <div class="story-text">
-                    <div class="story-number">04</div>
-                    <h2 class="story-title">Glaciers: Intelligence for Climate Action</h2>
-                    <p class="story-description">
-                        Glaciers are melting. Climate is changing. But data is fragmented and decision-makers lack clarity. 
-                        I built intelligent systems to track glacial changes and quantify climate impact with precision. 
-                        Every dataset is evidence. Every insight is a tool for better policy. 
-                        Real climate action needs real data—clean, comprehensive, and undeniable. 
-                        <em>Glaciers are the voice of the planet. I'm helping us listen.</em>
-                    </p>
-                </div>
-                <div class="story-visual">
-                    <div class="story-visual-content">
-                        <div class="story-visual-icon">❄️</div>
-                        <div class="story-visual-label">Climate Science</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Interactive Map Section -->
-    <section class="map-section" id="map">
-        <h2 class="map-title">My Global Journey</h2>
-        <div class="map-container">
-            <div class="map-marker">
-                <div class="marker-emoji">🏔️</div>
-                <div class="marker-title">Gilgit, Pakistan</div>
-                <div class="marker-description">My childhood. Mountains taught me resilience. Limited resources, unlimited curiosity.</div>
-            </div>
-
-            <div class="map-marker">
-                <div class="marker-emoji">📚</div>
-                <div class="marker-title">Women's University</div>
-                <div class="marker-description">Education that opened doors. Recognition through scholarships. The path became clear.</div>
-            </div>
-
-            <div class="map-marker">
-                <div class="marker-emoji">🌍</div>
-                <div class="marker-title">Afghanistan</div>
-                <div class="marker-description">Witness to resilience. I learned that empowering women requires building systems, not just opportunities.</div>
-            </div>
-
-            <div class="map-marker">
-                <div class="marker-emoji">🇬🇧</div>
-                <div class="marker-title">United Kingdom</div>
-                <div class="marker-description">Research and reflection. AI, neuroscience, and the power of data to transform healthcare.</div>
-            </div>
-
-            <div class="map-marker">
-                <div class="marker-emoji">🔮</div>
-                <div class="marker-title">The Future</div>
-                <div class="marker-description">Building intelligent systems for real-world impact. Healthcare. Climate. Access. Justice.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recruiter Hub Section -->
-    <section class="recruiter-hub" id="recruiter">
-        <div class="recruiter-header">
-            <div class="recruiter-label">🎯 Looking for Talent?</div>
-            <h2 class="recruiter-title">Here's What You Need to Know</h2>
-            <p class="recruiter-subtitle">
-                Research work, interests, and everything you need to evaluate a fit. Download my resume, review my projects, or reach out directly.
+            <h3>Healthcare Appointment No-Show Prediction</h3>
+            <p class="project-desc">
+              A predictive modelling project designed to identify patients at risk of
+              missing appointments and support scheduling optimisation in healthcare services.
             </p>
+            <div class="project-details">
+              <p>
+                Uses classification models with careful feature engineering and evaluation
+                to flag no-show risk. Intended as a decision-support prototype to help
+                teams reduce wasted slots and plan reminders responsibly.
+              </p>
+            </div>
+            <ul class="tag-list">
+              <li>Python</li><li>SQL</li><li>Scikit-learn</li>
+              <li>Classification</li><li>Feature Engineering</li><li>Model Evaluation</li>
+            </ul>
+            <div class="project-actions">
+              <button class="link-btn toggle-details" aria-expanded="false">Details</button>
+              <a class="link-btn" href="https://github.com/Talikamuhib" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal" data-tags="research healthtech ml">
+            <div class="project-top">
+              <span class="badge badge-research">Research</span>
+              <span class="project-index">03</span>
+            </div>
+            <h3>EEG Neurodegenerative Disease Detection</h3>
+            <p class="project-desc">
+              A research-focused healthcare AI project using EEG connectivity, graph signal
+              processing, and machine learning to support early detection research for
+              neurodegenerative disease.
+            </p>
+            <div class="project-details">
+              <p>
+                Preprocesses EEG signals, builds graph-based connectivity features, and
+                trains reproducible ML pipelines. Exploratory healthcare AI — research-only
+                and not intended for diagnosis.
+              </p>
+            </div>
+            <ul class="tag-list">
+              <li>Python</li><li>EEG</li><li>Graph Signal Processing</li>
+              <li>Machine Learning</li><li>Healthcare AI</li>
+            </ul>
+            <div class="project-actions">
+              <button class="link-btn toggle-details" aria-expanded="false">Details</button>
+              <a class="link-btn" href="eeg-alzheimers.html">View Project</a>
+              <a class="link-btn" href="https://github.com/Talikamuhib" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card reveal" data-tags="research ml healthtech">
+            <div class="project-top">
+              <span class="badge badge-done">Completed</span>
+              <span class="project-index">04</span>
+            </div>
+            <h3>Kidney Stone Detection using Vision Transformers</h3>
+            <p class="project-desc">
+              A medical imaging project using Vision Transformers to detect kidney stones
+              from CT scan images.
+            </p>
+            <div class="project-details">
+              <p>
+                Final-year project applying Vision Transformer models to CT imaging for
+                exploratory kidney-stone detection. Built as a research prototype to study
+                model performance on medical images.
+              </p>
+            </div>
+            <ul class="tag-list">
+              <li>Python</li><li>Vision Transformers</li><li>Medical Imaging</li>
+              <li>Deep Learning</li><li>Computer Vision</li>
+            </ul>
+            <div class="project-actions">
+              <button class="link-btn toggle-details" aria-expanded="false">Details</button>
+              <a class="link-btn" href="vision-transformer-renal.html">View Project</a>
+              <a class="link-btn" href="https://github.com/Talikamuhib" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card reveal" data-tags="research healthtech ml">
+            <div class="project-top">
+              <span class="badge badge-research">Research</span>
+              <span class="project-index">05</span>
+            </div>
+            <h3>Health LLM Evaluation Framework</h3>
+            <p class="project-desc">
+              A responsible AI project for evaluating healthcare-focused language model
+              responses across accuracy, safety, bias, and clinical reliability.
+            </p>
+            <div class="project-details">
+              <p>
+                Defines benchmarks and scoring for healthcare LLM outputs, emphasising
+                safety and responsible AI. Supports research into trustworthy language
+                models — not intended for clinical use.
+              </p>
+            </div>
+            <ul class="tag-list">
+              <li>LLM Evaluation</li><li>Healthcare AI</li>
+              <li>Responsible AI</li><li>Benchmarking</li>
+            </ul>
+            <div class="project-actions">
+              <button class="link-btn toggle-details" aria-expanded="false">Details</button>
+              <a class="link-btn" href="health-llm-eval.html">View Project</a>
+              <a class="link-btn" href="https://github.com/Talikamuhib" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
         </div>
+
+        <!-- Other Work -->
+        <div class="other-work reveal">
+          <button class="other-toggle" id="other-toggle" aria-expanded="false" aria-controls="other-grid">
+            <span>Other Work</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="other-grid" id="other-grid" hidden>
+            <article class="project-card project-card-sm">
+              <h3>EdTech Learning Platform</h3>
+              <p class="project-desc">An e-learning platform delivering coding and digital
+                skills training to widen access to technical education.</p>
+              <ul class="tag-list"><li>Web</li><li>Education</li><li>Access</li></ul>
+            </article>
+            <article class="project-card project-card-sm">
+              <h3>Glacier &amp; Climate Monitoring</h3>
+              <p class="project-desc">Data-driven monitoring of glacial change to support
+                environmental analysis and reporting.</p>
+              <ul class="tag-list"><li>Python</li><li>Data Analysis</li><li>Remote Sensing</li></ul>
+            </article>
+            <article class="project-card project-card-sm">
+              <h3>Portfolio Analytics Dashboard</h3>
+              <p class="project-desc">A general analytics dashboard exploring KPI reporting
+                and data visualisation practices.</p>
+              <ul class="tag-list"><li>Tableau</li><li>Power BI</li><li>KPI Reporting</li></ul>
+              <div class="project-actions">
+                <a class="link-btn" href="portfolio-dashboard.html">View</a>
+              </div>
+            </article>
+            <article class="project-card project-card-sm">
+              <h3>Interactive Game Project</h3>
+              <p class="project-desc">A small interactive build exploring logic, state, and
+                front-end interactivity.</p>
+              <ul class="tag-list"><li>JavaScript</li><li>UI</li><li>Logic</li></ul>
+              <div class="project-actions">
+                <a class="link-btn" href="game.html">View</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">Toolkit</p>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-lead">Grouped by how I use them across healthcare data work.</p>
+        </header>
+
+        <div class="skills-tabs reveal" role="tablist" aria-label="Skill groups">
+          <button class="skill-tab is-active" data-skill="ds" role="tab" aria-selected="true">Data Science &amp; ML</button>
+          <button class="skill-tab" data-skill="ha" role="tab" aria-selected="false">Healthcare Analytics</button>
+          <button class="skill-tab" data-skill="bi" role="tab" aria-selected="false">Data &amp; BI</button>
+          <button class="skill-tab" data-skill="research" role="tab" aria-selected="false">Research &amp; AI</button>
+        </div>
+
+        <div class="skills-panels reveal">
+          <div class="skill-panel is-active" data-panel="ds" role="tabpanel">
+            <ul class="chip-list">
+              <li>Python</li><li>Pandas</li><li>NumPy</li><li>Scikit-learn</li>
+              <li>Statistical Analysis</li><li>Predictive Modelling</li><li>Classification</li>
+              <li>Regression</li><li>Feature Engineering</li><li>Model Evaluation</li>
+            </ul>
+          </div>
+          <div class="skill-panel" data-panel="ha" role="tabpanel" hidden>
+            <ul class="chip-list">
+              <li>Patient Pathway Analysis</li><li>Appointment Attendance Prediction</li>
+              <li>Referral Trends</li><li>Waiting Time Analysis</li><li>Clinical Data</li>
+              <li>Healthcare Operations</li><li>GDPR-aware Analysis</li>
+            </ul>
+          </div>
+          <div class="skill-panel" data-panel="bi" role="tabpanel" hidden>
+            <ul class="chip-list">
+              <li>SQL</li><li>SQL Server</li><li>MySQL</li><li>Tableau</li>
+              <li>Power BI</li><li>Excel</li><li>Dashboards</li><li>KPI Reporting</li>
+              <li>Data Quality Checks</li>
+            </ul>
+          </div>
+          <div class="skill-panel" data-panel="research" role="tabpanel" hidden>
+            <ul class="chip-list">
+              <li>EEG Analysis</li><li>Graph Signal Processing</li><li>Medical Imaging</li>
+              <li>Vision Transformers</li><li>Healthcare AI</li><li>Responsible AI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH HIGHLIGHT ============ -->
+    <section class="section section-alt" id="research">
+      <div class="container">
+        <div class="research-highlight reveal">
+          <span class="badge badge-research">Research Highlight</span>
+          <h2>EEG + Graph Signal Processing for Neurodegenerative Disease Research</h2>
+          <p>
+            My MRes research explored how EEG connectivity, graph signal processing, and
+            machine learning can support early detection research for neurodegenerative
+            disease. The work involved preprocessing EEG data, extracting graph-based
+            features, building reproducible Python pipelines, and evaluating machine
+            learning models.
+          </p>
+          <p class="disclaimer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" /><path d="M12 8v5m0 3h.01" stroke-linecap="round" />
+            </svg>
+            This work is research-only and is not intended for clinical diagnosis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY / TIMELINE ============ -->
+    <section class="section" id="journey">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">Background</p>
+          <h2 class="section-title">Education &amp; Research Journey</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-tag">Postgraduate Research</span>
+              <h3>MRes Computer Science — Coventry University</h3>
+              <p>Research focused on early detection of neurodegenerative disease using EEG,
+                graph signal processing, and machine learning.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-tag">Applied Research</span>
+              <h3>Healthcare AI &amp; Analytics Projects</h3>
+              <p>Patient pathway analytics, appointment no-show prediction, medical imaging,
+                and responsible LLM evaluation.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-tag">Undergraduate</span>
+              <h3>BS Computer Science</h3>
+              <p>Final year project: kidney stone detection from CT images using Vision
+                Transformers.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ RECRUITERS ============ -->
+    <section class="section section-alt" id="recruiters">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">For hiring teams</p>
+          <h2 class="section-title">Why I fit HealthTech Data Science roles</h2>
+        </header>
 
         <div class="recruiter-grid">
-            <!-- Research Done -->
-            <div class="recruiter-card">
-                <div class="card-icon">🔬</div>
-                <div class="card-title">Research I've Done</div>
-                <p class="card-content">
-                    Computational neuroscience and applied machine learning across healthcare, governance, and global development.
-                </p>
-                <ul class="card-items">
-                    <li><strong>EEG & Graph Signal Processing</strong> - Alzheimer's detection via spectral biomarkers</li>
-                    <li><strong>Computer Vision</strong> - Water body segmentation, medical imaging (U-Net, Vision Transformers)</li>
-                    <li><strong>Data Science</strong> - Global entrepreneurship analytics, dashboard design, Python ETL pipelines</li>
-                    <li><strong>Systems Thinking</strong> - Water access, governance, justice, social impact frameworks</li>
-                </ul>
-            </div>
-
-            <!-- Research Interests -->
-            <div class="recruiter-card">
-                <div class="card-icon">🚀</div>
-                <div class="card-title">What Excites Me</div>
-                <p class="card-content">
-                    Problems at the intersection of AI, healthcare, and human impact. Building systems, not just models.
-                </p>
-                <ul class="card-items">
-                    <li><strong>Healthcare AI</strong> - Accessible diagnostics, neurodegenerative disease detection</li>
-                    <li><strong>Climate Tech</strong> - Environmental monitoring, water/resource management</li>
-                    <li><strong>Research Roles</strong> - PhD opportunities, neuroscience labs, graph ML research</li>
-                    <li><strong>Impact Teams</strong> - NGOs, social enterprises, global development tech</li>
-                </ul>
-            </div>
-
-            <!-- Skills & Tech Stack -->
-            <div class="recruiter-card">
-                <div class="card-icon">⚙️</div>
-                <div class="card-title">Technical Stack</div>
-                <p class="card-content">
-                    Specialized in signal processing and ML. Full-stack capability from data engineering to research.
-                </p>
-                <ul class="card-items">
-                    <li><strong>Core:</strong> Python, PyTorch, TensorFlow, Scikit-learn</li>
-                    <li><strong>Signal Processing:</strong> Graph Signal Processing, EEG analysis, MNE-Python</li>
-                    <li><strong>Data:</strong> SQL, Azure Data Factory, Power BI, Tableau</li>
-                    <li><strong>Cloud:</strong> Azure, AWS, Google Cloud · Git, Jupyter, Linux</li>
-                </ul>
-            </div>
-
-            <!-- Availability -->
-            <div class="recruiter-card">
-                <div class="card-icon">📅</div>
-                <div class="card-title">Availability & Fit</div>
-                <p class="card-content">
-                    Open to research, full-time, internships, and consulting. Based in UK, open to remote globally.
-                </p>
-                <ul class="card-items">
-                    <li><strong>Current:</strong> MRes Computational Science & AI (Coventry University)</li>
-                    <li><strong>Available:</strong> Full-time, part-time, fellowship, consulting</li>
-                    <li><strong>Location:</strong> UK-based, remote-friendly, willing to relocate</li>
-                    <li><strong>Notice:</strong> Flexible · Can start immediately or plan ahead</li>
-                </ul>
-            </div>
-
-            <!-- Recognition -->
-            <div class="recruiter-card">
-                <div class="card-icon">🏆</div>
-                <div class="card-title">Recognition & Awards</div>
-                <p class="card-content">
-                    Scholarship recipient with demonstrated research excellence and leadership potential.
-                </p>
-                <ul class="card-items">
-                    <li><strong>British Council Women in STEM Scholar</strong> - 2024-25 cohort</li>
-                    <li><strong>E-Scholarship Recipient</strong> - AKES, competitive selection</li>
-                    <li><strong>Published Research</strong> - Graph signal processing, neuroscience applications</li>
-                    <li><strong>Impact Work:</strong> 4+ years consulting across 3 continents</li>
-                </ul>
-            </div>
-
-            <!-- Next Steps -->
-            <div class="recruiter-card">
-                <div class="card-icon">→</div>
-                <div class="card-title">Let's Connect</div>
-                <p class="card-content">
-                    Ready to explore opportunities? Download my resume, check my projects, or let's chat directly.
-                </p>
-                <ul class="card-items">
-                    <li><strong>Resume:</strong> See the full CV and credentials</li>
-                    <li><strong>Work:</strong> Explore research, code, and dashboards</li>
-                    <li><strong>Direct:</strong> Email, LinkedIn, or quick call</li>
-                    <li><strong>More?</strong> Custom deck or portfolio presentation available</li>
-                </ul>
-            </div>
+          <article class="recruiter-card reveal">
+            <span class="recruiter-num">01</span>
+            <h3>Healthcare AI research background</h3>
+            <p>MRes research in EEG, graph signal processing, and machine learning for
+              neurodegenerative disease detection.</p>
+          </article>
+          <article class="recruiter-card reveal">
+            <span class="recruiter-num">02</span>
+            <h3>Python, SQL, ML, and dashboarding skills</h3>
+            <p>End-to-end workflows from data pipelines to models and Tableau/Power BI
+              reporting.</p>
+          </article>
+          <article class="recruiter-card reveal">
+            <span class="recruiter-num">03</span>
+            <h3>Translating data into stakeholder insight</h3>
+            <p>Experience turning complex clinical and operational data into clear insights
+              for planning and decisions.</p>
+          </article>
+          <article class="recruiter-card reveal">
+            <span class="recruiter-num">04</span>
+            <h3>Focused on outcomes and responsible AI</h3>
+            <p>Strong interest in patient outcomes, service improvement, and responsible,
+              research-first AI.</p>
+          </article>
         </div>
 
-        <!-- CTA Buttons -->
-        <div class="recruiter-cta">
-            <button class="recruiter-btn recruiter-btn-primary" onclick="window.location.href='./Taliqa_Muhib_Resume.pdf';">
-                📄 Download Resume (PDF)
-            </button>
-            <button class="recruiter-btn recruiter-btn-secondary" onclick="window.location.href='recruiters.html';">
-                → Full Recruiter Portal
-            </button>
-            <button class="recruiter-btn recruiter-btn-secondary" onclick="window.location.href='contact.html';">
-                📧 Get In Touch
-            </button>
-        </div>
-
-        <div class="arrow-divider">
-            ↓ ↓ ↓
-        </div>
+        <p class="availability reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          Pakistan-based, open to remote roles and relocation opportunities depending on
+          role and visa requirements.
+        </p>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Let's build something that matters.</p>
-        <div class="footer-links">
-            <a href="mailto:taliqa.muhib@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/talika-muhib" target="_blank">LinkedIn</a>
-            <a href="contact.html">Get in Touch</a>
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <h2>Let&rsquo;s work together</h2>
+          <p>
+            Open to HealthTech Data Scientist, Healthcare Data Scientist, Clinical AI
+            Researcher, Patient Pathway Analyst, and Senior Data Analyst roles in digital
+            health. Happy to share my CV, walk through projects, or discuss a fit.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:taliqa.muhib@gmail.com">Email Me</a>
+            <a class="btn btn-outline" href="Taliqa_Muhib_Resume.pdf" download>Download CV</a>
+            <a class="btn btn-ghost" href="https://github.com/Talikamuhib" target="_blank"
+              rel="noopener noreferrer">GitHub</a>
+            <a class="btn btn-ghost" href="https://linkedin.com/in/talika-muhib"
+              target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
-        <p style="margin-top: 2rem; font-size: 0.85rem;">© 2026 Taliqa Muhib. Built with purpose.</p>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // ===== SMOOTH SCROLL & NAVIGATION =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">Taliqa Muhib</p>
+      <p class="footer-tag">
+        &copy; 2026 Taliqa Muhib. HealthTech Data Science | Healthcare AI | Patient Pathway Analytics
+      </p>
+      <div class="footer-links">
+        <a href="mailto:taliqa.muhib@gmail.com">Email</a>
+        <a href="https://github.com/Talikamuhib" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/talika-muhib" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
 
-        // ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+      <path d="M12 19V5m-7 7 7-7 7 7" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'slideIn 0.8s ease forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.story-visual, .map-marker, .recruiter-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.animation = 'none';
-            observer.observe(el);
-        });
-
-        // ===== PARALLAX EFFECT ON MOUSE MOVE =====
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth) * 10;
-            const y = (e.clientY / window.innerHeight) * 10;
-            
-            document.querySelectorAll('.story-visual').forEach(el => {
-                el.style.transform = `translateX(${x}px) translateY(${y}px)`;
-            });
-        });
-
-        // ===== ACTIVE NAV LINK HIGHLIGHTING =====
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a:not(.nav-recruiter)');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.style.color = 'var(--accent-warm)';
-                } else {
-                    link.style.color = 'var(--text-muted)';
-                }
-            });
-        });
-
-        // ===== BUTTON RIPPLE EFFECT =====
-        document.querySelectorAll('.btn, .recruiter-btn, .map-marker').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
-                ripple.style.width = ripple.style.height = '20px';
-                ripple.style.animation = 'ripple 0.6s ease-out';
-                
-                const rect = this.getBoundingClientRect();
-                ripple.style.left = (e.clientX - rect.left - 10) + 'px';
-                ripple.style.top = (e.clientY - rect.top - 10) + 'px';
-                
-                this.appendChild(ripple);
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
-
-        // ===== ADD RIPPLE ANIMATION =====
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    width: 300px;
-                    height: 300px;
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // ===== CARD HOVER 3D EFFECT =====
-        document.querySelectorAll('.recruiter-card, .map-marker').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width;
-                const y = (e.clientY - rect.top) / rect.height;
-                
-                const rotX = (y - 0.5) * 10;
-                const rotY = (x - 0.5) * -10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-            });
-        });
-
-        // ===== ANIMATED COUNTER FOR STATS =====
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.innerHTML = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        // ===== SCROLL-BASED BACKGROUND ANIMATION =====
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero::before');
-            if (parallax) {
-                document.documentElement.style.setProperty('--scroll', scrolled + 'px');
-            }
-        });
-
-        // ===== CURSOR GLOW EFFECT =====
-        const cursorGlow = document.createElement('div');
-        cursorGlow.style.cssText = `
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-            filter: blur(40px);
-        `;
-        document.body.appendChild(cursorGlow);
-
-        document.addEventListener('mousemove', (e) => {
-            cursorGlow.style.left = (e.clientX - 200) + 'px';
-            cursorGlow.style.top = (e.clientY - 200) + 'px';
-        });
-
-        // ===== PERFORMANCE: LAZY LOAD ANIMATIONS =====
-        if ('IntersectionObserver' in window) {
-            const lazyElements = document.querySelectorAll('.story-section, .map-marker, .recruiter-card');
-            lazyElements.forEach(el => {
-                el.style.willChange = 'transform, opacity';
-            });
-        }
-    </script>
+  <script src="js/portfolio.js?v=1.1"></script>
+  <script src="js/rag-chatbot.js?v=1.1"></script>
 </body>
+
 </html>

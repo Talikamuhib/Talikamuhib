@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "owner": "Taliqa Muhib",
+    "role": "HealthTech Data Scientist | Healthcare AI Researcher",
+    "updated": "2026",
+    "note": "Grounded knowledge base for the portfolio assistant. Answers are retrieved from these entries only."
+  },
+  "documents": [
+    {
+      "id": "profile",
+      "title": "About Taliqa Muhib",
+      "category": "profile",
+      "text": "Taliqa Muhib is a HealthTech Data Scientist and Healthcare AI Researcher working at the intersection of machine learning, clinical data, and patient pathway analytics. She builds Python, SQL, and dashboard-based solutions that turn complex healthcare and operational data into clear insights for better patient outcomes, service planning, and clinical decision-making. Her focus areas are patient pathway analytics, predictive modelling, healthcare dashboards, and clinical AI research."
+    },
+    {
+      "id": "positioning",
+      "title": "Roles and positioning",
+      "category": "profile",
+      "text": "Taliqa is a good fit for HealthTech Data Scientist, Healthcare Data Scientist, Clinical AI Researcher, Patient Pathway Analyst, Healthcare Analytics Consultant, and Senior Data Analyst roles in digital health. Her strengths are a healthcare AI research background, Python, SQL, ML and dashboarding skills, experience translating data into stakeholder insight, and a strong interest in patient outcomes, service improvement, and responsible AI."
+    },
+    {
+      "id": "availability",
+      "title": "Availability and location",
+      "category": "profile",
+      "text": "Taliqa is Pakistan-based and open to remote roles and relocation opportunities depending on role and visa requirements. She is open to HealthTech Data Scientist, Healthcare Data Scientist, Clinical AI Researcher, Patient Pathway Analyst, and Senior Data Analyst roles in digital health."
+    },
+    {
+      "id": "education",
+      "title": "Education",
+      "category": "education",
+      "text": "Taliqa holds an MRes in Computer Science from Coventry University, with research focused on early detection of neurodegenerative disease using EEG, graph signal processing, and machine learning. She also holds a BS in Computer Science, where her final year project was kidney stone detection from CT images using Vision Transformers."
+    },
+    {
+      "id": "skills-ds-ml",
+      "title": "Skills: Data Science and Machine Learning",
+      "category": "skills",
+      "text": "Data Science and ML skills include Python, Pandas, NumPy, Scikit-learn, statistical analysis, predictive modelling, classification, regression, feature engineering, and model evaluation."
+    },
+    {
+      "id": "skills-healthcare",
+      "title": "Skills: Healthcare Analytics",
+      "category": "skills",
+      "text": "Healthcare analytics skills include patient pathway analysis, appointment attendance prediction, referral trends, waiting time analysis, working with clinical data, healthcare operations, and GDPR-aware analysis."
+    },
+    {
+      "id": "skills-bi",
+      "title": "Skills: Data and Business Intelligence",
+      "category": "skills",
+      "text": "Data and BI skills include SQL, SQL Server, MySQL, Tableau, Power BI, Excel, dashboards, KPI reporting, and data quality checks."
+    },
+    {
+      "id": "skills-research",
+      "title": "Skills: Research and AI",
+      "category": "skills",
+      "text": "Research and AI skills include EEG analysis, graph signal processing, medical imaging, Vision Transformers, healthcare AI, and responsible AI."
+    },
+    {
+      "id": "project-adhd",
+      "title": "Project: ADHD Patient Pathway Analytics Dashboard",
+      "category": "project",
+      "status": "Dashboard",
+      "tags": "Python, SQL, Pandas, Scikit-learn, Tableau, Healthcare Analytics",
+      "text": "The ADHD Patient Pathway Analytics Dashboard is a HealthTech analytics project exploring referral volumes, waiting times, assessment progression, appointment attendance, patient engagement, and clinical service capacity across an ADHD care pathway. It combines Python and SQL data pipelines with Tableau dashboards to help service leads understand demand, bottlenecks, and where capacity is needed. It is designed to support service planning, not clinical diagnosis. Tools: Python, SQL, Pandas, Scikit-learn, Tableau, Healthcare Analytics."
+    },
+    {
+      "id": "project-noshow",
+      "title": "Project: Healthcare Appointment No-Show Prediction",
+      "category": "project",
+      "status": "In Progress",
+      "tags": "Python, SQL, Scikit-learn, Classification, Feature Engineering, Model Evaluation",
+      "text": "The Healthcare Appointment No-Show Prediction project is a predictive modelling project designed to identify patients at risk of missing appointments and support scheduling optimisation in healthcare services. It uses classification models with careful feature engineering and evaluation to flag no-show risk. It is intended as a decision-support prototype to help teams reduce wasted slots and plan reminders responsibly. Tools: Python, SQL, Scikit-learn, Classification, Feature Engineering, Model Evaluation."
+    },
+    {
+      "id": "project-eeg",
+      "title": "Project: EEG Neurodegenerative Disease Detection",
+      "category": "project",
+      "status": "Research",
+      "tags": "Python, EEG, Graph Signal Processing, Machine Learning, Healthcare AI",
+      "text": "The EEG Neurodegenerative Disease Detection project is a research-focused healthcare AI project using EEG connectivity, graph signal processing, and machine learning to support early detection research for neurodegenerative disease. It preprocesses EEG signals, builds graph-based connectivity features, and trains reproducible ML pipelines. It is exploratory healthcare AI, research-only, and not intended for diagnosis. Tools: Python, EEG, Graph Signal Processing, Machine Learning, Healthcare AI."
+    },
+    {
+      "id": "project-kidney",
+      "title": "Project: Kidney Stone Detection using Vision Transformers",
+      "category": "project",
+      "status": "Completed",
+      "tags": "Python, Vision Transformers, Medical Imaging, Deep Learning, Computer Vision",
+      "text": "The Kidney Stone Detection project is a medical imaging project using Vision Transformers to detect kidney stones from CT scan images. It was a final-year project applying Vision Transformer models to CT imaging for exploratory kidney-stone detection, built as a research prototype to study model performance on medical images. Tools: Python, Vision Transformers, Medical Imaging, Deep Learning, Computer Vision."
+    },
+    {
+      "id": "project-llm",
+      "title": "Project: Health LLM Evaluation Framework",
+      "category": "project",
+      "status": "Research",
+      "tags": "LLM Evaluation, Healthcare AI, Responsible AI, Benchmarking",
+      "text": "The Health LLM Evaluation Framework is a responsible AI project for evaluating healthcare-focused language model responses across accuracy, safety, bias, and clinical reliability. It defines benchmarks and scoring for healthcare LLM outputs, emphasising safety and responsible AI, and supports research into trustworthy language models. It is not intended for clinical use. Tools: LLM Evaluation, Healthcare AI, Responsible AI, Benchmarking."
+    },
+    {
+      "id": "research-highlight",
+      "title": "Research Highlight: EEG and Graph Signal Processing",
+      "category": "research",
+      "text": "Taliqa's MRes research explored how EEG connectivity, graph signal processing, and machine learning can support early detection research for neurodegenerative disease. The work involved preprocessing EEG data, extracting graph-based features, building reproducible Python pipelines, and evaluating machine learning models. This work is research-only and is not intended for clinical diagnosis."
+    },
+    {
+      "id": "responsible-ai",
+      "title": "Responsible AI approach",
+      "category": "research",
+      "text": "Taliqa takes a responsible, research-first approach to healthcare AI. Her healthcare projects are exploratory, decision-support prototypes designed to support service planning and clinical research. They are not intended for clinical diagnosis or deployment. She works with GDPR-aware analysis and emphasises safety, bias, and reliability in AI systems."
+    },
+    {
+      "id": "other-work",
+      "title": "Other work",
+      "category": "project",
+      "text": "Beyond healthcare projects, Taliqa has built an EdTech learning platform delivering coding and digital skills training to widen access to technical education, a glacier and climate monitoring project for environmental analysis, a general portfolio analytics dashboard exploring KPI reporting, and small interactive game projects exploring logic, state, and front-end interactivity."
+    },
+    {
+      "id": "contact",
+      "title": "Contact and links",
+      "category": "contact",
+      "text": "You can reach Taliqa by email at taliqa.muhib@gmail.com. Her GitHub is github.com/Talikamuhib and her LinkedIn is linkedin.com/in/talika-muhib. Her CV is available to download from the portfolio. She is happy to share her CV, walk through projects, or discuss a role fit."
+    },
+    {
+      "id": "phone",
+      "title": "Phone number",
+      "category": "phone",
+      "text": "Taliqa's phone number is +44 7732 477820. You can call, phone, ring, or reach her by mobile or WhatsApp on +44 7732 477820. That is her direct telephone number for calls."
+    }
+  ]
+}
