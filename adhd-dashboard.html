@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="ADHD Patient Pathway Analytics — an interactive Tableau dashboard by Taliqa Muhib exploring referral demand, waiting times, appointment outcomes, and clinical service performance across an ADHD care pathway." />
+  <meta name="author" content="Taliqa Muhib" />
+  <meta name="theme-color" content="#0b1120" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="mask-icon" href="favicon.svg" color="#2dd4bf" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ADHD Patient Pathway Analytics | Taliqa Muhib" />
+  <meta property="og:description"
+    content="Interactive Tableau dashboard: referral demand, waiting times, appointment outcomes, and clinical service performance." />
+  <meta property="og:type" content="website" />
+
+  <title>ADHD Patient Pathway Analytics | Taliqa Muhib</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/portfolio.css?v=1.1" />
+
+  <style>
+    /* Page-specific layout for the dashboard view */
+    .dash-main {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .dash-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      margin-bottom: 28px;
+      transition: color 0.2s var(--ease);
+    }
+    .dash-back:hover { color: var(--accent); }
+
+    .dash-head {
+      margin-bottom: 32px;
+    }
+    .dash-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .dash-head h1 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .dash-head p {
+      color: var(--text-muted);
+      max-width: 720px;
+      font-size: 1.02rem;
+    }
+
+    .dash-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+      list-style: none;
+    }
+    .dash-tags li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    /* KPI summary cards */
+    .dash-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 36px 0;
+    }
+    .kpi-card {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .kpi-card .kpi-value {
+      font-family: "Sora", sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .kpi-card .kpi-label {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Tableau embed frame */
+    .dash-embed-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .tableauPlaceholder {
+      width: 100% !important;
+      position: relative;
+    }
+    .tableauPlaceholder object {
+      width: 100% !important;
+    }
+
+    .dash-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0 8px;
+    }
+    .dash-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border: 1px solid var(--border-strong);
+      color: var(--text);
+      background: var(--surface-2);
+      transition: all 0.2s var(--ease);
+    }
+    .dash-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .dash-btn.primary {
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      color: #04121a;
+      border-color: transparent;
+    }
+    .dash-btn.primary:hover { color: #04121a; opacity: 0.92; }
+
+    /* Insights */
+    .dash-insights {
+      margin-top: 44px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .dash-insights h2 {
+      font-family: "Sora", sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+    }
+    .dash-insights ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    .dash-insights li {
+      position: relative;
+      padding-left: 26px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .dash-insights li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .dash-insights li strong { color: var(--text); }
+
+    .dash-disclaimer {
+      margin-top: 28px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      border-left: 2px solid var(--border-strong);
+      padding: 6px 0 6px 16px;
+    }
+
+    @media (max-width: 860px) {
+      .dash-kpis { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .dash-kpis { grid-template-columns: 1fr; }
+      .dash-main { padding-top: 100px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="dash-main">
+    <a class="dash-back" href="index.html#projects" aria-label="Back to portfolio">
+      &larr; Back to portfolio
+    </a>
+
+    <header class="dash-head">
+      <span class="dash-eyebrow">HealthTech · Tableau</span>
+      <h1>ADHD Patient Pathway Analytics</h1>
+      <p>
+        An interactive analytics dashboard exploring referral demand, waiting times,
+        appointment outcomes, and clinical service performance across an ADHD care
+        pathway. Built to help service leads understand demand, bottlenecks, and where
+        capacity is needed — designed to support service planning, not clinical diagnosis.
+      </p>
+      <ul class="dash-tags">
+        <li>Python</li><li>SQL</li><li>Pandas</li><li>Tableau</li>
+        <li>Patient Pathway Analytics</li><li>Healthcare Operations</li>
+      </ul>
+    </header>
+
+    <section class="dash-kpis" aria-label="Key performance indicators">
+      <div class="kpi-card">
+        <span class="kpi-value">1,200</span>
+        <span class="kpi-label">Total Referrals</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-value">79 days</span>
+        <span class="kpi-label">Avg. Wait to First Appointment</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-value">17%</span>
+        <span class="kpi-label">Did-Not-Attend (DNA) Rate</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-value">77%</span>
+        <span class="kpi-label">Meeting 18-Week Target</span>
+      </div>
+    </section>
+
+    <div class="dash-actions">
+      <a class="dash-btn primary"
+        href="https://public.tableau.com/views/MonthlyReferralADHDanalysis/Dashboard1"
+        target="_blank" rel="noopener noreferrer">Open in Tableau Public &nearr;</a>
+      <a class="dash-btn" href="index.html#contact">Discuss this project</a>
+    </div>
+
+    <!-- ============ TABLEAU EMBED ============ -->
+    <div class="dash-embed-wrap">
+      <div class="tableauPlaceholder" id="viz-adhd" style="position: relative">
+        <noscript>
+          <a href="https://public.tableau.com/views/MonthlyReferralADHDanalysis/Dashboard1">
+            <img alt="ADHD Patient Pathway Analytics dashboard"
+              src="https://public.tableau.com/static/images/Mo/MonthlyReferralADHDanalysis/Dashboard1/1_rss.png"
+              style="border: none; width: 100%;" />
+          </a>
+        </noscript>
+        <object class="tableauViz" style="display: none;">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param name="name" value="MonthlyReferralADHDanalysis/Dashboard1" />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param name="static_image"
+            value="https://public.tableau.com/static/images/Mo/MonthlyReferralADHDanalysis/Dashboard1/1.png" />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en-US" />
+        </object>
+      </div>
+    </div>
+
+    <section class="dash-insights">
+      <h2>Key Insights</h2>
+      <ul>
+        <li><strong>Rising demand:</strong> Referral volume grows month-on-month, driven mainly by routine referrals.</li>
+        <li><strong>Prioritisation works:</strong> Urgent cases are seen far sooner (~30 days) than routine referrals (~85 days).</li>
+        <li><strong>Lost capacity:</strong> A 17% did-not-attend rate represents wasted clinical slots — a clear target for reminder and engagement interventions.</li>
+        <li><strong>Access pressure:</strong> Only 77% of referrals meet the 18-week access standard, revealing waiting-list pressure concentrated in specific clinics.</li>
+      </ul>
+    </section>
+
+    <p class="dash-disclaimer">
+      Built with synthetic demonstration data (1,200 referrals, 2024–2025). For portfolio
+      and methodology demonstration only — not derived from real patients and not for
+      clinical use.
+    </p>
+  </main>
+
+  <!-- Tableau Embedding API -->
+  <script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+  <script type="text/javascript">
+    (function () {
+      var div = document.getElementById('viz-adhd');
+      var viz = div.getElementsByTagName('object')[0];
+      function sizeViz() {
+        if (div.offsetWidth > 800) {
+          viz.style.width = '100%';
+          viz.style.height = (div.offsetWidth * 1.42) + 'px';
+        } else if (div.offsetWidth > 500) {
+          viz.style.width = '100%';
+          viz.style.height = (div.offsetWidth * 1.42) + 'px';
+        } else {
+          viz.style.width = '100%';
+          viz.style.height = '1200px';
+        }
+      }
+      sizeViz();
+      window.addEventListener('resize', sizeViz);
+    })();
+  </script>
+</body>
+</html>
