@@ -55,15 +55,42 @@ def wait_days(priority, source):
     return max(3, w)
 
 
-def attendance_outcome(priority, wait):
-    """Longer waits and routine cases have higher DNA (did-not-attend) risk."""
-    dna_risk = 0.10
+def attendance_outcome(priority, wait, age_band, source):
+    """Did-not-attend (DNA) risk driven by realistic, learnable factors.
+
+    Real no-show research consistently links non-attendance to longer waits,
+    lower-urgency (routine) referrals, younger adults/adolescents, and
+    self-referral routes. We encode those as modest, additive effects so a
+    model can recover a believable signal (overall DNA rate ~16-18%).
+    """
+    dna_risk = 0.06
+
+    # Priority: routine referrals no-show more than urgent
     if priority == "Routine":
-        dna_risk += 0.04
-    if wait > 120:
-        dna_risk += 0.08
+        dna_risk += 0.05
+
+    # Waiting time: the longer the wait, the higher the risk (dose-response)
+    if wait > 140:
+        dna_risk += 0.14
+    elif wait > 112:
+        dna_risk += 0.10
     elif wait > 84:
-        dna_risk += 0.04
+        dna_risk += 0.06
+    elif wait > 56:
+        dna_risk += 0.03
+
+    # Age: adolescents and younger adults have higher DNA rates
+    if age_band in ("12-17", "18-24"):
+        dna_risk += 0.05
+    elif age_band == "25-39":
+        dna_risk += 0.02
+
+    # Referral route: self-referrals no-show slightly more
+    if source == "Self-referral":
+        dna_risk += 0.03
+
+    dna_risk = min(dna_risk, 0.55)
+
     r = random.random()
     if r < dna_risk:
         return "DNA"
@@ -84,7 +111,7 @@ def main():
 
         wait = wait_days(priority, source)
         first_appt_date = referral_date + timedelta(days=wait)
-        outcome = attendance_outcome(priority, wait)
+        outcome = attendance_outcome(priority, wait, age_band, source)
 
         # Progression through the pathway (only if they attended)
         if outcome == "Attended":

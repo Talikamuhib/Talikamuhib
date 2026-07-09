@@ -80,22 +80,22 @@ REF-00078,2024-02-25,2024-02,GP,West Community,Routine,18-24,Male,131,2024-07-05
 REF-00079,2024-10-21,2024-10,GP,North Hub,Routine,6-11,Male,117,2025-02-15,Attended,Triage,No,81,Yes
 REF-00080,2024-04-05,2024-04,GP,North Hub,Urgent,12-17,Female,3,2024-04-08,Attended,Diagnosis,Yes,93,Yes
 REF-00081,2025-12-23,2025-12,GP,West Community,Urgent,12-17,Male,3,2025-12-26,Attended,Treatment/Follow-up,No,85,Yes
-REF-00082,2025-02-28,2025-02,GP,East Community,Routine,25-39,Female,189,2025-09-05,Attended,Diagnosis,No,77,No
+REF-00082,2025-02-28,2025-02,GP,East Community,Routine,25-39,Female,189,2025-09-05,Cancelled,Triage,No,62,No
 REF-00083,2024-06-01,2024-06,GP,East Community,Routine,18-24,Male,24,2024-06-25,Cancelled,Triage,No,67,Yes
 REF-00084,2025-08-08,2025-08,GP,West Community,Urgent,6-11,Male,33,2025-09-10,Attended,Treatment/Follow-up,Yes,79,Yes
 REF-00085,2025-05-22,2025-05,Social Services,Central,Routine,12-17,Female,102,2025-09-01,Attended,Triage,No,73,Yes
 REF-00086,2025-02-23,2025-02,Secondary Care,North Hub,Urgent,12-17,Male,20,2025-03-15,Attended,Diagnosis,Yes,86,Yes
 REF-00087,2025-11-21,2025-11,Secondary Care,East Community,Routine,18-24,Male,3,2025-11-24,Attended,Assessment,No,86,Yes
 REF-00088,2024-08-20,2024-08,Self-referral,North Hub,Routine,25-39,Male,93,2024-11-21,Attended,Diagnosis,No,71,Yes
-REF-00089,2024-11-28,2024-11,Self-referral,East Community,Routine,12-17,Female,3,2024-12-01,Cancelled,Triage,No,64,Yes
-REF-00090,2025-09-16,2025-09,Secondary Care,South Hub,Routine,12-17,Male,139,2026-02-02,Cancelled,Triage,No,59,No
+REF-00089,2024-11-28,2024-11,Self-referral,East Community,Routine,12-17,Female,3,2024-12-01,DNA,Triage,No,39,Yes
+REF-00090,2025-09-16,2025-09,Secondary Care,South Hub,Routine,12-17,Male,139,2026-02-02,DNA,Triage,No,34,No
 REF-00091,2025-04-15,2025-04,GP,West Community,Routine,25-39,Male,125,2025-08-18,Attended,Diagnosis,Yes,80,Yes
 REF-00092,2025-12-07,2025-12,GP,South Hub,Urgent,40+,Male,46,2026-01-22,Cancelled,Triage,No,71,Yes
 REF-00093,2025-08-08,2025-08,GP,East Community,Routine,6-11,Male,76,2025-10-23,Attended,Treatment/Follow-up,No,86,Yes
 REF-00094,2024-10-20,2024-10,Self-referral,East Community,Routine,6-11,Female,97,2025-01-25,Attended,Treatment/Follow-up,Yes,73,Yes
 REF-00095,2025-10-05,2025-10,GP,North Hub,Routine,12-17,Male,3,2025-10-08,DNA,Triage,No,46,Yes
 REF-00096,2024-11-30,2024-11,Self-referral,South Hub,Routine,25-39,Male,40,2025-01-09,Attended,Treatment/Follow-up,No,82,Yes
-REF-00097,2025-05-08,2025-05,Social Services,East Community,Routine,25-39,Male,188,2025-11-12,Cancelled,Triage,No,59,No
+REF-00097,2025-05-08,2025-05,Social Services,East Community,Routine,25-39,Male,188,2025-11-12,DNA,Triage,No,34,No
 REF-00098,2025-07-24,2025-07,GP,North Hub,Routine,12-17,Female,137,2025-12-08,Attended,Treatment/Follow-up,Yes,78,No
 REF-00099,2025-10-15,2025-10,Secondary Care,South Hub,Routine,12-17,Male,142,2026-03-06,Attended,Diagnosis,Yes,80,No
 REF-00100,2025-12-18,2025-12,GP,South Hub,Routine,6-11,Female,62,2026-02-18,Attended,Triage,No,79,Yes
@@ -123,166 +123,166 @@ REF-00121,2024-10-23,2024-10,GP,West Community,Routine,6-11,Female,60,2024-12-22
 REF-00122,2025-03-22,2025-03,GP,East Community,Urgent,18-24,Male,4,2025-03-26,Attended,Assessment,No,80,Yes
 REF-00123,2025-02-18,2025-02,GP,Central,Routine,12-17,Male,35,2025-03-25,DNA,Triage,No,48,Yes
 REF-00124,2025-08-26,2025-08,GP,East Community,Routine,25-39,Female,141,2026-01-14,Attended,Triage,No,69,No
-REF-00125,2025-06-27,2025-06,GP,East Community,Urgent,12-17,Male,20,2025-07-17,Cancelled,Triage,No,69,Yes
+REF-00125,2025-06-27,2025-06,GP,East Community,Urgent,12-17,Male,20,2025-07-17,DNA,Triage,No,44,Yes
 REF-00126,2024-07-21,2024-07,GP,North Hub,Routine,6-11,Male,52,2024-09-11,Attended,Treatment/Follow-up,No,87,Yes
 REF-00127,2025-11-28,2025-11,Secondary Care,Central,Routine,12-17,Other/Not stated,53,2026-01-20,Attended,Diagnosis,No,74,Yes
-REF-00128,2024-12-26,2024-12,GP,West Community,Routine,6-11,Female,152,2025-05-27,Attended,Diagnosis,No,67,No
+REF-00128,2024-12-26,2024-12,GP,West Community,Routine,6-11,Female,152,2025-05-27,Cancelled,Triage,No,52,No
 REF-00129,2025-09-21,2025-09,School,Central,Routine,18-24,Male,144,2026-02-12,Attended,Diagnosis,Yes,80,No
 REF-00130,2025-05-28,2025-05,GP,North Hub,Routine,25-39,Male,37,2025-07-04,Attended,Triage,No,79,Yes
 REF-00131,2024-02-10,2024-02,GP,West Community,Routine,18-24,Male,3,2024-02-13,Attended,Treatment/Follow-up,Yes,78,Yes
-REF-00132,2025-10-08,2025-10,School,North Hub,Routine,18-24,Female,202,2026-04-28,Cancelled,Triage,No,50,No
+REF-00132,2025-10-08,2025-10,School,North Hub,Routine,18-24,Female,202,2026-04-28,DNA,Triage,No,25,No
 REF-00133,2024-12-07,2024-12,GP,East Community,Routine,12-17,Male,64,2025-02-09,Attended,Triage,No,84,Yes
 REF-00134,2025-10-20,2025-10,Self-referral,Central,Routine,6-11,Male,68,2025-12-27,Attended,Assessment,No,77,Yes
 REF-00135,2024-08-07,2024-08,GP,South Hub,Routine,12-17,Female,203,2025-02-26,DNA,Triage,No,37,No
 REF-00136,2024-02-08,2024-02,School,Central,Urgent,6-11,Female,46,2024-03-25,Attended,Treatment/Follow-up,No,79,Yes
-REF-00137,2025-03-24,2025-03,GP,South Hub,Routine,40+,Male,85,2025-06-17,Cancelled,Triage,No,62,Yes
-REF-00138,2024-11-12,2024-11,Social Services,South Hub,Routine,12-17,Male,3,2024-11-15,Attended,Diagnosis,Yes,89,Yes
-REF-00139,2025-05-29,2025-05,School,South Hub,Urgent,25-39,Female,27,2025-06-25,Attended,Diagnosis,Yes,91,Yes
-REF-00140,2024-05-07,2024-05,GP,East Community,Routine,12-17,Male,184,2024-11-07,Attended,Triage,No,69,No
-REF-00141,2025-04-06,2025-04,Secondary Care,West Community,Urgent,6-11,Male,34,2025-05-10,Attended,Triage,No,78,Yes
-REF-00142,2025-10-27,2025-10,GP,North Hub,Routine,12-17,Male,309,2026-09-01,Attended,Assessment,No,72,No
-REF-00143,2025-04-04,2025-04,School,North Hub,Urgent,12-17,Male,3,2025-04-07,Attended,Triage,No,86,Yes
-REF-00144,2024-08-31,2024-08,GP,West Community,Routine,18-24,Male,49,2024-10-19,DNA,Triage,No,48,Yes
-REF-00145,2025-09-03,2025-09,School,Central,Routine,12-17,Female,3,2025-09-06,Attended,Assessment,No,79,Yes
-REF-00146,2025-06-20,2025-06,Social Services,Central,Routine,18-24,Male,125,2025-10-23,Attended,Triage,No,82,Yes
-REF-00147,2024-02-14,2024-02,School,East Community,Urgent,25-39,Female,42,2024-03-27,Attended,Triage,No,84,Yes
-REF-00148,2024-05-16,2024-05,GP,South Hub,Routine,25-39,Male,105,2024-08-29,Attended,Diagnosis,Yes,73,Yes
-REF-00149,2024-03-05,2024-03,Self-referral,North Hub,Urgent,12-17,Female,38,2024-04-12,Attended,Treatment/Follow-up,Yes,82,Yes
-REF-00150,2024-02-07,2024-02,Self-referral,East Community,Routine,25-39,Female,123,2024-06-09,Attended,Assessment,No,78,Yes
-REF-00151,2025-03-23,2025-03,Secondary Care,West Community,Routine,12-17,Female,60,2025-05-22,Attended,Assessment,No,74,Yes
-REF-00152,2025-03-10,2025-03,GP,South Hub,Routine,18-24,Female,21,2025-03-31,DNA,Triage,No,45,Yes
-REF-00153,2024-11-09,2024-11,GP,South Hub,Routine,18-24,Female,220,2025-06-17,Attended,Treatment/Follow-up,Yes,60,No
-REF-00154,2024-03-17,2024-03,School,Central,Routine,25-39,Male,121,2024-07-16,Attended,Assessment,No,81,Yes
-REF-00155,2024-02-05,2024-02,GP,East Community,Routine,12-17,Male,123,2024-06-07,Attended,Assessment,No,81,Yes
-REF-00156,2024-03-19,2024-03,School,West Community,Routine,12-17,Female,92,2024-06-19,Attended,Triage,No,75,Yes
-REF-00157,2025-05-26,2025-05,GP,North Hub,Urgent,12-17,Female,3,2025-05-29,Attended,Treatment/Follow-up,Yes,80,Yes
-REF-00158,2024-05-18,2024-05,Secondary Care,West Community,Routine,40+,Male,161,2024-10-26,Attended,Treatment/Follow-up,Yes,66,No
-REF-00159,2025-07-17,2025-07,School,South Hub,Urgent,25-39,Male,3,2025-07-20,Attended,Assessment,No,83,Yes
-REF-00160,2024-05-22,2024-05,GP,East Community,Routine,18-24,Female,3,2024-05-25,Attended,Diagnosis,Yes,79,Yes
-REF-00161,2024-03-08,2024-03,GP,West Community,Urgent,18-24,Male,31,2024-04-08,Attended,Diagnosis,Yes,91,Yes
-REF-00162,2024-12-18,2024-12,GP,Central,Urgent,18-24,Female,20,2025-01-07,Attended,Diagnosis,No,77,Yes
-REF-00163,2024-05-07,2024-05,GP,South Hub,Routine,12-17,Male,3,2024-05-10,Attended,Treatment/Follow-up,Yes,85,Yes
-REF-00164,2024-05-08,2024-05,School,North Hub,Routine,18-24,Female,221,2024-12-15,Attended,Assessment,No,69,No
+REF-00137,2025-03-24,2025-03,GP,South Hub,Routine,40+,Male,85,2025-06-17,Attended,Assessment,No,85,Yes
+REF-00138,2024-07-17,2024-07,GP,West Community,Urgent,12-17,Female,3,2024-07-20,Attended,Diagnosis,No,83,Yes
+REF-00139,2025-09-11,2025-09,GP,West Community,Routine,25-39,Male,192,2026-03-22,Attended,Assessment,No,66,No
+REF-00140,2024-10-06,2024-10,GP,West Community,Routine,6-11,Male,165,2025-03-20,Attended,Treatment/Follow-up,No,77,No
+REF-00141,2024-02-24,2024-02,GP,West Community,Routine,40+,Female,243,2024-10-24,Attended,Diagnosis,No,61,No
+REF-00142,2024-02-09,2024-02,GP,South Hub,Urgent,25-39,Male,36,2024-03-16,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-00143,2024-06-02,2024-06,School,Central,Routine,12-17,Male,86,2024-08-27,Cancelled,Triage,No,69,Yes
+REF-00144,2024-03-05,2024-03,GP,Central,Urgent,18-24,Male,38,2024-04-12,Attended,Treatment/Follow-up,Yes,74,Yes
+REF-00145,2025-09-21,2025-09,GP,South Hub,Routine,18-24,Female,109,2026-01-08,Attended,Diagnosis,No,68,Yes
+REF-00146,2025-02-03,2025-02,Secondary Care,West Community,Routine,40+,Female,79,2025-04-23,DNA,Triage,No,33,Yes
+REF-00147,2024-12-19,2024-12,GP,North Hub,Routine,25-39,Male,73,2025-03-02,Attended,Treatment/Follow-up,Yes,85,Yes
+REF-00148,2025-12-13,2025-12,GP,South Hub,Routine,6-11,Male,102,2026-03-25,Attended,Assessment,No,70,Yes
+REF-00149,2024-07-23,2024-07,Secondary Care,East Community,Routine,18-24,Other/Not stated,32,2024-08-24,Attended,Assessment,No,86,Yes
+REF-00150,2024-02-18,2024-02,Secondary Care,North Hub,Routine,25-39,Male,69,2024-04-27,Attended,Diagnosis,No,82,Yes
+REF-00151,2024-07-10,2024-07,GP,Central,Routine,12-17,Female,17,2024-07-27,Attended,Assessment,No,85,Yes
+REF-00152,2024-11-24,2024-11,GP,East Community,Routine,12-17,Male,117,2025-03-21,Attended,Diagnosis,Yes,69,Yes
+REF-00153,2024-12-27,2024-12,School,North Hub,Routine,6-11,Male,3,2024-12-30,Attended,Treatment/Follow-up,Yes,91,Yes
+REF-00154,2024-02-05,2024-02,GP,East Community,Routine,12-17,Male,179,2024-08-02,DNA,Triage,No,27,No
+REF-00155,2025-11-26,2025-11,GP,West Community,Routine,25-39,Male,14,2025-12-10,Attended,Assessment,No,79,Yes
+REF-00156,2024-01-27,2024-01,Self-referral,West Community,Routine,25-39,Female,79,2024-04-15,Attended,Assessment,No,80,Yes
+REF-00157,2025-12-11,2025-12,Secondary Care,North Hub,Routine,6-11,Female,135,2026-04-25,Attended,Treatment/Follow-up,No,76,No
+REF-00158,2025-11-14,2025-11,GP,Central,Routine,12-17,Female,181,2026-05-14,DNA,Triage,No,27,No
+REF-00159,2025-01-05,2025-01,GP,South Hub,Routine,25-39,Female,17,2025-01-22,Attended,Diagnosis,No,80,Yes
+REF-00160,2025-09-18,2025-09,Secondary Care,West Community,Routine,40+,Male,86,2025-12-13,Attended,Treatment/Follow-up,No,72,Yes
+REF-00161,2024-05-08,2024-05,Social Services,West Community,Routine,12-17,Male,175,2024-10-30,Attended,Diagnosis,No,67,No
+REF-00162,2025-03-19,2025-03,GP,North Hub,Urgent,18-24,Female,56,2025-05-14,Cancelled,Triage,No,65,Yes
+REF-00163,2024-12-20,2024-12,Secondary Care,East Community,Routine,25-39,Female,25,2025-01-14,DNA,Triage,No,44,Yes
+REF-00164,2025-09-21,2025-09,School,South Hub,Routine,18-24,Male,17,2025-10-08,Cancelled,Triage,No,71,Yes
 REF-00165,2025-07-31,2025-07,GP,North Hub,Urgent,6-11,Male,3,2025-08-03,Attended,Assessment,No,77,Yes
 REF-00166,2025-05-24,2025-05,Secondary Care,East Community,Routine,12-17,Male,36,2025-06-29,Attended,Assessment,No,76,Yes
-REF-00167,2025-12-06,2025-12,GP,West Community,Routine,12-17,Female,170,2026-05-25,Attended,Treatment/Follow-up,Yes,75,No
-REF-00168,2024-05-13,2024-05,Self-referral,North Hub,Routine,12-17,Male,201,2024-11-30,Attended,Assessment,No,62,No
-REF-00169,2024-10-24,2024-10,Secondary Care,West Community,Urgent,12-17,Male,38,2024-12-01,Attended,Assessment,No,79,Yes
-REF-00170,2025-05-25,2025-05,Social Services,East Community,Routine,12-17,Female,136,2025-10-08,Attended,Diagnosis,Yes,77,No
-REF-00171,2024-02-19,2024-02,GP,West Community,Routine,12-17,Female,113,2024-06-11,Attended,Assessment,No,80,Yes
-REF-00172,2025-01-09,2025-01,GP,Central,Routine,6-11,Male,107,2025-04-26,DNA,Triage,No,45,Yes
-REF-00173,2025-04-06,2025-04,Self-referral,Central,Routine,18-24,Female,163,2025-09-16,Attended,Assessment,No,68,No
-REF-00174,2024-07-22,2024-07,School,North Hub,Routine,6-11,Female,73,2024-10-03,Attended,Diagnosis,Yes,87,Yes
-REF-00175,2024-05-23,2024-05,GP,South Hub,Routine,12-17,Male,135,2024-10-05,Attended,Diagnosis,Yes,75,No
-REF-00176,2025-05-01,2025-05,Self-referral,North Hub,Routine,40+,Male,25,2025-05-26,DNA,Triage,No,50,Yes
-REF-00177,2024-09-28,2024-09,Social Services,Central,Routine,18-24,Male,46,2024-11-13,Attended,Diagnosis,No,78,Yes
-REF-00178,2025-11-28,2025-11,GP,North Hub,Routine,6-11,Male,62,2026-01-29,Attended,Assessment,No,78,Yes
-REF-00179,2025-02-24,2025-02,GP,West Community,Routine,25-39,Male,119,2025-06-23,Cancelled,Triage,No,63,Yes
-REF-00180,2025-11-09,2025-11,GP,South Hub,Routine,12-17,Male,98,2026-02-15,Attended,Diagnosis,No,77,Yes
-REF-00181,2025-09-16,2025-09,GP,East Community,Urgent,18-24,Female,45,2025-10-31,Attended,Assessment,No,89,Yes
-REF-00182,2024-11-20,2024-11,GP,East Community,Routine,12-17,Male,74,2025-02-02,Attended,Treatment/Follow-up,Yes,82,Yes
-REF-00183,2024-05-29,2024-05,GP,North Hub,Routine,12-17,Male,80,2024-08-17,Attended,Diagnosis,No,79,Yes
-REF-00184,2024-05-20,2024-05,GP,South Hub,Routine,12-17,Male,163,2024-10-30,Attended,Diagnosis,Yes,77,No
-REF-00185,2024-12-04,2024-12,Self-referral,South Hub,Routine,6-11,Male,163,2025-05-16,Attended,Assessment,No,73,No
-REF-00186,2024-11-24,2024-11,GP,North Hub,Routine,18-24,Female,53,2025-01-16,Attended,Treatment/Follow-up,Yes,78,Yes
-REF-00187,2025-03-03,2025-03,Secondary Care,North Hub,Routine,40+,Female,3,2025-03-06,Attended,Treatment/Follow-up,No,77,Yes
-REF-00188,2024-11-01,2024-11,School,East Community,Routine,12-17,Other/Not stated,88,2025-01-28,Attended,Diagnosis,No,86,Yes
-REF-00189,2025-04-24,2025-04,GP,East Community,Routine,6-11,Male,81,2025-07-14,Attended,Treatment/Follow-up,Yes,77,Yes
-REF-00190,2024-06-28,2024-06,School,West Community,Routine,25-39,Male,128,2024-11-03,DNA,Triage,No,30,No
-REF-00191,2024-07-08,2024-07,Social Services,South Hub,Routine,6-11,Female,31,2024-08-08,Attended,Diagnosis,Yes,83,Yes
-REF-00192,2025-10-31,2025-10,GP,North Hub,Routine,12-17,Female,102,2026-02-10,Attended,Treatment/Follow-up,No,78,Yes
-REF-00193,2025-12-07,2025-12,GP,East Community,Urgent,12-17,Female,51,2026-01-27,Attended,Treatment/Follow-up,Yes,88,Yes
-REF-00194,2025-07-04,2025-07,Self-referral,South Hub,Urgent,18-24,Male,23,2025-07-27,Attended,Diagnosis,Yes,79,Yes
-REF-00195,2024-03-04,2024-03,Self-referral,South Hub,Urgent,18-24,Female,19,2024-03-23,Attended,Treatment/Follow-up,Yes,92,Yes
-REF-00196,2025-04-01,2025-04,Self-referral,Central,Routine,12-17,Male,175,2025-09-23,Attended,Treatment/Follow-up,No,75,No
-REF-00197,2024-09-17,2024-09,Self-referral,Central,Routine,6-11,Male,58,2024-11-14,Attended,Triage,No,88,Yes
-REF-00198,2024-02-02,2024-02,GP,South Hub,Routine,25-39,Other/Not stated,3,2024-02-05,Attended,Diagnosis,No,89,Yes
-REF-00199,2025-04-04,2025-04,Secondary Care,West Community,Urgent,6-11,Male,35,2025-05-09,Attended,Triage,No,87,Yes
-REF-00200,2025-06-25,2025-06,GP,North Hub,Urgent,25-39,Other/Not stated,20,2025-07-15,Attended,Treatment/Follow-up,Yes,88,Yes
-REF-00201,2024-08-23,2024-08,GP,East Community,Routine,6-11,Male,85,2024-11-16,Attended,Diagnosis,No,70,Yes
-REF-00202,2024-09-03,2024-09,GP,North Hub,Routine,12-17,Male,66,2024-11-08,Attended,Assessment,No,73,Yes
-REF-00203,2025-02-15,2025-02,GP,North Hub,Routine,6-11,Other/Not stated,99,2025-05-25,Attended,Diagnosis,No,79,Yes
-REF-00204,2024-08-30,2024-08,GP,Central,Routine,12-17,Female,239,2025-04-26,DNA,Triage,No,23,No
-REF-00205,2025-10-03,2025-10,School,North Hub,Routine,40+,Male,25,2025-10-28,Attended,Assessment,No,79,Yes
-REF-00206,2024-11-03,2024-11,GP,West Community,Routine,12-17,Female,3,2024-11-06,Attended,Assessment,No,91,Yes
-REF-00207,2024-02-29,2024-02,School,Central,Urgent,18-24,Female,27,2024-03-27,DNA,Triage,No,49,Yes
-REF-00208,2025-01-14,2025-01,GP,South Hub,Routine,6-11,Female,146,2025-06-09,Attended,Triage,No,67,No
-REF-00209,2024-07-11,2024-07,Self-referral,Central,Routine,6-11,Female,133,2024-11-21,DNA,Triage,No,32,No
-REF-00210,2024-04-30,2024-04,Self-referral,South Hub,Routine,18-24,Male,63,2024-07-02,Attended,Diagnosis,No,84,Yes
-REF-00211,2025-04-22,2025-04,School,East Community,Routine,12-17,Male,3,2025-04-25,Attended,Treatment/Follow-up,Yes,83,Yes
-REF-00212,2025-01-14,2025-01,GP,South Hub,Routine,25-39,Female,110,2025-05-04,Attended,Diagnosis,No,77,Yes
-REF-00213,2024-06-05,2024-06,GP,Central,Routine,25-39,Male,23,2024-06-28,Attended,Treatment/Follow-up,No,91,Yes
-REF-00214,2025-04-16,2025-04,GP,South Hub,Routine,6-11,Male,3,2025-04-19,Cancelled,Triage,No,63,Yes
-REF-00215,2025-06-20,2025-06,GP,North Hub,Urgent,25-39,Female,36,2025-07-26,Attended,Triage,No,90,Yes
-REF-00216,2025-04-11,2025-04,GP,Central,Routine,25-39,Male,41,2025-05-22,DNA,Triage,No,47,Yes
-REF-00217,2024-01-13,2024-01,GP,Central,Routine,40+,Female,124,2024-05-16,Attended,Treatment/Follow-up,Yes,70,Yes
-REF-00218,2025-06-20,2025-06,GP,Central,Routine,12-17,Female,3,2025-06-23,Attended,Triage,No,89,Yes
-REF-00219,2025-04-15,2025-04,School,South Hub,Urgent,12-17,Male,84,2025-07-08,Attended,Triage,No,82,Yes
-REF-00220,2025-01-23,2025-01,GP,North Hub,Routine,25-39,Female,189,2025-07-31,Attended,Diagnosis,Yes,65,No
-REF-00221,2025-06-24,2025-06,Secondary Care,Central,Routine,12-17,Female,226,2026-02-05,Attended,Diagnosis,Yes,69,No
-REF-00222,2024-01-17,2024-01,Social Services,West Community,Routine,40+,Female,155,2024-06-20,Attended,Diagnosis,No,75,No
-REF-00223,2025-01-28,2025-01,Self-referral,North Hub,Routine,18-24,Other/Not stated,156,2025-07-03,Attended,Treatment/Follow-up,No,76,No
-REF-00224,2024-11-30,2024-11,GP,West Community,Routine,12-17,Female,108,2025-03-18,Attended,Diagnosis,Yes,80,Yes
-REF-00225,2024-03-28,2024-03,Self-referral,South Hub,Routine,25-39,Female,166,2024-09-10,DNA,Triage,No,36,No
-REF-00226,2024-11-20,2024-11,GP,East Community,Routine,12-17,Male,175,2025-05-14,DNA,Triage,No,25,No
-REF-00227,2024-07-10,2024-07,GP,Central,Routine,12-17,Female,65,2024-09-13,Attended,Assessment,No,84,Yes
-REF-00228,2024-01-13,2024-01,GP,North Hub,Routine,25-39,Male,108,2024-04-30,Attended,Assessment,No,84,Yes
-REF-00229,2024-06-22,2024-06,School,East Community,Routine,12-17,Male,152,2024-11-21,Attended,Diagnosis,Yes,73,No
-REF-00230,2024-09-09,2024-09,Self-referral,Central,Routine,6-11,Female,121,2025-01-08,DNA,Triage,No,39,Yes
-REF-00231,2024-12-06,2024-12,Secondary Care,East Community,Routine,12-17,Male,129,2025-04-14,Attended,Assessment,No,73,No
-REF-00232,2025-05-05,2025-05,GP,East Community,Urgent,12-17,Male,3,2025-05-08,Attended,Diagnosis,Yes,89,Yes
-REF-00233,2024-10-14,2024-10,Self-referral,North Hub,Routine,40+,Female,145,2025-03-08,DNA,Triage,No,39,No
-REF-00234,2025-12-26,2025-12,GP,North Hub,Routine,25-39,Male,83,2026-03-19,Attended,Diagnosis,Yes,78,Yes
-REF-00235,2024-09-15,2024-09,School,West Community,Routine,6-11,Other/Not stated,13,2024-09-28,Attended,Treatment/Follow-up,Yes,77,Yes
-REF-00236,2025-01-03,2025-01,Self-referral,Central,Routine,18-24,Female,100,2025-04-13,Attended,Assessment,No,70,Yes
-REF-00237,2025-07-30,2025-07,Social Services,West Community,Routine,40+,Female,93,2025-10-31,DNA,Triage,No,37,Yes
-REF-00238,2025-06-06,2025-06,Self-referral,Central,Routine,12-17,Female,66,2025-08-11,Attended,Diagnosis,Yes,83,Yes
-REF-00239,2024-01-26,2024-01,GP,North Hub,Routine,6-11,Male,122,2024-05-27,Attended,Assessment,No,82,Yes
-REF-00240,2024-12-22,2024-12,GP,West Community,Routine,12-17,Female,131,2025-05-02,Attended,Triage,No,77,No
-REF-00241,2025-10-25,2025-10,GP,South Hub,Routine,18-24,Male,48,2025-12-12,Attended,Treatment/Follow-up,Yes,78,Yes
-REF-00242,2025-10-17,2025-10,School,Central,Routine,25-39,Male,148,2026-03-14,Attended,Triage,No,71,No
-REF-00243,2024-07-29,2024-07,GP,North Hub,Routine,18-24,Male,18,2024-08-16,Cancelled,Triage,No,64,Yes
-REF-00244,2024-09-25,2024-09,School,East Community,Routine,18-24,Male,68,2024-12-02,Attended,Assessment,No,86,Yes
-REF-00245,2025-09-24,2025-09,GP,East Community,Routine,25-39,Male,55,2025-11-18,Attended,Triage,No,84,Yes
-REF-00246,2025-12-11,2025-12,GP,Central,Routine,6-11,Female,30,2026-01-10,Cancelled,Triage,No,65,Yes
-REF-00247,2025-07-22,2025-07,GP,South Hub,Routine,12-17,Male,146,2025-12-15,DNA,Triage,No,29,No
-REF-00248,2024-07-18,2024-07,Self-referral,Central,Urgent,18-24,Female,49,2024-09-05,Attended,Treatment/Follow-up,Yes,75,Yes
-REF-00249,2025-08-01,2025-08,GP,East Community,Routine,6-11,Female,54,2025-09-24,Attended,Treatment/Follow-up,Yes,89,Yes
-REF-00250,2024-04-25,2024-04,School,Central,Routine,25-39,Female,202,2024-11-13,Attended,Triage,No,75,No
-REF-00251,2025-07-13,2025-07,GP,South Hub,Routine,12-17,Other/Not stated,22,2025-08-04,Attended,Diagnosis,No,83,Yes
-REF-00252,2024-08-02,2024-08,Self-referral,East Community,Routine,25-39,Male,117,2024-11-27,DNA,Triage,No,32,Yes
-REF-00253,2024-07-30,2024-07,Self-referral,Central,Routine,12-17,Female,32,2024-08-31,Attended,Assessment,No,91,Yes
-REF-00254,2025-11-26,2025-11,Self-referral,West Community,Routine,25-39,Other/Not stated,89,2026-02-23,DNA,Triage,No,34,Yes
-REF-00255,2024-09-12,2024-09,GP,South Hub,Routine,25-39,Male,3,2024-09-15,Attended,Assessment,No,91,Yes
-REF-00256,2024-03-18,2024-03,School,North Hub,Urgent,12-17,Male,29,2024-04-16,Attended,Treatment/Follow-up,Yes,90,Yes
-REF-00257,2024-12-01,2024-12,School,North Hub,Urgent,25-39,Male,17,2024-12-18,DNA,Triage,No,48,Yes
-REF-00258,2024-08-11,2024-08,Social Services,West Community,Urgent,12-17,Male,11,2024-08-22,Attended,Diagnosis,Yes,92,Yes
-REF-00259,2024-12-17,2024-12,Secondary Care,North Hub,Routine,6-11,Male,49,2025-02-04,Attended,Diagnosis,Yes,86,Yes
-REF-00260,2024-07-26,2024-07,Social Services,East Community,Urgent,6-11,Male,30,2024-08-25,Attended,Diagnosis,Yes,86,Yes
-REF-00261,2025-11-11,2025-11,Secondary Care,West Community,Routine,18-24,Male,86,2026-02-05,DNA,Triage,No,33,Yes
-REF-00262,2024-01-02,2024-01,GP,Central,Routine,12-17,Male,9,2024-01-11,DNA,Triage,No,47,Yes
-REF-00263,2024-05-03,2024-05,Social Services,South Hub,Routine,12-17,Female,191,2024-11-10,DNA,Triage,No,33,No
-REF-00264,2024-11-02,2024-11,GP,South Hub,Routine,18-24,Male,151,2025-04-02,DNA,Triage,No,25,No
-REF-00265,2025-09-16,2025-09,School,South Hub,Routine,18-24,Female,3,2025-09-19,Attended,Triage,No,80,Yes
-REF-00266,2024-05-23,2024-05,Self-referral,West Community,Routine,12-17,Male,144,2024-10-14,Cancelled,Triage,No,52,No
-REF-00267,2024-09-11,2024-09,School,Central,Routine,12-17,Male,217,2025-04-16,Attended,Assessment,No,75,No
-REF-00268,2024-07-12,2024-07,Self-referral,North Hub,Routine,25-39,Male,113,2024-11-02,Attended,Triage,No,83,Yes
-REF-00269,2025-10-15,2025-10,School,North Hub,Routine,40+,Male,177,2026-04-10,Attended,Assessment,No,68,No
-REF-00270,2025-04-27,2025-04,Social Services,North Hub,Routine,18-24,Female,186,2025-10-30,DNA,Triage,No,23,No
-REF-00271,2025-02-11,2025-02,GP,Central,Routine,25-39,Male,3,2025-02-14,Attended,Assessment,No,79,Yes
-REF-00272,2024-11-13,2024-11,GP,South Hub,Urgent,18-24,Female,45,2024-12-28,Attended,Treatment/Follow-up,Yes,76,Yes
+REF-00167,2025-12-06,2025-12,GP,West Community,Routine,12-17,Female,170,2026-05-25,Cancelled,Triage,No,59,No
+REF-00168,2025-02-12,2025-02,GP,Central,Routine,6-11,Female,193,2025-08-24,DNA,Triage,No,35,No
+REF-00169,2024-09-10,2024-09,GP,West Community,Routine,25-39,Female,230,2025-04-28,Attended,Treatment/Follow-up,No,64,No
+REF-00170,2024-06-12,2024-06,GP,West Community,Routine,25-39,Male,48,2024-07-30,DNA,Triage,No,45,Yes
+REF-00171,2025-06-01,2025-06,GP,Central,Routine,12-17,Female,3,2025-06-04,Attended,Diagnosis,Yes,80,Yes
+REF-00172,2025-03-17,2025-03,GP,East Community,Routine,25-39,Female,88,2025-06-13,Attended,Diagnosis,Yes,79,Yes
+REF-00173,2024-03-16,2024-03,GP,Central,Routine,12-17,Other/Not stated,69,2024-05-24,Attended,Assessment,No,82,Yes
+REF-00174,2025-07-25,2025-07,Secondary Care,South Hub,Routine,18-24,Female,52,2025-09-15,DNA,Triage,No,34,Yes
+REF-00175,2024-05-20,2024-05,Self-referral,Central,Routine,12-17,Male,40,2024-06-29,Attended,Assessment,No,83,Yes
+REF-00176,2025-08-30,2025-08,GP,Central,Urgent,12-17,Male,26,2025-09-25,Attended,Triage,No,85,Yes
+REF-00177,2025-11-20,2025-11,GP,East Community,Routine,25-39,Male,77,2026-02-05,Attended,Treatment/Follow-up,No,78,Yes
+REF-00178,2024-02-22,2024-02,School,Central,Routine,25-39,Female,68,2024-04-30,Attended,Assessment,No,75,Yes
+REF-00179,2024-07-14,2024-07,GP,South Hub,Routine,12-17,Female,3,2024-07-17,Attended,Treatment/Follow-up,No,81,Yes
+REF-00180,2025-06-15,2025-06,GP,West Community,Routine,18-24,Female,82,2025-09-05,DNA,Triage,No,41,Yes
+REF-00181,2025-07-13,2025-07,GP,East Community,Routine,18-24,Female,85,2025-10-06,Cancelled,Triage,No,64,Yes
+REF-00182,2024-10-22,2024-10,Self-referral,West Community,Routine,12-17,Female,181,2025-04-21,DNA,Triage,No,34,No
+REF-00183,2025-02-08,2025-02,Self-referral,South Hub,Urgent,12-17,Female,37,2025-03-17,Attended,Treatment/Follow-up,Yes,82,Yes
+REF-00184,2025-07-29,2025-07,School,Central,Routine,25-39,Female,21,2025-08-19,DNA,Triage,No,52,Yes
+REF-00185,2024-08-19,2024-08,School,West Community,Routine,12-17,Male,68,2024-10-26,Attended,Treatment/Follow-up,Yes,87,Yes
+REF-00186,2025-05-03,2025-05,School,East Community,Routine,12-17,Male,49,2025-06-21,Attended,Triage,No,80,Yes
+REF-00187,2025-07-01,2025-07,Self-referral,North Hub,Urgent,25-39,Female,38,2025-08-08,Attended,Assessment,No,89,Yes
+REF-00188,2024-07-09,2024-07,Secondary Care,East Community,Urgent,25-39,Female,19,2024-07-28,Attended,Triage,No,86,Yes
+REF-00189,2024-10-18,2024-10,GP,Central,Routine,12-17,Male,130,2025-02-25,DNA,Triage,No,30,No
+REF-00190,2024-12-04,2024-12,GP,East Community,Routine,25-39,Female,20,2024-12-24,Attended,Assessment,No,82,Yes
+REF-00191,2024-06-28,2024-06,School,West Community,Routine,25-39,Male,173,2024-12-18,DNA,Triage,No,27,No
+REF-00192,2025-05-03,2025-05,GP,East Community,Routine,12-17,Male,137,2025-09-17,Cancelled,Triage,No,61,No
+REF-00193,2024-11-05,2024-11,School,East Community,Routine,18-24,Male,116,2025-03-01,Cancelled,Triage,No,65,Yes
+REF-00194,2025-12-03,2025-12,GP,East Community,Urgent,18-24,Male,32,2026-01-04,Attended,Assessment,No,82,Yes
+REF-00195,2024-08-12,2024-08,Social Services,West Community,Routine,25-39,Male,7,2024-08-19,Attended,Diagnosis,Yes,83,Yes
+REF-00196,2024-09-10,2024-09,School,North Hub,Routine,18-24,Male,128,2025-01-16,Attended,Treatment/Follow-up,Yes,83,No
+REF-00197,2024-07-26,2024-07,School,East Community,Routine,25-39,Male,36,2024-08-31,Attended,Treatment/Follow-up,Yes,75,Yes
+REF-00198,2025-04-09,2025-04,GP,Central,Routine,6-11,Male,3,2025-04-12,Attended,Treatment/Follow-up,Yes,77,Yes
+REF-00199,2024-08-11,2024-08,School,East Community,Routine,25-39,Male,221,2025-03-20,Attended,Diagnosis,Yes,64,No
+REF-00200,2024-05-18,2024-05,Self-referral,West Community,Urgent,12-17,Male,58,2024-07-15,Attended,Treatment/Follow-up,Yes,77,Yes
+REF-00201,2025-10-31,2025-10,Secondary Care,Central,Routine,12-17,Female,215,2026-06-03,Attended,Treatment/Follow-up,Yes,73,No
+REF-00202,2025-06-28,2025-06,GP,West Community,Routine,12-17,Female,66,2025-09-02,Attended,Treatment/Follow-up,Yes,85,Yes
+REF-00203,2025-09-21,2025-09,Self-referral,North Hub,Urgent,12-17,Female,30,2025-10-21,Attended,Triage,No,76,Yes
+REF-00204,2025-02-15,2025-02,GP,North Hub,Routine,6-11,Other/Not stated,41,2025-03-28,Attended,Treatment/Follow-up,Yes,84,Yes
+REF-00205,2024-08-30,2024-08,GP,Central,Routine,12-17,Female,242,2025-04-29,Attended,Treatment/Follow-up,Yes,70,No
+REF-00206,2025-07-23,2025-07,GP,West Community,Urgent,25-39,Female,47,2025-09-08,Attended,Assessment,No,86,Yes
+REF-00207,2024-07-07,2024-07,Self-referral,South Hub,Routine,12-17,Male,154,2024-12-08,Attended,Assessment,No,81,No
+REF-00208,2024-05-17,2024-05,GP,East Community,Routine,18-24,Male,3,2024-05-20,Attended,Triage,No,83,Yes
+REF-00209,2024-02-22,2024-02,GP,Central,Routine,6-11,Female,115,2024-06-16,Attended,Assessment,No,74,Yes
+REF-00210,2024-12-06,2024-12,GP,South Hub,Urgent,40+,Male,3,2024-12-09,Cancelled,Triage,No,77,Yes
+REF-00211,2024-09-05,2024-09,School,West Community,Routine,25-39,Male,94,2024-12-08,Attended,Assessment,No,78,Yes
+REF-00212,2025-01-03,2025-01,GP,North Hub,Routine,25-39,Male,16,2025-01-19,Attended,Assessment,No,82,Yes
+REF-00213,2025-01-14,2025-01,GP,South Hub,Routine,25-39,Female,3,2025-01-17,Attended,Assessment,No,83,Yes
+REF-00214,2024-12-03,2024-12,GP,South Hub,Routine,12-17,Male,53,2025-01-25,Attended,Assessment,No,88,Yes
+REF-00215,2025-10-19,2025-10,Self-referral,East Community,Routine,6-11,Male,3,2025-10-22,Attended,Treatment/Follow-up,Yes,79,Yes
+REF-00216,2025-11-15,2025-11,GP,South Hub,Routine,25-39,Female,95,2026-02-18,Attended,Triage,No,86,Yes
+REF-00217,2025-04-11,2025-04,GP,Central,Routine,25-39,Male,169,2025-09-27,Attended,Triage,No,71,No
+REF-00218,2025-07-02,2025-07,Social Services,West Community,Routine,25-39,Male,92,2025-10-02,DNA,Triage,No,33,Yes
+REF-00219,2025-06-20,2025-06,GP,Central,Routine,12-17,Female,91,2025-09-19,Attended,Diagnosis,Yes,77,Yes
+REF-00220,2024-11-03,2024-11,School,North Hub,Urgent,6-11,Female,19,2024-11-22,Attended,Triage,No,76,Yes
+REF-00221,2025-12-20,2025-12,GP,West Community,Routine,18-24,Female,271,2026-09-17,Attended,Treatment/Follow-up,Yes,72,No
+REF-00222,2024-10-04,2024-10,GP,East Community,Routine,25-39,Male,57,2024-11-30,DNA,Triage,No,43,Yes
+REF-00223,2024-01-17,2024-01,Social Services,West Community,Routine,40+,Female,3,2024-01-20,Attended,Diagnosis,Yes,89,Yes
+REF-00224,2024-05-23,2024-05,Self-referral,North Hub,Routine,18-24,Other/Not stated,49,2024-07-11,DNA,Triage,No,40,Yes
+REF-00225,2024-03-18,2024-03,GP,Central,Routine,12-17,Male,138,2024-08-03,Attended,Diagnosis,Yes,78,No
+REF-00226,2025-03-18,2025-03,GP,West Community,Routine,6-11,Male,94,2025-06-20,Attended,Treatment/Follow-up,Yes,74,Yes
+REF-00227,2025-01-24,2025-01,Self-referral,West Community,Routine,12-17,Female,155,2025-06-28,Attended,Triage,No,67,No
+REF-00228,2024-07-10,2024-07,GP,Central,Routine,12-17,Female,85,2024-10-03,Attended,Triage,No,80,Yes
+REF-00229,2025-01-29,2025-01,GP,North Hub,Routine,25-39,Male,136,2025-06-14,Attended,Diagnosis,Yes,74,No
+REF-00230,2024-11-04,2024-11,GP,South Hub,Routine,12-17,Male,81,2025-01-24,Attended,Triage,No,79,Yes
+REF-00231,2024-09-09,2024-09,Self-referral,Central,Routine,6-11,Female,36,2024-10-15,Attended,Assessment,No,84,Yes
+REF-00232,2025-03-26,2025-03,GP,Central,Routine,6-11,Female,244,2025-11-25,Attended,Assessment,No,67,No
+REF-00233,2024-06-30,2024-06,Social Services,East Community,Urgent,25-39,Male,63,2024-09-01,Attended,Assessment,No,84,Yes
+REF-00234,2025-01-08,2025-01,GP,Central,Routine,40+,Female,59,2025-03-08,Attended,Triage,No,87,Yes
+REF-00235,2025-12-26,2025-12,GP,North Hub,Routine,25-39,Male,14,2026-01-09,Attended,Assessment,No,80,Yes
+REF-00236,2025-03-09,2025-03,Self-referral,Central,Routine,12-17,Female,144,2025-07-31,Attended,Treatment/Follow-up,Yes,66,No
+REF-00237,2025-01-03,2025-01,Self-referral,Central,Routine,18-24,Female,107,2025-04-20,DNA,Triage,No,30,Yes
+REF-00238,2025-07-30,2025-07,Social Services,West Community,Routine,40+,Female,3,2025-08-02,Attended,Triage,No,80,Yes
+REF-00239,2024-09-21,2024-09,GP,Central,Routine,18-24,Male,18,2024-10-09,Attended,Diagnosis,Yes,87,Yes
+REF-00240,2024-01-26,2024-01,GP,North Hub,Routine,6-11,Male,107,2024-05-12,DNA,Triage,No,38,Yes
+REF-00241,2024-12-17,2024-12,GP,West Community,Routine,12-17,Female,70,2025-02-25,DNA,Triage,No,33,Yes
+REF-00242,2025-12-28,2025-12,GP,North Hub,Urgent,18-24,Female,5,2026-01-02,Attended,Assessment,No,82,Yes
+REF-00243,2025-07-19,2025-07,GP,West Community,Routine,12-17,Female,124,2025-11-20,Attended,Triage,No,73,Yes
+REF-00244,2025-04-05,2025-04,School,South Hub,Routine,6-11,Male,175,2025-09-27,Attended,Triage,No,66,No
+REF-00245,2025-07-03,2025-07,GP,West Community,Routine,6-11,Male,3,2025-07-06,Attended,Assessment,No,89,Yes
+REF-00246,2025-08-24,2025-08,GP,West Community,Routine,18-24,Male,96,2025-11-28,Attended,Assessment,No,71,Yes
+REF-00247,2025-11-19,2025-11,GP,East Community,Routine,6-11,Female,127,2026-03-26,Attended,Diagnosis,Yes,82,No
+REF-00248,2025-10-12,2025-10,School,South Hub,Urgent,18-24,Male,44,2025-11-25,Cancelled,Triage,No,69,Yes
+REF-00249,2025-04-06,2025-04,School,North Hub,Urgent,12-17,Female,7,2025-04-13,Attended,Assessment,No,92,Yes
+REF-00250,2025-03-01,2025-03,Self-referral,South Hub,Routine,6-11,Female,150,2025-07-29,Cancelled,Triage,No,58,No
+REF-00251,2024-08-18,2024-08,School,West Community,Routine,18-24,Male,3,2024-08-21,Attended,Assessment,No,88,Yes
+REF-00252,2025-07-09,2025-07,Self-referral,West Community,Routine,18-24,Other/Not stated,89,2025-10-06,Attended,Diagnosis,Yes,71,Yes
+REF-00253,2025-04-05,2025-04,GP,North Hub,Urgent,12-17,Other/Not stated,30,2025-05-05,Attended,Diagnosis,Yes,88,Yes
+REF-00254,2024-06-18,2024-06,School,South Hub,Routine,25-39,Male,33,2024-07-21,Attended,Diagnosis,Yes,84,Yes
+REF-00255,2024-10-23,2024-10,School,Central,Urgent,40+,Male,72,2025-01-03,Attended,Treatment/Follow-up,No,75,Yes
+REF-00256,2025-12-19,2025-12,Secondary Care,East Community,Routine,25-39,Male,185,2026-06-22,Attended,Diagnosis,Yes,70,No
+REF-00257,2025-10-04,2025-10,GP,North Hub,Routine,12-17,Male,35,2025-11-08,Attended,Diagnosis,Yes,77,Yes
+REF-00258,2025-04-14,2025-04,School,North Hub,Routine,25-39,Female,3,2025-04-17,Attended,Treatment/Follow-up,Yes,87,Yes
+REF-00259,2024-10-17,2024-10,GP,Central,Routine,25-39,Male,177,2025-04-12,DNA,Triage,No,37,No
+REF-00260,2024-01-17,2024-01,GP,West Community,Urgent,12-17,Other/Not stated,6,2024-01-23,Attended,Treatment/Follow-up,No,86,Yes
+REF-00261,2024-06-11,2024-06,Secondary Care,North Hub,Urgent,18-24,Female,3,2024-06-14,Cancelled,Triage,No,74,Yes
+REF-00262,2025-10-02,2025-10,GP,South Hub,Routine,12-17,Female,193,2026-04-13,DNA,Triage,No,27,No
+REF-00263,2025-05-03,2025-05,GP,Central,Routine,18-24,Female,40,2025-06-12,Attended,Diagnosis,Yes,76,Yes
+REF-00264,2024-08-22,2024-08,GP,North Hub,Routine,6-11,Female,3,2024-08-25,Attended,Assessment,No,81,Yes
+REF-00265,2025-10-18,2025-10,Social Services,Central,Routine,18-24,Male,117,2026-02-12,DNA,Triage,No,32,Yes
+REF-00266,2025-02-25,2025-02,School,South Hub,Routine,6-11,Female,139,2025-07-14,Attended,Diagnosis,Yes,79,No
+REF-00267,2024-11-18,2024-11,Self-referral,North Hub,Routine,12-17,Male,73,2025-01-30,Attended,Diagnosis,Yes,87,Yes
+REF-00268,2025-09-13,2025-09,GP,East Community,Routine,18-24,Male,27,2025-10-10,Attended,Assessment,No,87,Yes
+REF-00269,2024-04-25,2024-04,GP,North Hub,Routine,18-24,Other/Not stated,246,2024-12-27,DNA,Triage,No,30,No
+REF-00270,2025-01-09,2025-01,School,West Community,Routine,40+,Male,70,2025-03-20,DNA,Triage,No,34,Yes
+REF-00271,2024-01-15,2024-01,GP,North Hub,Routine,40+,Female,58,2024-03-13,Attended,Diagnosis,Yes,77,Yes
+REF-00272,2024-10-11,2024-10,GP,South Hub,Routine,40+,Female,191,2025-04-20,Attended,Diagnosis,No,64,No
 REF-00273,2024-11-13,2024-11,School,South Hub,Routine,6-11,Female,13,2024-11-26,Attended,Assessment,No,81,Yes
 REF-00274,2024-05-02,2024-05,GP,North Hub,Routine,6-11,Male,114,2024-08-24,Attended,Treatment/Follow-up,No,73,Yes
 REF-00275,2025-01-15,2025-01,GP,East Community,Routine,25-39,Female,135,2025-05-30,Attended,Diagnosis,Yes,68,No
 REF-00276,2025-05-23,2025-05,GP,West Community,Routine,25-39,Female,46,2025-07-08,Cancelled,Triage,No,62,Yes
 REF-00277,2025-08-10,2025-08,School,Central,Routine,6-11,Male,105,2025-11-23,Attended,Treatment/Follow-up,Yes,70,Yes
-REF-00278,2025-07-20,2025-07,Self-referral,West Community,Routine,12-17,Female,95,2025-10-23,Attended,Triage,No,81,Yes
-REF-00279,2024-05-02,2024-05,GP,South Hub,Urgent,12-17,Male,48,2024-06-19,Attended,Treatment/Follow-up,No,82,Yes
-REF-00280,2024-12-01,2024-12,GP,East Community,Routine,6-11,Male,104,2025-03-15,Attended,Diagnosis,Yes,84,Yes
-REF-00281,2024-07-19,2024-07,Self-referral,South Hub,Routine,6-11,Male,190,2025-01-25,Attended,Treatment/Follow-up,No,62,No
-REF-00282,2025-11-04,2025-11,GP,East Community,Routine,6-11,Male,97,2026-02-09,Cancelled,Triage,No,69,Yes
-REF-00283,2024-03-02,2024-03,Social Services,East Community,Routine,6-11,Male,151,2024-07-31,Attended,Assessment,No,67,No
-REF-00284,2025-08-17,2025-08,GP,West Community,Routine,6-11,Male,33,2025-09-19,Attended,Treatment/Follow-up,Yes,83,Yes
+REF-00278,2025-07-20,2025-07,Self-referral,West Community,Routine,12-17,Female,95,2025-10-23,Cancelled,Triage,No,57,Yes
+REF-00279,2025-08-08,2025-08,GP,North Hub,Routine,6-11,Male,256,2026-04-21,DNA,Triage,No,31,No
+REF-00280,2024-10-16,2024-10,Self-referral,North Hub,Routine,18-24,Female,69,2024-12-24,Attended,Treatment/Follow-up,No,79,Yes
+REF-00281,2025-04-20,2025-04,GP,South Hub,Urgent,25-39,Male,31,2025-05-21,Attended,Triage,No,86,Yes
+REF-00282,2025-10-13,2025-10,Self-referral,East Community,Urgent,6-11,Male,25,2025-11-07,Cancelled,Triage,No,76,Yes
+REF-00283,2024-08-31,2024-08,GP,South Hub,Urgent,25-39,Female,67,2024-11-06,Attended,Treatment/Follow-up,Yes,74,Yes
+REF-00284,2025-08-17,2025-08,GP,West Community,Routine,6-11,Male,13,2025-08-30,Attended,Treatment/Follow-up,Yes,84,Yes
 REF-00285,2024-11-18,2024-11,Secondary Care,East Community,Routine,12-17,Female,126,2025-03-24,Attended,Diagnosis,Yes,72,Yes
 REF-00286,2025-04-05,2025-04,GP,Central,Routine,12-17,Male,105,2025-07-19,Attended,Diagnosis,No,71,Yes
 REF-00287,2024-06-10,2024-06,Self-referral,Central,Routine,6-11,Male,76,2024-08-25,Attended,Assessment,No,72,Yes
@@ -293,7 +293,7 @@ REF-00291,2024-02-21,2024-02,GP,West Community,Routine,12-17,Female,25,2024-03-1
 REF-00292,2024-06-01,2024-06,GP,South Hub,Routine,18-24,Male,113,2024-09-22,Attended,Diagnosis,Yes,80,Yes
 REF-00293,2024-05-20,2024-05,GP,Central,Routine,12-17,Other/Not stated,70,2024-07-29,Attended,Treatment/Follow-up,Yes,87,Yes
 REF-00294,2024-12-18,2024-12,Secondary Care,West Community,Routine,12-17,Female,80,2025-03-08,Attended,Triage,No,79,Yes
-REF-00295,2024-02-29,2024-02,Self-referral,East Community,Routine,25-39,Other/Not stated,136,2024-07-14,Cancelled,Triage,No,52,No
+REF-00295,2024-02-29,2024-02,Self-referral,East Community,Routine,25-39,Other/Not stated,136,2024-07-14,DNA,Triage,No,27,No
 REF-00296,2024-08-12,2024-08,School,West Community,Urgent,12-17,Male,26,2024-09-07,Attended,Assessment,No,85,Yes
 REF-00297,2025-12-15,2025-12,GP,East Community,Routine,40+,Male,42,2026-01-26,Attended,Treatment/Follow-up,Yes,83,Yes
 REF-00298,2024-06-28,2024-06,GP,South Hub,Routine,18-24,Female,66,2024-09-02,Attended,Assessment,No,78,Yes
@@ -303,8 +303,8 @@ REF-00301,2025-10-16,2025-10,Social Services,South Hub,Routine,25-39,Male,158,20
 REF-00302,2024-11-10,2024-11,Self-referral,South Hub,Routine,25-39,Male,40,2024-12-20,Attended,Treatment/Follow-up,No,75,Yes
 REF-00303,2024-07-05,2024-07,School,Central,Urgent,12-17,Male,38,2024-08-12,Attended,Assessment,No,84,Yes
 REF-00304,2024-06-20,2024-06,School,East Community,Urgent,12-17,Female,23,2024-07-13,Attended,Triage,No,84,Yes
-REF-00305,2024-04-20,2024-04,Self-referral,West Community,Routine,25-39,Male,157,2024-09-24,Attended,Assessment,No,79,No
-REF-00306,2025-08-14,2025-08,School,South Hub,Routine,12-17,Male,29,2025-09-12,DNA,Triage,No,35,Yes
+REF-00305,2024-04-20,2024-04,Self-referral,West Community,Routine,25-39,Male,157,2024-09-24,Cancelled,Triage,No,61,No
+REF-00306,2024-04-13,2024-04,Self-referral,Central,Routine,18-24,Male,34,2024-05-17,Attended,Treatment/Follow-up,Yes,75,Yes
 REF-00307,2024-11-22,2024-11,GP,East Community,Routine,6-11,Female,74,2025-02-04,Attended,Triage,No,86,Yes
 REF-00308,2025-12-22,2025-12,GP,South Hub,Urgent,18-24,Male,3,2025-12-25,DNA,Triage,No,47,Yes
 REF-00309,2024-07-29,2024-07,Social Services,Central,Routine,25-39,Male,78,2024-10-15,Attended,Triage,No,86,Yes
@@ -360,13 +360,13 @@ REF-00358,2024-03-31,2024-03,Secondary Care,North Hub,Routine,40+,Male,28,2024-0
 REF-00359,2025-02-26,2025-02,GP,North Hub,Routine,25-39,Male,3,2025-03-01,Attended,Diagnosis,Yes,87,Yes
 REF-00360,2025-01-07,2025-01,Self-referral,West Community,Routine,12-17,Male,3,2025-01-10,Attended,Diagnosis,Yes,80,Yes
 REF-00361,2024-04-09,2024-04,Self-referral,East Community,Routine,12-17,Male,122,2024-08-09,Attended,Triage,No,72,Yes
-REF-00362,2025-05-19,2025-05,GP,West Community,Routine,6-11,Male,3,2025-05-22,Cancelled,Triage,No,74,Yes
-REF-00363,2024-08-08,2024-08,GP,East Community,Routine,6-11,Female,203,2025-02-27,Attended,Treatment/Follow-up,Yes,77,No
-REF-00364,2024-05-17,2024-05,Social Services,North Hub,Routine,18-24,Male,24,2024-06-10,Attended,Treatment/Follow-up,No,80,Yes
-REF-00365,2025-12-09,2025-12,School,South Hub,Routine,6-11,Male,35,2026-01-13,Attended,Assessment,No,82,Yes
-REF-00366,2024-10-07,2024-10,GP,East Community,Routine,12-17,Female,45,2024-11-21,Attended,Treatment/Follow-up,No,83,Yes
-REF-00367,2025-12-19,2025-12,School,Central,Routine,18-24,Female,42,2026-01-30,Attended,Diagnosis,No,79,Yes
-REF-00368,2025-05-30,2025-05,School,North Hub,Routine,25-39,Male,43,2025-07-12,Attended,Treatment/Follow-up,Yes,83,Yes
+REF-00362,2025-05-19,2025-05,GP,West Community,Routine,6-11,Male,3,2025-05-22,Attended,Treatment/Follow-up,Yes,91,Yes
+REF-00363,2024-07-14,2024-07,Self-referral,West Community,Routine,6-11,Male,81,2024-10-03,Attended,Diagnosis,Yes,86,Yes
+REF-00364,2024-01-05,2024-01,School,West Community,Routine,25-39,Male,52,2024-02-26,Attended,Treatment/Follow-up,Yes,78,Yes
+REF-00365,2024-05-11,2024-05,GP,Central,Routine,25-39,Male,3,2024-05-14,Attended,Treatment/Follow-up,Yes,87,Yes
+REF-00366,2024-10-28,2024-10,GP,West Community,Routine,18-24,Male,213,2025-05-29,Attended,Treatment/Follow-up,Yes,70,No
+REF-00367,2025-12-29,2025-12,Self-referral,South Hub,Routine,6-11,Male,88,2026-03-27,DNA,Triage,No,35,Yes
+REF-00368,2025-05-30,2025-05,School,North Hub,Routine,25-39,Male,146,2025-10-23,Attended,Treatment/Follow-up,Yes,74,No
 REF-00369,2025-03-08,2025-03,Self-referral,North Hub,Routine,12-17,Female,140,2025-07-26,Attended,Diagnosis,Yes,67,No
 REF-00370,2025-12-08,2025-12,Self-referral,Central,Routine,6-11,Male,106,2026-03-24,Attended,Diagnosis,Yes,76,Yes
 REF-00371,2025-10-24,2025-10,School,East Community,Routine,18-24,Female,30,2025-11-23,Attended,Diagnosis,No,76,Yes
@@ -394,7 +394,7 @@ REF-00392,2024-10-14,2024-10,Secondary Care,Central,Routine,6-11,Male,167,2025-0
 REF-00393,2025-10-08,2025-10,GP,West Community,Routine,25-39,Female,136,2026-02-21,Attended,Diagnosis,Yes,70,No
 REF-00394,2025-01-09,2025-01,GP,Central,Urgent,25-39,Female,31,2025-02-09,Attended,Diagnosis,Yes,91,Yes
 REF-00395,2024-01-11,2024-01,School,Central,Urgent,18-24,Male,35,2024-02-15,Attended,Diagnosis,No,79,Yes
-REF-00396,2025-05-10,2025-05,Secondary Care,West Community,Routine,12-17,Female,115,2025-09-02,Cancelled,Triage,No,59,Yes
+REF-00396,2025-05-10,2025-05,Secondary Care,West Community,Routine,12-17,Female,115,2025-09-02,DNA,Triage,No,34,Yes
 REF-00397,2025-06-14,2025-06,Secondary Care,West Community,Routine,25-39,Male,182,2025-12-13,DNA,Triage,No,38,No
 REF-00398,2025-10-10,2025-10,Self-referral,East Community,Urgent,18-24,Male,47,2025-11-26,Attended,Assessment,No,76,Yes
 REF-00399,2025-06-13,2025-06,GP,South Hub,Urgent,18-24,Female,44,2025-07-27,Attended,Diagnosis,Yes,78,Yes
@@ -405,7 +405,7 @@ REF-00403,2024-07-03,2024-07,GP,Central,Routine,18-24,Male,66,2024-09-07,Attende
 REF-00404,2025-05-08,2025-05,GP,Central,Urgent,6-11,Male,3,2025-05-11,Attended,Diagnosis,Yes,82,Yes
 REF-00405,2025-12-03,2025-12,GP,Central,Routine,6-11,Female,92,2026-03-05,Attended,Treatment/Follow-up,Yes,74,Yes
 REF-00406,2025-09-12,2025-09,GP,Central,Routine,18-24,Male,93,2025-12-14,Attended,Treatment/Follow-up,Yes,74,Yes
-REF-00407,2025-09-09,2025-09,School,West Community,Routine,18-24,Female,166,2026-02-22,Cancelled,Triage,No,64,No
+REF-00407,2025-09-09,2025-09,School,West Community,Routine,18-24,Female,166,2026-02-22,DNA,Triage,No,39,No
 REF-00408,2025-01-25,2025-01,GP,Central,Routine,6-11,Female,107,2025-05-12,Attended,Assessment,No,71,Yes
 REF-00409,2024-10-17,2024-10,School,East Community,Routine,6-11,Male,106,2025-01-31,DNA,Triage,No,29,Yes
 REF-00410,2025-01-19,2025-01,School,East Community,Routine,12-17,Female,3,2025-01-22,Attended,Diagnosis,Yes,90,Yes
@@ -440,7 +440,7 @@ REF-00438,2024-04-15,2024-04,GP,West Community,Urgent,18-24,Female,62,2024-06-16
 REF-00439,2025-09-24,2025-09,GP,West Community,Routine,12-17,Female,63,2025-11-26,DNA,Triage,No,37,Yes
 REF-00440,2024-01-30,2024-01,GP,East Community,Routine,25-39,Male,179,2024-07-27,Attended,Treatment/Follow-up,Yes,67,No
 REF-00441,2025-12-15,2025-12,School,West Community,Routine,18-24,Male,5,2025-12-20,Attended,Assessment,No,88,Yes
-REF-00442,2025-05-08,2025-05,School,West Community,Routine,12-17,Female,50,2025-06-27,Cancelled,Triage,No,58,Yes
+REF-00442,2025-05-08,2025-05,School,West Community,Routine,12-17,Female,50,2025-06-27,DNA,Triage,No,33,Yes
 REF-00443,2024-01-01,2024-01,School,South Hub,Routine,12-17,Male,241,2024-08-29,Attended,Diagnosis,Yes,70,No
 REF-00444,2024-10-26,2024-10,School,Central,Routine,12-17,Female,92,2025-01-26,Attended,Assessment,No,75,Yes
 REF-00445,2025-10-23,2025-10,GP,East Community,Routine,6-11,Male,3,2025-10-26,Attended,Diagnosis,Yes,85,Yes
@@ -448,11 +448,11 @@ REF-00446,2025-02-26,2025-02,GP,South Hub,Routine,12-17,Male,70,2025-05-07,Atten
 REF-00447,2024-07-11,2024-07,GP,Central,Routine,6-11,Other/Not stated,76,2024-09-25,Attended,Triage,No,73,Yes
 REF-00448,2024-06-03,2024-06,GP,West Community,Routine,12-17,Male,119,2024-09-30,Attended,Diagnosis,No,78,Yes
 REF-00449,2024-03-23,2024-03,Secondary Care,North Hub,Urgent,12-17,Female,15,2024-04-07,Attended,Assessment,No,88,Yes
-REF-00450,2024-01-13,2024-01,GP,South Hub,Routine,12-17,Other/Not stated,72,2024-03-25,Attended,Treatment/Follow-up,Yes,74,Yes
-REF-00451,2025-06-17,2025-06,School,West Community,Routine,18-24,Female,40,2025-07-27,DNA,Triage,No,50,Yes
-REF-00452,2024-05-05,2024-05,GP,South Hub,Routine,12-17,Female,172,2024-10-24,Attended,Treatment/Follow-up,Yes,76,No
-REF-00453,2024-11-28,2024-11,GP,Central,Routine,6-11,Male,104,2025-03-12,Attended,Diagnosis,Yes,80,Yes
-REF-00454,2024-04-01,2024-04,GP,Central,Routine,12-17,Male,85,2024-06-25,Attended,Triage,No,81,Yes
+REF-00450,2024-01-13,2024-01,GP,South Hub,Routine,12-17,Other/Not stated,72,2024-03-25,Cancelled,Triage,No,57,Yes
+REF-00451,2024-07-22,2024-07,GP,Central,Routine,18-24,Female,3,2024-07-25,Attended,Assessment,No,78,Yes
+REF-00452,2025-07-16,2025-07,School,East Community,Routine,6-11,Male,198,2026-01-30,Attended,Assessment,No,64,No
+REF-00453,2024-08-29,2024-08,School,South Hub,Routine,25-39,Male,42,2024-10-10,Attended,Diagnosis,Yes,78,Yes
+REF-00454,2025-01-15,2025-01,Self-referral,West Community,Routine,6-11,Male,135,2025-05-30,DNA,Triage,No,37,No
 REF-00455,2025-10-22,2025-10,GP,North Hub,Routine,6-11,Female,206,2026-05-16,Attended,Treatment/Follow-up,Yes,66,No
 REF-00456,2024-01-22,2024-01,School,South Hub,Routine,12-17,Female,69,2024-03-31,Attended,Diagnosis,Yes,87,Yes
 REF-00457,2024-07-13,2024-07,School,East Community,Routine,25-39,Female,159,2024-12-19,Attended,Triage,No,68,No
@@ -477,13 +477,13 @@ REF-00475,2025-05-28,2025-05,GP,South Hub,Routine,12-17,Female,11,2025-06-08,Att
 REF-00476,2024-03-14,2024-03,GP,Central,Routine,6-11,Male,139,2024-07-31,Attended,Assessment,No,76,No
 REF-00477,2024-12-18,2024-12,School,East Community,Routine,6-11,Female,138,2025-05-05,Attended,Diagnosis,No,73,No
 REF-00478,2024-07-23,2024-07,School,North Hub,Routine,6-11,Female,3,2024-07-26,Attended,Treatment/Follow-up,No,86,Yes
-REF-00479,2024-01-15,2024-01,GP,East Community,Routine,12-17,Female,106,2024-04-30,Cancelled,Triage,No,70,Yes
+REF-00479,2024-01-15,2024-01,GP,East Community,Routine,12-17,Female,106,2024-04-30,DNA,Triage,No,45,Yes
 REF-00480,2024-09-21,2024-09,School,South Hub,Routine,18-24,Male,168,2025-03-08,Attended,Treatment/Follow-up,Yes,71,No
 REF-00481,2024-06-23,2024-06,GP,Central,Routine,12-17,Male,108,2024-10-09,Attended,Diagnosis,No,79,Yes
 REF-00482,2024-04-20,2024-04,GP,West Community,Urgent,12-17,Female,25,2024-05-15,Attended,Triage,No,85,Yes
 REF-00483,2025-05-11,2025-05,Secondary Care,South Hub,Routine,6-11,Male,3,2025-05-14,DNA,Triage,No,53,Yes
 REF-00484,2024-11-08,2024-11,GP,South Hub,Routine,6-11,Male,42,2024-12-20,Attended,Assessment,No,90,Yes
-REF-00485,2024-10-09,2024-10,Self-referral,West Community,Routine,25-39,Male,179,2025-04-06,Cancelled,Triage,No,58,No
+REF-00485,2024-10-09,2024-10,Self-referral,West Community,Routine,25-39,Male,179,2025-04-06,DNA,Triage,No,33,No
 REF-00486,2025-02-06,2025-02,School,West Community,Routine,18-24,Male,100,2025-05-17,Attended,Diagnosis,Yes,73,Yes
 REF-00487,2025-03-12,2025-03,Social Services,East Community,Urgent,12-17,Female,12,2025-03-24,Attended,Assessment,No,80,Yes
 REF-00488,2024-11-12,2024-11,School,South Hub,Urgent,12-17,Male,5,2024-11-17,Attended,Diagnosis,Yes,82,Yes
@@ -502,7 +502,7 @@ REF-00500,2024-04-03,2024-04,GP,East Community,Routine,6-11,Male,174,2024-09-24,
 REF-00501,2025-01-22,2025-01,School,South Hub,Routine,25-39,Male,62,2025-03-25,Attended,Assessment,No,73,Yes
 REF-00502,2025-03-05,2025-03,GP,West Community,Routine,12-17,Female,50,2025-04-24,Attended,Treatment/Follow-up,Yes,81,Yes
 REF-00503,2024-01-13,2024-01,GP,Central,Urgent,25-39,Male,13,2024-01-26,Attended,Diagnosis,Yes,76,Yes
-REF-00504,2024-09-07,2024-09,Secondary Care,Central,Routine,25-39,Female,86,2024-12-02,Cancelled,Triage,No,56,Yes
+REF-00504,2024-09-07,2024-09,Secondary Care,Central,Routine,25-39,Female,86,2024-12-02,DNA,Triage,No,31,Yes
 REF-00505,2025-10-30,2025-10,GP,North Hub,Routine,18-24,Male,36,2025-12-05,DNA,Triage,No,47,Yes
 REF-00506,2024-07-01,2024-07,GP,Central,Routine,18-24,Male,234,2025-02-20,Attended,Treatment/Follow-up,Yes,59,No
 REF-00507,2024-04-05,2024-04,Self-referral,West Community,Routine,25-39,Male,113,2024-07-27,DNA,Triage,No,36,Yes
@@ -524,13 +524,13 @@ REF-00522,2025-03-27,2025-03,School,South Hub,Routine,12-17,Female,47,2025-05-13
 REF-00523,2025-07-16,2025-07,GP,East Community,Routine,18-24,Female,28,2025-08-13,Attended,Triage,No,75,Yes
 REF-00524,2025-04-27,2025-04,Secondary Care,West Community,Routine,6-11,Male,220,2025-12-03,DNA,Triage,No,33,No
 REF-00525,2025-09-23,2025-09,GP,South Hub,Routine,25-39,Male,3,2025-09-26,Attended,Diagnosis,Yes,91,Yes
-REF-00526,2024-04-09,2024-04,GP,West Community,Routine,12-17,Male,44,2024-05-23,Cancelled,Triage,No,67,Yes
+REF-00526,2024-04-09,2024-04,GP,West Community,Routine,12-17,Male,44,2024-05-23,DNA,Triage,No,42,Yes
 REF-00527,2025-01-07,2025-01,GP,East Community,Routine,25-39,Male,67,2025-03-15,Attended,Assessment,No,86,Yes
 REF-00528,2024-06-23,2024-06,GP,Central,Routine,6-11,Female,89,2024-09-20,Attended,Treatment/Follow-up,Yes,72,Yes
 REF-00529,2024-11-05,2024-11,School,West Community,Routine,12-17,Female,127,2025-03-12,DNA,Triage,No,33,No
 REF-00530,2025-12-11,2025-12,School,West Community,Routine,18-24,Female,151,2026-05-11,Attended,Assessment,No,67,No
-REF-00531,2025-12-29,2025-12,School,Central,Routine,18-24,Female,146,2026-05-24,Attended,Assessment,No,68,No
-REF-00532,2025-12-02,2025-12,Self-referral,West Community,Routine,12-17,Male,128,2026-04-09,DNA,Triage,No,31,No
+REF-00531,2025-12-29,2025-12,School,Central,Routine,18-24,Female,146,2026-05-24,Cancelled,Triage,No,62,No
+REF-00532,2024-03-12,2024-03,School,Central,Routine,25-39,Female,127,2024-07-17,Attended,Diagnosis,Yes,71,No
 REF-00533,2025-08-17,2025-08,Secondary Care,North Hub,Routine,25-39,Male,28,2025-09-14,Attended,Diagnosis,Yes,85,Yes
 REF-00534,2024-11-02,2024-11,School,East Community,Urgent,25-39,Male,33,2024-12-05,Attended,Treatment/Follow-up,No,75,Yes
 REF-00535,2025-09-18,2025-09,Social Services,South Hub,Routine,25-39,Female,233,2026-05-09,DNA,Triage,No,29,No
@@ -560,11 +560,11 @@ REF-00558,2025-03-28,2025-03,Self-referral,North Hub,Routine,6-11,Male,99,2025-0
 REF-00559,2024-06-01,2024-06,School,North Hub,Routine,18-24,Female,37,2024-07-08,Attended,Diagnosis,No,89,Yes
 REF-00560,2025-05-04,2025-05,GP,North Hub,Urgent,18-24,Female,3,2025-05-07,Attended,Treatment/Follow-up,Yes,88,Yes
 REF-00561,2024-12-07,2024-12,School,North Hub,Routine,12-17,Male,12,2024-12-19,Attended,Assessment,No,82,Yes
-REF-00562,2024-06-29,2024-06,School,South Hub,Urgent,12-17,Female,62,2024-08-30,Cancelled,Triage,No,68,Yes
+REF-00562,2024-06-29,2024-06,School,South Hub,Urgent,12-17,Female,62,2024-08-30,DNA,Triage,No,43,Yes
 REF-00563,2025-05-13,2025-05,GP,South Hub,Routine,6-11,Female,66,2025-07-18,Attended,Triage,No,81,Yes
 REF-00564,2025-05-26,2025-05,School,West Community,Urgent,40+,Female,3,2025-05-29,Attended,Assessment,No,78,Yes
 REF-00565,2025-02-19,2025-02,GP,Central,Routine,12-17,Male,111,2025-06-10,Attended,Treatment/Follow-up,Yes,72,Yes
-REF-00566,2025-05-15,2025-05,School,Central,Routine,6-11,Male,55,2025-07-09,DNA,Triage,No,38,Yes
+REF-00566,2025-05-15,2025-05,School,Central,Routine,6-11,Male,55,2025-07-09,Cancelled,Triage,No,63,Yes
 REF-00567,2025-10-09,2025-10,GP,North Hub,Routine,12-17,Female,3,2025-10-12,DNA,Triage,No,52,Yes
 REF-00568,2025-09-01,2025-09,Self-referral,South Hub,Routine,12-17,Male,35,2025-10-06,Attended,Assessment,No,79,Yes
 REF-00569,2024-11-25,2024-11,Self-referral,North Hub,Routine,18-24,Female,125,2025-03-30,DNA,Triage,No,38,Yes
@@ -615,7 +615,7 @@ REF-00613,2024-11-19,2024-11,Self-referral,East Community,Routine,12-17,Male,38,
 REF-00614,2024-10-15,2024-10,GP,East Community,Routine,40+,Female,149,2025-03-13,DNA,Triage,No,41,No
 REF-00615,2024-08-14,2024-08,Self-referral,Central,Routine,18-24,Male,16,2024-08-30,Attended,Treatment/Follow-up,Yes,78,Yes
 REF-00616,2024-04-29,2024-04,Self-referral,West Community,Urgent,12-17,Male,27,2024-05-26,Attended,Treatment/Follow-up,Yes,85,Yes
-REF-00617,2024-06-25,2024-06,Self-referral,North Hub,Routine,12-17,Male,119,2024-10-22,Cancelled,Triage,No,55,Yes
+REF-00617,2024-06-25,2024-06,Self-referral,North Hub,Routine,12-17,Male,119,2024-10-22,DNA,Triage,No,30,Yes
 REF-00618,2025-03-11,2025-03,School,North Hub,Routine,6-11,Male,123,2025-07-12,Attended,Assessment,No,68,Yes
 REF-00619,2025-11-06,2025-11,GP,North Hub,Routine,25-39,Female,80,2026-01-25,DNA,Triage,No,34,Yes
 REF-00620,2025-09-08,2025-09,GP,South Hub,Urgent,18-24,Female,30,2025-10-08,Cancelled,Triage,No,68,Yes
@@ -628,7 +628,7 @@ REF-00626,2025-05-02,2025-05,Secondary Care,North Hub,Routine,40+,Male,41,2025-0
 REF-00627,2025-06-19,2025-06,School,South Hub,Routine,12-17,Male,197,2026-01-02,Attended,Assessment,No,72,No
 REF-00628,2024-07-22,2024-07,GP,West Community,Routine,6-11,Male,67,2024-09-27,Attended,Assessment,No,80,Yes
 REF-00629,2025-10-21,2025-10,Secondary Care,Central,Routine,40+,Other/Not stated,44,2025-12-04,Attended,Assessment,No,89,Yes
-REF-00630,2025-05-24,2025-05,GP,North Hub,Urgent,6-11,Female,27,2025-06-20,DNA,Triage,No,35,Yes
+REF-00630,2025-05-24,2025-05,GP,North Hub,Urgent,6-11,Female,27,2025-06-20,Cancelled,Triage,No,60,Yes
 REF-00631,2024-07-02,2024-07,GP,South Hub,Routine,12-17,Male,90,2024-09-30,Attended,Diagnosis,Yes,79,Yes
 REF-00632,2025-11-08,2025-11,GP,Central,Routine,12-17,Male,3,2025-11-11,Attended,Treatment/Follow-up,Yes,90,Yes
 REF-00633,2024-05-01,2024-05,GP,West Community,Routine,12-17,Female,129,2024-09-07,Attended,Treatment/Follow-up,Yes,80,No
@@ -665,7 +665,7 @@ REF-00663,2024-06-23,2024-06,Secondary Care,Central,Routine,12-17,Male,3,2024-06
 REF-00664,2024-07-14,2024-07,Secondary Care,East Community,Routine,12-17,Male,114,2024-11-05,DNA,Triage,No,34,Yes
 REF-00665,2025-09-06,2025-09,GP,South Hub,Urgent,12-17,Female,38,2025-10-14,Attended,Diagnosis,No,85,Yes
 REF-00666,2025-08-19,2025-08,School,North Hub,Routine,12-17,Male,130,2025-12-27,Attended,Assessment,No,73,No
-REF-00667,2025-12-31,2025-12,GP,Central,Routine,12-17,Female,142,2026-05-22,Cancelled,Triage,No,62,No
+REF-00667,2025-12-31,2025-12,GP,Central,Routine,12-17,Female,142,2026-05-22,DNA,Triage,No,37,No
 REF-00668,2025-09-12,2025-09,Secondary Care,Central,Urgent,25-39,Male,34,2025-10-16,DNA,Triage,No,51,Yes
 REF-00669,2025-09-26,2025-09,GP,East Community,Urgent,6-11,Male,40,2025-11-05,Attended,Diagnosis,Yes,88,Yes
 REF-00670,2024-05-15,2024-05,GP,West Community,Routine,6-11,Female,95,2024-08-18,DNA,Triage,No,34,Yes
@@ -677,21 +677,21 @@ REF-00675,2025-06-04,2025-06,Self-referral,Central,Routine,6-11,Other/Not stated
 REF-00676,2025-11-24,2025-11,GP,East Community,Routine,18-24,Male,87,2026-02-19,Attended,Diagnosis,No,80,Yes
 REF-00677,2024-06-06,2024-06,GP,West Community,Routine,12-17,Male,77,2024-08-22,Attended,Diagnosis,No,81,Yes
 REF-00678,2025-08-05,2025-08,GP,East Community,Urgent,12-17,Female,26,2025-08-31,DNA,Triage,No,47,Yes
-REF-00679,2024-04-04,2024-04,GP,West Community,Routine,6-11,Male,147,2024-08-29,Attended,Treatment/Follow-up,Yes,68,No
-REF-00680,2024-11-01,2024-11,GP,East Community,Routine,25-39,Male,187,2025-05-07,Attended,Triage,No,73,No
+REF-00679,2024-04-04,2024-04,GP,West Community,Routine,6-11,Male,147,2024-08-29,Cancelled,Triage,No,54,No
+REF-00680,2024-05-03,2024-05,GP,East Community,Routine,25-39,Male,187,2024-11-06,Attended,Triage,No,73,No
 REF-00681,2025-06-08,2025-06,GP,West Community,Routine,12-17,Male,3,2025-06-11,Attended,Diagnosis,Yes,90,Yes
 REF-00682,2024-04-05,2024-04,GP,West Community,Routine,18-24,Male,138,2024-08-21,Attended,Treatment/Follow-up,Yes,82,No
-REF-00683,2024-03-26,2024-03,GP,West Community,Routine,12-17,Other/Not stated,60,2024-05-25,Attended,Diagnosis,Yes,74,Yes
-REF-00684,2024-02-16,2024-02,GP,West Community,Routine,6-11,Male,29,2024-03-16,Attended,Assessment,No,83,Yes
-REF-00685,2025-08-22,2025-08,GP,North Hub,Routine,25-39,Male,114,2025-12-14,DNA,Triage,No,41,Yes
-REF-00686,2025-12-22,2025-12,GP,West Community,Routine,25-39,Male,3,2025-12-25,Attended,Assessment,No,82,Yes
+REF-00683,2024-03-26,2024-03,GP,West Community,Routine,12-17,Other/Not stated,60,2024-05-25,Cancelled,Triage,No,70,Yes
+REF-00684,2024-10-29,2024-10,School,North Hub,Routine,18-24,Male,29,2024-11-27,Attended,Diagnosis,No,83,Yes
+REF-00685,2024-12-29,2024-12,GP,Central,Routine,6-11,Male,3,2025-01-01,Attended,Triage,No,90,Yes
+REF-00686,2025-12-22,2025-12,GP,West Community,Routine,25-39,Male,112,2026-04-13,Attended,Assessment,No,73,Yes
 REF-00687,2024-08-04,2024-08,GP,Central,Routine,12-17,Male,71,2024-10-14,Attended,Triage,No,87,Yes
 REF-00688,2025-04-16,2025-04,School,Central,Urgent,25-39,Female,29,2025-05-15,Attended,Diagnosis,Yes,87,Yes
 REF-00689,2024-11-05,2024-11,GP,South Hub,Routine,6-11,Female,220,2025-06-13,DNA,Triage,No,23,No
 REF-00690,2025-10-27,2025-10,GP,Central,Urgent,6-11,Female,20,2025-11-16,Attended,Diagnosis,Yes,81,Yes
 REF-00691,2024-06-05,2024-06,Self-referral,West Community,Routine,12-17,Male,61,2024-08-05,Attended,Assessment,No,82,Yes
 REF-00692,2024-01-09,2024-01,GP,West Community,Urgent,40+,Male,20,2024-01-29,Attended,Diagnosis,Yes,85,Yes
-REF-00693,2024-02-07,2024-02,GP,Central,Routine,25-39,Male,200,2024-08-25,Cancelled,Triage,No,47,No
+REF-00693,2024-02-07,2024-02,GP,Central,Routine,25-39,Male,200,2024-08-25,DNA,Triage,No,22,No
 REF-00694,2025-06-24,2025-06,GP,Central,Routine,6-11,Male,4,2025-06-28,Attended,Diagnosis,Yes,88,Yes
 REF-00695,2025-04-04,2025-04,School,East Community,Routine,25-39,Male,6,2025-04-10,Attended,Diagnosis,No,91,Yes
 REF-00696,2024-05-14,2024-05,Secondary Care,West Community,Routine,40+,Male,115,2024-09-06,Attended,Treatment/Follow-up,No,73,Yes
@@ -740,7 +740,7 @@ REF-00738,2025-02-06,2025-02,School,North Hub,Routine,18-24,Male,106,2025-05-23,
 REF-00739,2025-09-07,2025-09,GP,North Hub,Routine,6-11,Female,87,2025-12-03,Attended,Treatment/Follow-up,Yes,81,Yes
 REF-00740,2024-07-15,2024-07,GP,East Community,Routine,25-39,Female,92,2024-10-15,Attended,Treatment/Follow-up,Yes,85,Yes
 REF-00741,2025-12-21,2025-12,Self-referral,South Hub,Routine,40+,Male,143,2026-05-13,Attended,Diagnosis,Yes,71,No
-REF-00742,2024-03-07,2024-03,School,South Hub,Routine,12-17,Male,120,2024-07-05,Cancelled,Triage,No,68,Yes
+REF-00742,2024-03-07,2024-03,School,South Hub,Routine,12-17,Male,120,2024-07-05,DNA,Triage,No,43,Yes
 REF-00743,2024-10-07,2024-10,GP,Central,Routine,18-24,Male,87,2025-01-02,Attended,Diagnosis,Yes,80,Yes
 REF-00744,2025-03-18,2025-03,Secondary Care,North Hub,Routine,18-24,Male,81,2025-06-07,Attended,Treatment/Follow-up,No,78,Yes
 REF-00745,2024-02-18,2024-02,GP,West Community,Routine,12-17,Female,10,2024-02-28,Attended,Treatment/Follow-up,Yes,90,Yes
@@ -777,12 +777,12 @@ REF-00775,2025-01-18,2025-01,GP,East Community,Urgent,40+,Female,42,2025-03-01,A
 REF-00776,2025-12-08,2025-12,School,North Hub,Routine,18-24,Female,3,2025-12-11,DNA,Triage,No,47,Yes
 REF-00777,2025-08-04,2025-08,School,Central,Routine,18-24,Female,3,2025-08-07,DNA,Triage,No,49,Yes
 REF-00778,2024-07-11,2024-07,GP,West Community,Routine,18-24,Female,199,2025-01-26,DNA,Triage,No,26,No
-REF-00779,2024-02-02,2024-02,Self-referral,North Hub,Routine,6-11,Female,146,2024-06-27,Attended,Diagnosis,Yes,76,No
-REF-00780,2025-06-14,2025-06,GP,West Community,Routine,12-17,Other/Not stated,70,2025-08-23,DNA,Triage,No,45,Yes
-REF-00781,2025-05-04,2025-05,Self-referral,South Hub,Routine,6-11,Female,3,2025-05-07,Cancelled,Triage,No,71,Yes
-REF-00782,2025-08-24,2025-08,GP,West Community,Routine,12-17,Female,129,2025-12-31,DNA,Triage,No,29,No
-REF-00783,2025-02-12,2025-02,School,East Community,Routine,25-39,Male,3,2025-02-15,Attended,Assessment,No,91,Yes
-REF-00784,2024-12-21,2024-12,Self-referral,East Community,Routine,12-17,Male,111,2025-04-11,Attended,Assessment,No,81,Yes
+REF-00779,2024-02-02,2024-02,Self-referral,North Hub,Routine,6-11,Female,146,2024-06-27,Cancelled,Triage,No,66,No
+REF-00780,2024-03-12,2024-03,GP,North Hub,Routine,6-11,Male,70,2024-05-21,Attended,Assessment,No,75,Yes
+REF-00781,2024-05-12,2024-05,School,North Hub,Routine,12-17,Male,122,2024-09-11,Cancelled,Triage,No,67,Yes
+REF-00782,2024-06-11,2024-06,School,Central,Urgent,6-11,Male,68,2024-08-18,Attended,Assessment,No,76,Yes
+REF-00783,2025-04-01,2025-04,GP,South Hub,Routine,18-24,Male,140,2025-08-19,Attended,Treatment/Follow-up,Yes,80,No
+REF-00784,2024-12-21,2024-12,Self-referral,East Community,Routine,12-17,Male,35,2025-01-25,Attended,Assessment,No,88,Yes
 REF-00785,2025-04-13,2025-04,GP,Central,Routine,6-11,Male,224,2025-11-23,DNA,Triage,No,28,No
 REF-00786,2025-11-13,2025-11,Secondary Care,South Hub,Routine,25-39,Female,123,2026-03-16,Attended,Assessment,No,78,Yes
 REF-00787,2024-03-19,2024-03,Self-referral,East Community,Routine,12-17,Female,89,2024-06-16,DNA,Triage,No,44,Yes
@@ -816,7 +816,7 @@ REF-00814,2025-05-27,2025-05,Social Services,West Community,Routine,18-24,Male,7
 REF-00815,2025-10-13,2025-10,School,South Hub,Routine,12-17,Female,82,2026-01-03,DNA,Triage,No,36,Yes
 REF-00816,2025-05-18,2025-05,GP,West Community,Routine,18-24,Male,3,2025-05-21,Attended,Assessment,No,88,Yes
 REF-00817,2024-07-09,2024-07,Self-referral,South Hub,Routine,18-24,Female,45,2024-08-23,DNA,Triage,No,39,Yes
-REF-00818,2024-07-15,2024-07,GP,West Community,Urgent,12-17,Male,22,2024-08-06,Cancelled,Triage,No,66,Yes
+REF-00818,2024-07-15,2024-07,GP,West Community,Urgent,12-17,Male,22,2024-08-06,DNA,Triage,No,41,Yes
 REF-00819,2024-03-22,2024-03,GP,East Community,Routine,6-11,Female,91,2024-06-21,Attended,Triage,No,78,Yes
 REF-00820,2024-01-08,2024-01,School,North Hub,Routine,6-11,Male,164,2024-06-20,DNA,Triage,No,40,No
 REF-00821,2024-09-29,2024-09,Secondary Care,East Community,Routine,18-24,Female,57,2024-11-25,Attended,Assessment,No,84,Yes
@@ -868,334 +868,334 @@ REF-00866,2025-10-20,2025-10,GP,West Community,Urgent,25-39,Male,61,2025-12-20,D
 REF-00867,2025-09-22,2025-09,GP,North Hub,Routine,6-11,Male,109,2026-01-09,DNA,Triage,No,43,Yes
 REF-00868,2024-07-21,2024-07,GP,South Hub,Routine,12-17,Male,144,2024-12-12,DNA,Triage,No,33,No
 REF-00869,2024-08-19,2024-08,GP,East Community,Routine,12-17,Female,96,2024-11-23,Attended,Treatment/Follow-up,Yes,80,Yes
-REF-00870,2025-03-20,2025-03,GP,South Hub,Urgent,6-11,Female,18,2025-04-07,Cancelled,Triage,No,74,Yes
-REF-00871,2024-12-05,2024-12,Secondary Care,South Hub,Routine,40+,Male,119,2025-04-03,Attended,Diagnosis,Yes,72,Yes
-REF-00872,2024-11-28,2024-11,Self-referral,West Community,Routine,18-24,Male,92,2025-02-28,DNA,Triage,No,33,Yes
-REF-00873,2024-01-22,2024-01,GP,North Hub,Routine,25-39,Female,56,2024-03-18,Attended,Treatment/Follow-up,Yes,82,Yes
-REF-00874,2024-10-15,2024-10,GP,South Hub,Routine,18-24,Male,26,2024-11-10,Cancelled,Triage,No,68,Yes
-REF-00875,2024-04-27,2024-04,Secondary Care,South Hub,Urgent,18-24,Male,3,2024-04-30,Cancelled,Triage,No,78,Yes
-REF-00876,2025-09-17,2025-09,GP,Central,Urgent,18-24,Female,33,2025-10-20,Cancelled,Triage,No,72,Yes
-REF-00877,2024-02-09,2024-02,GP,South Hub,Routine,12-17,Male,103,2024-05-22,Attended,Assessment,No,76,Yes
-REF-00878,2024-08-15,2024-08,GP,Central,Routine,12-17,Female,96,2024-11-19,DNA,Triage,No,40,Yes
-REF-00879,2024-10-14,2024-10,Secondary Care,South Hub,Routine,12-17,Female,106,2025-01-28,Attended,Assessment,No,84,Yes
-REF-00880,2024-10-13,2024-10,Secondary Care,South Hub,Routine,12-17,Male,89,2025-01-10,Attended,Triage,No,70,Yes
-REF-00881,2025-11-30,2025-11,School,East Community,Urgent,12-17,Male,26,2025-12-26,Attended,Assessment,No,83,Yes
-REF-00882,2024-08-03,2024-08,School,North Hub,Routine,6-11,Male,3,2024-08-06,DNA,Triage,No,43,Yes
-REF-00883,2024-07-16,2024-07,Self-referral,North Hub,Urgent,40+,Male,26,2024-08-11,Attended,Assessment,No,79,Yes
-REF-00884,2024-07-15,2024-07,GP,Central,Routine,40+,Male,159,2024-12-21,Attended,Treatment/Follow-up,No,66,No
-REF-00885,2025-05-09,2025-05,GP,Central,Urgent,25-39,Female,19,2025-05-28,Attended,Treatment/Follow-up,Yes,82,Yes
-REF-00886,2025-02-11,2025-02,GP,Central,Routine,40+,Female,265,2025-11-03,Attended,Assessment,No,69,No
-REF-00887,2025-02-14,2025-02,School,North Hub,Routine,6-11,Female,36,2025-03-22,Attended,Diagnosis,Yes,90,Yes
-REF-00888,2024-09-22,2024-09,GP,East Community,Routine,18-24,Female,3,2024-09-25,DNA,Triage,No,44,Yes
-REF-00889,2024-10-25,2024-10,GP,East Community,Routine,40+,Female,109,2025-02-11,Attended,Treatment/Follow-up,Yes,68,Yes
-REF-00890,2025-10-26,2025-10,GP,East Community,Routine,12-17,Male,3,2025-10-29,Attended,Assessment,No,81,Yes
-REF-00891,2025-02-22,2025-02,Secondary Care,North Hub,Routine,18-24,Female,14,2025-03-08,Attended,Assessment,No,76,Yes
-REF-00892,2025-07-04,2025-07,School,Central,Urgent,6-11,Male,54,2025-08-27,Attended,Diagnosis,No,79,Yes
-REF-00893,2025-03-28,2025-03,GP,Central,Routine,18-24,Male,23,2025-04-20,Attended,Diagnosis,Yes,91,Yes
-REF-00894,2024-04-05,2024-04,GP,South Hub,Routine,6-11,Male,130,2024-08-13,Attended,Diagnosis,Yes,72,No
-REF-00895,2024-06-30,2024-06,Self-referral,South Hub,Routine,6-11,Female,100,2024-10-08,DNA,Triage,No,45,Yes
-REF-00896,2024-05-20,2024-05,Self-referral,Central,Routine,6-11,Female,240,2025-01-15,Attended,Treatment/Follow-up,Yes,58,No
-REF-00897,2024-05-15,2024-05,GP,South Hub,Routine,40+,Male,86,2024-08-09,Attended,Diagnosis,No,72,Yes
-REF-00898,2024-07-26,2024-07,GP,West Community,Routine,25-39,Female,74,2024-10-08,Attended,Assessment,No,79,Yes
-REF-00899,2025-10-04,2025-10,School,North Hub,Routine,6-11,Female,3,2025-10-07,Cancelled,Triage,No,69,Yes
-REF-00900,2024-01-25,2024-01,GP,East Community,Routine,18-24,Female,74,2024-04-08,Attended,Assessment,No,74,Yes
-REF-00901,2025-05-18,2025-05,GP,North Hub,Routine,40+,Female,139,2025-10-04,Attended,Treatment/Follow-up,Yes,67,No
-REF-00902,2025-09-11,2025-09,GP,East Community,Routine,18-24,Male,113,2026-01-02,DNA,Triage,No,37,Yes
-REF-00903,2025-10-01,2025-10,Self-referral,North Hub,Routine,12-17,Male,48,2025-11-18,Attended,Treatment/Follow-up,No,77,Yes
-REF-00904,2024-11-23,2024-11,GP,West Community,Routine,25-39,Female,124,2025-03-27,Attended,Treatment/Follow-up,Yes,77,Yes
-REF-00905,2024-05-10,2024-05,GP,East Community,Routine,12-17,Male,177,2024-11-03,Attended,Assessment,No,70,No
-REF-00906,2025-01-27,2025-01,GP,Central,Routine,12-17,Male,67,2025-04-04,Attended,Triage,No,85,Yes
-REF-00907,2025-06-23,2025-06,School,South Hub,Routine,25-39,Female,307,2026-04-26,DNA,Triage,No,32,No
-REF-00908,2024-05-16,2024-05,Secondary Care,East Community,Routine,12-17,Male,88,2024-08-12,Attended,Assessment,No,84,Yes
-REF-00909,2024-05-27,2024-05,Self-referral,West Community,Routine,12-17,Male,123,2024-09-27,Attended,Triage,No,80,Yes
-REF-00910,2025-01-15,2025-01,GP,Central,Routine,6-11,Male,97,2025-04-22,Attended,Triage,No,80,Yes
-REF-00911,2024-05-24,2024-05,GP,Central,Routine,25-39,Female,91,2024-08-23,DNA,Triage,No,46,Yes
-REF-00912,2025-12-16,2025-12,Secondary Care,East Community,Routine,12-17,Male,5,2025-12-21,DNA,Triage,No,40,Yes
-REF-00913,2024-06-08,2024-06,GP,Central,Routine,25-39,Male,216,2025-01-10,Attended,Treatment/Follow-up,Yes,67,No
-REF-00914,2025-08-08,2025-08,GP,West Community,Routine,40+,Female,93,2025-11-09,DNA,Triage,No,42,Yes
-REF-00915,2024-05-08,2024-05,Self-referral,North Hub,Routine,6-11,Female,83,2024-07-30,Attended,Diagnosis,Yes,83,Yes
-REF-00916,2025-01-24,2025-01,GP,West Community,Routine,6-11,Female,3,2025-01-27,DNA,Triage,No,47,Yes
-REF-00917,2024-01-29,2024-01,GP,North Hub,Routine,6-11,Male,86,2024-04-24,Attended,Diagnosis,Yes,78,Yes
-REF-00918,2024-03-28,2024-03,Social Services,Central,Routine,40+,Male,23,2024-04-20,DNA,Triage,No,38,Yes
-REF-00919,2024-11-12,2024-11,GP,East Community,Routine,40+,Male,56,2025-01-07,Attended,Assessment,No,76,Yes
-REF-00920,2024-12-05,2024-12,GP,North Hub,Routine,18-24,Male,148,2025-05-02,DNA,Triage,No,37,No
-REF-00921,2025-05-03,2025-05,School,East Community,Urgent,6-11,Male,53,2025-06-25,Attended,Assessment,No,79,Yes
-REF-00922,2025-11-28,2025-11,School,South Hub,Routine,40+,Male,130,2026-04-07,Attended,Diagnosis,Yes,77,No
-REF-00923,2025-04-03,2025-04,Self-referral,East Community,Routine,18-24,Male,212,2025-11-01,Attended,Assessment,No,62,No
-REF-00924,2024-06-05,2024-06,School,North Hub,Urgent,25-39,Female,36,2024-07-11,Attended,Diagnosis,No,76,Yes
-REF-00925,2025-05-25,2025-05,GP,East Community,Routine,6-11,Female,64,2025-07-28,Cancelled,Triage,No,71,Yes
-REF-00926,2024-09-21,2024-09,Social Services,West Community,Urgent,18-24,Female,34,2024-10-25,Cancelled,Triage,No,75,Yes
-REF-00927,2024-02-10,2024-02,GP,West Community,Routine,25-39,Male,130,2024-06-19,Attended,Treatment/Follow-up,Yes,80,No
-REF-00928,2025-06-02,2025-06,GP,North Hub,Urgent,18-24,Male,42,2025-07-14,Attended,Assessment,No,74,Yes
-REF-00929,2024-06-07,2024-06,Secondary Care,South Hub,Routine,18-24,Male,108,2024-09-23,Attended,Assessment,No,82,Yes
-REF-00930,2025-10-19,2025-10,School,North Hub,Routine,6-11,Male,224,2026-05-31,Attended,Treatment/Follow-up,No,65,No
-REF-00931,2025-02-15,2025-02,GP,Central,Routine,12-17,Male,28,2025-03-15,DNA,Triage,No,39,Yes
-REF-00932,2025-04-26,2025-04,GP,Central,Routine,6-11,Male,92,2025-07-27,Attended,Treatment/Follow-up,Yes,83,Yes
-REF-00933,2025-04-29,2025-04,GP,North Hub,Routine,40+,Male,71,2025-07-09,DNA,Triage,No,34,Yes
-REF-00934,2024-10-07,2024-10,GP,West Community,Routine,25-39,Male,182,2025-04-07,Attended,Assessment,No,63,No
-REF-00935,2024-04-04,2024-04,Secondary Care,East Community,Routine,6-11,Female,14,2024-04-18,Attended,Assessment,No,89,Yes
-REF-00936,2024-12-29,2024-12,Secondary Care,North Hub,Routine,18-24,Male,122,2025-04-30,DNA,Triage,No,31,Yes
-REF-00937,2024-11-27,2024-11,School,East Community,Urgent,6-11,Male,50,2025-01-16,Attended,Treatment/Follow-up,Yes,81,Yes
-REF-00938,2025-06-17,2025-06,Self-referral,South Hub,Urgent,18-24,Male,36,2025-07-23,DNA,Triage,No,40,Yes
-REF-00939,2024-07-11,2024-07,GP,South Hub,Routine,18-24,Female,95,2024-10-14,Attended,Treatment/Follow-up,Yes,81,Yes
-REF-00940,2024-01-17,2024-01,GP,North Hub,Routine,18-24,Male,128,2024-05-24,Attended,Assessment,No,78,No
-REF-00941,2025-07-09,2025-07,GP,East Community,Urgent,6-11,Female,16,2025-07-25,Attended,Diagnosis,Yes,89,Yes
-REF-00942,2025-10-11,2025-10,GP,North Hub,Routine,40+,Male,102,2026-01-21,DNA,Triage,No,29,Yes
-REF-00943,2025-09-23,2025-09,Secondary Care,Central,Routine,40+,Female,3,2025-09-26,DNA,Triage,No,46,Yes
-REF-00944,2025-03-06,2025-03,GP,Central,Routine,12-17,Female,115,2025-06-29,Attended,Assessment,No,82,Yes
-REF-00945,2025-02-26,2025-02,Secondary Care,West Community,Routine,6-11,Female,93,2025-05-30,Attended,Assessment,No,83,Yes
-REF-00946,2025-11-20,2025-11,GP,West Community,Urgent,6-11,Female,44,2026-01-03,Attended,Treatment/Follow-up,Yes,84,Yes
-REF-00947,2024-12-09,2024-12,GP,West Community,Routine,12-17,Other/Not stated,119,2025-04-07,Attended,Treatment/Follow-up,Yes,72,Yes
-REF-00948,2025-10-13,2025-10,GP,West Community,Routine,25-39,Male,178,2026-04-09,Attended,Triage,No,67,No
-REF-00949,2025-05-31,2025-05,GP,West Community,Routine,25-39,Male,78,2025-08-17,Attended,Assessment,No,73,Yes
-REF-00950,2024-01-27,2024-01,GP,Central,Routine,6-11,Male,172,2024-07-17,Attended,Treatment/Follow-up,Yes,63,No
-REF-00951,2024-05-13,2024-05,Social Services,East Community,Routine,6-11,Male,92,2024-08-13,Attended,Treatment/Follow-up,No,82,Yes
-REF-00952,2024-09-23,2024-09,School,South Hub,Routine,18-24,Male,129,2025-01-30,Attended,Triage,No,81,No
-REF-00953,2025-09-02,2025-09,GP,East Community,Routine,25-39,Female,17,2025-09-19,Attended,Assessment,No,91,Yes
-REF-00954,2024-01-23,2024-01,GP,North Hub,Routine,6-11,Female,86,2024-04-18,Attended,Diagnosis,Yes,75,Yes
-REF-00955,2024-07-03,2024-07,GP,Central,Urgent,18-24,Male,42,2024-08-14,Attended,Treatment/Follow-up,Yes,74,Yes
-REF-00956,2024-06-11,2024-06,School,North Hub,Routine,6-11,Female,127,2024-10-16,DNA,Triage,No,43,No
-REF-00957,2024-06-05,2024-06,GP,South Hub,Routine,6-11,Female,176,2024-11-28,DNA,Triage,No,31,No
-REF-00958,2025-05-08,2025-05,GP,Central,Routine,18-24,Male,137,2025-09-22,Attended,Diagnosis,No,72,No
-REF-00959,2024-09-13,2024-09,GP,East Community,Routine,40+,Female,108,2024-12-30,DNA,Triage,No,34,Yes
-REF-00960,2025-05-14,2025-05,GP,Central,Routine,25-39,Male,3,2025-05-17,Attended,Diagnosis,Yes,88,Yes
-REF-00961,2025-01-17,2025-01,Secondary Care,West Community,Routine,6-11,Female,3,2025-01-20,Attended,Treatment/Follow-up,Yes,93,Yes
-REF-00962,2024-12-26,2024-12,GP,East Community,Routine,12-17,Female,77,2025-03-13,Attended,Assessment,No,82,Yes
-REF-00963,2025-01-15,2025-01,GP,North Hub,Routine,12-17,Female,46,2025-03-02,Attended,Treatment/Follow-up,Yes,86,Yes
-REF-00964,2024-10-17,2024-10,School,North Hub,Routine,18-24,Male,152,2025-03-18,Attended,Treatment/Follow-up,Yes,78,No
-REF-00965,2025-11-29,2025-11,Self-referral,East Community,Routine,6-11,Female,70,2026-02-07,Attended,Assessment,No,77,Yes
-REF-00966,2025-09-07,2025-09,GP,Central,Routine,6-11,Female,84,2025-11-30,Attended,Diagnosis,Yes,84,Yes
-REF-00967,2024-10-18,2024-10,GP,North Hub,Urgent,25-39,Male,57,2024-12-14,DNA,Triage,No,36,Yes
-REF-00968,2025-03-01,2025-03,Self-referral,East Community,Routine,12-17,Male,118,2025-06-27,Attended,Triage,No,77,Yes
-REF-00969,2025-12-14,2025-12,Social Services,North Hub,Routine,25-39,Male,123,2026-04-16,Attended,Assessment,No,77,Yes
-REF-00970,2025-12-05,2025-12,Self-referral,North Hub,Routine,6-11,Male,124,2026-04-08,Attended,Diagnosis,Yes,68,Yes
-REF-00971,2024-09-22,2024-09,Secondary Care,North Hub,Routine,40+,Female,37,2024-10-29,Attended,Assessment,No,79,Yes
-REF-00972,2024-05-21,2024-05,School,East Community,Routine,25-39,Male,168,2024-11-05,Attended,Treatment/Follow-up,Yes,77,No
-REF-00973,2025-11-15,2025-11,GP,Central,Routine,12-17,Male,61,2026-01-15,Attended,Triage,No,81,Yes
-REF-00974,2025-12-29,2025-12,GP,South Hub,Routine,18-24,Male,202,2026-07-19,DNA,Triage,No,23,No
-REF-00975,2024-03-17,2024-03,Social Services,North Hub,Routine,18-24,Male,23,2024-04-09,Attended,Treatment/Follow-up,No,92,Yes
-REF-00976,2024-11-16,2024-11,Self-referral,West Community,Routine,18-24,Male,140,2025-04-05,Attended,Assessment,No,77,No
-REF-00977,2025-01-29,2025-01,Social Services,Central,Urgent,6-11,Female,48,2025-03-18,Attended,Treatment/Follow-up,Yes,76,Yes
-REF-00978,2024-05-30,2024-05,GP,North Hub,Routine,12-17,Male,114,2024-09-21,Cancelled,Triage,No,53,Yes
-REF-00979,2025-05-02,2025-05,School,East Community,Routine,6-11,Male,54,2025-06-25,Attended,Diagnosis,Yes,87,Yes
-REF-00980,2024-10-06,2024-10,GP,West Community,Routine,25-39,Male,122,2025-02-05,Attended,Assessment,No,75,Yes
-REF-00981,2025-06-26,2025-06,School,North Hub,Routine,18-24,Male,131,2025-11-04,DNA,Triage,No,28,No
-REF-00982,2025-08-12,2025-08,GP,North Hub,Routine,12-17,Male,71,2025-10-22,Attended,Assessment,No,84,Yes
-REF-00983,2024-04-13,2024-04,GP,East Community,Urgent,12-17,Female,36,2024-05-19,Attended,Assessment,No,74,Yes
-REF-00984,2024-04-06,2024-04,GP,Central,Urgent,12-17,Female,56,2024-06-01,Attended,Assessment,No,83,Yes
-REF-00985,2025-11-28,2025-11,GP,West Community,Routine,6-11,Female,21,2025-12-19,Cancelled,Triage,No,69,Yes
-REF-00986,2024-03-19,2024-03,GP,North Hub,Routine,18-24,Male,94,2024-06-21,Attended,Diagnosis,Yes,73,Yes
-REF-00987,2024-02-16,2024-02,Self-referral,East Community,Routine,25-39,Male,106,2024-06-01,DNA,Triage,No,39,Yes
-REF-00988,2025-04-08,2025-04,GP,Central,Routine,12-17,Male,118,2025-08-04,Attended,Triage,No,79,Yes
-REF-00989,2024-11-04,2024-11,Self-referral,Central,Urgent,12-17,Female,3,2024-11-07,Attended,Treatment/Follow-up,Yes,81,Yes
-REF-00990,2024-12-31,2024-12,GP,West Community,Routine,12-17,Male,71,2025-03-12,Cancelled,Triage,No,69,Yes
-REF-00991,2025-10-16,2025-10,GP,Central,Routine,25-39,Male,166,2026-03-31,Cancelled,Triage,No,60,No
-REF-00992,2024-12-05,2024-12,GP,East Community,Routine,12-17,Female,61,2025-02-04,Attended,Assessment,No,75,Yes
-REF-00993,2025-03-19,2025-03,Self-referral,East Community,Routine,12-17,Male,3,2025-03-22,Attended,Diagnosis,Yes,82,Yes
-REF-00994,2024-11-06,2024-11,GP,East Community,Routine,6-11,Female,84,2025-01-29,Attended,Diagnosis,Yes,79,Yes
-REF-00995,2024-01-06,2024-01,GP,North Hub,Routine,6-11,Female,172,2024-06-26,Attended,Treatment/Follow-up,Yes,65,No
-REF-00996,2025-12-31,2025-12,GP,South Hub,Urgent,12-17,Male,3,2026-01-03,Attended,Triage,No,88,Yes
-REF-00997,2024-09-11,2024-09,Self-referral,West Community,Routine,12-17,Male,226,2025-04-25,Attended,Diagnosis,Yes,69,No
-REF-00998,2025-08-15,2025-08,GP,East Community,Routine,6-11,Male,3,2025-08-18,Attended,Triage,No,91,Yes
-REF-00999,2025-07-12,2025-07,GP,West Community,Routine,6-11,Male,55,2025-09-05,Attended,Assessment,No,84,Yes
-REF-01000,2025-03-13,2025-03,GP,West Community,Urgent,6-11,Male,4,2025-03-17,Attended,Diagnosis,No,86,Yes
-REF-01001,2024-09-05,2024-09,School,Central,Routine,18-24,Male,52,2024-10-27,Attended,Assessment,No,73,Yes
-REF-01002,2025-04-18,2025-04,Self-referral,West Community,Urgent,25-39,Female,69,2025-06-26,Attended,Diagnosis,Yes,75,Yes
-REF-01003,2024-10-24,2024-10,School,North Hub,Routine,6-11,Male,3,2024-10-27,Attended,Diagnosis,Yes,92,Yes
-REF-01004,2024-05-19,2024-05,GP,South Hub,Routine,12-17,Female,76,2024-08-03,Attended,Triage,No,86,Yes
-REF-01005,2025-09-30,2025-09,School,North Hub,Routine,6-11,Male,31,2025-10-31,DNA,Triage,No,35,Yes
-REF-01006,2025-06-01,2025-06,GP,North Hub,Routine,12-17,Male,77,2025-08-17,Cancelled,Triage,No,63,Yes
-REF-01007,2025-07-13,2025-07,GP,West Community,Routine,25-39,Male,3,2025-07-16,Cancelled,Triage,No,69,Yes
-REF-01008,2024-06-23,2024-06,GP,South Hub,Routine,12-17,Female,125,2024-10-26,Attended,Treatment/Follow-up,Yes,75,Yes
-REF-01009,2025-02-04,2025-02,GP,West Community,Routine,12-17,Male,160,2025-07-14,Attended,Triage,No,73,No
-REF-01010,2024-02-04,2024-02,School,Central,Urgent,12-17,Male,32,2024-03-07,Attended,Assessment,No,89,Yes
-REF-01011,2024-10-10,2024-10,GP,Central,Routine,25-39,Male,20,2024-10-30,Attended,Triage,No,80,Yes
-REF-01012,2024-12-26,2024-12,School,West Community,Routine,25-39,Male,173,2025-06-17,Cancelled,Triage,No,57,No
-REF-01013,2025-02-07,2025-02,GP,West Community,Urgent,12-17,Male,13,2025-02-20,Attended,Treatment/Follow-up,Yes,80,Yes
-REF-01014,2025-12-15,2025-12,GP,East Community,Urgent,18-24,Male,4,2025-12-19,DNA,Triage,No,37,Yes
-REF-01015,2024-06-11,2024-06,GP,West Community,Routine,40+,Male,96,2024-09-15,Attended,Treatment/Follow-up,Yes,74,Yes
-REF-01016,2025-01-28,2025-01,Self-referral,North Hub,Routine,6-11,Female,3,2025-01-31,Attended,Triage,No,88,Yes
-REF-01017,2025-09-13,2025-09,School,South Hub,Routine,12-17,Male,3,2025-09-16,Attended,Assessment,No,85,Yes
-REF-01018,2025-05-17,2025-05,GP,South Hub,Routine,25-39,Male,229,2026-01-01,Attended,Treatment/Follow-up,Yes,58,No
-REF-01019,2025-10-06,2025-10,Social Services,North Hub,Routine,25-39,Male,38,2025-11-13,Attended,Triage,No,79,Yes
-REF-01020,2025-11-29,2025-11,Self-referral,Central,Urgent,12-17,Male,62,2026-01-30,Attended,Diagnosis,Yes,76,Yes
-REF-01021,2024-03-09,2024-03,GP,North Hub,Routine,18-24,Female,51,2024-04-29,Attended,Triage,No,83,Yes
-REF-01022,2024-01-24,2024-01,GP,East Community,Urgent,12-17,Female,26,2024-02-19,Attended,Assessment,No,84,Yes
-REF-01023,2024-03-17,2024-03,School,Central,Routine,40+,Male,64,2024-05-20,Attended,Triage,No,87,Yes
-REF-01024,2024-09-26,2024-09,School,West Community,Routine,12-17,Female,98,2025-01-02,Attended,Assessment,No,79,Yes
-REF-01025,2025-11-10,2025-11,Secondary Care,West Community,Routine,6-11,Male,173,2026-05-02,Attended,Triage,No,65,No
-REF-01026,2025-03-02,2025-03,School,North Hub,Routine,25-39,Male,22,2025-03-24,DNA,Triage,No,37,Yes
-REF-01027,2024-04-16,2024-04,GP,East Community,Routine,12-17,Female,193,2024-10-26,DNA,Triage,No,22,No
-REF-01028,2024-01-27,2024-01,Self-referral,Central,Routine,18-24,Female,3,2024-01-30,Attended,Diagnosis,Yes,89,Yes
-REF-01029,2025-12-13,2025-12,GP,Central,Routine,6-11,Male,243,2026-08-13,Attended,Assessment,No,70,No
-REF-01030,2024-02-29,2024-02,GP,North Hub,Routine,12-17,Male,3,2024-03-03,Attended,Treatment/Follow-up,Yes,77,Yes
-REF-01031,2024-09-12,2024-09,Self-referral,South Hub,Routine,12-17,Female,53,2024-11-04,Attended,Assessment,No,85,Yes
-REF-01032,2025-05-05,2025-05,School,North Hub,Routine,12-17,Male,171,2025-10-23,Attended,Treatment/Follow-up,Yes,70,No
-REF-01033,2025-03-30,2025-03,Self-referral,Central,Urgent,12-17,Male,28,2025-04-27,Attended,Triage,No,88,Yes
-REF-01034,2025-12-23,2025-12,Social Services,North Hub,Routine,6-11,Female,74,2026-03-07,Attended,Assessment,No,77,Yes
-REF-01035,2024-05-05,2024-05,GP,South Hub,Routine,6-11,Female,3,2024-05-08,Attended,Triage,No,78,Yes
-REF-01036,2024-10-03,2024-10,GP,North Hub,Routine,6-11,Male,127,2025-02-07,Attended,Triage,No,79,No
-REF-01037,2025-01-28,2025-01,GP,West Community,Routine,6-11,Male,140,2025-06-17,Attended,Assessment,No,66,No
-REF-01038,2025-09-15,2025-09,Self-referral,East Community,Routine,25-39,Male,103,2025-12-27,Attended,Treatment/Follow-up,Yes,82,Yes
-REF-01039,2024-02-28,2024-02,Self-referral,East Community,Routine,25-39,Male,14,2024-03-13,Attended,Assessment,No,88,Yes
-REF-01040,2025-04-23,2025-04,Self-referral,South Hub,Urgent,25-39,Female,55,2025-06-17,Attended,Triage,No,80,Yes
-REF-01041,2025-07-09,2025-07,GP,North Hub,Routine,18-24,Female,17,2025-07-26,Attended,Diagnosis,Yes,86,Yes
-REF-01042,2024-09-27,2024-09,Secondary Care,North Hub,Routine,12-17,Male,3,2024-09-30,Attended,Diagnosis,No,83,Yes
-REF-01043,2025-02-22,2025-02,GP,East Community,Urgent,25-39,Male,49,2025-04-12,Attended,Treatment/Follow-up,Yes,88,Yes
-REF-01044,2024-05-10,2024-05,GP,Central,Routine,18-24,Female,62,2024-07-11,Attended,Assessment,No,88,Yes
-REF-01045,2025-03-26,2025-03,School,South Hub,Routine,6-11,Male,80,2025-06-14,Attended,Treatment/Follow-up,Yes,72,Yes
-REF-01046,2025-09-06,2025-09,GP,Central,Routine,12-17,Male,137,2026-01-21,Cancelled,Triage,No,61,No
-REF-01047,2025-08-07,2025-08,GP,West Community,Urgent,6-11,Male,27,2025-09-03,Attended,Assessment,No,88,Yes
-REF-01048,2025-10-29,2025-10,GP,East Community,Urgent,18-24,Female,32,2025-11-30,DNA,Triage,No,39,Yes
-REF-01049,2025-08-28,2025-08,GP,East Community,Routine,18-24,Male,3,2025-08-31,Attended,Assessment,No,78,Yes
-REF-01050,2025-11-03,2025-11,Self-referral,North Hub,Routine,40+,Male,86,2026-01-28,Attended,Treatment/Follow-up,Yes,83,Yes
-REF-01051,2025-07-05,2025-07,Self-referral,Central,Urgent,25-39,Male,24,2025-07-29,Attended,Treatment/Follow-up,Yes,82,Yes
-REF-01052,2024-12-02,2024-12,GP,East Community,Routine,12-17,Female,12,2024-12-14,Attended,Diagnosis,Yes,89,Yes
-REF-01053,2025-01-05,2025-01,GP,North Hub,Routine,25-39,Male,23,2025-01-28,Attended,Diagnosis,No,80,Yes
-REF-01054,2025-07-04,2025-07,GP,Central,Urgent,18-24,Male,13,2025-07-17,Attended,Assessment,No,79,Yes
-REF-01055,2024-03-24,2024-03,GP,South Hub,Routine,18-24,Male,105,2024-07-07,Attended,Triage,No,72,Yes
-REF-01056,2025-03-04,2025-03,GP,West Community,Routine,25-39,Female,3,2025-03-07,DNA,Triage,No,50,Yes
-REF-01057,2024-01-25,2024-01,School,South Hub,Urgent,18-24,Male,11,2024-02-05,Cancelled,Triage,No,69,Yes
-REF-01058,2025-12-30,2025-12,GP,East Community,Routine,18-24,Male,131,2026-05-10,Attended,Triage,No,78,No
-REF-01059,2025-04-04,2025-04,Secondary Care,West Community,Routine,12-17,Male,113,2025-07-26,Attended,Treatment/Follow-up,No,70,Yes
-REF-01060,2024-06-04,2024-06,Secondary Care,East Community,Routine,18-24,Male,117,2024-09-29,Attended,Assessment,No,76,Yes
-REF-01061,2024-04-09,2024-04,GP,North Hub,Routine,18-24,Male,3,2024-04-12,Attended,Assessment,No,87,Yes
-REF-01062,2024-07-01,2024-07,Social Services,South Hub,Routine,12-17,Female,19,2024-07-20,Attended,Assessment,No,87,Yes
-REF-01063,2024-10-18,2024-10,GP,West Community,Routine,12-17,Male,46,2024-12-03,Attended,Treatment/Follow-up,No,82,Yes
-REF-01064,2024-05-24,2024-05,GP,Central,Routine,25-39,Female,235,2025-01-14,Attended,Treatment/Follow-up,Yes,64,No
-REF-01065,2024-01-07,2024-01,GP,East Community,Urgent,6-11,Male,3,2024-01-10,Attended,Treatment/Follow-up,Yes,80,Yes
-REF-01066,2025-12-24,2025-12,Secondary Care,West Community,Routine,12-17,Female,34,2026-01-27,DNA,Triage,No,43,Yes
-REF-01067,2025-11-15,2025-11,GP,North Hub,Routine,25-39,Female,120,2026-03-15,Attended,Diagnosis,No,69,Yes
-REF-01068,2025-12-24,2025-12,School,North Hub,Urgent,12-17,Male,33,2026-01-26,Attended,Assessment,No,76,Yes
-REF-01069,2025-10-11,2025-10,School,Central,Routine,12-17,Male,58,2025-12-08,Cancelled,Triage,No,63,Yes
-REF-01070,2025-05-23,2025-05,GP,North Hub,Routine,40+,Male,35,2025-06-27,Attended,Triage,No,77,Yes
-REF-01071,2025-05-17,2025-05,School,South Hub,Routine,6-11,Male,9,2025-05-26,Attended,Assessment,No,93,Yes
-REF-01072,2025-11-03,2025-11,Social Services,South Hub,Urgent,25-39,Male,8,2025-11-11,Attended,Diagnosis,Yes,92,Yes
-REF-01073,2024-10-29,2024-10,GP,East Community,Routine,12-17,Male,85,2025-01-22,DNA,Triage,No,40,Yes
-REF-01074,2025-11-07,2025-11,GP,South Hub,Routine,25-39,Male,157,2026-04-13,Attended,Diagnosis,Yes,71,No
-REF-01075,2024-01-30,2024-01,GP,West Community,Routine,6-11,Male,79,2024-04-18,Attended,Diagnosis,Yes,72,Yes
-REF-01076,2024-10-01,2024-10,GP,North Hub,Routine,12-17,Female,145,2025-02-23,Attended,Assessment,No,71,No
-REF-01077,2025-10-02,2025-10,GP,Central,Urgent,12-17,Male,61,2025-12-02,Attended,Triage,No,82,Yes
-REF-01078,2024-12-27,2024-12,Self-referral,North Hub,Routine,18-24,Female,103,2025-04-09,Attended,Treatment/Follow-up,Yes,76,Yes
-REF-01079,2024-10-24,2024-10,Self-referral,East Community,Urgent,12-17,Male,28,2024-11-21,Attended,Diagnosis,Yes,90,Yes
-REF-01080,2024-02-13,2024-02,GP,South Hub,Routine,18-24,Male,95,2024-05-18,DNA,Triage,No,33,Yes
-REF-01081,2025-01-21,2025-01,School,East Community,Routine,25-39,Female,3,2025-01-24,Attended,Triage,No,81,Yes
-REF-01082,2024-04-07,2024-04,Self-referral,South Hub,Routine,25-39,Male,90,2024-07-06,Attended,Treatment/Follow-up,Yes,84,Yes
-REF-01083,2024-07-26,2024-07,GP,Central,Urgent,12-17,Female,73,2024-10-07,Attended,Diagnosis,No,87,Yes
-REF-01084,2024-09-07,2024-09,GP,West Community,Urgent,40+,Male,58,2024-11-04,Attended,Diagnosis,Yes,73,Yes
-REF-01085,2025-02-10,2025-02,Self-referral,West Community,Routine,18-24,Male,22,2025-03-04,DNA,Triage,No,41,Yes
-REF-01086,2024-07-31,2024-07,Secondary Care,South Hub,Routine,6-11,Female,194,2025-02-10,Attended,Diagnosis,No,68,No
-REF-01087,2024-03-01,2024-03,Self-referral,East Community,Routine,25-39,Male,207,2024-09-24,Attended,Triage,No,66,No
-REF-01088,2025-07-29,2025-07,Self-referral,East Community,Routine,40+,Female,122,2025-11-28,Attended,Diagnosis,No,69,Yes
-REF-01089,2024-04-17,2024-04,GP,South Hub,Routine,25-39,Female,83,2024-07-09,Attended,Treatment/Follow-up,Yes,84,Yes
-REF-01090,2025-05-22,2025-05,GP,West Community,Routine,6-11,Male,41,2025-07-02,Attended,Triage,No,77,Yes
-REF-01091,2025-03-21,2025-03,Social Services,East Community,Routine,18-24,Male,13,2025-04-03,Cancelled,Triage,No,77,Yes
-REF-01092,2025-12-02,2025-12,GP,East Community,Routine,18-24,Female,157,2026-05-08,Attended,Treatment/Follow-up,No,68,No
-REF-01093,2024-06-17,2024-06,School,North Hub,Urgent,12-17,Female,3,2024-06-20,DNA,Triage,No,43,Yes
-REF-01094,2024-07-23,2024-07,School,East Community,Routine,6-11,Male,124,2024-11-24,Attended,Triage,No,74,Yes
-REF-01095,2024-12-19,2024-12,School,East Community,Urgent,12-17,Male,3,2024-12-22,Attended,Treatment/Follow-up,No,83,Yes
-REF-01096,2024-03-20,2024-03,School,South Hub,Routine,12-17,Female,134,2024-08-01,DNA,Triage,No,42,No
-REF-01097,2025-08-24,2025-08,School,Central,Routine,25-39,Male,62,2025-10-25,Attended,Diagnosis,Yes,77,Yes
-REF-01098,2024-01-03,2024-01,Self-referral,North Hub,Urgent,40+,Male,69,2024-03-12,Attended,Treatment/Follow-up,Yes,73,Yes
-REF-01099,2024-05-20,2024-05,GP,West Community,Routine,12-17,Male,150,2024-10-17,Attended,Assessment,No,80,No
-REF-01100,2024-12-29,2024-12,GP,Central,Routine,6-11,Male,144,2025-05-22,DNA,Triage,No,30,No
-REF-01101,2025-10-10,2025-10,Self-referral,West Community,Routine,18-24,Male,126,2026-02-13,Attended,Diagnosis,Yes,78,Yes
-REF-01102,2025-04-22,2025-04,Self-referral,West Community,Routine,6-11,Male,3,2025-04-25,Attended,Assessment,No,77,Yes
-REF-01103,2024-07-19,2024-07,GP,North Hub,Routine,18-24,Female,216,2025-02-20,Attended,Triage,No,67,No
-REF-01104,2024-02-04,2024-02,School,West Community,Routine,6-11,Male,3,2024-02-07,Attended,Diagnosis,No,77,Yes
-REF-01105,2025-04-27,2025-04,Social Services,West Community,Routine,6-11,Male,31,2025-05-28,DNA,Triage,No,46,Yes
-REF-01106,2024-01-30,2024-01,School,South Hub,Routine,25-39,Female,13,2024-02-12,Attended,Treatment/Follow-up,Yes,77,Yes
-REF-01107,2024-11-17,2024-11,GP,South Hub,Routine,18-24,Male,32,2024-12-19,Attended,Treatment/Follow-up,Yes,86,Yes
-REF-01108,2025-06-12,2025-06,GP,West Community,Routine,25-39,Male,174,2025-12-03,DNA,Triage,No,39,No
-REF-01109,2024-05-31,2024-05,Self-referral,West Community,Routine,6-11,Male,77,2024-08-16,Attended,Treatment/Follow-up,Yes,79,Yes
-REF-01110,2025-07-28,2025-07,GP,Central,Routine,25-39,Female,17,2025-08-14,Attended,Triage,No,78,Yes
-REF-01111,2024-07-05,2024-07,Self-referral,Central,Routine,18-24,Female,108,2024-10-21,Attended,Triage,No,75,Yes
-REF-01112,2024-11-11,2024-11,Self-referral,South Hub,Routine,25-39,Male,101,2025-02-20,DNA,Triage,No,38,Yes
-REF-01113,2024-07-01,2024-07,GP,West Community,Routine,12-17,Female,116,2024-10-25,Attended,Diagnosis,Yes,83,Yes
-REF-01114,2024-12-29,2024-12,School,Central,Routine,12-17,Male,54,2025-02-21,Attended,Triage,No,85,Yes
-REF-01115,2024-06-08,2024-06,School,West Community,Routine,12-17,Male,97,2024-09-13,Attended,Diagnosis,No,77,Yes
-REF-01116,2024-04-02,2024-04,GP,South Hub,Routine,12-17,Female,38,2024-05-10,DNA,Triage,No,39,Yes
-REF-01117,2025-05-01,2025-05,GP,East Community,Routine,18-24,Male,134,2025-09-12,DNA,Triage,No,37,No
-REF-01118,2024-01-09,2024-01,GP,East Community,Routine,18-24,Female,48,2024-02-26,Attended,Assessment,No,87,Yes
-REF-01119,2025-07-13,2025-07,GP,Central,Routine,12-17,Male,19,2025-08-01,Attended,Assessment,No,87,Yes
-REF-01120,2025-09-07,2025-09,GP,East Community,Routine,6-11,Male,112,2025-12-28,Cancelled,Triage,No,69,Yes
-REF-01121,2024-04-20,2024-04,GP,Central,Routine,12-17,Female,3,2024-04-23,Attended,Treatment/Follow-up,No,83,Yes
-REF-01122,2025-08-04,2025-08,Self-referral,East Community,Routine,25-39,Female,73,2025-10-16,Attended,Treatment/Follow-up,No,85,Yes
-REF-01123,2025-02-09,2025-02,GP,South Hub,Routine,6-11,Female,68,2025-04-18,Attended,Diagnosis,No,76,Yes
-REF-01124,2025-12-02,2025-12,School,North Hub,Routine,12-17,Female,125,2026-04-06,Attended,Diagnosis,Yes,82,Yes
-REF-01125,2025-11-15,2025-11,GP,South Hub,Routine,25-39,Female,166,2026-04-30,DNA,Triage,No,34,No
-REF-01126,2024-10-16,2024-10,Self-referral,West Community,Routine,18-24,Male,180,2025-04-14,Attended,Treatment/Follow-up,Yes,69,No
-REF-01127,2025-09-15,2025-09,GP,East Community,Routine,12-17,Male,3,2025-09-18,Attended,Diagnosis,Yes,83,Yes
-REF-01128,2024-02-15,2024-02,GP,East Community,Routine,12-17,Female,9,2024-02-24,Cancelled,Triage,No,71,Yes
-REF-01129,2025-01-31,2025-01,School,East Community,Routine,40+,Male,138,2025-06-18,Attended,Diagnosis,Yes,69,No
-REF-01130,2025-11-02,2025-11,Secondary Care,North Hub,Routine,6-11,Female,174,2026-04-25,Attended,Diagnosis,Yes,75,No
-REF-01131,2025-03-08,2025-03,Self-referral,East Community,Routine,25-39,Female,153,2025-08-08,Attended,Diagnosis,Yes,76,No
-REF-01132,2024-04-24,2024-04,Self-referral,Central,Urgent,25-39,Male,3,2024-04-27,Cancelled,Triage,No,72,Yes
-REF-01133,2025-12-25,2025-12,School,Central,Routine,25-39,Male,138,2026-05-12,DNA,Triage,No,41,No
-REF-01134,2025-04-16,2025-04,GP,East Community,Urgent,12-17,Female,33,2025-05-19,Attended,Treatment/Follow-up,Yes,80,Yes
-REF-01135,2024-10-27,2024-10,GP,East Community,Routine,12-17,Female,170,2025-04-15,Attended,Assessment,No,68,No
-REF-01136,2024-03-27,2024-03,School,South Hub,Routine,18-24,Male,157,2024-08-31,Cancelled,Triage,No,63,No
-REF-01137,2025-12-06,2025-12,School,Central,Urgent,18-24,Female,25,2025-12-31,Attended,Treatment/Follow-up,No,78,Yes
-REF-01138,2025-01-26,2025-01,GP,East Community,Routine,40+,Male,101,2025-05-07,Attended,Triage,No,77,Yes
-REF-01139,2025-10-30,2025-10,Self-referral,West Community,Routine,40+,Male,3,2025-11-02,Attended,Treatment/Follow-up,Yes,78,Yes
-REF-01140,2025-01-18,2025-01,School,West Community,Routine,12-17,Male,3,2025-01-21,Cancelled,Triage,No,78,Yes
-REF-01141,2025-11-18,2025-11,GP,South Hub,Routine,18-24,Female,72,2026-01-29,Attended,Assessment,No,79,Yes
-REF-01142,2025-04-18,2025-04,School,East Community,Urgent,6-11,Female,30,2025-05-18,Attended,Assessment,No,84,Yes
-REF-01143,2025-12-30,2025-12,School,West Community,Routine,18-24,Female,3,2026-01-02,DNA,Triage,No,47,Yes
-REF-01144,2024-11-23,2024-11,GP,West Community,Routine,25-39,Male,187,2025-05-29,Attended,Assessment,No,74,No
-REF-01145,2024-09-18,2024-09,GP,Central,Routine,40+,Male,24,2024-10-12,Attended,Treatment/Follow-up,Yes,84,Yes
-REF-01146,2024-11-18,2024-11,GP,South Hub,Routine,18-24,Female,59,2025-01-16,Attended,Diagnosis,No,73,Yes
-REF-01147,2024-10-17,2024-10,School,South Hub,Routine,12-17,Male,3,2024-10-20,DNA,Triage,No,49,Yes
-REF-01148,2024-08-11,2024-08,GP,East Community,Routine,6-11,Female,202,2025-03-01,Attended,Treatment/Follow-up,Yes,74,No
-REF-01149,2024-12-26,2024-12,Self-referral,Central,Routine,12-17,Male,34,2025-01-29,Attended,Treatment/Follow-up,Yes,87,Yes
-REF-01150,2024-08-18,2024-08,Secondary Care,West Community,Routine,12-17,Male,8,2024-08-26,Cancelled,Triage,No,67,Yes
-REF-01151,2025-02-13,2025-02,GP,East Community,Routine,25-39,Male,71,2025-04-25,Attended,Assessment,No,85,Yes
-REF-01152,2025-02-24,2025-02,GP,South Hub,Routine,6-11,Male,54,2025-04-19,Attended,Diagnosis,No,73,Yes
-REF-01153,2024-11-28,2024-11,School,West Community,Routine,18-24,Male,177,2025-05-24,Attended,Assessment,No,79,No
-REF-01154,2024-07-16,2024-07,Secondary Care,East Community,Routine,25-39,Female,97,2024-10-21,Attended,Treatment/Follow-up,Yes,73,Yes
-REF-01155,2024-10-27,2024-10,GP,Central,Routine,12-17,Female,3,2024-10-30,Attended,Treatment/Follow-up,Yes,80,Yes
-REF-01156,2025-09-10,2025-09,Self-referral,South Hub,Urgent,12-17,Male,3,2025-09-13,DNA,Triage,No,38,Yes
-REF-01157,2025-11-29,2025-11,School,West Community,Urgent,25-39,Female,13,2025-12-12,Attended,Assessment,No,76,Yes
-REF-01158,2025-03-25,2025-03,GP,East Community,Routine,25-39,Male,111,2025-07-14,Attended,Triage,No,80,Yes
-REF-01159,2025-06-07,2025-06,School,North Hub,Routine,6-11,Male,88,2025-09-03,Attended,Treatment/Follow-up,Yes,80,Yes
-REF-01160,2024-05-25,2024-05,Secondary Care,South Hub,Routine,12-17,Female,3,2024-05-28,Attended,Diagnosis,Yes,84,Yes
-REF-01161,2024-09-23,2024-09,GP,East Community,Routine,25-39,Male,3,2024-09-26,Attended,Assessment,No,86,Yes
-REF-01162,2024-01-27,2024-01,GP,East Community,Routine,25-39,Female,44,2024-03-11,Attended,Diagnosis,Yes,88,Yes
-REF-01163,2025-11-20,2025-11,GP,South Hub,Routine,6-11,Female,9,2025-11-29,DNA,Triage,No,43,Yes
-REF-01164,2025-08-20,2025-08,GP,East Community,Routine,12-17,Male,150,2026-01-17,Attended,Diagnosis,Yes,70,No
-REF-01165,2024-12-18,2024-12,School,Central,Routine,12-17,Female,137,2025-05-04,DNA,Triage,No,42,No
-REF-01166,2025-05-08,2025-05,GP,North Hub,Urgent,18-24,Female,9,2025-05-17,Attended,Assessment,No,81,Yes
-REF-01167,2024-10-11,2024-10,School,North Hub,Routine,18-24,Female,3,2024-10-14,Attended,Treatment/Follow-up,No,93,Yes
-REF-01168,2024-08-21,2024-08,Self-referral,North Hub,Routine,12-17,Female,133,2025-01-01,Attended,Assessment,No,68,No
-REF-01169,2024-02-27,2024-02,GP,South Hub,Routine,12-17,Male,46,2024-04-13,Attended,Diagnosis,Yes,75,Yes
-REF-01170,2025-09-15,2025-09,GP,South Hub,Routine,25-39,Male,3,2025-09-18,Attended,Assessment,No,86,Yes
-REF-01171,2024-03-03,2024-03,GP,Central,Routine,12-17,Female,100,2024-06-11,Attended,Triage,No,84,Yes
-REF-01172,2024-04-29,2024-04,GP,North Hub,Routine,18-24,Female,68,2024-07-06,Attended,Diagnosis,Yes,75,Yes
-REF-01173,2025-03-29,2025-03,Self-referral,Central,Routine,25-39,Other/Not stated,91,2025-06-28,Attended,Assessment,No,86,Yes
-REF-01174,2025-05-09,2025-05,GP,East Community,Urgent,12-17,Male,49,2025-06-27,Attended,Diagnosis,Yes,87,Yes
-REF-01175,2024-04-24,2024-04,Social Services,West Community,Urgent,6-11,Male,3,2024-04-27,Attended,Treatment/Follow-up,Yes,80,Yes
-REF-01176,2025-03-29,2025-03,GP,South Hub,Routine,6-11,Female,79,2025-06-16,Attended,Assessment,No,80,Yes
-REF-01177,2024-11-23,2024-11,Self-referral,East Community,Routine,40+,Female,60,2025-01-22,Attended,Treatment/Follow-up,No,77,Yes
-REF-01178,2024-11-29,2024-11,Social Services,Central,Urgent,25-39,Male,11,2024-12-10,Attended,Treatment/Follow-up,Yes,86,Yes
-REF-01179,2025-01-14,2025-01,GP,East Community,Routine,25-39,Female,51,2025-03-06,Attended,Triage,No,85,Yes
-REF-01180,2024-02-26,2024-02,Social Services,South Hub,Routine,40+,Male,168,2024-08-12,DNA,Triage,No,29,No
-REF-01181,2024-08-01,2024-08,School,East Community,Routine,6-11,Male,17,2024-08-18,Attended,Treatment/Follow-up,Yes,90,Yes
-REF-01182,2024-10-07,2024-10,GP,East Community,Routine,25-39,Male,144,2025-02-28,Attended,Treatment/Follow-up,No,77,No
-REF-01183,2025-12-05,2025-12,Social Services,South Hub,Routine,12-17,Male,61,2026-02-04,Attended,Assessment,No,83,Yes
-REF-01184,2025-03-24,2025-03,Secondary Care,South Hub,Routine,25-39,Female,106,2025-07-08,Attended,Treatment/Follow-up,No,73,Yes
-REF-01185,2025-08-26,2025-08,GP,North Hub,Routine,12-17,Female,3,2025-08-29,Attended,Treatment/Follow-up,Yes,81,Yes
-REF-01186,2024-03-10,2024-03,Secondary Care,East Community,Routine,40+,Female,54,2024-05-03,Attended,Treatment/Follow-up,Yes,83,Yes
-REF-01187,2025-04-24,2025-04,GP,South Hub,Routine,18-24,Male,80,2025-07-13,DNA,Triage,No,34,Yes
-REF-01188,2025-10-19,2025-10,GP,West Community,Routine,25-39,Male,200,2026-05-07,DNA,Triage,No,37,No
-REF-01189,2025-01-17,2025-01,GP,North Hub,Routine,40+,Male,43,2025-03-01,Attended,Assessment,No,76,Yes
-REF-01190,2024-03-18,2024-03,School,North Hub,Urgent,18-24,Male,51,2024-05-08,Attended,Triage,No,87,Yes
-REF-01191,2025-09-16,2025-09,School,North Hub,Routine,25-39,Male,71,2025-11-26,Attended,Treatment/Follow-up,Yes,74,Yes
-REF-01192,2024-07-05,2024-07,School,Central,Routine,25-39,Male,159,2024-12-11,Attended,Treatment/Follow-up,Yes,73,No
-REF-01193,2024-01-07,2024-01,School,North Hub,Routine,12-17,Male,81,2024-03-28,Attended,Assessment,No,85,Yes
-REF-01194,2025-10-31,2025-10,School,Central,Routine,40+,Male,133,2026-03-13,Attended,Diagnosis,Yes,70,No
-REF-01195,2024-07-30,2024-07,GP,Central,Routine,18-24,Male,100,2024-11-07,Attended,Assessment,No,79,Yes
-REF-01196,2024-08-23,2024-08,School,South Hub,Routine,12-17,Female,3,2024-08-26,Attended,Assessment,No,88,Yes
-REF-01197,2024-01-28,2024-01,GP,West Community,Urgent,6-11,Male,69,2024-04-06,Attended,Assessment,No,73,Yes
-REF-01198,2025-04-02,2025-04,GP,West Community,Routine,18-24,Female,106,2025-07-17,Attended,Diagnosis,Yes,85,Yes
-REF-01199,2024-05-04,2024-05,GP,West Community,Routine,25-39,Female,156,2024-10-07,DNA,Triage,No,26,No
-REF-01200,2025-06-03,2025-06,GP,North Hub,Routine,40+,Female,81,2025-08-23,Attended,Diagnosis,No,74,Yes
+REF-00870,2025-03-20,2025-03,GP,South Hub,Urgent,6-11,Female,18,2025-04-07,Attended,Diagnosis,Yes,77,Yes
+REF-00871,2024-06-13,2024-06,School,East Community,Urgent,6-11,Male,3,2024-06-16,Attended,Treatment/Follow-up,No,89,Yes
+REF-00872,2025-05-28,2025-05,Self-referral,West Community,Routine,6-11,Male,86,2025-08-22,DNA,Triage,No,41,Yes
+REF-00873,2025-05-27,2025-05,GP,North Hub,Routine,18-24,Female,197,2025-12-10,Attended,Assessment,No,76,No
+REF-00874,2024-03-25,2024-03,Self-referral,South Hub,Routine,25-39,Female,75,2024-06-08,Attended,Treatment/Follow-up,No,78,Yes
+REF-00875,2025-11-13,2025-11,Self-referral,North Hub,Routine,25-39,Male,193,2026-05-25,Attended,Assessment,No,64,No
+REF-00876,2024-05-15,2024-05,GP,South Hub,Routine,40+,Male,282,2025-02-21,Attended,Triage,No,58,No
+REF-00877,2025-01-24,2025-01,GP,South Hub,Routine,12-17,Male,152,2025-06-25,DNA,Triage,No,28,No
+REF-00878,2024-10-02,2024-10,GP,West Community,Urgent,12-17,Male,36,2024-11-07,Attended,Triage,No,84,Yes
+REF-00879,2024-08-05,2024-08,GP,Central,Routine,6-11,Female,147,2024-12-30,Cancelled,Triage,No,53,No
+REF-00880,2025-11-16,2025-11,GP,South Hub,Routine,12-17,Male,62,2026-01-17,Attended,Treatment/Follow-up,Yes,83,Yes
+REF-00881,2024-08-31,2024-08,School,West Community,Routine,6-11,Female,18,2024-09-18,DNA,Triage,No,42,Yes
+REF-00882,2024-07-16,2024-07,Self-referral,North Hub,Urgent,40+,Male,16,2024-08-01,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-00883,2024-02-14,2024-02,GP,East Community,Routine,25-39,Male,134,2024-06-27,Attended,Assessment,No,69,No
+REF-00884,2025-03-22,2025-03,GP,Central,Routine,25-39,Female,10,2025-04-01,Attended,Treatment/Follow-up,Yes,78,Yes
+REF-00885,2025-12-11,2025-12,GP,West Community,Routine,18-24,Male,125,2026-04-15,Attended,Assessment,No,79,Yes
+REF-00886,2025-02-14,2025-02,School,North Hub,Routine,6-11,Female,76,2025-05-01,Attended,Treatment/Follow-up,No,85,Yes
+REF-00887,2025-05-30,2025-05,Self-referral,East Community,Routine,25-39,Female,86,2025-08-24,DNA,Triage,No,37,Yes
+REF-00888,2024-10-25,2024-10,GP,East Community,Routine,40+,Female,119,2025-02-21,Attended,Diagnosis,Yes,74,Yes
+REF-00889,2025-07-01,2025-07,GP,Central,Routine,40+,Female,221,2026-02-07,Cancelled,Triage,No,48,No
+REF-00890,2025-02-22,2025-02,Secondary Care,North Hub,Routine,18-24,Female,36,2025-03-30,Attended,Treatment/Follow-up,Yes,82,Yes
+REF-00891,2024-01-17,2024-01,School,Central,Urgent,6-11,Male,5,2024-01-22,Attended,Diagnosis,Yes,91,Yes
+REF-00892,2024-08-13,2024-08,GP,West Community,Routine,6-11,Female,152,2025-01-12,Attended,Assessment,No,80,No
+REF-00893,2024-04-05,2024-04,GP,South Hub,Routine,6-11,Male,71,2024-06-15,DNA,Triage,No,37,Yes
+REF-00894,2024-06-30,2024-06,Self-referral,South Hub,Routine,6-11,Female,3,2024-07-03,Attended,Diagnosis,Yes,93,Yes
+REF-00895,2024-05-20,2024-05,Self-referral,Central,Routine,6-11,Female,112,2024-09-09,Attended,Assessment,No,70,Yes
+REF-00896,2024-10-01,2024-10,GP,North Hub,Routine,25-39,Female,91,2024-12-31,Attended,Diagnosis,No,72,Yes
+REF-00897,2024-07-26,2024-07,GP,West Community,Routine,25-39,Female,32,2024-08-27,Attended,Assessment,No,78,Yes
+REF-00898,2024-01-22,2024-01,Self-referral,East Community,Routine,6-11,Male,103,2024-05-04,DNA,Triage,No,36,Yes
+REF-00899,2024-01-25,2024-01,GP,East Community,Routine,18-24,Female,133,2024-06-06,Attended,Treatment/Follow-up,Yes,71,No
+REF-00900,2024-04-22,2024-04,GP,East Community,Urgent,12-17,Male,13,2024-05-05,Cancelled,Triage,No,63,Yes
+REF-00901,2024-02-14,2024-02,School,Central,Routine,12-17,Female,3,2024-02-17,Attended,Diagnosis,Yes,80,Yes
+REF-00902,2024-10-04,2024-10,Secondary Care,East Community,Routine,25-39,Male,151,2025-03-04,DNA,Triage,No,25,No
+REF-00903,2024-06-01,2024-06,Self-referral,South Hub,Routine,12-17,Male,103,2024-09-12,DNA,Triage,No,42,Yes
+REF-00904,2024-10-12,2024-10,GP,South Hub,Routine,6-11,Female,6,2024-10-18,Attended,Diagnosis,Yes,90,Yes
+REF-00905,2025-09-08,2025-09,Self-referral,South Hub,Routine,12-17,Male,21,2025-09-29,Attended,Assessment,No,89,Yes
+REF-00906,2025-06-23,2025-06,School,South Hub,Routine,25-39,Female,64,2025-08-26,DNA,Triage,No,32,Yes
+REF-00907,2025-01-06,2025-01,School,North Hub,Urgent,6-11,Female,52,2025-02-27,Attended,Assessment,No,77,Yes
+REF-00908,2025-07-18,2025-07,Social Services,South Hub,Urgent,6-11,Female,3,2025-07-21,Attended,Triage,No,81,Yes
+REF-00909,2025-01-21,2025-01,Self-referral,West Community,Routine,12-17,Male,88,2025-04-19,Attended,Triage,No,81,Yes
+REF-00910,2024-05-24,2024-05,GP,Central,Routine,25-39,Female,60,2024-07-23,Attended,Diagnosis,Yes,88,Yes
+REF-00911,2025-12-16,2025-12,Secondary Care,East Community,Routine,12-17,Male,117,2026-04-12,DNA,Triage,No,29,Yes
+REF-00912,2025-09-10,2025-09,Self-referral,North Hub,Routine,12-17,Male,100,2025-12-19,Attended,Treatment/Follow-up,No,85,Yes
+REF-00913,2024-11-09,2024-11,Self-referral,South Hub,Routine,12-17,Female,3,2024-11-12,Attended,Triage,No,89,Yes
+REF-00914,2024-07-07,2024-07,Self-referral,Central,Urgent,25-39,Male,77,2024-09-22,Attended,Diagnosis,Yes,83,Yes
+REF-00915,2024-06-17,2024-06,GP,West Community,Routine,6-11,Female,168,2024-12-02,Attended,Triage,No,72,No
+REF-00916,2024-06-15,2024-06,School,Central,Routine,6-11,Male,128,2024-10-21,DNA,Triage,No,33,No
+REF-00917,2025-10-15,2025-10,Secondary Care,North Hub,Routine,40+,Male,3,2025-10-18,DNA,Triage,No,47,Yes
+REF-00918,2024-04-05,2024-04,Secondary Care,East Community,Routine,25-39,Male,35,2024-05-10,Attended,Assessment,No,87,Yes
+REF-00919,2024-12-30,2024-12,Social Services,North Hub,Routine,12-17,Male,3,2025-01-02,Attended,Triage,No,89,Yes
+REF-00920,2025-05-03,2025-05,School,East Community,Urgent,6-11,Male,27,2025-05-30,Cancelled,Triage,No,62,Yes
+REF-00921,2024-08-25,2024-08,Secondary Care,South Hub,Routine,25-39,Female,166,2025-02-07,Attended,Diagnosis,No,74,No
+REF-00922,2025-04-03,2025-04,Self-referral,East Community,Routine,18-24,Male,65,2025-06-07,Attended,Treatment/Follow-up,Yes,78,Yes
+REF-00923,2025-09-17,2025-09,School,Central,Urgent,18-24,Male,31,2025-10-18,Attended,Diagnosis,No,77,Yes
+REF-00924,2025-05-25,2025-05,GP,East Community,Routine,6-11,Female,47,2025-07-11,Attended,Triage,No,79,Yes
+REF-00925,2025-12-28,2025-12,Self-referral,West Community,Routine,40+,Male,3,2025-12-31,Attended,Diagnosis,Yes,86,Yes
+REF-00926,2025-02-14,2025-02,GP,South Hub,Routine,12-17,Male,140,2025-07-04,Attended,Assessment,No,68,No
+REF-00927,2025-11-29,2025-11,GP,North Hub,Routine,18-24,Male,81,2026-02-18,Attended,Triage,No,74,Yes
+REF-00928,2024-10-24,2024-10,GP,North Hub,Routine,12-17,Male,31,2024-11-24,Attended,Assessment,No,89,Yes
+REF-00929,2025-10-19,2025-10,School,North Hub,Routine,6-11,Male,221,2026-05-28,Attended,Assessment,No,69,No
+REF-00930,2024-03-07,2024-03,GP,West Community,Urgent,6-11,Male,4,2024-03-11,Cancelled,Triage,No,76,Yes
+REF-00931,2024-02-09,2024-02,School,South Hub,Urgent,18-24,Female,55,2024-04-04,Attended,Treatment/Follow-up,Yes,86,Yes
+REF-00932,2025-04-29,2025-04,GP,North Hub,Routine,40+,Male,102,2025-08-09,Attended,Diagnosis,Yes,71,Yes
+REF-00933,2024-10-07,2024-10,GP,West Community,Routine,25-39,Male,57,2024-12-03,Attended,Triage,No,86,Yes
+REF-00934,2024-12-16,2024-12,Social Services,South Hub,Routine,12-17,Female,36,2025-01-21,Attended,Diagnosis,Yes,87,Yes
+REF-00935,2024-12-29,2024-12,Secondary Care,North Hub,Routine,18-24,Male,119,2025-04-27,Attended,Assessment,No,78,Yes
+REF-00936,2024-01-15,2024-01,GP,South Hub,Routine,12-17,Female,190,2024-07-23,Attended,Diagnosis,Yes,62,No
+REF-00937,2025-04-06,2025-04,Secondary Care,West Community,Urgent,18-24,Male,61,2025-06-06,Cancelled,Triage,No,62,Yes
+REF-00938,2025-09-07,2025-09,GP,South Hub,Routine,40+,Male,110,2025-12-26,DNA,Triage,No,39,Yes
+REF-00939,2024-01-17,2024-01,GP,North Hub,Routine,18-24,Male,14,2024-01-31,Attended,Diagnosis,Yes,86,Yes
+REF-00940,2024-04-26,2024-04,Secondary Care,East Community,Routine,6-11,Male,103,2024-08-07,Attended,Assessment,No,82,Yes
+REF-00941,2025-10-11,2025-10,GP,North Hub,Routine,40+,Male,164,2026-03-24,Attended,Assessment,No,79,No
+REF-00942,2025-09-30,2025-09,Secondary Care,West Community,Routine,18-24,Male,145,2026-02-22,Attended,Treatment/Follow-up,Yes,79,No
+REF-00943,2025-07-18,2025-07,GP,West Community,Routine,40+,Female,105,2025-10-31,Attended,Diagnosis,No,81,Yes
+REF-00944,2024-01-08,2024-01,Secondary Care,Central,Routine,12-17,Male,8,2024-01-16,Attended,Treatment/Follow-up,No,90,Yes
+REF-00945,2025-11-20,2025-11,GP,West Community,Urgent,6-11,Female,38,2025-12-28,Attended,Treatment/Follow-up,Yes,79,Yes
+REF-00946,2025-08-08,2025-08,Social Services,West Community,Routine,6-11,Male,3,2025-08-11,Attended,Treatment/Follow-up,Yes,81,Yes
+REF-00947,2025-10-13,2025-10,GP,West Community,Routine,25-39,Male,54,2025-12-06,Attended,Diagnosis,Yes,85,Yes
+REF-00948,2025-10-04,2025-10,Secondary Care,South Hub,Urgent,40+,Female,31,2025-11-04,Cancelled,Triage,No,73,Yes
+REF-00949,2024-01-12,2024-01,School,North Hub,Routine,18-24,Male,173,2024-07-03,DNA,Triage,No,27,No
+REF-00950,2025-04-09,2025-04,School,South Hub,Routine,12-17,Male,68,2025-06-16,Attended,Diagnosis,Yes,84,Yes
+REF-00951,2024-09-23,2024-09,School,South Hub,Routine,18-24,Male,55,2024-11-17,Attended,Diagnosis,Yes,82,Yes
+REF-00952,2024-09-25,2024-09,Secondary Care,West Community,Routine,25-39,Male,68,2024-12-02,Cancelled,Triage,No,60,Yes
+REF-00953,2025-05-17,2025-05,Self-referral,West Community,Routine,40+,Female,67,2025-07-23,Attended,Diagnosis,Yes,81,Yes
+REF-00954,2024-01-11,2024-01,Secondary Care,Central,Routine,25-39,Female,21,2024-02-01,Attended,Assessment,No,76,Yes
+REF-00955,2024-06-11,2024-06,School,North Hub,Routine,6-11,Female,166,2024-11-24,DNA,Triage,No,35,No
+REF-00956,2024-04-27,2024-04,Secondary Care,South Hub,Routine,6-11,Male,96,2024-08-01,Attended,Assessment,No,84,Yes
+REF-00957,2024-07-23,2024-07,Social Services,Central,Routine,18-24,Male,111,2024-11-11,Attended,Treatment/Follow-up,Yes,74,Yes
+REF-00958,2025-12-04,2025-12,Secondary Care,West Community,Routine,6-11,Male,14,2025-12-18,Attended,Assessment,No,82,Yes
+REF-00959,2025-05-14,2025-05,GP,Central,Routine,25-39,Male,15,2025-05-29,Attended,Diagnosis,Yes,78,Yes
+REF-00960,2025-04-05,2025-04,GP,Central,Routine,12-17,Female,17,2025-04-22,Attended,Treatment/Follow-up,No,92,Yes
+REF-00961,2024-12-26,2024-12,GP,East Community,Routine,12-17,Female,85,2025-03-21,Attended,Assessment,No,80,Yes
+REF-00962,2024-05-05,2024-05,GP,East Community,Routine,6-11,Male,132,2024-09-14,Attended,Assessment,No,68,No
+REF-00963,2025-01-29,2025-01,GP,South Hub,Routine,6-11,Female,3,2025-02-01,Attended,Triage,No,90,Yes
+REF-00964,2025-11-29,2025-11,Self-referral,East Community,Routine,6-11,Female,8,2025-12-07,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-00965,2025-04-08,2025-04,GP,West Community,Routine,12-17,Female,205,2025-10-30,Attended,Triage,No,74,No
+REF-00966,2024-10-18,2024-10,GP,North Hub,Urgent,25-39,Male,32,2024-11-19,DNA,Triage,No,35,Yes
+REF-00967,2024-03-12,2024-03,GP,West Community,Urgent,25-39,Female,28,2024-04-09,Attended,Assessment,No,76,Yes
+REF-00968,2025-02-06,2025-02,GP,West Community,Urgent,25-39,Male,6,2025-02-12,Cancelled,Triage,No,73,Yes
+REF-00969,2025-09-24,2025-09,GP,North Hub,Routine,6-11,Other/Not stated,156,2026-02-27,DNA,Triage,No,26,No
+REF-00970,2024-07-14,2024-07,Self-referral,Central,Routine,40+,Male,3,2024-07-17,Attended,Treatment/Follow-up,Yes,86,Yes
+REF-00971,2024-03-17,2024-03,GP,West Community,Routine,12-17,Female,134,2024-07-29,DNA,Triage,No,30,No
+REF-00972,2025-08-21,2025-08,Secondary Care,West Community,Urgent,18-24,Male,45,2025-10-05,Attended,Assessment,No,89,Yes
+REF-00973,2025-11-08,2025-11,GP,West Community,Routine,12-17,Female,75,2026-01-22,Attended,Treatment/Follow-up,Yes,77,Yes
+REF-00974,2025-12-12,2025-12,GP,North Hub,Urgent,6-11,Male,36,2026-01-17,Attended,Assessment,No,89,Yes
+REF-00975,2024-04-17,2024-04,GP,Central,Routine,18-24,Female,187,2024-10-21,Attended,Treatment/Follow-up,Yes,66,No
+REF-00976,2024-08-12,2024-08,Secondary Care,West Community,Routine,25-39,Male,46,2024-09-27,Attended,Assessment,No,82,Yes
+REF-00977,2025-03-09,2025-03,GP,Central,Routine,18-24,Female,166,2025-08-22,DNA,Triage,No,38,No
+REF-00978,2024-07-10,2024-07,GP,Central,Routine,12-17,Female,3,2024-07-13,Attended,Triage,No,90,Yes
+REF-00979,2024-08-05,2024-08,GP,Central,Routine,12-17,Male,68,2024-10-12,Attended,Treatment/Follow-up,Yes,78,Yes
+REF-00980,2025-02-16,2025-02,GP,Central,Routine,12-17,Male,100,2025-05-27,Attended,Diagnosis,No,76,Yes
+REF-00981,2024-04-27,2024-04,GP,East Community,Routine,12-17,Male,60,2024-06-26,Attended,Assessment,No,84,Yes
+REF-00982,2024-04-13,2024-04,GP,East Community,Urgent,12-17,Female,70,2024-06-22,Attended,Diagnosis,Yes,81,Yes
+REF-00983,2024-01-04,2024-01,GP,Central,Routine,12-17,Female,127,2024-05-10,Cancelled,Triage,No,54,No
+REF-00984,2024-06-19,2024-06,GP,South Hub,Urgent,40+,Male,19,2024-07-08,Attended,Triage,No,84,Yes
+REF-00985,2024-03-19,2024-03,GP,North Hub,Routine,18-24,Male,13,2024-04-01,Attended,Triage,No,76,Yes
+REF-00986,2025-08-03,2025-08,School,South Hub,Routine,18-24,Female,43,2025-09-15,DNA,Triage,No,37,Yes
+REF-00987,2024-04-12,2024-04,GP,West Community,Routine,12-17,Female,3,2024-04-15,Attended,Diagnosis,No,86,Yes
+REF-00988,2025-12-28,2025-12,GP,Central,Routine,12-17,Female,54,2026-02-20,Attended,Diagnosis,Yes,86,Yes
+REF-00989,2024-08-13,2024-08,School,West Community,Routine,6-11,Male,59,2024-10-11,Attended,Triage,No,85,Yes
+REF-00990,2025-10-16,2025-10,GP,Central,Routine,25-39,Male,13,2025-10-29,Attended,Diagnosis,Yes,87,Yes
+REF-00991,2024-12-05,2024-12,GP,East Community,Routine,12-17,Female,20,2024-12-25,Attended,Diagnosis,Yes,87,Yes
+REF-00992,2024-10-22,2024-10,GP,South Hub,Routine,12-17,Female,75,2025-01-05,Attended,Diagnosis,Yes,80,Yes
+REF-00993,2025-05-13,2025-05,GP,North Hub,Routine,12-17,Female,100,2025-08-21,Attended,Triage,No,80,Yes
+REF-00994,2025-11-07,2025-11,Self-referral,South Hub,Routine,12-17,Female,68,2026-01-14,Attended,Treatment/Follow-up,Yes,74,Yes
+REF-00995,2025-12-31,2025-12,GP,South Hub,Urgent,12-17,Male,26,2026-01-26,Attended,Assessment,No,87,Yes
+REF-00996,2025-03-08,2025-03,GP,East Community,Urgent,40+,Male,33,2025-04-10,Attended,Diagnosis,No,79,Yes
+REF-00997,2025-11-30,2025-11,Self-referral,West Community,Routine,18-24,Female,181,2026-05-30,Attended,Assessment,No,75,No
+REF-00998,2024-04-08,2024-04,GP,East Community,Routine,18-24,Male,130,2024-08-16,Attended,Assessment,No,81,No
+REF-00999,2025-03-06,2025-03,Social Services,Central,Routine,6-11,Male,116,2025-06-30,Attended,Treatment/Follow-up,Yes,79,Yes
+REF-01000,2024-05-10,2024-05,School,East Community,Urgent,6-11,Male,34,2024-06-13,Attended,Diagnosis,Yes,91,Yes
+REF-01001,2025-04-16,2025-04,Self-referral,East Community,Routine,25-39,Male,77,2025-07-02,Attended,Diagnosis,No,74,Yes
+REF-01002,2025-08-21,2025-08,School,North Hub,Routine,25-39,Male,111,2025-12-10,Attended,Treatment/Follow-up,Yes,72,Yes
+REF-01003,2024-11-04,2024-11,School,North Hub,Routine,25-39,Male,91,2025-02-03,DNA,Triage,No,33,Yes
+REF-01004,2025-06-16,2025-06,GP,West Community,Routine,6-11,Male,108,2025-10-02,Attended,Treatment/Follow-up,Yes,83,Yes
+REF-01005,2024-07-07,2024-07,Self-referral,Central,Urgent,12-17,Male,3,2024-07-10,Attended,Diagnosis,Yes,84,Yes
+REF-01006,2024-06-23,2024-06,GP,South Hub,Routine,12-17,Female,122,2024-10-23,Attended,Treatment/Follow-up,Yes,75,Yes
+REF-01007,2025-02-04,2025-02,GP,West Community,Routine,12-17,Male,160,2025-07-14,Attended,Triage,No,73,No
+REF-01008,2024-02-04,2024-02,School,Central,Urgent,12-17,Male,32,2024-03-07,Attended,Assessment,No,89,Yes
+REF-01009,2024-10-10,2024-10,GP,Central,Routine,25-39,Male,20,2024-10-30,Attended,Triage,No,80,Yes
+REF-01010,2024-12-26,2024-12,School,West Community,Routine,25-39,Male,173,2025-06-17,Cancelled,Triage,No,57,No
+REF-01011,2025-02-07,2025-02,GP,West Community,Urgent,12-17,Male,13,2025-02-20,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-01012,2025-12-15,2025-12,GP,East Community,Urgent,18-24,Male,4,2025-12-19,DNA,Triage,No,37,Yes
+REF-01013,2024-06-11,2024-06,GP,West Community,Routine,40+,Male,96,2024-09-15,Attended,Treatment/Follow-up,Yes,74,Yes
+REF-01014,2025-01-28,2025-01,Self-referral,North Hub,Routine,6-11,Female,3,2025-01-31,Attended,Triage,No,88,Yes
+REF-01015,2025-09-13,2025-09,School,South Hub,Routine,12-17,Male,3,2025-09-16,Attended,Assessment,No,85,Yes
+REF-01016,2025-05-17,2025-05,GP,South Hub,Routine,25-39,Male,229,2026-01-01,Attended,Treatment/Follow-up,Yes,58,No
+REF-01017,2025-10-06,2025-10,Social Services,North Hub,Routine,25-39,Male,38,2025-11-13,Attended,Triage,No,79,Yes
+REF-01018,2025-11-29,2025-11,Self-referral,Central,Urgent,12-17,Male,62,2026-01-30,Attended,Diagnosis,Yes,76,Yes
+REF-01019,2024-03-09,2024-03,GP,North Hub,Routine,18-24,Female,51,2024-04-29,Attended,Triage,No,83,Yes
+REF-01020,2024-01-24,2024-01,GP,East Community,Urgent,12-17,Female,26,2024-02-19,Attended,Assessment,No,84,Yes
+REF-01021,2024-03-17,2024-03,School,Central,Routine,40+,Male,64,2024-05-20,Attended,Triage,No,87,Yes
+REF-01022,2024-09-26,2024-09,School,West Community,Routine,12-17,Female,98,2025-01-02,Attended,Assessment,No,79,Yes
+REF-01023,2025-11-10,2025-11,Secondary Care,West Community,Routine,6-11,Male,173,2026-05-02,Attended,Triage,No,65,No
+REF-01024,2025-03-02,2025-03,School,North Hub,Routine,25-39,Male,22,2025-03-24,DNA,Triage,No,37,Yes
+REF-01025,2024-04-16,2024-04,GP,East Community,Routine,12-17,Female,193,2024-10-26,DNA,Triage,No,22,No
+REF-01026,2024-01-27,2024-01,Self-referral,Central,Routine,18-24,Female,3,2024-01-30,Attended,Diagnosis,Yes,89,Yes
+REF-01027,2025-12-13,2025-12,GP,Central,Routine,6-11,Male,243,2026-08-13,Attended,Assessment,No,70,No
+REF-01028,2024-02-29,2024-02,GP,North Hub,Routine,12-17,Male,3,2024-03-03,Attended,Treatment/Follow-up,Yes,77,Yes
+REF-01029,2024-09-12,2024-09,Self-referral,South Hub,Routine,12-17,Female,53,2024-11-04,Attended,Assessment,No,85,Yes
+REF-01030,2025-05-05,2025-05,School,North Hub,Routine,12-17,Male,171,2025-10-23,Attended,Treatment/Follow-up,Yes,70,No
+REF-01031,2025-03-30,2025-03,Self-referral,Central,Urgent,12-17,Male,28,2025-04-27,Attended,Triage,No,88,Yes
+REF-01032,2025-12-23,2025-12,Social Services,North Hub,Routine,6-11,Female,74,2026-03-07,Attended,Assessment,No,77,Yes
+REF-01033,2024-05-05,2024-05,GP,South Hub,Routine,6-11,Female,3,2024-05-08,Attended,Triage,No,78,Yes
+REF-01034,2024-10-03,2024-10,GP,North Hub,Routine,6-11,Male,127,2025-02-07,Attended,Triage,No,79,No
+REF-01035,2025-01-28,2025-01,GP,West Community,Routine,6-11,Male,140,2025-06-17,Attended,Assessment,No,66,No
+REF-01036,2025-09-15,2025-09,Self-referral,East Community,Routine,25-39,Male,103,2025-12-27,Attended,Treatment/Follow-up,Yes,82,Yes
+REF-01037,2024-02-28,2024-02,Self-referral,East Community,Routine,25-39,Male,14,2024-03-13,Attended,Assessment,No,88,Yes
+REF-01038,2025-04-23,2025-04,Self-referral,South Hub,Urgent,25-39,Female,55,2025-06-17,Attended,Triage,No,80,Yes
+REF-01039,2025-07-09,2025-07,GP,North Hub,Routine,18-24,Female,17,2025-07-26,Attended,Diagnosis,Yes,86,Yes
+REF-01040,2024-09-27,2024-09,Secondary Care,North Hub,Routine,12-17,Male,3,2024-09-30,Attended,Diagnosis,No,83,Yes
+REF-01041,2025-02-22,2025-02,GP,East Community,Urgent,25-39,Male,49,2025-04-12,Attended,Treatment/Follow-up,Yes,88,Yes
+REF-01042,2024-05-10,2024-05,GP,Central,Routine,18-24,Female,62,2024-07-11,Attended,Assessment,No,88,Yes
+REF-01043,2025-03-26,2025-03,School,South Hub,Routine,6-11,Male,80,2025-06-14,Attended,Treatment/Follow-up,Yes,72,Yes
+REF-01044,2025-09-06,2025-09,GP,Central,Routine,12-17,Male,137,2026-01-21,DNA,Triage,No,36,No
+REF-01045,2025-08-07,2025-08,GP,West Community,Urgent,6-11,Male,27,2025-09-03,Attended,Assessment,No,88,Yes
+REF-01046,2025-10-29,2025-10,GP,East Community,Urgent,18-24,Female,32,2025-11-30,DNA,Triage,No,39,Yes
+REF-01047,2025-08-28,2025-08,GP,East Community,Routine,18-24,Male,3,2025-08-31,Attended,Assessment,No,78,Yes
+REF-01048,2025-11-03,2025-11,Self-referral,North Hub,Routine,40+,Male,86,2026-01-28,Attended,Treatment/Follow-up,Yes,83,Yes
+REF-01049,2025-07-05,2025-07,Self-referral,Central,Urgent,25-39,Male,24,2025-07-29,Attended,Treatment/Follow-up,Yes,82,Yes
+REF-01050,2024-12-02,2024-12,GP,East Community,Routine,12-17,Female,12,2024-12-14,Attended,Diagnosis,Yes,89,Yes
+REF-01051,2025-01-05,2025-01,GP,North Hub,Routine,25-39,Male,23,2025-01-28,Attended,Diagnosis,No,80,Yes
+REF-01052,2025-07-04,2025-07,GP,Central,Urgent,18-24,Male,13,2025-07-17,Attended,Assessment,No,79,Yes
+REF-01053,2024-03-24,2024-03,GP,South Hub,Routine,18-24,Male,105,2024-07-07,Attended,Triage,No,72,Yes
+REF-01054,2025-03-04,2025-03,GP,West Community,Routine,25-39,Female,3,2025-03-07,DNA,Triage,No,50,Yes
+REF-01055,2024-01-25,2024-01,School,South Hub,Urgent,18-24,Male,11,2024-02-05,Cancelled,Triage,No,69,Yes
+REF-01056,2025-12-30,2025-12,GP,East Community,Routine,18-24,Male,131,2026-05-10,Attended,Triage,No,78,No
+REF-01057,2025-04-04,2025-04,Secondary Care,West Community,Routine,12-17,Male,113,2025-07-26,Attended,Treatment/Follow-up,No,70,Yes
+REF-01058,2024-06-04,2024-06,Secondary Care,East Community,Routine,18-24,Male,117,2024-09-29,Attended,Assessment,No,76,Yes
+REF-01059,2024-04-09,2024-04,GP,North Hub,Routine,18-24,Male,3,2024-04-12,Attended,Assessment,No,87,Yes
+REF-01060,2024-07-01,2024-07,Social Services,South Hub,Routine,12-17,Female,19,2024-07-20,Attended,Assessment,No,87,Yes
+REF-01061,2024-10-18,2024-10,GP,West Community,Routine,12-17,Male,46,2024-12-03,Attended,Treatment/Follow-up,No,82,Yes
+REF-01062,2024-05-24,2024-05,GP,Central,Routine,25-39,Female,235,2025-01-14,Attended,Treatment/Follow-up,Yes,64,No
+REF-01063,2024-01-07,2024-01,GP,East Community,Urgent,6-11,Male,3,2024-01-10,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-01064,2025-12-24,2025-12,Secondary Care,West Community,Routine,12-17,Female,34,2026-01-27,DNA,Triage,No,43,Yes
+REF-01065,2025-11-15,2025-11,GP,North Hub,Routine,25-39,Female,120,2026-03-15,Attended,Diagnosis,No,69,Yes
+REF-01066,2025-12-24,2025-12,School,North Hub,Urgent,12-17,Male,33,2026-01-26,Attended,Assessment,No,76,Yes
+REF-01067,2025-10-11,2025-10,School,Central,Routine,12-17,Male,58,2025-12-08,DNA,Triage,No,38,Yes
+REF-01068,2025-05-23,2025-05,GP,North Hub,Routine,40+,Male,35,2025-06-27,Attended,Triage,No,77,Yes
+REF-01069,2025-05-17,2025-05,School,South Hub,Routine,6-11,Male,9,2025-05-26,Attended,Assessment,No,93,Yes
+REF-01070,2025-11-03,2025-11,Social Services,South Hub,Urgent,25-39,Male,8,2025-11-11,Attended,Diagnosis,Yes,92,Yes
+REF-01071,2024-10-29,2024-10,GP,East Community,Routine,12-17,Male,85,2025-01-22,DNA,Triage,No,40,Yes
+REF-01072,2025-11-07,2025-11,GP,South Hub,Routine,25-39,Male,157,2026-04-13,Attended,Diagnosis,Yes,71,No
+REF-01073,2024-01-30,2024-01,GP,West Community,Routine,6-11,Male,79,2024-04-18,Attended,Diagnosis,Yes,72,Yes
+REF-01074,2024-10-01,2024-10,GP,North Hub,Routine,12-17,Female,145,2025-02-23,Attended,Assessment,No,71,No
+REF-01075,2025-10-02,2025-10,GP,Central,Urgent,12-17,Male,61,2025-12-02,Attended,Triage,No,82,Yes
+REF-01076,2024-12-27,2024-12,Self-referral,North Hub,Routine,18-24,Female,103,2025-04-09,Attended,Treatment/Follow-up,Yes,76,Yes
+REF-01077,2024-10-24,2024-10,Self-referral,East Community,Urgent,12-17,Male,28,2024-11-21,Attended,Diagnosis,Yes,90,Yes
+REF-01078,2024-02-13,2024-02,GP,South Hub,Routine,18-24,Male,95,2024-05-18,DNA,Triage,No,33,Yes
+REF-01079,2025-01-21,2025-01,School,East Community,Routine,25-39,Female,3,2025-01-24,Attended,Triage,No,81,Yes
+REF-01080,2024-04-07,2024-04,Self-referral,South Hub,Routine,25-39,Male,90,2024-07-06,Attended,Treatment/Follow-up,Yes,84,Yes
+REF-01081,2024-07-26,2024-07,GP,Central,Urgent,12-17,Female,73,2024-10-07,Attended,Diagnosis,No,87,Yes
+REF-01082,2024-09-07,2024-09,GP,West Community,Urgent,40+,Male,58,2024-11-04,Attended,Diagnosis,Yes,73,Yes
+REF-01083,2025-02-10,2025-02,Self-referral,West Community,Routine,18-24,Male,22,2025-03-04,DNA,Triage,No,41,Yes
+REF-01084,2024-07-31,2024-07,Secondary Care,South Hub,Routine,6-11,Female,194,2025-02-10,Attended,Diagnosis,No,68,No
+REF-01085,2024-03-01,2024-03,Self-referral,East Community,Routine,25-39,Male,207,2024-09-24,Attended,Triage,No,66,No
+REF-01086,2025-07-29,2025-07,Self-referral,East Community,Routine,40+,Female,122,2025-11-28,Attended,Diagnosis,No,69,Yes
+REF-01087,2024-04-17,2024-04,GP,South Hub,Routine,25-39,Female,83,2024-07-09,Attended,Treatment/Follow-up,Yes,84,Yes
+REF-01088,2025-05-22,2025-05,GP,West Community,Routine,6-11,Male,41,2025-07-02,Attended,Triage,No,77,Yes
+REF-01089,2025-03-21,2025-03,Social Services,East Community,Routine,18-24,Male,13,2025-04-03,DNA,Triage,No,52,Yes
+REF-01090,2025-12-02,2025-12,GP,East Community,Routine,18-24,Female,157,2026-05-08,Attended,Treatment/Follow-up,No,68,No
+REF-01091,2024-06-17,2024-06,School,North Hub,Urgent,12-17,Female,3,2024-06-20,DNA,Triage,No,43,Yes
+REF-01092,2024-07-23,2024-07,School,East Community,Routine,6-11,Male,124,2024-11-24,Attended,Triage,No,74,Yes
+REF-01093,2024-12-19,2024-12,School,East Community,Urgent,12-17,Male,3,2024-12-22,Attended,Treatment/Follow-up,No,83,Yes
+REF-01094,2024-03-20,2024-03,School,South Hub,Routine,12-17,Female,134,2024-08-01,DNA,Triage,No,42,No
+REF-01095,2025-08-24,2025-08,School,Central,Routine,25-39,Male,62,2025-10-25,Attended,Diagnosis,Yes,77,Yes
+REF-01096,2024-01-03,2024-01,Self-referral,North Hub,Urgent,40+,Male,69,2024-03-12,Cancelled,Triage,No,57,Yes
+REF-01097,2024-11-27,2024-11,GP,South Hub,Urgent,18-24,Male,18,2024-12-15,Attended,Triage,No,88,Yes
+REF-01098,2025-01-21,2025-01,Self-referral,East Community,Routine,12-17,Male,46,2025-03-08,DNA,Triage,No,40,Yes
+REF-01099,2024-06-19,2024-06,Secondary Care,South Hub,Urgent,25-39,Male,3,2024-06-22,Attended,Diagnosis,Yes,88,Yes
+REF-01100,2024-07-01,2024-07,GP,West Community,Routine,25-39,Female,91,2024-09-30,Attended,Diagnosis,No,76,Yes
+REF-01101,2025-01-26,2025-01,GP,North Hub,Urgent,6-11,Female,37,2025-03-04,Attended,Treatment/Follow-up,No,90,Yes
+REF-01102,2024-01-14,2024-01,School,East Community,Routine,18-24,Female,171,2024-07-03,Attended,Treatment/Follow-up,Yes,64,No
+REF-01103,2025-08-08,2025-08,Self-referral,West Community,Urgent,40+,Male,24,2025-09-01,Attended,Treatment/Follow-up,Yes,75,Yes
+REF-01104,2025-09-19,2025-09,Secondary Care,South Hub,Routine,25-39,Female,88,2025-12-16,Attended,Treatment/Follow-up,Yes,71,Yes
+REF-01105,2024-11-17,2024-11,GP,South Hub,Routine,18-24,Male,32,2024-12-19,Attended,Treatment/Follow-up,Yes,86,Yes
+REF-01106,2025-06-12,2025-06,GP,West Community,Routine,25-39,Male,174,2025-12-03,DNA,Triage,No,39,No
+REF-01107,2024-05-31,2024-05,Self-referral,West Community,Routine,6-11,Male,77,2024-08-16,Attended,Treatment/Follow-up,Yes,79,Yes
+REF-01108,2025-07-28,2025-07,GP,Central,Routine,25-39,Female,17,2025-08-14,Attended,Triage,No,78,Yes
+REF-01109,2024-07-05,2024-07,Self-referral,Central,Routine,18-24,Female,108,2024-10-21,Attended,Triage,No,75,Yes
+REF-01110,2024-11-11,2024-11,Self-referral,South Hub,Routine,25-39,Male,101,2025-02-20,DNA,Triage,No,38,Yes
+REF-01111,2024-07-01,2024-07,GP,West Community,Routine,12-17,Female,116,2024-10-25,Cancelled,Triage,No,67,Yes
+REF-01112,2024-09-27,2024-09,GP,East Community,Routine,12-17,Male,54,2024-11-20,Attended,Diagnosis,No,74,Yes
+REF-01113,2025-08-22,2025-08,GP,South Hub,Routine,40+,Male,19,2025-09-10,Attended,Assessment,No,92,Yes
+REF-01114,2025-07-18,2025-07,Self-referral,North Hub,Routine,18-24,Female,6,2025-07-24,Attended,Triage,No,80,Yes
+REF-01115,2025-06-13,2025-06,School,South Hub,Routine,12-17,Female,3,2025-06-16,Attended,Assessment,No,80,Yes
+REF-01116,2025-10-06,2025-10,GP,South Hub,Urgent,12-17,Female,15,2025-10-21,Attended,Triage,No,87,Yes
+REF-01117,2024-11-09,2024-11,GP,North Hub,Routine,12-17,Male,3,2024-11-12,Attended,Diagnosis,Yes,88,Yes
+REF-01118,2025-09-07,2025-09,GP,East Community,Routine,6-11,Male,24,2025-10-01,Attended,Treatment/Follow-up,No,78,Yes
+REF-01119,2025-03-07,2025-03,GP,Central,Routine,12-17,Female,3,2025-03-10,Attended,Treatment/Follow-up,No,83,Yes
+REF-01120,2025-08-04,2025-08,Self-referral,East Community,Routine,25-39,Female,73,2025-10-16,Attended,Treatment/Follow-up,No,85,Yes
+REF-01121,2025-02-09,2025-02,GP,South Hub,Routine,6-11,Female,68,2025-04-18,Attended,Diagnosis,No,76,Yes
+REF-01122,2025-12-02,2025-12,School,North Hub,Routine,12-17,Female,125,2026-04-06,Attended,Diagnosis,Yes,82,Yes
+REF-01123,2025-11-15,2025-11,GP,South Hub,Routine,25-39,Female,166,2026-04-30,DNA,Triage,No,34,No
+REF-01124,2024-10-16,2024-10,Self-referral,West Community,Routine,18-24,Male,180,2025-04-14,Attended,Treatment/Follow-up,Yes,69,No
+REF-01125,2025-09-15,2025-09,GP,East Community,Routine,12-17,Male,3,2025-09-18,Attended,Diagnosis,Yes,83,Yes
+REF-01126,2024-02-15,2024-02,GP,East Community,Routine,12-17,Female,9,2024-02-24,DNA,Triage,No,46,Yes
+REF-01127,2025-01-31,2025-01,School,East Community,Routine,40+,Male,138,2025-06-18,Attended,Diagnosis,Yes,69,No
+REF-01128,2025-11-02,2025-11,Secondary Care,North Hub,Routine,6-11,Female,174,2026-04-25,Attended,Diagnosis,Yes,75,No
+REF-01129,2025-03-08,2025-03,Self-referral,East Community,Routine,25-39,Female,153,2025-08-08,Attended,Diagnosis,Yes,76,No
+REF-01130,2024-04-24,2024-04,Self-referral,Central,Urgent,25-39,Male,3,2024-04-27,Cancelled,Triage,No,72,Yes
+REF-01131,2025-12-25,2025-12,School,Central,Routine,25-39,Male,138,2026-05-12,DNA,Triage,No,41,No
+REF-01132,2025-04-16,2025-04,GP,East Community,Urgent,12-17,Female,33,2025-05-19,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-01133,2024-10-27,2024-10,GP,East Community,Routine,12-17,Female,170,2025-04-15,Attended,Assessment,No,68,No
+REF-01134,2024-03-27,2024-03,School,South Hub,Routine,18-24,Male,157,2024-08-31,DNA,Triage,No,38,No
+REF-01135,2025-12-06,2025-12,School,Central,Urgent,18-24,Female,25,2025-12-31,Attended,Treatment/Follow-up,No,78,Yes
+REF-01136,2025-01-26,2025-01,GP,East Community,Routine,40+,Male,101,2025-05-07,Attended,Triage,No,77,Yes
+REF-01137,2025-10-30,2025-10,Self-referral,West Community,Routine,40+,Male,3,2025-11-02,Attended,Treatment/Follow-up,Yes,78,Yes
+REF-01138,2025-01-18,2025-01,School,West Community,Routine,12-17,Male,3,2025-01-21,Cancelled,Triage,No,78,Yes
+REF-01139,2025-11-18,2025-11,GP,South Hub,Routine,18-24,Female,72,2026-01-29,Attended,Assessment,No,79,Yes
+REF-01140,2025-04-18,2025-04,School,East Community,Urgent,6-11,Female,30,2025-05-18,Attended,Assessment,No,84,Yes
+REF-01141,2025-12-30,2025-12,School,West Community,Routine,18-24,Female,3,2026-01-02,DNA,Triage,No,47,Yes
+REF-01142,2024-11-23,2024-11,GP,West Community,Routine,25-39,Male,187,2025-05-29,Attended,Assessment,No,74,No
+REF-01143,2024-09-18,2024-09,GP,Central,Routine,40+,Male,24,2024-10-12,Attended,Treatment/Follow-up,Yes,84,Yes
+REF-01144,2024-11-18,2024-11,GP,South Hub,Routine,18-24,Female,59,2025-01-16,Attended,Diagnosis,No,73,Yes
+REF-01145,2024-10-17,2024-10,School,South Hub,Routine,12-17,Male,3,2024-10-20,DNA,Triage,No,49,Yes
+REF-01146,2024-08-11,2024-08,GP,East Community,Routine,6-11,Female,202,2025-03-01,Attended,Treatment/Follow-up,Yes,74,No
+REF-01147,2024-12-26,2024-12,Self-referral,Central,Routine,12-17,Male,34,2025-01-29,Attended,Treatment/Follow-up,Yes,87,Yes
+REF-01148,2024-08-18,2024-08,Secondary Care,West Community,Routine,12-17,Male,8,2024-08-26,DNA,Triage,No,42,Yes
+REF-01149,2025-02-13,2025-02,GP,East Community,Routine,25-39,Male,71,2025-04-25,Attended,Assessment,No,85,Yes
+REF-01150,2025-02-24,2025-02,GP,South Hub,Routine,6-11,Male,54,2025-04-19,Attended,Diagnosis,No,73,Yes
+REF-01151,2024-11-28,2024-11,School,West Community,Routine,18-24,Male,177,2025-05-24,Attended,Assessment,No,79,No
+REF-01152,2024-07-16,2024-07,Secondary Care,East Community,Routine,25-39,Female,97,2024-10-21,Attended,Treatment/Follow-up,Yes,73,Yes
+REF-01153,2024-10-27,2024-10,GP,Central,Routine,12-17,Female,3,2024-10-30,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-01154,2025-09-10,2025-09,Self-referral,South Hub,Urgent,12-17,Male,3,2025-09-13,DNA,Triage,No,38,Yes
+REF-01155,2025-11-29,2025-11,School,West Community,Urgent,25-39,Female,13,2025-12-12,Attended,Assessment,No,76,Yes
+REF-01156,2025-03-25,2025-03,GP,East Community,Routine,25-39,Male,111,2025-07-14,Attended,Triage,No,80,Yes
+REF-01157,2025-06-07,2025-06,School,North Hub,Routine,6-11,Male,88,2025-09-03,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-01158,2024-05-25,2024-05,Secondary Care,South Hub,Routine,12-17,Female,3,2024-05-28,Attended,Diagnosis,Yes,84,Yes
+REF-01159,2024-09-23,2024-09,GP,East Community,Routine,25-39,Male,3,2024-09-26,Attended,Assessment,No,86,Yes
+REF-01160,2024-01-27,2024-01,GP,East Community,Routine,25-39,Female,44,2024-03-11,Attended,Diagnosis,Yes,88,Yes
+REF-01161,2025-11-20,2025-11,GP,South Hub,Routine,6-11,Female,9,2025-11-29,DNA,Triage,No,43,Yes
+REF-01162,2025-08-20,2025-08,GP,East Community,Routine,12-17,Male,150,2026-01-17,Attended,Diagnosis,Yes,70,No
+REF-01163,2024-12-18,2024-12,School,Central,Routine,12-17,Female,137,2025-05-04,DNA,Triage,No,42,No
+REF-01164,2025-05-08,2025-05,GP,North Hub,Urgent,18-24,Female,9,2025-05-17,Attended,Assessment,No,81,Yes
+REF-01165,2024-10-11,2024-10,School,North Hub,Routine,18-24,Female,3,2024-10-14,Attended,Treatment/Follow-up,No,93,Yes
+REF-01166,2024-08-21,2024-08,Self-referral,North Hub,Routine,12-17,Female,133,2025-01-01,Attended,Assessment,No,68,No
+REF-01167,2024-02-27,2024-02,GP,South Hub,Routine,12-17,Male,46,2024-04-13,Attended,Diagnosis,Yes,75,Yes
+REF-01168,2025-09-15,2025-09,GP,South Hub,Routine,25-39,Male,3,2025-09-18,Attended,Assessment,No,86,Yes
+REF-01169,2024-03-03,2024-03,GP,Central,Routine,12-17,Female,100,2024-06-11,Attended,Triage,No,84,Yes
+REF-01170,2024-04-29,2024-04,GP,North Hub,Routine,18-24,Female,68,2024-07-06,Attended,Diagnosis,Yes,75,Yes
+REF-01171,2025-03-29,2025-03,Self-referral,Central,Routine,25-39,Other/Not stated,91,2025-06-28,Attended,Assessment,No,86,Yes
+REF-01172,2025-05-09,2025-05,GP,East Community,Urgent,12-17,Male,49,2025-06-27,Attended,Diagnosis,Yes,87,Yes
+REF-01173,2024-04-24,2024-04,Social Services,West Community,Urgent,6-11,Male,3,2024-04-27,Attended,Treatment/Follow-up,Yes,80,Yes
+REF-01174,2025-03-29,2025-03,GP,South Hub,Routine,6-11,Female,79,2025-06-16,Attended,Assessment,No,80,Yes
+REF-01175,2024-11-23,2024-11,Self-referral,East Community,Routine,40+,Female,60,2025-01-22,Attended,Treatment/Follow-up,No,77,Yes
+REF-01176,2024-11-29,2024-11,Social Services,Central,Urgent,25-39,Male,11,2024-12-10,Attended,Treatment/Follow-up,Yes,86,Yes
+REF-01177,2025-01-14,2025-01,GP,East Community,Routine,25-39,Female,51,2025-03-06,Attended,Triage,No,85,Yes
+REF-01178,2024-02-26,2024-02,Social Services,South Hub,Routine,40+,Male,168,2024-08-12,DNA,Triage,No,29,No
+REF-01179,2024-08-01,2024-08,School,East Community,Routine,6-11,Male,17,2024-08-18,Attended,Treatment/Follow-up,Yes,90,Yes
+REF-01180,2024-10-07,2024-10,GP,East Community,Routine,25-39,Male,144,2025-02-28,Attended,Treatment/Follow-up,No,77,No
+REF-01181,2025-12-05,2025-12,Social Services,South Hub,Routine,12-17,Male,61,2026-02-04,Attended,Assessment,No,83,Yes
+REF-01182,2025-03-24,2025-03,Secondary Care,South Hub,Routine,25-39,Female,106,2025-07-08,Attended,Treatment/Follow-up,No,73,Yes
+REF-01183,2025-08-26,2025-08,GP,North Hub,Routine,12-17,Female,3,2025-08-29,Attended,Treatment/Follow-up,Yes,81,Yes
+REF-01184,2024-03-10,2024-03,Secondary Care,East Community,Routine,40+,Female,54,2024-05-03,Attended,Treatment/Follow-up,Yes,83,Yes
+REF-01185,2025-04-24,2025-04,GP,South Hub,Routine,18-24,Male,80,2025-07-13,DNA,Triage,No,34,Yes
+REF-01186,2025-10-19,2025-10,GP,West Community,Routine,25-39,Male,200,2026-05-07,DNA,Triage,No,37,No
+REF-01187,2025-01-17,2025-01,GP,North Hub,Routine,40+,Male,43,2025-03-01,Attended,Assessment,No,76,Yes
+REF-01188,2024-03-18,2024-03,School,North Hub,Urgent,18-24,Male,51,2024-05-08,Attended,Triage,No,87,Yes
+REF-01189,2025-09-16,2025-09,School,North Hub,Routine,25-39,Male,71,2025-11-26,Attended,Treatment/Follow-up,Yes,74,Yes
+REF-01190,2024-07-05,2024-07,School,Central,Routine,25-39,Male,159,2024-12-11,Attended,Treatment/Follow-up,Yes,73,No
+REF-01191,2024-01-07,2024-01,School,North Hub,Routine,12-17,Male,81,2024-03-28,Attended,Assessment,No,85,Yes
+REF-01192,2025-10-31,2025-10,School,Central,Routine,40+,Male,133,2026-03-13,Attended,Diagnosis,Yes,70,No
+REF-01193,2024-07-30,2024-07,GP,Central,Routine,18-24,Male,100,2024-11-07,Attended,Assessment,No,79,Yes
+REF-01194,2024-08-23,2024-08,School,South Hub,Routine,12-17,Female,3,2024-08-26,Attended,Assessment,No,88,Yes
+REF-01195,2024-01-28,2024-01,GP,West Community,Urgent,6-11,Male,69,2024-04-06,Attended,Assessment,No,73,Yes
+REF-01196,2025-04-02,2025-04,GP,West Community,Routine,18-24,Female,106,2025-07-17,Attended,Diagnosis,Yes,85,Yes
+REF-01197,2024-05-04,2024-05,GP,West Community,Routine,25-39,Female,156,2024-10-07,DNA,Triage,No,26,No
+REF-01198,2025-06-03,2025-06,GP,North Hub,Routine,40+,Female,81,2025-08-23,Attended,Diagnosis,No,74,Yes
+REF-01199,2024-12-29,2024-12,GP,North Hub,Routine,12-17,Male,3,2025-01-01,DNA,Triage,No,49,Yes
+REF-01200,2025-04-27,2025-04,GP,East Community,Urgent,6-11,Male,108,2025-08-13,Cancelled,Triage,No,53,Yes
