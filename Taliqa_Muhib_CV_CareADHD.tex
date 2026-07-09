@@ -1,0 +1,177 @@
+%==============================================================
+% Taliqa Muhib — Curriculum Vitae
+% Tailored for: Data Scientist, Care ADHD
+% Compile with: pdflatex Taliqa_Muhib_CV_CareADHD.tex
+%   (or upload to Overleaf and press Recompile)
+%==============================================================
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+
+% ---- Colours
+\definecolor{accent}{HTML}{0F8F86}
+\definecolor{ink}{HTML}{10233B}
+\definecolor{muted}{HTML}{4A5B70}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent
+}
+
+% ---- Section styling
+\titleformat{\section}
+  {\color{accent}\scshape\large\bfseries}
+  {}{0em}{}[\vspace{-0.6em}\color{accent}\rule{\linewidth}{0.8pt}]
+\titlespacing{\section}{0pt}{8pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=2pt}
+
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1}\hfill{\color{muted}\small #2}\\[-0.2em]
+  {\color{accent}\small #3}\\[0.1em]
+  #4
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+%==============================================================
+\begin{document}
+
+% ---------------- Header ----------------
+\begin{center}
+  {\Huge\bfseries\color{ink} Taliqa Muhib}\\[0.35em]
+  {\color{accent}\bfseries HealthTech Data Scientist $\cdot$ Patient Pathway Analytics $\cdot$ Predictive Modelling}\\[0.5em]
+  {\small
+    \faEnvelope\ \href{mailto:taliqa.muhib@gmail.com}{taliqa.muhib@gmail.com} \quad
+    \faPhone\ +44 7732 477820 \quad
+    \faMapMarker*\ Pakistan-based --- open to UK relocation / hybrid
+  }\\[0.3em]
+  {\small
+    \faGlobe\ \href{https://talikamuhib.github.io/Talikamuhib/}{Portfolio} \quad
+    \faGithub\ \href{https://github.com/Talikamuhib}{github.com/Talikamuhib} \quad
+    \faLinkedin\ \href{https://www.linkedin.com/in/talika-muhib}{linkedin.com/in/talika-muhib} \quad
+    \faChartBar\ \href{https://public.tableau.com/app/profile/taliqa.muhib1820}{Tableau Public}
+  }
+\end{center}
+
+% ---------------- Summary ----------------
+\section*{Professional Summary}
+HealthTech Data Scientist specialising in \textbf{patient pathway analytics, predictive
+modelling, and clinical service performance}. I turn healthcare, operational, and product
+data into actionable insights that improve patient outcomes and service efficiency. MRes
+research background, strong Python / SQL / Tableau toolkit, and a responsible, GDPR-aware
+approach to sensitive clinical data. Passionate about improving access to ADHD and
+neurodiversity care through data.
+
+% ---------------- Skills ----------------
+\section*{Core Skills}
+\begin{itemize}
+  \item \textbf{Data Science \& ML:} Python, Pandas, NumPy, Scikit-learn, Statistical Analysis,
+        Predictive Modelling, Classification, Regression, Feature Engineering, Model Evaluation
+  \item \textbf{Healthcare Analytics:} Patient Pathway Analysis, Appointment Attendance
+        Prediction, Referral Trends, Waiting-Time Analysis, Clinical Data, Healthcare
+        Operations, GDPR-aware Analysis
+  \item \textbf{Data \& BI:} SQL, SQL Server, MySQL, Tableau, Power BI, Excel, Dashboards,
+        KPI Reporting, Data Quality Checks
+  \item \textbf{Research \& AI:} EEG Analysis, Graph Signal Processing, Medical Imaging,
+        Vision Transformers, Healthcare AI, Responsible AI, LLM Evaluation
+\end{itemize}
+
+% ---------------- Projects ----------------
+\section*{Selected Projects}
+
+\entry{ADHD Patient Pathway Analytics Dashboard}
+      {\href{https://public.tableau.com/views/MonthlyReferralADHDanalysis/Dashboard1}{Live dashboard}}
+      {Python $\cdot$ SQL $\cdot$ Pandas $\cdot$ Tableau $\cdot$ Healthcare Analytics}
+      {\begin{itemize}
+        \item Built an end-to-end analytics dashboard modelling \textbf{1,200 referrals} to
+              analyse demand, waiting times, assessment progression, and appointment attendance
+              across an ADHD care pathway.
+        \item Surfaced a \textbf{17\% did-not-attend (DNA) rate} and \textbf{77\%
+              18-week-target compliance}, identifying DNA reduction as a lever for recovering
+              wasted clinical capacity.
+        \item Showed urgent cases correctly prioritised ($\sim$30 days vs $\sim$85 for routine);
+              combines Python/SQL pipelines with Tableau to help service leads understand demand
+              and bottlenecks --- designed to support service planning, not clinical diagnosis.
+      \end{itemize}}
+\vspace{0.5em}
+
+\entry{ADHD Appointment No-Show (DNA) Prediction}
+      {\href{https://github.com/Talikamuhib}{Code / Streamlit app}}
+      {Python $\cdot$ Scikit-learn $\cdot$ Streamlit $\cdot$ Classification}
+      {\begin{itemize}
+        \item Developed an interactive risk model (Logistic Regression, \textbf{ROC-AUC $\approx$ 0.62})
+              predicting which referrals are most likely to no-show, as decision-support for
+              targeted reminders and scheduling optimisation.
+        \item Handled class imbalance and avoided target leakage; built a Streamlit app with
+              live prediction, ROC curve, feature importance, and confusion-matrix views.
+      \end{itemize}}
+\vspace{0.5em}
+
+\entry{EEG Neurodegenerative Disease Detection (MRes Research)}
+      {Coventry University}
+      {Python $\cdot$ EEG $\cdot$ Graph Signal Processing $\cdot$ Machine Learning}
+      {\begin{itemize}
+        \item Used EEG connectivity, graph signal processing, and ML to support early-detection
+              research for neurodegenerative disease.
+        \item Preprocessed EEG signals, built graph-based connectivity features, and trained
+              reproducible ML pipelines --- research-only, not intended for diagnosis.
+      \end{itemize}}
+\vspace{0.5em}
+
+\entry{Kidney Stone Detection using Vision Transformers}
+      {Final-year project}
+      {Python $\cdot$ Vision Transformers $\cdot$ Medical Imaging $\cdot$ Deep Learning}
+      {\begin{itemize}
+        \item Applied Vision Transformer models to CT scan images for exploratory kidney-stone
+              detection, studying model performance on medical imaging as a research prototype.
+      \end{itemize}}
+\vspace{0.5em}
+
+\entry{Health LLM Evaluation Framework}
+      {Research}
+      {LLM Evaluation $\cdot$ Healthcare AI $\cdot$ Responsible AI $\cdot$ Benchmarking}
+      {\begin{itemize}
+        \item Built a responsible-AI framework evaluating healthcare language-model responses
+              across accuracy, safety, bias, and clinical reliability, with defined benchmarks
+              and scoring --- not intended for clinical use.
+      \end{itemize}}
+
+% ---------------- Education ----------------
+\section*{Education}
+\textbf{MRes, Computer Science} --- Coventry University\\
+{\color{muted}\small Research: early detection of neurodegenerative disease using EEG, graph signal processing, and machine learning.}\\[0.4em]
+\textbf{BS, Computer Science}\\
+{\color{muted}\small Final-year project: kidney-stone detection from CT images using Vision Transformers.}
+
+% ---------------- Other work ----------------
+\section*{Other Work}
+\begin{itemize}
+  \item \textbf{EdTech Learning Platform} --- coding and digital-skills training to widen access to technical education.
+  \item \textbf{Glacier \& Climate Monitoring} --- data-driven monitoring of glacial change for environmental analysis.
+  \item \textbf{Portfolio Analytics Dashboard} --- general KPI reporting and data-visualisation practice (Tableau, Power BI).
+  \item \textbf{Interactive Game Projects} --- small front-end builds exploring logic, state, and interactivity.
+\end{itemize}
+
+% ---------------- Strengths ----------------
+\section*{Key Strengths}
+\begin{itemize}
+  \item Translate complex analysis into clear dashboards and recommendations for non-technical clinical and operational stakeholders.
+  \item Responsible, GDPR-aware handling of sensitive data; treats models as decision support, not clinical judgement.
+  \item Commercially minded --- frames analytics around service improvement, capacity, and patient outcomes.
+\end{itemize}
+
+\vfill
+{\footnotesize\color{muted}\itshape Portfolio projects use synthetic demonstration data and are decision-support prototypes, not intended for clinical diagnosis or deployment.}
+
+\end{document}

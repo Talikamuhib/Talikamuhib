@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taliqa Muhib — CV (Data Scientist, Care ADHD)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #10233b;
+      --muted: #4a5b70;
+      --accent: #0f8f86;
+      --line: #d9e0e8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--ink);
+      line-height: 1.45;
+      font-size: 10.6pt;
+      background: #eef2f6;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 12px auto;
+      background: #fff;
+      padding: 16mm 16mm 12mm;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    /* Header */
+    header { border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 12px; }
+    h1 { font-size: 22pt; font-weight: 800; letter-spacing: -0.01em; }
+    .title { color: var(--accent); font-weight: 700; font-size: 11pt; margin-top: 2px; }
+    .contact { margin-top: 8px; font-size: 9.4pt; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+    .contact a { color: var(--muted); text-decoration: none; }
+    .contact span::before { content: "•"; color: var(--accent); margin-right: 6px; }
+    .contact span:first-child::before { content: ""; margin: 0; }
+
+    /* Sections */
+    section { margin-top: 14px; }
+    h2 {
+      font-size: 9.6pt; text-transform: uppercase; letter-spacing: 0.09em;
+      color: var(--accent); font-weight: 700; margin-bottom: 7px;
+      border-bottom: 1px solid var(--line); padding-bottom: 3px;
+    }
+    p.summary { color: #2a3a4d; }
+
+    .item { margin-bottom: 10px; }
+    .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+    .item-title { font-weight: 700; }
+    .item-title .stack { font-weight: 500; color: var(--accent); }
+    .item-meta { color: var(--muted); font-size: 9pt; white-space: nowrap; }
+    ul { margin: 3px 0 0 16px; }
+    li { margin-bottom: 2px; }
+    .item a { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+    /* Skills grid */
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+    .skills div { font-size: 9.8pt; }
+    .skills b { color: var(--ink); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+
+    .note { font-size: 8.6pt; color: var(--muted); margin-top: 10px; font-style: italic; }
+
+    @media print {
+      body { background: #fff; font-size: 10pt; }
+      .page { margin: 0; box-shadow: none; width: auto; min-height: auto; padding: 12mm 14mm; }
+      .no-print { display: none; }
+      a { color: var(--accent); }
+    }
+    .no-print {
+      max-width: 210mm; margin: 12px auto 0; text-align: center;
+    }
+    .no-print button {
+      background: var(--accent); color: #fff; border: 0; padding: 10px 22px;
+      border-radius: 8px; font: inherit; font-weight: 700; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print">
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="page">
+    <header>
+      <h1>Taliqa Muhib</h1>
+      <div class="title">HealthTech Data Scientist · Patient Pathway Analytics · Predictive Modelling</div>
+      <div class="contact">
+        <span><a href="mailto:taliqa.muhib@gmail.com">taliqa.muhib@gmail.com</a></span>
+        <span>+44 7732 477820</span>
+        <span>Pakistan-based · open to UK relocation / hybrid</span>
+        <span><a href="https://talikamuhib.github.io/Talikamuhib/">Portfolio</a></span>
+        <span><a href="https://github.com/Talikamuhib">GitHub</a></span>
+        <span><a href="https://www.linkedin.com/in/talika-muhib">LinkedIn</a></span>
+        <span><a href="https://public.tableau.com/app/profile/taliqa.muhib1820">Tableau</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        HealthTech Data Scientist specialising in <b>patient pathway analytics, predictive
+        modelling, and clinical service performance</b>. I turn healthcare, operational, and
+        product data into actionable insights that improve patient outcomes and service
+        efficiency. MRes research background, strong Python / SQL / Tableau toolkit, and a
+        responsible, GDPR-aware approach to sensitive clinical data. Passionate about improving
+        access to ADHD and neurodiversity care through data.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Skills</h2>
+      <div class="skills">
+        <div><b>Languages &amp; Analysis:</b> Python, SQL, Pandas, NumPy, Statistical Analysis</div>
+        <div><b>Machine Learning:</b> Scikit-learn, Predictive Modelling, Classification, Feature Engineering, Model Evaluation</div>
+        <div><b>Visualisation &amp; BI:</b> Tableau, Power BI, Excel, Dashboard Design, KPI Reporting</div>
+        <div><b>Healthcare &amp; Delivery:</b> Patient Pathway Analytics, Waiting-Time Analysis, Data Pipelines, GDPR-aware Handling, Stakeholder Reporting</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">ADHD Patient Pathway Analytics Dashboard <span class="stack">— Python · SQL · Tableau</span></div>
+          <div class="item-meta"><a href="https://public.tableau.com/views/MonthlyReferralADHDanalysis/Dashboard1">Live dashboard →</a></div>
+        </div>
+        <ul>
+          <li>Built an end-to-end analytics dashboard modelling <b>1,200 referrals</b> to analyse demand, waiting times, and appointment attendance across an ADHD care pathway.</li>
+          <li>Surfaced a <b>17% did-not-attend (DNA) rate</b> and <b>77% 18-week-target compliance</b>, identifying DNA reduction as a lever for recovering wasted clinical capacity.</li>
+          <li>Showed urgent cases correctly prioritised (~30 days vs ~85 for routine) — designed to support service planning, not clinical diagnosis.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">ADHD Appointment No-Show (DNA) Prediction <span class="stack">— Python · Scikit-learn · Streamlit</span></div>
+          <div class="item-meta"><a href="https://github.com/Talikamuhib">Code / app →</a></div>
+        </div>
+        <ul>
+          <li>Developed an interactive risk model (Logistic Regression, <b>ROC-AUC ≈ 0.62</b>) predicting which referrals are most likely to no-show, as decision-support for targeted reminders.</li>
+          <li>Handled class imbalance and avoided target leakage; built a Streamlit app with live prediction, ROC/feature-importance views, and confusion matrix.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">MRes Research — EEG &amp; Early Detection of Neurodegenerative Disease <span class="stack">— Python, ML</span></div>
+          <div class="item-meta">Coventry University</div>
+        </div>
+        <ul>
+          <li>Applied EEG connectivity, graph signal processing, and reproducible ML pipelines to early-detection research, working responsibly with sensitive biomedical data.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Kidney Stone Detection with Vision Transformers <span class="stack">— Python, Deep Learning</span></div>
+          <div class="item-meta">Final-year project</div>
+        </div>
+        <ul>
+          <li>Applied Vision Transformer models to CT imaging for exploratory kidney-stone detection; studied model performance on medical images.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <section>
+        <h2>Education</h2>
+        <div class="item">
+          <div class="item-title">MRes, Computer Science</div>
+          <div class="item-meta">Coventry University · Research: EEG-based early detection of neurodegenerative disease</div>
+        </div>
+        <div class="item">
+          <div class="item-title">BS, Computer Science</div>
+          <div class="item-meta">Final-year project: kidney-stone detection from CT images (Vision Transformers)</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Key Strengths</h2>
+        <ul>
+          <li>Translate complex analysis into clear dashboards and recommendations for non-technical clinical and operational stakeholders.</li>
+          <li>Responsible, GDPR-aware handling of sensitive data; models as decision support, not clinical judgement.</li>
+          <li>Commercially minded — framing analytics around service improvement, capacity, and patient outcomes.</li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="note">
+      Portfolio projects use synthetic demonstration data and are decision-support prototypes,
+      not intended for clinical diagnosis or deployment.
+    </p>
+  </div>
+</body>
+</html>
