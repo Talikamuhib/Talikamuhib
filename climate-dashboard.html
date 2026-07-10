@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Gilgit-Baltistan Climate Trends — an interactive machine-learning dashboard by Taliqa Muhib analysing 1984–2019 temperature and precipitation records from seven weather stations to quantify warming, map trends, and flag glacial-melt risk." />
+  <meta name="author" content="Taliqa Muhib" />
+  <meta name="theme-color" content="#0b1120" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="mask-icon" href="favicon.svg" color="#2dd4bf" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gilgit-Baltistan Climate Trends | Taliqa Muhib" />
+  <meta property="og:description"
+    content="Interactive ML dashboard: warming trends, station map, clustering, anomaly detection, and forecasts across Gilgit-Baltistan (1984–2019)." />
+  <meta property="og:type" content="website" />
+
+  <title>Gilgit-Baltistan Climate Trends | Taliqa Muhib</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/portfolio.css?v=1.1" />
+
+  <style>
+    .dash-main { max-width: var(--maxw); margin: 0 auto; padding: 120px 24px 80px; }
+    .dash-back {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted);
+      text-decoration: none; font-size: 0.92rem; margin-bottom: 28px;
+      transition: color 0.2s var(--ease);
+    }
+    .dash-back:hover { color: var(--accent); }
+    .dash-head { margin-bottom: 32px; }
+    .dash-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem;
+      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-soft); border: 1px solid var(--border);
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .dash-head h1 {
+      font-family: "Sora", sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.15; margin-bottom: 14px;
+    }
+    .dash-head p { color: var(--text-muted); max-width: 760px; font-size: 1.02rem; }
+    .dash-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; list-style: none; }
+    .dash-tags li {
+      font-size: 0.82rem; color: var(--text-muted); background: var(--surface-2);
+      border: 1px solid var(--border); padding: 5px 12px; border-radius: 999px;
+    }
+    .dash-kpis {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 36px 0;
+    }
+    .kpi-card {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 20px; box-shadow: var(--shadow);
+    }
+    .kpi-card .kpi-value {
+      font-family: "Sora", sans-serif; font-size: 1.9rem; font-weight: 700;
+      color: var(--accent); line-height: 1;
+    }
+    .kpi-card .kpi-label {
+      display: block; margin-top: 8px; font-size: 0.85rem; color: var(--text-muted);
+    }
+    .dash-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 8px; }
+    .dash-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px;
+      border-radius: var(--radius-sm); font-weight: 600; font-size: 0.92rem;
+      text-decoration: none; border: 1px solid var(--border-strong); color: var(--text);
+      background: var(--surface-2); transition: all 0.2s var(--ease);
+    }
+    .dash-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .dash-btn.primary {
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      color: #04121a; border-color: transparent;
+    }
+    .dash-btn.primary:hover { color: #04121a; opacity: 0.92; }
+
+    /* Feature grid */
+    .feat-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0;
+    }
+    .feat-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 22px;
+    }
+    .feat-card h3 {
+      font-family: "Sora", sans-serif; font-size: 1.05rem; margin-bottom: 8px;
+    }
+    .feat-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.55; }
+    .feat-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+
+    /* Ranking table */
+    .rank-table-wrap {
+      margin-top: 24px; overflow-x: auto; border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+    table.rank-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    table.rank-table th, table.rank-table td {
+      padding: 11px 16px; text-align: left; border-bottom: 1px solid var(--border);
+    }
+    table.rank-table th {
+      background: var(--surface-2); color: var(--text); font-weight: 600;
+      font-family: "Sora", sans-serif;
+    }
+    table.rank-table td { color: var(--text-muted); }
+    table.rank-table tr:last-child td { border-bottom: none; }
+    .warm-hot { color: #f97362; font-weight: 700; }
+    .warm-mid { color: #f5b458; font-weight: 600; }
+    .warm-low { color: var(--accent); font-weight: 600; }
+
+    .dash-insights {
+      margin-top: 44px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+    }
+    .dash-insights h2 { font-family: "Sora", sans-serif; font-size: 1.35rem; margin-bottom: 16px; }
+    .dash-insights ul { list-style: none; display: grid; gap: 14px; }
+    .dash-insights li {
+      position: relative; padding-left: 26px; color: var(--text-muted); line-height: 1.6;
+    }
+    .dash-insights li::before {
+      content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px;
+      border-radius: 50%; background: var(--accent);
+    }
+    .dash-insights li strong { color: var(--text); }
+
+    .run-box {
+      margin-top: 40px; background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 22px;
+    }
+    .run-box h3 { font-family: "Sora", sans-serif; font-size: 1.05rem; margin-bottom: 10px; }
+    .run-box code {
+      display: block; background: #0b1120; color: #8ef1e0; padding: 12px 16px;
+      border-radius: 8px; font-size: 0.88rem; margin-top: 8px; overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+    .run-box p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.55; }
+
+    .dash-disclaimer {
+      margin-top: 28px; font-size: 0.85rem; color: var(--text-dim);
+      border-left: 2px solid var(--border-strong); padding: 6px 0 6px 16px;
+    }
+
+    @media (max-width: 860px) {
+      .dash-kpis { grid-template-columns: repeat(2, 1fr); }
+      .feat-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .dash-kpis { grid-template-columns: 1fr; }
+      .dash-main { padding-top: 100px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="dash-main">
+    <a class="dash-back" href="index.html#projects" aria-label="Back to portfolio">
+      &larr; Back to portfolio
+    </a>
+
+    <header class="dash-head">
+      <span class="dash-eyebrow">Climate · Machine Learning</span>
+      <h1>Gilgit-Baltistan Climate Trends &amp; Glacial-Melt Risk</h1>
+      <p>
+        An interactive machine-learning dashboard analysing <strong>36 years (1984–2019)</strong>
+        of temperature and precipitation records from seven weather stations across
+        Gilgit-Baltistan, Pakistan — the gateway to the country's 7,000+ glaciers. It
+        quantifies warming trends, maps them geographically, groups stations by climate
+        behaviour, flags anomalous years, and projects future values to highlight where
+        accelerating glacial melt threatens downstream communities.
+      </p>
+      <ul class="dash-tags">
+        <li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>Streamlit</li>
+        <li>Linear Regression</li><li>K-Means Clustering</li><li>Anomaly Detection</li>
+        <li>Geospatial</li><li>Climate Analytics</li>
+      </ul>
+    </header>
+
+    <section class="dash-kpis" aria-label="Key findings">
+      <div class="kpi-card">
+        <span class="kpi-value">7</span>
+        <span class="kpi-label">Weather stations analysed</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-value">+0.59 °C</span>
+        <span class="kpi-label">Avg. regional warming / decade</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-value">+2.20 °C</span>
+        <span class="kpi-label">Fastest warming (Skardu) / decade</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-value">+0.51</span>
+        <span class="kpi-label">Elevation–warming correlation</span>
+      </div>
+    </section>
+
+    <div class="dash-actions">
+      <a class="dash-btn primary" href="https://github.com/Talikamuhib"
+        target="_blank" rel="noopener noreferrer">View code on GitHub &nearr;</a>
+      <a class="dash-btn" href="index.html#contact">Discuss this project</a>
+    </div>
+
+    <!-- ============ FEATURES ============ -->
+    <div class="feat-grid">
+      <div class="feat-card">
+        <span class="feat-icon">🗺️</span>
+        <h3>Interactive station map</h3>
+        <p>All seven stations plotted at their real coordinates, coloured and sized by
+          their ML-estimated warming trend — bigger, redder points warm faster.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">📈</span>
+        <h3>Trends &amp; anomalies</h3>
+        <p>Per-station annual trends with a fitted regression line, rolling averages, and
+          automatic detection of unusually hot or cold years.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🔮</span>
+        <h3>ML forecasting</h3>
+        <p>Linear and polynomial regression with a time-based train/test split, reporting
+          MAE and R², then projecting values years ahead.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🧩</span>
+        <h3>K-Means clustering</h3>
+        <p>Groups stations by mean, trend, seasonality, and variability to reveal which
+          stations behave alike across the region.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">⚖️</span>
+        <h3>Multi-station compare</h3>
+        <p>Overlay several stations, rank them by warming rate, and view a year-by-year
+          anomaly heat-strip.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">📝</span>
+        <h3>Auto-generated report</h3>
+        <p>A written climate summary built live from the data and ML results, downloadable
+          as a text file for research notes.</p>
+      </div>
+    </div>
+
+    <!-- ============ RANKING TABLE ============ -->
+    <section class="dash-insights" style="padding-bottom: 8px;">
+      <h2>Warming ranked by station (Linear Regression)</h2>
+      <div class="rank-table-wrap">
+        <table class="rank-table">
+          <thead>
+            <tr>
+              <th>Station</th><th>Elevation</th><th>Warming trend</th><th>Region role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Skardu</td><td>2,228 m</td><td class="warm-hot">+2.20 °C / decade</td><td>Karakoram glacier gateway</td></tr>
+            <tr><td>Hunza</td><td>2,438 m</td><td class="warm-mid">+0.86 °C / decade</td><td>High-altitude valley</td></tr>
+            <tr><td>Astore</td><td>2,168 m</td><td class="warm-mid">+0.38 °C / decade</td><td>Nanga Parbat approach</td></tr>
+            <tr><td>Bunji</td><td>1,372 m</td><td class="warm-low">+0.35 °C / decade</td><td>Indus valley</td></tr>
+            <tr><td>Gilgit</td><td>1,500 m</td><td class="warm-low">+0.12 °C / decade</td><td>Regional capital</td></tr>
+            <tr><td>Chilas</td><td>1,250 m</td><td class="warm-low">+0.11 °C / decade</td><td>Lower Indus</td></tr>
+            <tr><td>Gupis</td><td>2,156 m</td><td class="warm-low">+0.10 °C / decade</td><td>Western valley</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="dash-insights">
+      <h2>Key insights</h2>
+      <ul>
+        <li><strong>The region is warming:</strong> maximum temperature is rising by an average of <strong>+0.59 °C per decade</strong> across the seven stations.</li>
+        <li><strong>Skardu warms fastest</strong> at <strong>+2.20 °C per decade</strong> — a high-elevation gateway to the Karakoram glaciers, exactly where melt matters most.</li>
+        <li><strong>Elevation-dependent warming:</strong> a <strong>+0.51 correlation</strong> between elevation and trend suggests higher stations are warming faster — a recognised and dangerous mountain-climate signal.</li>
+        <li><strong>Melt &amp; flood risk:</strong> faster high-altitude warming accelerates glacial melt, swells unstable glacial lakes, and raises the risk of Glacial Lake Outburst Floods (GLOFs) for downstream communities.</li>
+      </ul>
+    </section>
+
+    <!-- ============ RUN LOCALLY ============ -->
+    <div class="run-box">
+      <h3>Run the interactive dashboard</h3>
+      <p>The full app is built with Streamlit. Clone the repository and run:</p>
+      <code>python -m streamlit run climate/gb_climate_app.py</code>
+      <p style="margin-top: 12px;">Source data parsed from Pakistan Meteorological Department
+        station records (1984–2019). Code and data are on
+        <a href="https://github.com/Talikamuhib" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+    </div>
+
+    <p class="dash-disclaimer">
+      A demonstration analysis of station records using interpretable machine-learning
+      methods — not an operational climate forecast. Station coordinates and elevations are
+      accurate approximations for mapping. Built to show method and motivation for
+      glacial-melt and climate-risk research in Pakistan.
+    </p>
+  </main>
+</body>
+</html>
