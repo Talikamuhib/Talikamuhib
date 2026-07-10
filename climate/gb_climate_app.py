@@ -36,6 +36,18 @@ MONTH_ORDER = [
     "July", "August", "September", "October", "November", "December",
 ]
 
+# Approximate coordinates (lat, lon) and elevation of the PMD stations across
+# Gilgit-Baltistan, Pakistan. Used to place them on the map.
+STATION_META = {
+    "Astore": {"lat": 35.3667, "lon": 74.8667, "elev_m": 2168},
+    "Bunji":  {"lat": 35.6667, "lon": 74.6333, "elev_m": 1372},
+    "Chilas": {"lat": 35.4200, "lon": 74.0956, "elev_m": 1250},
+    "Gilgit": {"lat": 35.9200, "lon": 74.3080, "elev_m": 1500},
+    "Gupis":  {"lat": 36.2340, "lon": 73.4400, "elev_m": 2156},
+    "Hunza":  {"lat": 36.3167, "lon": 74.6500, "elev_m": 2438},
+    "Skardu": {"lat": 35.2971, "lon": 75.6333, "elev_m": 2228},
+}
+
 st.set_page_config(page_title="Gilgit-Baltistan Climate Trends",
                    page_icon="\U0001f3d4\ufe0f", layout="wide")
 
@@ -70,6 +82,41 @@ def trend_per_decade(years: np.ndarray, values: np.ndarray) -> float:
         return float("nan")
     slope = np.polyfit(years, values, 1)[0]
     return slope * 10.0
+
+
+@st.cache_data
+def all_station_trends(variable: str) -> pd.DataFrame:
+    """ML trend summary for every station for one variable.
+
+    For each station, fit a Linear Regression on annual values vs year and
+    report the warming/precipitation rate per decade, the R^2 (how linear the
+    change is) and a 5-year-ahead projection. Merged with map coordinates.
+    """
+    rows = []
+    for station, meta in STATION_META.items():
+        ann = annual_series(df, station, variable)
+        if len(ann) < 3:
+            continue
+        X = ann["year"].values.reshape(-1, 1)
+        y = ann["value"].values
+        model = LinearRegression().fit(X, y)
+        slope_decade = float(model.coef_[0] * 10.0)
+        r2 = float(model.score(X, y))
+        last_year = int(ann["year"].max())
+        proj = float(model.predict([[last_year + 5]])[0])
+        rows.append({
+            "station": station,
+            "lat": meta["lat"], "lon": meta["lon"], "elev_m": meta["elev_m"],
+            "trend_decade": slope_decade,
+            "r2": r2,
+            "mean_value": float(y.mean()),
+            "last_value": float(y[-1]),
+            "proj_5yr": proj,
+            "first_year": int(ann["year"].min()),
+            "last_year": last_year,
+            "n_years": len(ann),
+        })
+    return pd.DataFrame(rows)
 
 
 # ----------------------------------------------------------------------------
@@ -119,9 +166,122 @@ k2.metric("Total change (period)", f"{total_change:+.2f} {unit}")
 k3.metric(f"Highest year", f"{hottest['value']:.1f} {unit}", f"{int(hottest['year'])}")
 k4.metric(f"Lowest year", f"{coldest['value']:.1f} {unit}", f"{int(coldest['year'])}")
 
-tab_trend, tab_season, tab_ml, tab_data = st.tabs(
-    ["\U0001f4c8 Trend", "\U0001f5d3\ufe0f Seasonal", "\U0001f52e ML Forecast", "\U0001f5c2\ufe0f Data"]
+tab_map, tab_trend, tab_season, tab_ml, tab_data = st.tabs(
+    ["\U0001f5fa\ufe0f Map", "\U0001f4c8 Trend", "\U0001f5d3\ufe0f Seasonal",
+     "\U0001f52e ML Forecast", "\U0001f5c2\ufe0f Data"]
 )
+
+
+# ----------------------------------------------------------------------------
+# Map tab -- all stations across Gilgit-Baltistan, coloured by ML trend
+# ----------------------------------------------------------------------------
+with tab_map:
+    st.subheader(f"Gilgit-Baltistan stations \u2014 {var_label}")
+    st.caption(
+        "Each point is a weather station. A Linear Regression is fitted to every "
+        "station's annual record; **circle colour and size show the ML-estimated "
+        f"trend per decade** for {var_label.lower()}. Bigger, redder circles warm faster."
+    )
+
+    summary = all_station_trends(variable).copy()
+
+    if summary.empty:
+        st.info("No station trends available for this variable.")
+    else:
+        warming = variable in ("max_temp", "min_temp")
+        # Colour: red = rising, blue = falling (for temperature); for precip
+        # green = wetter, brown = drier.
+        max_abs = max(summary["trend_decade"].abs().max(), 1e-6)
+
+        def _color(t: float):
+            frac = max(-1.0, min(1.0, t / max_abs))
+            if warming:
+                if frac >= 0:  # warming -> red
+                    return [200, int(60 * (1 - frac)) + 30, 40, 200]
+                return [40, 90, 200, 200]  # cooling -> blue
+            else:
+                if frac >= 0:  # wetter -> teal/green
+                    return [15, 140, 130, 200]
+                return [150, 100, 40, 200]  # drier -> brown
+
+        summary["color"] = summary["trend_decade"].apply(_color)
+        summary["radius"] = 6000 + summary["trend_decade"].abs() / max_abs * 22000
+        summary["trend_txt"] = summary["trend_decade"].round(2).astype(str)
+        summary["proj_txt"] = summary["proj_5yr"].round(1).astype(str)
+
+        unit = "mm" if variable == "precipitation" else "\u00b0C"
+        try:
+            import pydeck as pdk
+
+            layer = pdk.Layer(
+                "ScatterplotLayer",
+                data=summary,
+                get_position="[lon, lat]",
+                get_fill_color="color",
+                get_radius="radius",
+                pickable=True,
+                opacity=0.8,
+                stroked=True,
+                get_line_color=[255, 255, 255],
+                line_width_min_pixels=1,
+            )
+            text_layer = pdk.Layer(
+                "TextLayer",
+                data=summary,
+                get_position="[lon, lat]",
+                get_text="station",
+                get_size=13,
+                get_color=[20, 20, 20],
+                get_alignment_baseline="'top'",
+            )
+            view = pdk.ViewState(latitude=35.8, longitude=74.5, zoom=6.6, pitch=0)
+            tooltip = {
+                "html": "<b>{station}</b><br/>Trend: {trend_txt} " + unit + "/decade"
+                        "<br/>Elevation: {elev_m} m<br/>2024 projection: {proj_txt} " + unit,
+                "style": {"backgroundColor": "#10233B", "color": "white"},
+            }
+            st.pydeck_chart(pdk.Deck(
+                map_style="road",
+                initial_view_state=view,
+                layers=[layer, text_layer],
+                tooltip=tooltip,
+            ))
+        except Exception:
+            # Fallback to a simple point map if pydeck/tiles are unavailable
+            st.map(summary[["lat", "lon"]], zoom=6)
+
+        # Ranked ML summary under the map
+        st.markdown("**Machine-learning trend ranking (Linear Regression per station)**")
+        show = summary.sort_values("trend_decade", ascending=False)[
+            ["station", "elev_m", "first_year", "last_year", "n_years",
+             "trend_decade", "r2", "last_value", "proj_5yr"]
+        ].rename(columns={
+            "station": "Station", "elev_m": "Elevation (m)",
+            "first_year": "From", "last_year": "To", "n_years": "Years",
+            "trend_decade": f"Trend ({unit}/decade)", "r2": "R\u00b2 (fit)",
+            "last_value": f"Latest ({unit})", "proj_5yr": f"+5yr proj ({unit})",
+        })
+        st.dataframe(
+            show.style.format({
+                f"Trend ({unit}/decade)": "{:+.2f}", "R\u00b2 (fit)": "{:.2f}",
+                f"Latest ({unit})": "{:.1f}", f"+5yr proj ({unit})": "{:.1f}",
+            }),
+            width="stretch",
+        )
+
+        if warming:
+            fastest = summary.loc[summary["trend_decade"].idxmax()]
+            st.info(
+                f"**{fastest['station']}** is warming fastest at "
+                f"**{fastest['trend_decade']:+.2f} \u00b0C/decade**. Faster warming at "
+                "high-elevation stations accelerates glacial melt and raises "
+                "glacial-lake-flood (GLOF) risk downstream."
+            )
+
+        st.markdown("**Trend vs elevation** \u2014 are higher stations warming faster?")
+        elev_chart = summary.set_index("station")[["elev_m", "trend_decade"]]
+        st.scatter_chart(summary, x="elev_m", y="trend_decade", color="station",
+                         size="mean_value")
 
 
 # ----------------------------------------------------------------------------
