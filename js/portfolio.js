@@ -179,6 +179,81 @@
     });
   });
 
+  /* ---------- Neural brain interaction ---------- */
+  const brainScene = document.querySelector(".brain-scene");
+  const brainCore = document.querySelector(".brain-core");
+  const studyNodes = $$(".study-node");
+  const brainPanel = document.querySelector(".brain-panel");
+  const customCursor = document.querySelector(".custom-cursor");
+
+  const panelTitle = brainPanel?.querySelector(".brain-panel-title");
+  const panelCopy = brainPanel?.querySelector(".brain-panel-copy");
+  const panelMetrics = brainPanel?.querySelectorAll(".brain-panel-metrics strong");
+
+  const activateBrainNode = (study) => {
+    if (!brainScene || !study) return;
+    brainScene.dataset.active = study;
+    brainScene.classList.add("is-active");
+    studyNodes.forEach((node) => {
+      const current = node.dataset.study === study;
+      node.classList.toggle("active", current);
+    });
+
+    const activeNode = document.querySelector(`.study-node[data-study="${study}"]`);
+    if (!activeNode || !brainPanel) return;
+
+    if (panelTitle) panelTitle.textContent = activeNode.dataset.title || "Neural Research";
+    if (panelCopy) panelCopy.textContent = activeNode.dataset.copy || "Exploring brain-inspired intelligence.";
+
+    const metricLabels = [
+      activeNode.dataset.metricOne,
+      activeNode.dataset.metricTwo,
+      activeNode.dataset.metricThree,
+    ];
+    const metricValues = [
+      activeNode.dataset.metricOneValue,
+      activeNode.dataset.metricTwoValue,
+      activeNode.dataset.metricThreeValue,
+    ];
+
+    const metricNodes = brainPanel.querySelectorAll(".brain-panel-metrics div");
+    metricNodes.forEach((item, index) => {
+      const label = item.querySelector("span");
+      const value = item.querySelector("strong");
+      if (label) label.textContent = metricLabels[index] || "Signal";
+      if (value) value.textContent = metricValues[index] || "--";
+    });
+  };
+
+  const resetBrainNode = () => {
+    if (!brainScene) return;
+    brainScene.classList.remove("is-active");
+    studyNodes.forEach((node) => node.classList.remove("active"));
+    const defaultNode = document.querySelector('.study-node[data-study="fmri"]');
+    if (defaultNode) activateBrainNode(defaultNode.dataset.study || "fmri");
+  };
+
+  if (brainScene && brainCore) {
+    brainCore.addEventListener("mouseenter", () => activateBrainNode("fmri"));
+    brainCore.addEventListener("mouseleave", resetBrainNode);
+  }
+
+  studyNodes.forEach((node) => {
+    node.addEventListener("mouseenter", () => activateBrainNode(node.dataset.study || "fmri"));
+    node.addEventListener("mouseleave", resetBrainNode);
+    node.addEventListener("click", () => activateBrainNode(node.dataset.study || "fmri"));
+  });
+
+  if (customCursor) {
+    document.addEventListener("pointermove", (event) => {
+      customCursor.style.left = `${event.clientX}px`;
+      customCursor.style.top = `${event.clientY}px`;
+    });
+
+    document.addEventListener("pointerdown", () => customCursor.classList.add("active"));
+    document.addEventListener("pointerup", () => customCursor.classList.remove("active"));
+  }
+
   /* ---------- Back to top ---------- */
   const backToTop = $("#back-to-top");
   backToTop.addEventListener("click", () => {
