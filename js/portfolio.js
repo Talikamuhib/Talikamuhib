@@ -181,75 +181,91 @@
 
   /* ---------- Neural brain interaction ---------- */
   const brainScene = document.querySelector(".brain-scene");
-  const brainCore = document.querySelector(".brain-core");
-  const studyNodes = $$(".study-node");
-  const brainPanel = document.querySelector(".brain-panel");
+  const brainHotspots = $$(".brain-hotspot");
+  const brainMiniPanel = document.querySelector(".brain-mini-panel");
+  const miniPanelHead = document.querySelector("#mini-panel-head");
+  const miniPanelTitle = document.querySelector("#mini-panel-title");
+  const miniPanelCopy = document.querySelector("#mini-panel-copy");
   const customCursor = document.querySelector(".custom-cursor");
 
-  const panelTitle = brainPanel?.querySelector(".brain-panel-title");
-  const panelCopy = brainPanel?.querySelector(".brain-panel-copy");
-  const panelMetrics = brainPanel?.querySelectorAll(".brain-panel-metrics strong");
-
-  const activateBrainNode = (study) => {
-    if (!brainScene || !study) return;
-    brainScene.dataset.active = study;
-    brainScene.classList.add("is-active");
-    studyNodes.forEach((node) => {
-      const current = node.dataset.study === study;
-      node.classList.toggle("active", current);
-    });
-
-    const activeNode = document.querySelector(`.study-node[data-study="${study}"]`);
-    if (!activeNode || !brainPanel) return;
-
-    if (panelTitle) panelTitle.textContent = activeNode.dataset.title || "Neural Research";
-    if (panelCopy) panelCopy.textContent = activeNode.dataset.copy || "Exploring brain-inspired intelligence.";
-
-    const metricLabels = [
-      activeNode.dataset.metricOne,
-      activeNode.dataset.metricTwo,
-      activeNode.dataset.metricThree,
-    ];
-    const metricValues = [
-      activeNode.dataset.metricOneValue,
-      activeNode.dataset.metricTwoValue,
-      activeNode.dataset.metricThreeValue,
-    ];
-
-    const metricNodes = brainPanel.querySelectorAll(".brain-panel-metrics div");
-    metricNodes.forEach((item, index) => {
-      const label = item.querySelector("span");
-      const value = item.querySelector("strong");
-      if (label) label.textContent = metricLabels[index] || "Signal";
-      if (value) value.textContent = metricValues[index] || "--";
-    });
+  const regionMeta = {
+    eeg: {
+      label: "EEG",
+      title: "Signal rhythm",
+      copy: "Electrical patterns and temporal dynamics"
+    },
+    fmri: {
+      label: "fMRI",
+      title: "Functional connectivity",
+      copy: "Activation patterns in motion"
+    },
+    graph: {
+      label: "Graph",
+      title: "Network topology",
+      copy: "Connectivity structure and spectral flow"
+    },
+    imaging: {
+      label: "Imaging",
+      title: "Clinical scan layer",
+      copy: "Attention maps and anatomical detail"
+    },
+    neuroai: {
+      label: "NeuroAI",
+      title: "Biological to artificial",
+      copy: "Brain-inspired inference systems"
+    }
   };
 
-  const resetBrainNode = () => {
+  const activateBrainRegion = (region) => {
+    if (!brainScene || !regionMeta[region]) return;
+    brainScene.dataset.active = region;
+    brainScene.classList.add("is-active");
+
+    if (miniPanelHead) miniPanelHead.textContent = regionMeta[region].label;
+    if (miniPanelTitle) miniPanelTitle.textContent = regionMeta[region].title;
+    if (miniPanelCopy) miniPanelCopy.textContent = regionMeta[region].copy;
+  };
+
+  const clearBrainRegion = () => {
     if (!brainScene) return;
     brainScene.classList.remove("is-active");
-    studyNodes.forEach((node) => node.classList.remove("active"));
-    const defaultNode = document.querySelector('.study-node[data-study="fmri"]');
-    if (defaultNode) activateBrainNode(defaultNode.dataset.study || "fmri");
+    brainScene.dataset.active = "fmri";
+    if (miniPanelHead) miniPanelHead.textContent = "fMRI";
+    if (miniPanelTitle) miniPanelTitle.textContent = "Functional connectivity";
+    if (miniPanelCopy) miniPanelCopy.textContent = "Activation patterns in motion";
   };
 
-  if (brainScene && brainCore) {
-    brainCore.addEventListener("mouseenter", () => activateBrainNode("fmri"));
-    brainCore.addEventListener("mouseleave", resetBrainNode);
-  }
-
-  studyNodes.forEach((node) => {
-    node.addEventListener("mouseenter", () => activateBrainNode(node.dataset.study || "fmri"));
-    node.addEventListener("mouseleave", resetBrainNode);
-    node.addEventListener("click", () => activateBrainNode(node.dataset.study || "fmri"));
+  brainHotspots.forEach((hotspot) => {
+    const region = hotspot.dataset.region;
+    hotspot.addEventListener("mouseenter", () => activateBrainRegion(region));
+    hotspot.addEventListener("focus", () => activateBrainRegion(region));
+    hotspot.addEventListener("mouseleave", clearBrainRegion);
+    hotspot.addEventListener("blur", clearBrainRegion);
+    hotspot.addEventListener("click", () => activateBrainRegion(region));
   });
+
+  if (brainScene) {
+    brainScene.addEventListener("pointermove", (event) => {
+      const rect = brainScene.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+      brainScene.style.setProperty("--brain-shift-x", `${x * 14}px`);
+      brainScene.style.setProperty("--brain-shift-y", `${y * 12}px`);
+      brainScene.style.setProperty("--brain-tilt", `${x * 6}deg`);
+    });
+
+    brainScene.addEventListener("pointerleave", () => {
+      brainScene.style.setProperty("--brain-shift-x", "0px");
+      brainScene.style.setProperty("--brain-shift-y", "0px");
+      brainScene.style.setProperty("--brain-tilt", "0deg");
+    });
+  }
 
   if (customCursor) {
     document.addEventListener("pointermove", (event) => {
       customCursor.style.left = `${event.clientX}px`;
       customCursor.style.top = `${event.clientY}px`;
     });
-
     document.addEventListener("pointerdown", () => customCursor.classList.add("active"));
     document.addEventListener("pointerup", () => customCursor.classList.remove("active"));
   }
