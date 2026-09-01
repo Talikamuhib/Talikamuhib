@@ -182,7 +182,6 @@
   /* ---------- Neural brain interaction ---------- */
   const brainScene = document.querySelector(".brain-scene");
   const brainHotspots = $$(".brain-hotspot");
-  const brainMiniPanel = document.querySelector(".brain-mini-panel");
   const miniPanelHead = document.querySelector("#mini-panel-head");
   const miniPanelTitle = document.querySelector("#mini-panel-title");
   const miniPanelCopy = document.querySelector("#mini-panel-copy");
@@ -200,19 +199,24 @@
       copy: "Activation patterns in motion"
     },
     graph: {
-      label: "Graph",
+      label: "GRAPH",
       title: "Network topology",
       copy: "Connectivity structure and spectral flow"
     },
     imaging: {
-      label: "Imaging",
+      label: "IMAGING",
       title: "Clinical scan layer",
       copy: "Attention maps and anatomical detail"
     },
     neuroai: {
-      label: "NeuroAI",
+      label: "NEUROAI",
       title: "Biological to artificial",
       copy: "Brain-inspired inference systems"
+    },
+    connectivity: {
+      label: "CONNECTIVITY",
+      title: "Connectome map",
+      copy: "Neural pathways across regions"
     }
   };
 
@@ -244,6 +248,15 @@
     hotspot.addEventListener("click", () => activateBrainRegion(region));
   });
 
+  document.querySelectorAll(".science-module").forEach((module) => {
+    const region = module.dataset.module;
+    if (!region) return;
+    module.addEventListener("mouseenter", () => activateBrainRegion(region));
+    module.addEventListener("mouseleave", clearBrainRegion);
+    module.addEventListener("focusin", () => activateBrainRegion(region));
+    module.addEventListener("focusout", clearBrainRegion);
+  });
+
   if (brainScene) {
     brainScene.addEventListener("pointermove", (event) => {
       const rect = brainScene.getBoundingClientRect();
@@ -252,12 +265,14 @@
       brainScene.style.setProperty("--brain-shift-x", `${x * 14}px`);
       brainScene.style.setProperty("--brain-shift-y", `${y * 12}px`);
       brainScene.style.setProperty("--brain-tilt", `${x * 6}deg`);
+      brainScene.style.setProperty("--brain-glow", `${1 + Math.abs(x) * 0.2}`);
     });
 
     brainScene.addEventListener("pointerleave", () => {
       brainScene.style.setProperty("--brain-shift-x", "0px");
       brainScene.style.setProperty("--brain-shift-y", "0px");
       brainScene.style.setProperty("--brain-tilt", "0deg");
+      brainScene.style.setProperty("--brain-glow", "1");
     });
   }
 

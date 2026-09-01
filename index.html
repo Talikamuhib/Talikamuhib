@@ -64,115 +64,69 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="custom-cursor" aria-hidden="true"></div>
-
-      <div class="container hero-layout">
-        <div class="hero-copy reveal">
-          <p class="hero-eyebrow">
-            <span class="status-dot" aria-hidden="true"></span>
-            AI Researcher · NeuroAI · Medical AI
-          </p>
-          <h1 class="hero-title">Taliqa Muhib</h1>
-          <p class="hero-subtitle">Building intelligent systems to understand the brain.</p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">Explore Research</a>
-            <a href="Taliqa_Muhib_Resume.pdf" class="btn btn-outline" download>Download CV</a>
-          </div>
+      <div class="container hero-simple">
+        <div class="hero-content">
+          <p class="hero-kicker">TALIQA MUHIB</p>
+          <h1 class="hero-title">AI RESEARCHER</h1>
+          <p class="hero-subtitle">NeuroAI · Medical AI · Computational Neuroscience</p>
+          <p class="hero-line">Computing the brain. Understanding intelligence.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="brain-scene reveal" aria-label="Interactive neuroscience research map" data-active="fmri">
-          <div class="brain-ambient ambient-a"></div>
-          <div class="brain-ambient ambient-b"></div>
-          <div class="brain-grid" aria-hidden="true"></div>
+    <!-- ============ WHAT I DO BREAKDOWN ============ -->
+    <section class="section section-breakdown" id="what-i-do">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">Research & Expertise</p>
+          <h2 class="section-title">What I Do</h2>
+          <p class="section-lead">Exploring the intersection of neuroscience, AI, and clinical research.</p>
+        </header>
 
-          <svg class="brain-visual" viewBox="0 0 620 500" role="img" aria-label="Stylized anatomical brain illustration">
-            <defs>
-              <linearGradient id="brainFill" x1="0%" x2="100%" y1="0%" y2="100%">
-                <stop offset="0%" stop-color="rgba(210,240,255,0.95)"/>
-                <stop offset="35%" stop-color="rgba(147,214,255,0.85)"/>
-                <stop offset="65%" stop-color="rgba(110,151,255,0.58)"/>
-                <stop offset="100%" stop-color="rgba(68,86,140,0.76)"/>
-              </linearGradient>
-              <linearGradient id="brainEdge" x1="0%" x2="100%">
-                <stop offset="0%" stop-color="rgba(196,234,255,0.9)"/>
-                <stop offset="100%" stop-color="rgba(125,172,255,0.5)"/>
-              </linearGradient>
-              <filter id="brainGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="8" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
+        <div class="breakdown-grid">
+          <article class="breakdown-card reveal">
+            <div class="card-number">01</div>
+            <h3>Neuroscience Research</h3>
+            <p>EEG signal analysis, connectivity mapping, and brain dynamics using graph signal processing.</p>
+            <ul class="card-tags">
+              <li>EEG</li>
+              <li>Connectivity</li>
+              <li>Signal Processing</li>
+            </ul>
+          </article>
 
-            <g class="brain-shape-group" filter="url(#brainGlow)">
-              <path class="brain-shadow" d="M152 100C102 118 70 164 60 214C52 252 63 305 95 347C119 376 150 395 185 410C228 430 282 437 319 429C370 419 415 390 448 352C490 305 509 249 503 197C497 139 467 99 424 79C390 63 347 68 310 81C280 92 260 109 230 113C200 117 182 109 152 100Z" />
+          <article class="breakdown-card reveal">
+            <div class="card-number">02</div>
+            <h3>Deep Learning & AI</h3>
+            <p>Vision Transformers, neural networks, and brain-inspired AI systems for medical imaging and diagnosis support.</p>
+            <ul class="card-tags">
+              <li>Deep Learning</li>
+              <li>Medical AI</li>
+              <li>NeuroAI</li>
+            </ul>
+          </article>
 
-              <path class="brain-outline" d="M152 100C102 118 70 164 60 214C52 252 63 305 95 347C119 376 150 395 185 410C228 430 282 437 319 429C370 419 415 390 448 352C490 305 509 249 503 197C497 139 467 99 424 79C390 63 347 68 310 81C280 92 260 109 230 113C200 117 182 109 152 100Z" />
+          <article class="breakdown-card reveal">
+            <div class="card-number">03</div>
+            <h3>Healthcare Analytics</h3>
+            <p>Patient pathway analysis, predictive modelling, and data-driven dashboards for clinical decision support.</p>
+            <ul class="card-tags">
+              <li>Dashboards</li>
+              <li>Prediction</li>
+              <li>Analytics</li>
+            </ul>
+          </article>
 
-              <path class="brain-half left-half" d="M151 113C108 130 87 171 86 221C86 269 104 313 137 348C161 374 191 392 219 397C197 341 197 240 206 186C213 145 179 121 151 113Z" />
-              <path class="brain-half right-half" d="M466 113C434 109 401 131 390 169C379 210 381 276 393 326C407 379 435 395 468 378C495 363 517 334 526 294C536 247 531 188 510 155C497 134 480 119 466 113Z" />
-
-              <path class="brain-fold fold-a" d="M103 190C133 177 171 181 200 202C226 221 225 254 196 269C170 283 131 276 111 249C95 227 91 203 103 190Z" />
-              <path class="brain-fold fold-b" d="M182 150C210 134 241 135 270 153C282 159 289 170 291 181C294 203 277 220 251 228C220 238 188 234 171 216C158 201 161 166 182 150Z" />
-              <path class="brain-fold fold-c" d="M281 151C309 137 350 137 376 155C405 176 408 210 388 227C361 249 322 251 296 234C274 220 268 183 281 151Z" />
-              <path class="brain-fold fold-d" d="M116 279C151 261 195 263 226 286C247 303 250 338 228 355C198 378 142 377 117 350C94 324 90 296 116 279Z" />
-              <path class="brain-fold fold-e" d="M287 278C322 263 374 267 404 291C427 308 430 344 403 363C371 385 317 381 288 353C267 333 267 299 287 278Z" />
-              <path class="brain-fold fold-f" d="M205 308C233 289 274 290 299 311C320 329 323 359 304 376C279 397 232 395 205 372C185 355 183 327 205 308Z" />
-              <path class="brain-fold fold-g" d="M213 214C238 206 257 208 278 219C293 227 302 243 302 258C302 278 290 292 264 302C237 312 210 307 192 293C172 278 169 244 187 230C194 224 202 219 213 214Z" />
-
-              <path class="brain-network network-main" d="M183 180C205 177 223 195 225 214C227 234 214 245 204 257C196 268 189 280 192 293C197 312 217 321 240 320C268 318 294 302 304 278C313 257 302 244 281 235C269 229 260 219 258 207C256 190 267 175 282 168C302 158 332 163 349 178" />
-              <path class="brain-network network-aux" d="M145 244C176 236 201 245 223 261C242 277 244 301 220 321C198 341 164 340 139 324C117 309 106 286 111 262C116 249 128 243 145 244Z" />
-              <path class="brain-network network-aux-b" d="M353 217C383 207 420 210 442 230C467 252 465 290 436 311C410 330 371 329 346 311C329 300 320 281 326 258C332 239 342 230 353 217Z" />
-            </g>
-
-            <g class="brain-points" aria-hidden="true">
-              <circle cx="162" cy="175" r="4"/>
-              <circle cx="219" cy="168" r="4"/>
-              <circle cx="279" cy="176" r="4"/>
-              <circle cx="336" cy="170" r="4"/>
-              <circle cx="209" cy="246" r="4"/>
-              <circle cx="292" cy="238" r="4"/>
-              <circle cx="180" cy="299" r="4"/>
-              <circle cx="330" cy="296" r="4"/>
-              <circle cx="250" cy="325" r="4"/>
-            </g>
-          </svg>
-
-          <div class="brain-hotspots" aria-label="Research region hotspots">
-            <button class="brain-hotspot hotspot-eeg" type="button" data-region="eeg" aria-label="EEG research">
-              <span>EEG</span>
-            </button>
-            <button class="brain-hotspot hotspot-fmri" type="button" data-region="fmri" aria-label="fMRI research">
-              <span>fMRI</span>
-            </button>
-            <button class="brain-hotspot hotspot-graph" type="button" data-region="graph" aria-label="Graph signal processing research">
-              <span>Graph</span>
-            </button>
-            <button class="brain-hotspot hotspot-imaging" type="button" data-region="imaging" aria-label="Medical imaging research">
-              <span>Imaging</span>
-            </button>
-            <button class="brain-hotspot hotspot-neuroai" type="button" data-region="neuroai" aria-label="NeuroAI research">
-              <span>NeuroAI</span>
-            </button>
-          </div>
-
-          <aside class="brain-mini-panel" aria-live="polite">
-            <div class="mini-panel-head" id="mini-panel-head">fMRI</div>
-            <div class="mini-panel-visual" aria-hidden="true">
-              <span class="mini-scan-line"></span>
-              <span class="mini-scan-block block-a"></span>
-              <span class="mini-scan-block block-b"></span>
-              <span class="mini-scan-block block-c"></span>
-            </div>
-            <div class="mini-panel-copy">
-              <strong id="mini-panel-title">Functional connectivity</strong>
-              <small id="mini-panel-copy">Activation patterns in motion</small>
-            </div>
-          </aside>
+          <article class="breakdown-card reveal">
+            <div class="card-number">04</div>
+            <h3>Responsible AI</h3>
+            <p>Evaluating safety, bias, and reliability of AI systems in healthcare to ensure trustworthy research outcomes.</p>
+            <ul class="card-tags">
+              <li>Ethics</li>
+              <li>Evaluation</li>
+              <li>Trust</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
